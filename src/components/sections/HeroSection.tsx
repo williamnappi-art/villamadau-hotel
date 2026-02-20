@@ -147,7 +147,7 @@ export function HeroSection() {
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
             className="fixed inset-0 z-40 flex flex-col pt-24 px-8"
-            style={{ backgroundColor: '#c8b89f' }}
+            style={{ backgroundColor: '#f2ece2' }}
           >
             {/* X per chiudere */}
             <button
@@ -166,7 +166,7 @@ export function HeroSection() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="block py-4 text-2xl font-serif border-b border-gray-600/25 text-gray-800 hover:text-primary transition-colors"
+                      className="block py-4 text-2xl font-serif border-b border-gray-300 text-gray-800 hover:text-primary transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {link.label}
@@ -180,7 +180,8 @@ export function HeroSection() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-primary text-white py-4 rounded font-semibold uppercase tracking-wide text-sm"
+                className="block w-full text-center text-white py-4 rounded font-semibold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
+                style={{ backgroundColor: '#c9621a' }}
               >
                 Prenota ora
               </a>
