@@ -309,9 +309,10 @@ export default function GutturuMannuPage() {
             <div className="rounded-xl overflow-hidden shadow-md aspect-[4/3]">
               <iframe
                 title="Villa Madau Hotel – Via Nora 84, Pula"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=8.9722%2C38.9909%2C9.0322%2C39.0309&layer=mapnik&marker=39.0109%2C9.0022"
+                src="https://maps.google.com/maps?q=Via+Nora+84,+09010+Pula+CA,+Sardegna,+Italy&output=embed&z=16"
                 className="w-full h-full border-0"
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>
