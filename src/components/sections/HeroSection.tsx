@@ -146,15 +146,27 @@ export function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white flex flex-col pt-24 px-8"
+            className="fixed inset-0 z-40 flex flex-col pt-24 px-8"
+            style={{ backgroundColor: '#c8b89f' }}
           >
+            {/* X per chiudere */}
+            <button
+              onClick={() => setMobileOpen(false)}
+              aria-label="Chiudi menu"
+              className="absolute top-6 right-5 w-11 h-11 flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <path d="M20 6L6 20M6 6l14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </button>
+
             <nav aria-label="Menu mobile">
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="block py-4 text-2xl font-serif border-b border-gray-100 text-gray-800 hover:text-primary transition-colors"
+                      className="block py-4 text-2xl font-serif border-b border-gray-600/25 text-gray-800 hover:text-primary transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {link.label}
