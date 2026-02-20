@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
+
 import { HOTEL } from '@/lib/hotel.config'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { Button } from '@/components/ui/Button'
@@ -43,7 +43,7 @@ const percorsi = [
     lunghezza: '16,3 km',
     durata: '5 ore',
     difficolta: 'EE',
-    descrizione: 'Il percorso principale del parco. Segue in parte un'antica ferrovia carbonaria attraverso gole, fiumi e boschi di lecci.',
+    descrizione: "Il percorso principale del parco. Segue in parte un'antica ferrovia carbonaria attraverso gole, fiumi e boschi di lecci.",
   },
 ]
 
@@ -169,7 +169,7 @@ export default function GutturuMannuPage() {
           </h2>
           <div className="space-y-5 text-gray-600 leading-relaxed text-[15px]">
             <p>
-              Il <strong className="text-gray-800">Parco Naturale Regionale di Gutturu Mannu</strong> — il cui nome in sardo campidanese significa <em>"grande gola"</em> — è istituito dalla Regione Sardegna nel 2014 e comprende i territori di dieci comuni, con Pula che ne è oggi il Comune capofila e il cui sindaco presiede la Comunità del Parco.
+              Il <strong className="text-gray-800">Parco Naturale Regionale di Gutturu Mannu</strong> — il cui nome in sardo campidanese significa <em>&ldquo;grande gola&rdquo;</em> — è istituito dalla Regione Sardegna nel 2014 e comprende i territori di dieci comuni, con Pula che ne è oggi il Comune capofila e il cui sindaco presiede la Comunità del Parco.
             </p>
             <p>
               La foresta si estende per oltre <strong className="text-gray-800">35.000 ettari</strong> di copertura boschiva continua, dominata dal leccio, dalla sughera e dall&apos;olivastro selvatico, ed è considerata la più grande foresta a sclerofille dell&apos;intero bacino del Mediterraneo. Oltre 600 specie vegetali, 50 delle quali endemiche, convivono in questo straordinario ecosistema.
