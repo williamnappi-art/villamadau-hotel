@@ -105,7 +105,7 @@ export function CardCarousel() {
 
           {/* ── Slot sinistra (larghezza fissa, card animata dentro) ── */}
           <div
-            className="relative w-[22%] md:w-[30%] shrink-0"
+            className="relative w-[36%] md:w-[30%] shrink-0"
             style={{ zIndex: 10, marginTop: '4rem' }}
           >
             <AnimatePresence custom={dir} mode="popLayout">
@@ -131,7 +131,7 @@ export function CardCarousel() {
           </div>
 
           {/* ── Slot centrale ── */}
-          <div className="relative w-[56%] md:w-[40%] shrink-0 z-30 -mx-[3%]">
+          <div className="relative w-[82%] md:w-[40%] shrink-0 z-30 -mx-[18%] md:-mx-[3%]">
             <AnimatePresence custom={dir} mode="popLayout">
               <motion.div
                 key={`center-${activeCard.id}`}
@@ -180,7 +180,7 @@ export function CardCarousel() {
 
           {/* ── Slot destra ── */}
           <div
-            className="relative w-[22%] md:w-[30%] shrink-0"
+            className="relative w-[36%] md:w-[30%] shrink-0"
             style={{ zIndex: 10, marginTop: '4rem' }}
           >
             <AnimatePresence custom={dir} mode="popLayout">
