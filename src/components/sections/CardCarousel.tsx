@@ -42,6 +42,14 @@ const cards = [
     description: '',
     href: '/galleria',
   },
+  {
+    id: 'gutturu',
+    image: '/images/gutturu-mannu-cervo.jpg',
+    title: 'Gutturu Mannu',
+    description:
+      'la più grande foresta del Mediterraneo, a pochi minuti da Pula, rifugio del cervo sardo e tesoro di natura incontaminata',
+    href: '/gutturu-mannu',
+  },
 ]
 
 const N = cards.length

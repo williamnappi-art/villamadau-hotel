@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/servizi`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/galleria`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/contatti`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${base}/gutturu-mannu`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ]
 
   const cameraRoutes: MetadataRoute.Sitemap = camere.map((camera) => ({
