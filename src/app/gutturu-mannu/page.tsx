@@ -308,8 +308,8 @@ export default function GutturuMannuPage() {
             {/* Mappa OpenStreetMap */}
             <div className="rounded-xl overflow-hidden shadow-md aspect-[4/3]">
               <iframe
-                title="Mappa Parco di Gutturu Mannu"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=8.65%2C39.38%2C8.87%2C39.55&layer=mapnik&marker=39.46%2C8.76"
+                title="Villa Madau Hotel – Via Nora 84, Pula"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=8.9722%2C38.9909%2C9.0322%2C39.0309&layer=mapnik&marker=39.0109%2C9.0022"
                 className="w-full h-full border-0"
                 loading="lazy"
               />
