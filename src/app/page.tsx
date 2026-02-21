@@ -1,5 +1,6 @@
 import { HeroSection } from '@/components/sections/HeroSection'
 import { CardCarousel } from '@/components/sections/CardCarousel'
+import { HomeScrollSnap } from '@/components/sections/HomeScrollSnap'
 import { CamerePreview } from '@/components/sections/CamerePreview'
 import { ServiziSection } from '@/components/sections/ServiziSection'
 import { RistoranteSection } from '@/components/sections/RistoranteSection'
@@ -10,6 +11,7 @@ import { HOTEL } from '@/lib/hotel.config'
 export default function HomePage() {
   return (
     <>
+      <HomeScrollSnap />
       <HeroSection />
       <CardCarousel />
       <CamerePreview />

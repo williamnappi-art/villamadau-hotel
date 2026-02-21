@@ -102,7 +102,7 @@ export function CardCarousel() {
   const rightCard  = cards[next]
 
   return (
-    <section className="py-16 overflow-hidden">
+    <section id="carousel" className="py-16 overflow-hidden">
       <div className="relative mx-auto px-4 md:max-w-2xl">
 
         {/* prospettiva 3D sul contenitore */}
