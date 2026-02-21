@@ -32,18 +32,12 @@ export default function CamerePage() {
       />
 
       {/* Hero pagina */}
-      <div className="bg-gray-900 py-16 px-4 text-center text-white">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary-300 mb-3">
-          Dove riposarsi
-        </p>
-        <h1 className="font-serif text-4xl md:text-5xl">Le nostre camere</h1>
-        <p className="mt-4 text-gray-400 max-w-xl mx-auto">
-          Ogni camera è un rifugio di comfort nel cuore di Pula.
-        </p>
+      <div className="bg-cream py-20 px-4 text-center">
+        <h1 className="font-serif text-4xl md:text-5xl text-gray-500">Le dieci suite nel cuore del Mediterraneo</h1>
       </div>
 
       {/* Lista camere */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {camere.map((camera, i) => (
             <div
