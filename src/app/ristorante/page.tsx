@@ -17,12 +17,7 @@ export const metadata: Metadata = {
   },
 }
 
-const piatti = [
-  { categoria: 'Primi piatti', voci: ['Malloreddus alla campidanese', 'Culurgiones al pomodoro fresco', 'Fregola con arselle', 'Zuppa gallurese'] },
-  { categoria: 'Secondi piatti', voci: ['Porceddu arrosto', 'Agnello al forno con patate', 'Grigliata di pesce del golfo', 'Dentice al sale'] },
-  { categoria: 'Antipasti', voci: ['Bottarga di muggine di Cabras', 'Affettati e formaggi sardi', 'Bruschette con pomodorini e basilico', 'Cozze alla marinara'] },
-  { categoria: 'Dolci', voci: ['Seadas al miele di corbezzolo', 'Pardulas alla ricotta', 'Tiramisù sardo', 'Frutta fresca di stagione'] },
-]
+const MENU_URL = 'https://www.leggimenu.it/menu/federicos/210635'
 
 export default function RistorantePage() {
   const breadcrumb = generateBreadcrumbSchema([
@@ -37,39 +32,33 @@ export default function RistorantePage() {
       <RistoranteHero />
 
       {/* Intro */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-cream">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <SectionTitle
             label="Cucina tipica sarda"
-            title="Un viaggio tra i sapori dell'isola"
+            title="Un viaggio tra i sapori dell&apos;isola"
             subtitle="Ogni piatto racconta la storia e le tradizioni della Sardegna meridionale. Utilizziamo solo ingredienti freschi e locali, selezionati tra i migliori produttori del Sulcis e del Campidano."
           />
         </div>
       </section>
 
-      {/* Menu */}
-      <section className="pb-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {piatti.map((sezione) => (
-              <div key={sezione.categoria} className="bg-cream rounded-xl p-8">
-                <h2 className="font-serif text-2xl text-gray-900 mb-5 pb-3 border-b border-gray-200">
-                  {sezione.categoria}
-                </h2>
-                <ul className="space-y-3">
-                  {sezione.voci.map((voce) => (
-                    <li key={voce} className="flex items-start gap-3 text-sm text-gray-700">
-                      <span className="mt-1 flex-shrink-0 text-primary">✦</span>
-                      {voce}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+      {/* Menù embed */}
+      <section className="pb-20 bg-cream">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
+            <iframe
+              src={MENU_URL}
+              title="Menù Federico's"
+              className="w-full"
+              style={{ height: '900px', border: 'none' }}
+              loading="lazy"
+            />
           </div>
-
-          <p className="text-center text-sm text-gray-500 mt-8 italic">
-            Il menù varia in base alla stagionalità e alla disponibilità dei prodotti locali.
+          <p className="text-center text-sm text-gray-400 mt-4">
+            Il menù varia in base alla stagionalità.{' '}
+            <a href={MENU_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">
+              Apri in una nuova finestra →
+            </a>
           </p>
         </div>
       </section>
