@@ -5,6 +5,6 @@ import { Header } from './Header'
 
 export function ConditionalHeader() {
   const pathname = usePathname()
-  if (pathname === '/' || pathname === '/ristorante') return null
+  if (pathname === '/' || pathname === '/ristorante' || pathname === '/hotel') return null
   return <Header />
 }
