@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import { RistoranteHero } from '@/components/sections/RistoranteHero'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { generateBreadcrumbSchema } from '@/lib/schema'
@@ -34,24 +34,7 @@ export default function RistorantePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
-      {/* Hero */}
-      <div className="relative h-72 md:h-96 overflow-hidden">
-        <Image
-          src="/images/ristorante.jpg"
-          alt="Ristorante Villa Madau Pula - cucina tipica sarda"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary-200 mb-3">
-            Tradizione sarda
-          </p>
-          <h1 className="font-serif text-4xl md:text-5xl">Il nostro ristorante</h1>
-        </div>
-      </div>
+      <RistoranteHero />
 
       {/* Intro */}
       <section className="py-20 bg-white">
