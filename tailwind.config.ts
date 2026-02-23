@@ -22,7 +22,7 @@ const config: Config = {
           800: '#152e15',
           900: '#0e1f0e',
         },
-        cream: '#f2ece2',
+        cream: '#f0ebe0',
       },
       fontFamily: {
         serif: ['var(--font-playfair)', 'Georgia', 'serif'],
