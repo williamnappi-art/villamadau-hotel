@@ -5,6 +5,7 @@ import { CamerePreview } from '@/components/sections/CamerePreview'
 import { ServiziSection } from '@/components/sections/ServiziSection'
 import { RistoranteSection } from '@/components/sections/RistoranteSection'
 import { LocationSection } from '@/components/sections/LocationSection'
+import { OfferteSection } from '@/components/sections/OfferteSection'
 import { Button } from '@/components/ui/Button'
 import { HOTEL } from '@/lib/hotel.config'
 
@@ -14,6 +15,7 @@ export default function HomePage() {
       <HomeScrollSnap />
       <HeroSection />
       <CardCarousel />
+      <OfferteSection />
       <CamerePreview />
       <ServiziSection />
       <RistoranteSection />

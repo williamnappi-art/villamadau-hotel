@@ -40,7 +40,7 @@ export default function HotelPage() {
           </h1>
           <p className="text-[#4a4640] leading-relaxed text-lg max-w-2xl mx-auto">
             Villa Madau non si annuncia. Bisogna cercarlo, girare l&apos;angolo giusto, spingere il
-            cancello verde tra i vicoli del centro storico di Pula. È lì che il paese si ferma,
+            cancello tra i vicoli del centro storico di Pula. È lì che il paese si ferma,
             il tempo rallenta, e un piccolo mondo tutto da scoprire si apre davanti a voi.
           </p>
         </div>
@@ -66,20 +66,17 @@ export default function HotelPage() {
               La struttura
             </p>
             <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-6 leading-snug">
-              Un palazzo antico<br />che sa accogliere
+              Il Boutique Hotel<br />tra le vie del centro
             </h2>
             <div className="space-y-4 text-[#4a4640] leading-relaxed">
               <p>
-                Costruito attorno a un cortile ombreggiato, Villa Madau occupa un antico palazzo
-                del centro storico di Pula. Le mura in pietra, i soffitti alti, i pavimenti in
-                cotto fatto a mano: ogni elemento parla di un&apos;architettura che ha imparato
-                ad abitare il caldo del Mediterraneo.
+                Il Boutique Hotel Villa Madau si trova nel cuore del centro storico di Pula,
+                tra le acque cristalline del mare della Sardegna del Sud e la montagna incontaminata
+                costellata di percorsi naturalistici del parco di Gutturu Mannu.
               </p>
               <p>
-                Dieci suite distribuite su due piani, tutte diverse l&apos;una dall&apos;altra,
-                accomunate dalla stessa cura artigianale per i dettagli. Fuori, la piazza, la
-                fontana, il campanile di San Giovanni Battista. Dentro, il silenzio discreto di
-                chi sa stare.
+                A pochi minuti dalla spiaggia di Nora e la sua città romana; dalle spiagge
+                uniche al mondo di Chia e Tuerredda.
               </p>
             </div>
           </div>
@@ -96,30 +93,30 @@ export default function HotelPage() {
               La vita del paese
             </p>
             <h2 className="font-serif text-3xl md:text-4xl text-white mb-6 leading-snug">
-              Svegliarsi al suono<br />di Pula che si desta
+              I ritmi del<br />centro storico
             </h2>
             <div className="space-y-4 text-white/70 leading-relaxed">
               <p>
-                La mattina arriva con lentezza. Prima i passi sull&apos;acciottolato, poi le voci
-                al bar all&apos;angolo, poi il profumo del pane. Non c&apos;è sveglia che suoni —
-                è il paese stesso che bussa, con discrezione.
+                L&apos;aria di festa paesana che porta l&apos;estate, quel senso di serenità
+                che non si può descrivere — si può solo respirare.
               </p>
               <p>
-                Qui si vive al ritmo di Pula: le campane di San Giovanni Battista che scandiscono
-                le ore, le feste di paese che colorano le piazze, la processione del patrono che
-                passa davanti all&apos;ingresso e porta con sé secoli di cultura sarda. Non siete
-                turisti: siete ospiti del paese.
+                I profumi del pane, l&apos;aria fresca del mattino, il paese che si sveglia piano.
+                Vivere i ritmi di Pula, al centro del Mediterraneo, significa ritrovare qualcosa
+                di autentico. All&apos;ombra della chiesa di San Giovanni Battista si partecipa
+                alle manifestazioni religiose, ci si ferma, ci si guarda intorno.
+                Non sarete turisti — sarete abitanti di Pula.
               </p>
             </div>
           </div>
           {/* Foto */}
           <div className="order-1 lg:order-2 relative aspect-[4/5] w-full overflow-hidden">
             <Image
-              src="/images/piazzetta.jpg"
-              alt="Piazzetta di Pula - centro storico"
+              src="/images/foto-pula-hotel.jpg"
+              alt="Villa Madau Hotel – Pula"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
         </div>
@@ -135,7 +132,7 @@ export default function HotelPage() {
               alt="Colazione Villa Madau - prodotti locali sardi"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover scale-110"
             />
           </div>
           {/* Testo */}
@@ -145,19 +142,19 @@ export default function HotelPage() {
               La colazione
             </p>
             <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-6 leading-snug">
-              In piazza,<br />all&apos;ombra della chiesa
+              Nel giardino,<br />in piazza, a modo vostro
             </h2>
             <div className="space-y-4 text-[#4a4640] leading-relaxed">
               <p>
-                Ogni mattina la piccola piazzetta davanti a San Giovanni Battista si trasforma in
-                una sala colazione all&apos;aperto. Tavoli in pietra, sedie in ferro, e una tavola
-                imbandita di prodotti sardi: pane carasau croccante, formaggi freschi di Pula,
-                marmellate fatte in casa, dolcetti al miele di corbezzolo.
+                La colazione a Villa Madau si fa dove si preferisce: nel giardino interno,
+                tra le piante e il fresco del mattino, oppure fuori, nella piazzetta,
+                all&apos;ombra della grande pianta al centro — mentre il paese si sveglia
+                intorno a voi.
               </p>
               <p>
-                Non è una colazione da hotel. È quella che si fa quando si è ospiti di qualcuno
-                che vuole davvero il vostro bene. Prendetevi il tempo che volete — la giornata
-                può aspettare.
+                È una colazione à la carte, con prodotti sardi scelti ogni giorno:
+                formaggi freschi, salumi locali, dolci artigianali, marmellate di stagione
+                e frutta fresca. Non è un buffet — è una tavola apparecchiata per voi.
               </p>
             </div>
           </div>
@@ -233,8 +230,8 @@ export default function HotelPage() {
             <div>
               <div className="relative aspect-[3/2] w-full overflow-hidden mb-6">
                 <Image
-                  src="/images/hotel-1.jpg"
-                  alt="Suite Villa Madau – interno"
+                  src="/images/camera-via-nora.png"
+                  alt="Suite Villa Madau – camera via Nora"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
