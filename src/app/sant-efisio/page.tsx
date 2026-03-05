@@ -126,8 +126,8 @@ export default function SantEfisioPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4 / 5' }}>
             <Image
-              src="/images/foto-pula-hotel.jpg"
-              alt="Villa Madau \u2013 centro storico di Pula"
+              src="/images/sant-efisio-hotel.png"
+              alt="Sant\u2019Efisio \u2013 Villa Madau Hotel Pula"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -138,7 +138,7 @@ export default function SantEfisioPage() {
               Il posto giusto
             </p>
             <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-snug" style={{ color: '#1e1c18' }}>
-              Dentro la festa,<br />non solo a guardarla
+              Dentro la Festa
             </h2>
             <div className="space-y-4 leading-relaxed" style={{ color: '#4a4640' }}>
               <p>

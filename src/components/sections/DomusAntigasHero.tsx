@@ -15,9 +15,9 @@ const navLinks = [
   { href: '/contatti', label: 'Contatti' },
 ]
 
-const BOOKING_URL = 'https://reservation.carbonaraapp.com/Italia/Pula/Federicos/'
+const BOOKING_URL = 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8'
 
-export function RistoranteHero() {
+export function DomusAntigasHero() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
 
@@ -30,29 +30,27 @@ export function RistoranteHero() {
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
       <Image
-        src="/images/ristorante.jpg"
-        alt="Ristorante Federico's - Villa Madau Pula"
+        src="/images/piazzetta.jpg"
+        alt="Domus Antigas \u2013 Piazzetta di Pula, Villa Madau Hotel"
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-black/45" />
 
-      {/* ── DESKTOP NAV ── */}
+      {/* \u2500\u2500 DESKTOP NAV \u2500\u2500 */}
       <div className="absolute top-0 left-0 right-0 z-20 hidden md:flex flex-col items-center pt-7">
         <div className="w-[92%] flex items-center justify-between pb-0">
           <div className="flex-1" />
-          {/* Logo Federico's — filter invert per renderlo bianco */}
-          <Link href="/" aria-label="Torna alla home – Villa Madau Hotel">
+          <Link href="/" aria-label="Villa Madau Hotel \u2013 torna alla home">
             <Image
-              src="/images/logo-federicos.gif"
-              alt="Federico's Ristorante"
-              width={480}
-              height={240}
+              src="/images/logo.png"
+              alt="Villa Madau Hotel"
+              width={280}
+              height={198}
               priority
-              className="h-72 w-auto object-contain block"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-56 w-auto object-contain drop-shadow-md block"
             />
           </Link>
           <div className="flex-1 flex justify-end self-end mb-2">
@@ -80,21 +78,25 @@ export function RistoranteHero() {
         </nav>
       </div>
 
-      {/* ── MOBILE NAV ── */}
+      {/* \u2500\u2500 MOBILE NAV \u2500\u2500 */}
       <div className="absolute top-0 left-0 right-0 z-20 md:hidden">
         <div className="flex items-center justify-between px-5 pt-6">
           <div className="w-10" />
-          <Link href="/" aria-label="Torna alla home – Villa Madau Hotel">
-            <Image
-              src="/images/logo-federicos.gif"
-              alt="Federico's Ristorante"
-              width={300}
-              height={150}
-              priority
-              className="h-40 w-auto object-contain block"
-              style={{ filter: 'brightness(0) invert(1)' }}
-            />
-          </Link>
+          <div className="flex flex-col items-center gap-0">
+            <Link href="/" aria-label="Villa Madau Hotel \u2013 torna alla home">
+              <Image
+                src="/images/logo.png"
+                alt="Villa Madau Hotel"
+                width={140}
+                height={99}
+                priority
+                className="h-40 w-auto object-contain drop-shadow-md block"
+              />
+            </Link>
+            <p className="text-white text-[10px] tracking-[0.25em] uppercase font-light -mt-6">
+              Villamadau Boutique Hotel
+            </p>
+          </div>
           <button
             aria-label={mobileOpen ? 'Chiudi menu' : 'Apri menu'}
             aria-expanded={mobileOpen}
@@ -108,7 +110,7 @@ export function RistoranteHero() {
         </div>
       </div>
 
-      {/* Mobile menu slide-in */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -161,9 +163,12 @@ export function RistoranteHero() {
       {/* Titolo centrato */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
         <p className="text-xs font-medium uppercase tracking-[0.25em] text-white/70 mb-4">
-          Tradizione sarda
+          15 Marzo 2026 &middot; Pula, Sardegna
         </p>
-        <h1 className="font-serif text-4xl md:text-6xl">Il nostro ristorante</h1>
+        <h1 className="font-serif leading-tight">
+          <span className="block text-4xl md:text-5xl font-normal">Arriva</span>
+          <em className="block italic font-normal text-6xl md:text-8xl">Domus Antigas</em>
+        </h1>
       </div>
     </section>
   )

@@ -12,6 +12,7 @@ interface Item {
   label: string
   titolo: string
   italic: string
+  bigItalic?: boolean
   testo: string
   cta: string
   href: string
@@ -25,19 +26,20 @@ const items: Item[] = [
     label: 'Maggio 2025',
     titolo: 'Arriva',
     italic: "Sant\u2019Efisio",
+    bigItalic: true,
     testo:
       'Dal 1 al 4 maggio, da Cagliari parte la processione pi\u00f9 importante e fiorita della Sardegna \u2014 e arriva a Pula. Vivila dalla tua camera al Villa Madau Boutique Hotel.',
     cta: 'Scopri le camere con vista',
     href: '/sant-efisio',
-    image: '/images/foto-pula-hotel.jpg',
+    image: '/images/sant-efisio-hotel.png',
   },
   {
     tipo: 'offerta',
-    label: 'Offerta estate',
-    titolo: 'Luglio & Agosto:',
+    label: 'Autunno 2025',
+    titolo: 'Settembre & Ottobre,',
     italic: 'prenota prima',
     testo:
-      'Le suite estive si esauriscono presto. Assicuratevi i giorni migliori con ampio anticipo e godetevi il mare di Chia, Tuerredda e Nora senza pensieri.',
+      "L\u2019ultima parte dell\u2019estate, temperature gradevoli, mare caldo, tramonti mozzafiato e spiagge vuote.",
     cta: 'Prenota ora',
     href: 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8',
     external: true,
@@ -53,6 +55,18 @@ const items: Item[] = [
     cta: "Scopri l\u2019hotel",
     href: '/hotel',
     image: '/images/hotel-primavera.png',
+  },
+  {
+    tipo: 'evento',
+    label: '15 Marzo 2026',
+    titolo: 'Arriva',
+    italic: 'Domus Antigas',
+    bigItalic: true,
+    testo:
+      'Laboratori, cortili aperti e tradizione a tavola: il centro storico di Pula si trasforma in un viaggio nel tempo. Villa Madau \u00e8 nel cuore della manifestazione.',
+    cta: 'Scopri l\u2019offerta speciale',
+    href: '/domus-antigas',
+    image: '/images/domus-antigas-hotel.png',
   },
 ]
 
@@ -91,8 +105,9 @@ export function OfferteSection() {
           <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-3">
             Offerte &amp; eventi
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-[#1e1c18] leading-tight">
-            Il momento giusto<br />per venire a Pula
+          <h2 className="font-serif text-[#1e1c18] leading-none">
+            <em className="block italic font-normal text-7xl md:text-9xl leading-none">Sardegna</em>
+            <span className="block text-3xl md:text-4xl mt-2">Tutto l&apos;anno</span>
           </h2>
         </div>
 
@@ -117,7 +132,7 @@ export function OfferteSection() {
               >
                 {others.map(({ item, idx }) => (
                   <motion.button
-                    key={item.titolo}
+                    key={item.italic}
                     onClick={() => advance(idx)}
                     className="flex-1 relative overflow-hidden cursor-pointer"
                     initial={{ opacity: 0.55 }}
@@ -138,31 +153,63 @@ export function OfferteSection() {
             </div>
 
             {/* Card grande — portrait 3:4, in-flow (determina altezza collage), copre le piccole */}
-            <div
-              className="relative z-20 overflow-hidden"
-              style={{ width: 'calc(100% - 9%)', aspectRatio: '3 / 4' }}
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={active}
-                  className="absolute inset-0"
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
-                >
-                  <Image
-                    src={current.image}
-                    alt={current.titolo + ' ' + current.italic}
-                    fill
-                    sizes="38vw"
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+            {current.external ? (
+              <a
+                href={current.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-20 overflow-hidden block cursor-pointer"
+                style={{ width: 'calc(100% - 9%)', aspectRatio: '3 / 4' }}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={active}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.97 }}
+                    transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image
+                      src={current.image}
+                      alt={current.titolo + ' ' + current.italic}
+                      fill
+                      sizes="38vw"
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                  </motion.div>
+                </AnimatePresence>
+              </a>
+            ) : (
+              <Link
+                href={current.href}
+                className="relative z-20 overflow-hidden block cursor-pointer"
+                style={{ width: 'calc(100% - 9%)', aspectRatio: '3 / 4' }}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={active}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.97 }}
+                    transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image
+                      src={current.image}
+                      alt={current.titolo + ' ' + current.italic}
+                      fill
+                      sizes="38vw"
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                  </motion.div>
+                </AnimatePresence>
+              </Link>
+            )}
           </div>
 
           {/* ── Testo ── */}
@@ -184,11 +231,12 @@ export function OfferteSection() {
                   </span>
                 </div>
 
-                {/* Titolo — prima riga normale, seconda in corsivo come screenshot */}
-                <h3 className="font-serif text-5xl xl:text-6xl text-[#1e1c18] leading-tight mb-8">
-                  {current.titolo}
-                  <br />
-                  <em className="italic font-normal">{current.italic}</em>
+                {/* Titolo — prima riga normale, seconda in corsivo */}
+                <h3 className="font-serif text-[#1e1c18] leading-tight mb-8">
+                  <span className="block text-5xl xl:text-6xl">{current.titolo}</span>
+                  <em className={`italic font-normal block ${current.bigItalic ? 'text-6xl xl:text-8xl' : 'text-5xl xl:text-6xl'}`}>
+                    {current.italic}
+                  </em>
                 </h3>
 
                 <p className="text-[#4a4640] leading-relaxed mb-10 max-w-xs text-sm">
@@ -259,7 +307,7 @@ export function OfferteSection() {
               >
                 {others.map(({ item, idx }) => (
                   <motion.button
-                    key={item.titolo}
+                    key={item.italic}
                     onClick={() => advance(idx)}
                     className="flex-1 relative overflow-hidden cursor-pointer"
                     style={{ opacity: 0.58 }}
@@ -274,24 +322,49 @@ export function OfferteSection() {
             </div>
 
             {/* Card grande quadrata (z-20, copre le piccole) */}
-            <div
-              className="absolute top-0 left-0 z-20 overflow-hidden"
-              style={{ width: 'calc(100% - 10%)', aspectRatio: '1 / 1' }}
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={active}
-                  className="absolute inset-0"
-                  initial={{ opacity: 0, scale: 1.04 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
-                >
-                  <Image src={current.image} alt={current.titolo} fill sizes="90vw" className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+            {current.external ? (
+              <a
+                href={current.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-0 left-0 z-20 overflow-hidden block"
+                style={{ width: 'calc(100% - 10%)', aspectRatio: '1 / 1' }}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={active}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0, scale: 1.04 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.97 }}
+                    transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image src={current.image} alt={current.titolo} fill sizes="90vw" className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+                  </motion.div>
+                </AnimatePresence>
+              </a>
+            ) : (
+              <Link
+                href={current.href}
+                className="absolute top-0 left-0 z-20 overflow-hidden block"
+                style={{ width: 'calc(100% - 10%)', aspectRatio: '1 / 1' }}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={active}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0, scale: 1.04 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.97 }}
+                    transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image src={current.image} alt={current.titolo} fill sizes="90vw" className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+                  </motion.div>
+                </AnimatePresence>
+              </Link>
+            )}
           </div>
 
           {/* Testo */}
@@ -310,10 +383,11 @@ export function OfferteSection() {
                 </span>
               </div>
 
-              <h3 className="font-serif text-3xl text-[#1e1c18] leading-tight mb-4">
-                {current.titolo}
-                <br />
-                <em className="italic font-normal">{current.italic}</em>
+              <h3 className="font-serif text-[#1e1c18] leading-tight mb-4">
+                <span className="block text-3xl">{current.titolo}</span>
+                <em className={`italic font-normal block ${current.bigItalic ? 'text-4xl' : 'text-3xl'}`}>
+                  {current.italic}
+                </em>
               </h3>
 
               <p className="text-[#4a4640] text-sm leading-relaxed mb-6">{current.testo}</p>
