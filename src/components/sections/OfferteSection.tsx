@@ -66,7 +66,7 @@ const items: Item[] = [
       'Laboratori, cortili aperti e tradizione a tavola: il centro storico di Pula si trasforma in un viaggio nel tempo. Villa Madau \u00e8 nel cuore della manifestazione.',
     cta: 'Scopri l\u2019offerta speciale',
     href: '/domus-antigas',
-    image: '/images/domus-antigas-hotel.png',
+    image: '/images/piazza-pula-hotel.png',
   },
 ]
 
