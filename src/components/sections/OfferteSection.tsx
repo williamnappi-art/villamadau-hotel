@@ -327,8 +327,8 @@ export function OfferteSection() {
                 href={current.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-0 left-0 z-20 overflow-hidden block"
-                style={{ width: 'calc(100% - 10%)', aspectRatio: '1 / 1' }}
+                className="absolute top-0 left-0 bottom-0 z-20 overflow-hidden block"
+                style={{ width: 'calc(100% - 10%)' }}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -347,8 +347,8 @@ export function OfferteSection() {
             ) : (
               <Link
                 href={current.href}
-                className="absolute top-0 left-0 z-20 overflow-hidden block"
-                style={{ width: 'calc(100% - 10%)', aspectRatio: '1 / 1' }}
+                className="absolute top-0 left-0 bottom-0 z-20 overflow-hidden block"
+                style={{ width: 'calc(100% - 10%)' }}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
