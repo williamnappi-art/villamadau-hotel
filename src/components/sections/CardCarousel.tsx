@@ -40,7 +40,7 @@ const cards = [
     image: '/images/mare-vista-aerea.jpg',
     title: 'La Sardegna',
     description: 'Un\'isola antica e selvaggia, dove la natura non ha mai smesso di stupire. Ogni angolo racconta una storia da scoprire',
-    href: '/galleria',
+    href: '/da-non-perdere',
   },
   {
     id: 'gutturu',

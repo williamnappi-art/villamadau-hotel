@@ -11,7 +11,7 @@ const navLinks = [
   { href: '/camere', label: 'Camere' },
   { href: '/ristorante', label: 'Ristorante' },
   { href: '/servizi', label: 'Servizi' },
-  { href: '/galleria', label: 'Galleria' },
+  { href: '/da-non-perdere', label: 'Da non perdere' },
   { href: '/contatti', label: 'Contatti' },
 ]
 
