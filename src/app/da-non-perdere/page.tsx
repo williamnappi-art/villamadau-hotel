@@ -39,6 +39,17 @@ const items = [
     image: '/images/sant-efisio-hotel.png',
   },
   {
+    tipo: 'stagione' as Tipo,
+    label: 'Pasqua 2026',
+    titolo: 'Weekend di',
+    italic: 'Pasqua a Pula',
+    testo: 'Mare e montagna, colazione in giardino, sentieri nel parco di Gutturu Mannu e cucina mediterranea. Il weekend di Pasqua nel cuore storico di Pula.',
+    cta: 'Scopri il weekend di Pasqua',
+    href: '/pasqua-a-pula',
+    external: false,
+    image: '/images/villa-madau-primavera.png',
+  },
+  {
     tipo: 'evento' as Tipo,
     label: '15 Marzo 2026',
     titolo: 'Arriva',

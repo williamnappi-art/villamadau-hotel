@@ -57,6 +57,18 @@ const items: Item[] = [
     image: '/images/hotel-primavera.png',
   },
   {
+    tipo: 'stagione',
+    label: 'Pasqua 2026',
+    titolo: 'Weekend di',
+    italic: 'Pasqua a Pula',
+    bigItalic: true,
+    testo:
+      'Mare e montagna, colazione in giardino, sentieri nel parco di Gutturu Mannu e cucina mediterranea. Il weekend di Pasqua più bello di sempre, nel cuore storico di Pula.',
+    cta: 'Scopri il weekend di Pasqua',
+    href: '/pasqua-a-pula',
+    image: '/images/villa-madau-primavera.png',
+  },
+  {
     tipo: 'evento',
     label: '15 Marzo 2026',
     titolo: 'Arriva',
