@@ -47,7 +47,7 @@ const items = [
     cta: "Scopri l\u2019offerta speciale",
     href: '/domus-antigas',
     external: false,
-    image: '/images/domus-antigas-hotel.png',
+    image: '/images/piazza-chiesa-pula.png',
   },
   {
     tipo: 'stagione' as Tipo,
