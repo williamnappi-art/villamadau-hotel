@@ -274,23 +274,28 @@ export function OfferteSection() {
                 )}
 
                 {/* Progress bars */}
-                <div className="flex gap-3 mt-14">
+                <div className="flex gap-2 mt-14">
                   {items.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => advance(i)}
                       aria-label={`Vai a ${items[i].titolo} ${items[i].italic}`}
-                      className="h-px flex-1 max-w-[36px] bg-[#1e1c18]/15 relative overflow-hidden"
+                      className="flex-1 max-w-[48px] py-3 group"
                     >
-                      {i === active && (
-                        <motion.span
-                          key={tick}
-                          className="absolute inset-0 bg-[#1e1c18] origin-left"
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 1 }}
-                          transition={{ duration: INTERVAL, ease: 'linear' }}
-                        />
-                      )}
+                      <div className="h-[3px] w-full bg-[#1e1c18]/15 relative overflow-hidden transition-all duration-200 group-hover:bg-[#1e1c18]/30">
+                        {i < active && (
+                          <span className="absolute inset-0 bg-[#1e1c18]/60" />
+                        )}
+                        {i === active && (
+                          <motion.span
+                            key={tick}
+                            className="absolute inset-0 bg-[#1e1c18] origin-left"
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: INTERVAL, ease: 'linear' }}
+                          />
+                        )}
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -416,15 +421,19 @@ export function OfferteSection() {
                 </Link>
               )}
 
-              <div className="flex gap-3 mt-8">
+              <div className="flex gap-2 mt-8">
                 {items.map((_, i) => (
                   <button key={i} onClick={() => advance(i)}
-                    className="h-px flex-1 max-w-[36px] bg-[#1e1c18]/15 relative overflow-hidden">
-                    {i === active && (
-                      <motion.span key={tick} className="absolute inset-0 bg-[#1e1c18] origin-left"
-                        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
-                        transition={{ duration: INTERVAL, ease: 'linear' }} />
-                    )}
+                    aria-label={`Vai a ${items[i].titolo} ${items[i].italic}`}
+                    className="flex-1 max-w-[48px] py-3 group">
+                    <div className="h-[3px] w-full bg-[#1e1c18]/15 relative overflow-hidden group-hover:bg-[#1e1c18]/30 transition-all duration-200">
+                      {i < active && <span className="absolute inset-0 bg-[#1e1c18]/60" />}
+                      {i === active && (
+                        <motion.span key={tick} className="absolute inset-0 bg-[#1e1c18] origin-left"
+                          initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+                          transition={{ duration: INTERVAL, ease: 'linear' }} />
+                      )}
+                    </div>
                   </button>
                 ))}
               </div>
