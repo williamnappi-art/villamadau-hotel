@@ -4,6 +4,7 @@ import { servizi } from '@/content/servizi'
 import { Button } from '@/components/ui/Button'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
+import { ServiziHero } from '@/components/sections/ServiziHero'
 
 export const metadata: Metadata = {
   title: 'Servizi',
@@ -52,7 +53,7 @@ const spiagge = [
     image: '/images/nora-villa-madau.jpg',
     alt: 'Spiaggia di Nora – Villa Madau Hotel, Pula',
     testo:
-      'A tre minuti dall\u2019hotel si apre una delle spiagge pi\u00f9 suggestive del Mediterraneo. Nora \u00e8 un luogo unico: acque basse e cristalline color smeraldo, sabbia fine e bianca, e alle spalle i resti di un\u2019antica citt\u00e0 fenicio-romana che emerge direttamente dal mare. \u00c8 possibile nuotare fino ai ruderi, dove il fondale rivela anfore, mosaici e colonne sommerse. Un posto che non si dimentica.',
+      "A tre minuti dall'hotel si apre una delle spiagge più suggestive del Mediterraneo. Nora è un luogo unico: acque basse e cristalline color smeraldo, sabbia fine e bianca, e alle spalle i resti di un'antica città fenicio-romana che emerge direttamente dal mare. È possibile nuotare fino ai ruderi, dove il fondale rivela anfore, mosaici e colonne sommerse. Un posto che non si dimentica.",
   },
   {
     nome: 'Chia',
@@ -60,7 +61,7 @@ const spiagge = [
     image: '/images/chia-villamadau.jpg',
     alt: 'Spiaggia di Chia – vicino a Villa Madau Hotel, Pula',
     testo:
-      'A un quarto d\u2019ora di guida si apre il paesaggio selvaggio di Chia: dune alte ricoperte di ginepri secolari, acque poco profonde adatte alle famiglie, una laguna con fenicotteri e aironi. La spiaggia di Su Giudeu, con la sua isola raggiungibile a guado, \u00e8 tra le pi\u00f9 fotografate della Sardegna. I venti del maestrale la rendono perfetta anche per il windsurf.',
+      "A un quarto d'ora di guida si apre il paesaggio selvaggio di Chia: dune alte ricoperte di ginepri secolari, acque poco profonde adatte alle famiglie, una laguna con fenicotteri e aironi. La spiaggia di Su Giudeu, con la sua isola raggiungibile a guado, è tra le più fotografate della Sardegna. I venti del maestrale la rendono perfetta anche per il windsurf.",
   },
   {
     nome: 'Tuerredda',
@@ -68,7 +69,7 @@ const spiagge = [
     image: '/images/sardegna-chia.jpg',
     alt: 'Spiaggia di Tuerredda – vicino a Villa Madau Hotel',
     testo:
-      'Venti minuti e si arriva a quella che molti considerano la spiaggia pi\u00f9 bella del Sud Sardegna. Tuerredda \u00e8 una piccola baia chiusa tra due promontori di roccia, con un mare dai colori caraibici e un\u2019isola a pochi metri dalla riva. Le acque sono trasparenti, il fondale digrada lentamente \u2014 ideale per snorkeling e nuoto.',
+      "Venti minuti e si arriva a quella che molti considerano la spiaggia più bella del Sud Sardegna. Tuerredda è una piccola baia chiusa tra due promontori di roccia, con un mare dai colori caraibici e un'isola a pochi metri dalla riva. Le acque sono trasparenti, il fondale digrada lentamente — ideale per snorkeling e nuoto.",
   },
 ]
 
@@ -82,34 +83,14 @@ export default function ServiziPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
-      {/* ── HERO FULLSCREEN ── */}
-      <section className="relative h-screen min-h-[560px] overflow-hidden">
-        <Image
-          src="/images/villa-madau-pula-hotel.jpg"
-          alt="Villa Madau Hotel – Pula, Sardegna"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/70 mb-4">
-            Villa Madau Boutique Hotel
-          </p>
-          <h1 className="font-serif leading-tight">
-            <span className="block text-4xl md:text-5xl font-normal">Il mare,</span>
-            <em className="block italic font-normal text-6xl md:text-8xl">a portata di mano</em>
-          </h1>
-        </div>
-      </section>
+      <ServiziHero />
 
       {/* ── INTRO ── */}
       <section className="bg-cream py-20 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-6">Le spiagge pi\u00f9 belle del Sud Sardegna</p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-6">Le spiagge più belle del Sud Sardegna</p>
           <p className="font-serif text-[#1e1c18] text-xl md:text-2xl leading-relaxed">
-            Pula \u00e8 la base ideale per esplorare alcune tra le coste pi\u00f9 belle del Mediterraneo. Nora, Chia, Tuerredda: capolavori di natura raggiungibili in pochi minuti. E dopo una giornata di mare, Villa Madau ti aspetta con la camera fresca, l\u2019aperitivo e una cena che sa di Sardegna.
+            Pula è la base ideale per esplorare alcune tra le coste più belle del Mediterraneo. Nora, Chia, Tuerredda: capolavori di natura raggiungibili in pochi minuti. E dopo una giornata di mare, Villa Madau ti aspetta con la camera fresca, l&apos;aperitivo e una cena che sa di Sardegna.
           </p>
         </div>
       </section>

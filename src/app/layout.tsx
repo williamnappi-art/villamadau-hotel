@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Playfair_Display, Lato } from 'next/font/google'
 import { ConditionalHeader } from '@/components/layout/ConditionalHeader'
 import { Footer } from '@/components/layout/Footer'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { HOTEL } from '@/lib/hotel.config'
 import { generateHotelSchema } from '@/lib/schema'
 import './globals.css'
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ConditionalHeader />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   )

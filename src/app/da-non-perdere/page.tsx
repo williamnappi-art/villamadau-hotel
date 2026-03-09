@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HOTEL } from '@/lib/hotel.config'
+import { DaNonPerdereHero } from '@/components/sections/DaNonPerdereHero'
 
 export const metadata: Metadata = {
   title: 'Da non perdere',
@@ -87,21 +88,10 @@ const items = [
 export default function DaNonPerderePage() {
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="bg-[#f2e7df] pt-20 pb-16 px-6 text-center">
-        <p className="text-[10px] uppercase tracking-[0.35em] text-[#802d20] mb-5">
-          Villa Madau · Pula, Sardegna
-        </p>
-        <h1 className="font-serif text-[#802d20] leading-none">
-          <em className="block italic font-normal text-6xl md:text-9xl">Da non perdere</em>
-        </h1>
-        <p className="mt-6 text-[#c96148] text-sm max-w-md mx-auto leading-relaxed">
-          Offerte, eventi e stagioni per vivere la Sardegna al meglio,<br className="hidden md:block" /> partendo dal centro storico di Pula.
-        </p>
-      </section>
+      <DaNonPerdereHero />
 
       {/* ── CARDS ── */}
-      <section className="bg-[#f2e7df] pb-24 px-6">
+      <section className="bg-[#f2e7df] pt-16 pb-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {items.map((item, i) => {
             const cfg = tipoColor[item.tipo]

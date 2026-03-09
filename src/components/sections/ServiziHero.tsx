@@ -17,7 +17,7 @@ const navLinks = [
 
 const BOOKING_URL = 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8'
 
-export function PasquaHero() {
+export function ServiziHero() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
 
@@ -29,18 +29,15 @@ export function PasquaHero() {
 
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/chia-villamadau.jpg"
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        aria-hidden="true"
-      >
-        <source src="/images/tuerredda.mov" type="video/quicktime" />
-      </video>
-      <div className="absolute inset-0 bg-black/45" />
+      <Image
+        src="/images/villa-madau-pula-hotel.jpg"
+        alt="Villa Madau Hotel – Pula, Sardegna"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* ── DESKTOP NAV ── */}
       <div className="absolute top-0 left-0 right-0 z-20 hidden md:flex flex-col items-center pt-7">
@@ -122,13 +119,12 @@ export function PasquaHero() {
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
             className="fixed inset-0 z-40 flex flex-col pt-24 px-8"
-            style={{ backgroundColor: '#F5DFC5' }}
+            style={{ backgroundColor: '#f0ebe0' }}
           >
             <button
               onClick={() => setMobileOpen(false)}
               aria-label="Chiudi menu"
-              className="absolute top-6 right-5 w-11 h-11 flex items-center justify-center transition-colors"
-              style={{ color: '#A4624D' }}
+              className="absolute top-6 right-5 w-11 h-11 flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors"
             >
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
                 <path d="M20 6L6 20M6 6l14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -140,8 +136,7 @@ export function PasquaHero() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="block py-4 text-2xl font-serif border-b transition-colors"
-                      style={{ color: '#A4624D', borderColor: '#CBB093' }}
+                      className="block py-4 text-2xl font-serif border-b border-gray-300 text-gray-800 hover:text-primary transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {link.label}
@@ -155,8 +150,8 @@ export function PasquaHero() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center py-4 font-semibold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
-                style={{ backgroundColor: '#A4624D', color: '#F5DFC5' }}
+                className="block w-full text-center text-white py-4 rounded font-semibold uppercase tracking-wide text-sm transition-opacity hover:opacity-90"
+                style={{ backgroundColor: '#c9621a' }}
               >
                 Prenota ora
               </a>
@@ -167,11 +162,12 @@ export function PasquaHero() {
 
       {/* Titolo centrato */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-        <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/70 mb-5">
-          Pasqua 2026 &middot; Pula, Sardegna
+        <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/70 mb-4">
+          Villa Madau Boutique Hotel
         </p>
         <h1 className="font-serif leading-tight">
-          <em className="block italic font-normal text-6xl md:text-9xl">Pasqua a Pula</em>
+          <span className="block text-4xl md:text-5xl font-normal">Il mare,</span>
+          <em className="block italic font-normal text-6xl md:text-8xl">a portata di mano</em>
         </h1>
       </div>
     </section>
