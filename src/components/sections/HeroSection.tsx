@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { clsx } from 'clsx'
 
 const navLinks = [
+  { href: '/hotel', label: 'Hotel' },
   { href: '/ristorante', label: 'Ristorante' },
   { href: '/servizi', label: 'Servizi' },
   { href: '/da-non-perdere', label: 'Da non perdere' },

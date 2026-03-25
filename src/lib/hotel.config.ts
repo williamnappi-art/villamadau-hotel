@@ -17,13 +17,12 @@ export const HOTEL = {
   },
   contact: {
     email: 'info@villamadau.it',
-    // Aggiornare con il numero reale
-    phone: '+39 070 920XXXX',
+    phone: '+39 070 924 9033',
   },
   // Coordinate GPS di Pula (CA) – verificare su Google Maps
   coordinates: {
-    lat: 38.9968,
-    lng: 8.9826,
+    lat: 39.0114414,
+    lng: 9.0021019,
   },
   checkinTime: '14:00',
   checkoutTime: '11:00',
@@ -39,6 +38,5 @@ export const HOTEL = {
     { name: 'Aeroporto di Cagliari Elmas', distance: '40 km' },
     { name: 'Cagliari centro', distance: '40 km' },
   ],
-  googleMapsUrl:
-    'https://maps.google.com/?q=Via+Nora+84+Pula+Sardegna',
+  googleMapsUrl: 'https://maps.app.goo.gl/8p2bfkkvLgeQGnbf9',
 } as const
