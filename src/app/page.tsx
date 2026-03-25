@@ -16,9 +16,9 @@ export default function HomePage() {
       <HeroSection />
       <CardCarousel />
       <OfferteSection />
+      <RistoranteSection />
       <CamerePreview />
       <ServiziSection />
-      <RistoranteSection />
       <LocationSection />
 
       {/* CTA finale */}
