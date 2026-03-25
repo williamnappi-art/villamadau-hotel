@@ -277,12 +277,15 @@ export default function HotelPage() {
           </div>
 
           <div className="text-center mt-16">
-            <Link
-              href="/camere"
-              className="inline-block border border-[#1e1c18] text-[#1e1c18] text-xs font-medium tracking-[0.2em] uppercase px-10 py-4 hover:bg-[#1e1c18] hover:text-white transition-colors duration-300"
+            <a
+              href="https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-[#1e1c18] text-[#c4b99a] text-xs font-medium tracking-[0.25em] uppercase px-12 py-5 hover:bg-[#c4b99a] hover:text-[#1e1c18] transition-colors duration-500"
             >
-              Scopri tutte le suite
-            </Link>
+              Prenota la tua esperienza
+              <span className="text-base transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </a>
           </div>
         </div>
       </section>

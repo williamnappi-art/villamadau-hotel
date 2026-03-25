@@ -25,7 +25,7 @@ const items: Item[] = [
     tipo: 'evento',
     label: 'Maggio 2025',
     titolo: 'Arriva',
-    italic: "Sant\u2019Efisio",
+    italic: 'Sant\u2019Efisio',
     bigItalic: true,
     testo:
       'Dal 1 al 4 maggio, da Cagliari parte la processione pi\u00f9 importante e fiorita della Sardegna \u2014 e arriva a Pula. Vivila dalla tua camera al Villa Madau Boutique Hotel.',
@@ -52,7 +52,7 @@ const items: Item[] = [
     italic: 'in Sardegna',
     testo:
       'Aprile e maggio sono i mesi pi\u00f9 belli: profumi di macchia mediterranea, spiagge deserte, temperature miti. Villa Madau \u00e8 aperta e il paese vi aspetta.',
-    cta: "Scopri l\u2019hotel",
+    cta: 'Scopri l\u2019hotel',
     href: '/hotel',
     image: '/images/hotel-primavera.png',
   },
@@ -68,18 +68,19 @@ const items: Item[] = [
     href: '/pasqua-a-pula',
     image: '/images/villa-madau-primavera.png',
   },
-  {
-    tipo: 'evento',
-    label: '15 Marzo 2026',
-    titolo: 'Arriva',
-    italic: 'Domus Antigas',
-    bigItalic: true,
-    testo:
-      'Laboratori, cortili aperti e tradizione a tavola: il centro storico di Pula si trasforma in un viaggio nel tempo. Villa Madau \u00e8 nel cuore della manifestazione.',
-    cta: 'Scopri l\u2019offerta speciale',
-    href: '/domus-antigas',
-    image: '/images/piazza-chiesa-pula.png',
-  },
+  // Domus Antigas — riattivare per l'edizione 2027
+  // {
+  //   tipo: 'evento',
+  //   label: '15 Marzo 2026',
+  //   titolo: 'Arriva',
+  //   italic: 'Domus Antigas',
+  //   bigItalic: true,
+  //   testo:
+  //     'Laboratori, cortili aperti e tradizione a tavola: il centro storico di Pula si trasforma in un viaggio nel tempo. Villa Madau \u00e8 nel cuore della manifestazione.',
+  //   cta: 'Scopri l\u2019offerta speciale',
+  //   href: '/domus-antigas',
+  //   image: '/images/piazza-chiesa-pula.png',
+  // },
 ]
 
 const tipoConfig: Record<Tipo, { dot: string; text: string }> = {
@@ -88,7 +89,7 @@ const tipoConfig: Record<Tipo, { dot: string; text: string }> = {
   stagione: { dot: 'bg-[#8a9e82]',  text: 'text-[#8a9e82]' },
 }
 
-const INTERVAL = 6 // secondi per card
+const INTERVAL = 6
 
 export function OfferteSection() {
   const [active, setActive] = useState(0)
@@ -105,7 +106,6 @@ export function OfferteSection() {
   const advance = (i: number) => { setActive(i); setTick(t => t + 1) }
 
   const current = items[active]
-  const others  = items.map((item, i) => ({ item, idx: i })).filter(({ idx }) => idx !== active)
   const cfg     = tipoConfig[current.tipo]
 
   return (
@@ -113,7 +113,7 @@ export function OfferteSection() {
       <div className="max-w-7xl mx-auto px-8">
 
         {/* Intestazione */}
-        <div className="mb-16">
+        <div className="mb-12">
           <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-3">
             Offerte &amp; eventi
           </p>
@@ -124,137 +124,62 @@ export function OfferteSection() {
         </div>
 
         {/* ── DESKTOP ── */}
-        <div className="hidden lg:flex items-start gap-0">
+        <div className="hidden lg:block">
 
-          {/* ── Collage: card piccole (z-10) + card grande (z-20) ── */}
-          {/* Collage è 42% del container: la card grande (aspect 3/4) determina l'altezza */}
-          <div className="relative flex-[0_0_42%]">
-
-            {/* Card piccole — dietro, lato destro, stessa altezza della card grande */}
-            <div
-              className="absolute top-0 right-0 bottom-0 z-10 flex flex-col gap-3"
-              style={{ width: '22%' }}
-            >
-              <motion.div
-                key={tick}
-                className="flex flex-col gap-3 h-full"
-                initial={{ y: 0 }}
-                animate={{ y: -18 }}
-                transition={{ duration: INTERVAL, ease: 'linear' }}
-              >
-                {others.map(({ item, idx }) => (
-                  <motion.button
-                    key={item.italic}
-                    onClick={() => advance(idx)}
-                    className="flex-1 relative overflow-hidden cursor-pointer"
-                    initial={{ opacity: 0.55 }}
-                    whileHover={{ opacity: 0.9, scale: 1.03 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.titolo}
-                      fill
-                      sizes="10vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/10" />
-                  </motion.button>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Card grande — portrait 3:4, in-flow (determina altezza collage), copre le piccole */}
-            {current.external ? (
-              <a
-                href={current.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative z-20 overflow-hidden block cursor-pointer"
-                style={{ width: 'calc(100% - 9%)', aspectRatio: '3 / 4' }}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={active}
-                    className="absolute inset-0"
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
-                  >
-                    <Image
-                      src={current.image}
-                      alt={current.titolo + ' ' + current.italic}
-                      fill
-                      sizes="38vw"
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-                  </motion.div>
-                </AnimatePresence>
-              </a>
-            ) : (
-              <Link
-                href={current.href}
-                className="relative z-20 overflow-hidden block cursor-pointer"
-                style={{ width: 'calc(100% - 9%)', aspectRatio: '3 / 4' }}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={active}
-                    className="absolute inset-0"
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
-                  >
-                    <Image
-                      src={current.image}
-                      alt={current.titolo + ' ' + current.italic}
-                      fill
-                      sizes="38vw"
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-                  </motion.div>
-                </AnimatePresence>
-              </Link>
-            )}
-          </div>
-
-          {/* ── Testo ── */}
-          <div className="flex-1 pl-16 xl:pl-24 flex flex-col justify-center">
+          {/* Foto principale */}
+          <div className="relative w-full overflow-hidden mb-10" style={{ aspectRatio: '16 / 7' }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                className="flex flex-col"
-                initial={{ opacity: 0, y: 22 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -22 }}
-                transition={{ duration: 0.52, ease: 'easeOut' }}
+                className="absolute inset-0"
+                initial={{ opacity: 0, scale: 1.03 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {/* Badge tipo */}
-                <div className="flex items-center gap-2.5 mb-10">
+                {current.external ? (
+                  <a href={current.href} target="_blank" rel="noopener noreferrer" className="block absolute inset-0">
+                    <Image src={current.image} alt={current.titolo + ' ' + current.italic} fill sizes="100vw" className="object-cover" priority />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+                  </a>
+                ) : (
+                  <Link href={current.href} className="block absolute inset-0">
+                    <Image src={current.image} alt={current.titolo + ' ' + current.italic} fill sizes="100vw" className="object-cover" priority />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+                  </Link>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Testo sotto la foto */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              className="grid grid-cols-2 gap-16 mb-12"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.45, ease: 'easeOut' }}
+            >
+              <div>
+                <div className="flex items-center gap-2.5 mb-5">
                   <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${cfg.dot}`} />
                   <span className={`text-[10px] uppercase tracking-[0.25em] font-medium ${cfg.text}`}>
                     {current.label}
                   </span>
                 </div>
-
-                {/* Titolo — prima riga normale, seconda in corsivo */}
-                <h3 className="font-serif text-[#1e1c18] leading-tight mb-8">
-                  <span className="block text-5xl xl:text-6xl">{current.titolo}</span>
-                  <em className={`italic font-normal block ${current.bigItalic ? 'text-6xl xl:text-8xl' : 'text-5xl xl:text-6xl'}`}>
+                <h3 className="font-serif text-[#1e1c18] leading-tight">
+                  <span className="block text-4xl xl:text-5xl">{current.titolo}</span>
+                  <em className={`italic font-normal block ${current.bigItalic ? 'text-5xl xl:text-7xl' : 'text-4xl xl:text-5xl'}`}>
                     {current.italic}
                   </em>
                 </h3>
-
-                <p className="text-[#4a4640] leading-relaxed mb-10 max-w-xs text-sm">
+              </div>
+              <div className="flex flex-col justify-end">
+                <p className="text-[#4a4640] leading-relaxed mb-6 text-sm max-w-sm">
                   {current.testo}
                 </p>
-
                 {current.external ? (
                   <a
                     href={current.href}
@@ -272,143 +197,100 @@ export function OfferteSection() {
                     {current.cta} <span className="text-base">→</span>
                   </Link>
                 )}
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-                {/* Progress bars */}
-                <div className="flex gap-2 mt-14">
-                  {items.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => advance(i)}
-                      aria-label={`Vai a ${items[i].titolo} ${items[i].italic}`}
-                      className="flex-1 max-w-[48px] py-3 group"
-                    >
-                      <div className="h-[3px] w-full bg-[#1e1c18]/15 relative overflow-hidden transition-all duration-200 group-hover:bg-[#1e1c18]/30">
-                        {i < active && (
-                          <span className="absolute inset-0 bg-[#1e1c18]/60" />
-                        )}
-                        {i === active && (
-                          <motion.span
-                            key={tick}
-                            className="absolute inset-0 bg-[#1e1c18] origin-left"
-                            initial={{ scaleX: 0 }}
-                            animate={{ scaleX: 1 }}
-                            transition={{ duration: INTERVAL, ease: 'linear' }}
-                          />
-                        )}
-                      </div>
-                    </button>
-                  ))}
+          {/* Miniature con progress bar */}
+          <div className="grid grid-cols-5 gap-3">
+            {items.map((item, i) => (
+              <button
+                key={i}
+                onClick={() => advance(i)}
+                aria-label={`Vai a ${item.titolo} ${item.italic}`}
+                className="group text-left"
+              >
+                <div
+                  className={`relative overflow-hidden mb-2 transition-opacity duration-300 ${
+                    i === active ? 'opacity-100' : 'opacity-45 group-hover:opacity-75'
+                  }`}
+                  style={{ aspectRatio: '3 / 2' }}
+                >
+                  <Image src={item.image} alt={item.titolo} fill sizes="20vw" className="object-cover" />
+                  {i === active && (
+                    <div className="absolute inset-0 ring-1 ring-inset ring-[#1e1c18]/25" />
+                  )}
                 </div>
-              </motion.div>
-            </AnimatePresence>
+                <div className="h-[2px] w-full bg-[#1e1c18]/12 relative overflow-hidden">
+                  {i < active && (
+                    <span className="absolute inset-0 bg-[#1e1c18]/50" />
+                  )}
+                  {i === active && (
+                    <motion.span
+                      key={tick}
+                      className="absolute inset-0 bg-[#1e1c18] origin-left"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: INTERVAL, ease: 'linear' }}
+                    />
+                  )}
+                </div>
+              </button>
+            ))}
           </div>
         </div>
 
         {/* ── MOBILE ── */}
-        <div className="lg:hidden flex flex-col gap-7">
+        <div className="lg:hidden flex flex-col gap-6">
 
-          {/* Collage mobile: card grande quadrata + card piccole quadrate dietro */}
-          <div className="relative" style={{ paddingBottom: '80%' }}>
-
-            {/* Card piccole (z-10, destra, dietro la grande) */}
-            <div
-              className="absolute top-0 right-0 bottom-0 z-10 flex flex-col gap-2"
-              style={{ width: '28%' }}
-            >
+          {/* Foto principale */}
+          <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4 / 3' }}>
+            <AnimatePresence mode="wait">
               <motion.div
-                key={tick}
-                className="flex flex-col gap-2 h-full"
-                initial={{ y: 0 }}
-                animate={{ y: -12 }}
-                transition={{ duration: INTERVAL, ease: 'linear' }}
+                key={active}
+                className="absolute inset-0"
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {others.map(({ item, idx }) => (
-                  <motion.button
-                    key={item.italic}
-                    onClick={() => advance(idx)}
-                    className="flex-1 relative overflow-hidden cursor-pointer"
-                    style={{ opacity: 0.58 }}
-                    whileHover={{ opacity: 0.9 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Image src={item.image} alt={item.titolo} fill sizes="28vw" className="object-cover" />
-                    <div className="absolute inset-0 bg-black/10" />
-                  </motion.button>
-                ))}
+                {current.external ? (
+                  <a href={current.href} target="_blank" rel="noopener noreferrer" className="block absolute inset-0">
+                    <Image src={current.image} alt={current.titolo} fill sizes="100vw" className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </a>
+                ) : (
+                  <Link href={current.href} className="block absolute inset-0">
+                    <Image src={current.image} alt={current.titolo} fill sizes="100vw" className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </Link>
+                )}
               </motion.div>
-            </div>
-
-            {/* Card grande quadrata (z-20, copre le piccole) */}
-            {current.external ? (
-              <a
-                href={current.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute top-0 left-0 bottom-0 z-20 overflow-hidden block"
-                style={{ width: 'calc(100% - 10%)' }}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={active}
-                    className="absolute inset-0"
-                    initial={{ opacity: 0, scale: 1.04 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
-                  >
-                    <Image src={current.image} alt={current.titolo} fill sizes="90vw" className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                  </motion.div>
-                </AnimatePresence>
-              </a>
-            ) : (
-              <Link
-                href={current.href}
-                className="absolute top-0 left-0 bottom-0 z-20 overflow-hidden block"
-                style={{ width: 'calc(100% - 10%)' }}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={active}
-                    className="absolute inset-0"
-                    initial={{ opacity: 0, scale: 1.04 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
-                  >
-                    <Image src={current.image} alt={current.titolo} fill sizes="90vw" className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                  </motion.div>
-                </AnimatePresence>
-              </Link>
-            )}
+            </AnimatePresence>
           </div>
 
           {/* Testo */}
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <div className="flex items-center gap-2.5 mb-4">
+              <div className="flex items-center gap-2.5 mb-3">
                 <span className={`w-1.5 h-1.5 rounded-full ${cfg.dot}`} />
                 <span className={`text-[10px] uppercase tracking-[0.25em] font-medium ${cfg.text}`}>
                   {current.label}
                 </span>
               </div>
-
-              <h3 className="font-serif text-[#1e1c18] leading-tight mb-4">
+              <h3 className="font-serif text-[#1e1c18] leading-tight mb-3">
                 <span className="block text-3xl">{current.titolo}</span>
                 <em className={`italic font-normal block ${current.bigItalic ? 'text-4xl' : 'text-3xl'}`}>
                   {current.italic}
                 </em>
               </h3>
-
-              <p className="text-[#4a4640] text-sm leading-relaxed mb-6">{current.testo}</p>
-
+              <p className="text-[#4a4640] text-sm leading-relaxed mb-5">{current.testo}</p>
               {current.external ? (
                 <a href={current.href} target="_blank" rel="noopener noreferrer"
                   className="text-[11px] uppercase tracking-[0.2em] text-[#1e1c18]/50 flex items-center gap-2">
@@ -420,25 +302,41 @@ export function OfferteSection() {
                   {current.cta} <span>→</span>
                 </Link>
               )}
-
-              <div className="flex gap-2 mt-8">
-                {items.map((_, i) => (
-                  <button key={i} onClick={() => advance(i)}
-                    aria-label={`Vai a ${items[i].titolo} ${items[i].italic}`}
-                    className="flex-1 max-w-[48px] py-3 group">
-                    <div className="h-[3px] w-full bg-[#1e1c18]/15 relative overflow-hidden group-hover:bg-[#1e1c18]/30 transition-all duration-200">
-                      {i < active && <span className="absolute inset-0 bg-[#1e1c18]/60" />}
-                      {i === active && (
-                        <motion.span key={tick} className="absolute inset-0 bg-[#1e1c18] origin-left"
-                          initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
-                          transition={{ duration: INTERVAL, ease: 'linear' }} />
-                      )}
-                    </div>
-                  </button>
-                ))}
-              </div>
             </motion.div>
           </AnimatePresence>
+
+          {/* Miniature */}
+          <div className="grid grid-cols-5 gap-2">
+            {items.map((item, i) => (
+              <button
+                key={i}
+                onClick={() => advance(i)}
+                aria-label={`Vai a ${item.titolo} ${item.italic}`}
+                className="group"
+              >
+                <div
+                  className={`relative overflow-hidden mb-1.5 transition-opacity duration-300 ${
+                    i === active ? 'opacity-100' : 'opacity-45 group-hover:opacity-75'
+                  }`}
+                  style={{ aspectRatio: '1 / 1' }}
+                >
+                  <Image src={item.image} alt={item.titolo} fill sizes="20vw" className="object-cover" />
+                </div>
+                <div className="h-[2px] w-full bg-[#1e1c18]/12 relative overflow-hidden">
+                  {i < active && <span className="absolute inset-0 bg-[#1e1c18]/50" />}
+                  {i === active && (
+                    <motion.span
+                      key={tick}
+                      className="absolute inset-0 bg-[#1e1c18] origin-left"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: INTERVAL, ease: 'linear' }}
+                    />
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
 
       </div>
