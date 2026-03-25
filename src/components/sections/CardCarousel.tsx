@@ -15,13 +15,6 @@ const cards = [
     href: '/hotel',
   },
   {
-    id: 'camere',
-    image: '/images/camera-3.jpg',
-    title: 'Le Camere',
-    description: 'Dieci spaziose camere tra le vie del centro, per vivere la vita del paese, quella autentica',
-    href: '/camere',
-  },
-  {
     id: 'ristorante',
     image: '/images/ristorante.jpg',
     title: 'Il Ristorante',
