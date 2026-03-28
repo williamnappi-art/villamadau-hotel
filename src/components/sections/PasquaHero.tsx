@@ -47,7 +47,7 @@ export async function PasquaHero() {
               className="h-56 w-auto object-contain drop-shadow-md block"
             />
           </Link>
-          <div className="flex-1 flex items-end justify-end gap-4 mb-2">
+          <div className="flex-1 flex items-end justify-end gap-4 mb-0">
             <LanguageSwitcher />
             <a
               href={BOOKING_URL}
