@@ -32,7 +32,7 @@ export async function DomusAntigasHero() {
 
       {/* DESKTOP NAV */}
       <div className="absolute top-0 left-0 right-0 z-20 hidden md:flex flex-col items-center pt-7">
-        <div className="w-[92%] flex items-center justify-between pb-0">
+        <div className="w-[92%] flex items-end justify-between pb-0">
           <div className="flex-1" />
           <Link href="/" aria-label={t('hero.homeAriaLabel')}>
             <Image
@@ -44,7 +44,7 @@ export async function DomusAntigasHero() {
               className="h-56 w-auto object-contain drop-shadow-md block"
             />
           </Link>
-          <div className="flex-1 flex items-end justify-end gap-4 mb-0">
+          <div className="flex-1 flex items-end justify-end gap-4 mb-2">
             <LanguageSwitcher />
             <a
               href={BOOKING_URL}
