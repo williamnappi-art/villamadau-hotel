@@ -7,13 +7,13 @@ import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const cardData = [
+  { id: 'santEfisio',  image: '/images/camera-via-nora.webp',     href: '/sant-efisio' },
   { id: 'hotel',       image: '/images/hotel-primavera.webp',     href: '/hotel' },
   { id: 'ristorante',  image: '/images/ristorante.webp',          href: '/ristorante' },
-  { id: 'santEfisio',  image: '/images/sant-efisio-piazza.jpg',   href: '/sant-efisio' },
   { id: 'chia',        image: '/images/chia-villamadau.webp',      href: '/servizi' },
   { id: 'mare',        image: '/images/mare-vista-aerea.webp',     href: '/galleria' },
   { id: 'gutturu',     image: '/images/gutturu-mannu-cervo.webp',  href: '/gutturu-mannu' },
-] as const
+]
 
 const N = cardData.length
 
@@ -128,6 +128,7 @@ export function CardCarousel() {
                       alt={activeCard.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      style={{ objectPosition: (activeCard as { objectPosition?: string }).objectPosition ?? 'center' }}
                       priority
                     />
                   </div>
