@@ -1,16 +1,19 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { HOTEL } from '@/lib/hotel.config'
 import { generateLocalBusinessSchema } from '@/lib/schema'
+import { CookieSettingsButton } from '@/components/ui/CookieBanner'
+import { getTranslations } from 'next-intl/server'
 
 const links = [
-  { href: '/camere', label: 'Camere' },
-  { href: '/ristorante', label: 'Ristorante' },
-  { href: '/servizi', label: 'Servizi' },
-  { href: '/da-non-perdere', label: 'Da non perdere' },
-  { href: '/contatti', label: 'Contatti' },
+  { href: '/camere' as const, key: 'camere' },
+  { href: '/ristorante' as const, key: 'ristorante' },
+  { href: '/servizi' as const, key: 'servizi' },
+  { href: '/da-non-perdere' as const, key: 'daNonPerdere' },
+  { href: '/contatti' as const, key: 'contatti' },
 ]
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations('common')
   const schema = generateLocalBusinessSchema()
 
   return (
@@ -31,19 +34,19 @@ export function Footer() {
                 href={HOTEL.socialMedia.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook Villa Madau"
+                aria-label={t('footer.facebookAriaLabel')}
                 className="hover:text-white transition-colors"
               >
-                Facebook
+                {t('footer.facebook')}
               </a>
               <a
                 href={HOTEL.socialMedia.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram Villa Madau"
+                aria-label={t('footer.instagramAriaLabel')}
                 className="hover:text-white transition-colors"
               >
-                Instagram
+                {t('footer.instagram')}
               </a>
             </div>
           </div>
@@ -51,7 +54,7 @@ export function Footer() {
           {/* Navigazione */}
           <div>
             <p className="text-white font-semibold text-sm uppercase tracking-widest mb-4">
-              Navigazione
+              {t('footer.navigazione')}
             </p>
             <ul className="space-y-2">
               {links.map((link) => (
@@ -60,7 +63,7 @@ export function Footer() {
                     href={link.href}
                     className="text-sm hover:text-white transition-colors"
                   >
-                    {link.label}
+                    {t(`nav.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -70,7 +73,7 @@ export function Footer() {
           {/* Contatti */}
           <div>
             <p className="text-white font-semibold text-sm uppercase tracking-widest mb-4">
-              Dove siamo
+              {t('footer.doveSiamo')}
             </p>
             <address className="not-italic text-sm space-y-2">
               <p>{HOTEL.address.full}</p>
@@ -82,7 +85,7 @@ export function Footer() {
                   {HOTEL.contact.email}
                 </a>
               </p>
-              <p>Check-in: {HOTEL.checkinTime} · Check-out: {HOTEL.checkoutTime}</p>
+              <p>{t('footer.checkinCheckout', { checkin: HOTEL.checkinTime, checkout: HOTEL.checkoutTime })}</p>
             </address>
             <a
               href={HOTEL.googleMapsUrl}
@@ -90,13 +93,22 @@ export function Footer() {
               rel="noopener noreferrer"
               className="inline-block mt-3 text-sm text-primary-300 hover:text-primary-200 transition-colors"
             >
-              Vedi su Google Maps →
+              {t('footer.vediSuGoogleMaps')}
             </a>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-10 pt-6 text-xs text-gray-600 text-center">
-          © {new Date().getFullYear()} {HOTEL.name} – {HOTEL.address.full} – P.IVA da inserire
+        <div className="border-t border-gray-800 mt-10 pt-6 text-xs text-gray-600 text-center space-y-2">
+          <div className="flex items-center justify-center gap-3">
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              {t('footer.privacyPolicy')}
+            </Link>
+            <span aria-hidden>·</span>
+            <CookieSettingsButton className="text-xs text-gray-600 hover:text-white transition-colors cursor-pointer" />
+          </div>
+          <p>
+            {t('footer.copyright', { year: new Date().getFullYear().toString(), hotelName: HOTEL.name, address: HOTEL.address.full })}
+          </p>
         </div>
       </div>
     </footer>

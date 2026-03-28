@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Villa Madau Hotel – Pula, Sardegna",
+      "ogTitle": "Villa Madau Hotel – Pula, Sardegna",
+      "ogAlt": "Villa Madau Hotel a Pula – vista esterna"
+    },
+    "hotel": {
+      "title": "L'Hotel",
+      "description": "Villa Madau è un piccolo boutique hotel nascosto tra le vie del centro storico di Pula, in Sardegna. Dieci suite, giardino interno, terrazza, colazione in piazza: la vita autentica del paese.",
+      "ogTitle": "L'Hotel | Villa Madau – Pula, Sardegna",
+      "ogDescription": "Boutique hotel nel centro storico di Pula. Dieci suite, giardino, terrazza e colazione in piazza.",
+      "ogAlt": "Villa Madau Hotel Pula primavera"
+    },
+    "ristorante": {
+      "title": "Ristorante",
+      "description": "Il ristorante di Villa Madau a Pula propone la cucina tradizionale sarda con ingredienti locali: malloreddus, bottarga, grigliate di pesce, seadas. Colazione tipica sarda inclusa.",
+      "ogTitle": "Ristorante | Villa Madau Hotel Pula Sardegna",
+      "ogDescription": "Cucina tipica sarda con prodotti locali. Pula, Sardegna meridionale.",
+      "ogAlt": "Ristorante Villa Madau Pula"
+    },
+    "servizi": {
+      "title": "Servizi",
+      "description": "Tutti i servizi di Villa Madau Hotel a Pula: WiFi gratuito, parcheggio privato, aria condizionata, noleggio auto, colazione tipica sarda e assistenza turistica.",
+      "ogTitle": "Servizi | Villa Madau Hotel – Pula, Sardegna",
+      "ogDescription": "Tutti i servizi di Villa Madau Hotel a Pula: WiFi gratuito, parcheggio privato, aria condizionata, noleggio auto, colazione tipica sarda e assistenza turistica.",
+      "ogAlt": "Villa Madau Hotel Pula – servizi"
+    },
+    "contatti": {
+      "title": "Contatti e Prenotazioni",
+      "description": "Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. {address}. Email: {email}. Hotel 3 stelle nel centro storico di Pula, Sardegna.",
+      "ogTitle": "Contatti e Prenotazioni | Villa Madau Hotel – Pula",
+      "ogDescription": "Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. {address}.",
+      "ogAlt": "Villa Madau Hotel Pula – esterno"
+    },
+    "santEfisio": {
+      "title": "Sant\u2019Efisio a Pula \u2013 Vivi la processione da Villa Madau",
+      "description": "La processione di Sant\u2019Efisio parte da Cagliari il 1 Maggio e arriva a Pula il 2 Maggio, esattamente sotto il Boutique Hotel Villa Madau nel centro storico, davanti alla chiesa di San Giovanni.",
+      "ogTitle": "Sant\u2019Efisio a Pula | Villa Madau Boutique Hotel",
+      "ogDescription": "La processione pi\u00f9 importante della Sardegna passa davanti al tuo hotel. Prenota una delle sei camere con vista.",
+      "ogAlt": "Villa Madau \u2013 camera con vista sulla processione di Sant\u2019Efisio"
+    },
+    "domusAntigas": {
+      "title": "Domus Antigas a Pula \u2013 Villa Madau nel cuore dell\u2019evento",
+      "description": "Il 15 Marzo 2026 il centro storico di Pula si trasforma con Domus Antigas. Villa Madau Boutique Hotel \u00e8 nel cuore della manifestazione. Offerta speciale: 100\u20ac con colazione e late check-out.",
+      "ogTitle": "Domus Antigas 2026 | Villa Madau Boutique Hotel \u2013 Pula",
+      "ogDescription": "Vivi Domus Antigas dall\u2019interno del centro storico di Pula. Offerta speciale Villa Madau: alloggio + colazione + late check-out a 100\u20ac.",
+      "ogAlt": "Domus Antigas \u2013 Piazzetta di Pula"
+    },
+    "pasqua": {
+      "title": "Pasqua a Pula – Villa Madau Boutique Hotel",
+      "description": "Trascorri il weekend di Pasqua a Pula, in Sardegna. Mare, natura, colazione in giardino e cucina mediterranea al Villa Madau Boutique Hotel.",
+      "ogTitle": "Pasqua a Pula | Villa Madau Boutique Hotel – Sardegna",
+      "ogDescription": "Trascorri il weekend di Pasqua a Pula, in Sardegna. Mare, natura, colazione in giardino e cucina mediterranea al Villa Madau Boutique Hotel.",
+      "ogAlt": "Spiaggia di Chia – Pasqua in Sardegna"
+    },
+    "daNonPerdere": {
+      "title": "Da non perdere",
+      "description": "Offerte, eventi e stagioni da vivere a Villa Madau Hotel: la Cavalcata di Sant'Efisio, Domus Antigas, la primavera sarda e le promozioni di bassa stagione.",
+      "ogTitle": "Da non perdere | Villa Madau Hotel – Pula, Sardegna",
+      "ogDescription": "Offerte, eventi e stagioni da vivere a Villa Madau Hotel: la Cavalcata di Sant'Efisio, Domus Antigas, la primavera sarda e le promozioni di bassa stagione.",
+      "ogAlt": "Sant'Efisio – eventi a Pula, Sardegna"
+    },
+    "gutturuMannu": {
+      "title": "Parco di Gutturu Mannu",
+      "description": "Scopri il Parco Naturale Regionale di Gutturu Mannu a Pula: la pi\u00f9 grande foresta a sclerofille del Mediterraneo, home del cervo sardo, percorsi, cascate e natura incontaminata.",
+      "ogTitle": "Parco di Gutturu Mannu | Villa Madau Hotel – Pula, Sardegna",
+      "ogDescription": "Scopri il Parco Naturale Regionale di Gutturu Mannu a Pula: la pi\u00f9 grande foresta a sclerofille del Mediterraneo, percorsi, cascate e natura incontaminata.",
+      "ogAlt": "Parco di Gutturu Mannu – paesaggio naturale a Pula"
+    },
+    "galleria": {
+      "title": "Galleria fotografica",
+      "description": "Galleria fotografica di Villa Madau Hotel a Pula, Sardegna. Scopri le camere, il ristorante, gli esterni e le bellezze della Sardegna meridionale.",
+      "ogTitle": "Galleria fotografica | Villa Madau Hotel – Pula, Sardegna",
+      "ogDescription": "Galleria fotografica di Villa Madau Hotel a Pula, Sardegna. Scopri le camere, il ristorante, gli esterni e le bellezze della Sardegna meridionale.",
+      "ogAlt": "Villa Madau Hotel Pula – galleria fotografica"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Informativa sulla privacy e cookie policy di {hotelName}. Scopri come trattiamo i tuoi dati personali ai sensi del GDPR (Regolamento UE 2016/679).",
+      "ogTitle": "Privacy Policy | {shortName} – Pula, Sardegna",
+      "ogDescription": "Informativa sulla privacy e cookie policy di {hotelName}. Trattamento dati ai sensi del GDPR."
+    }
+  }
+}

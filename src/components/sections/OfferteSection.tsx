@@ -3,83 +3,63 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 
 type Tipo = 'offerta' | 'evento' | 'stagione'
 
-interface Item {
+interface ItemData {
+  id: string
   tipo: Tipo
-  label: string
-  titolo: string
-  italic: string
   bigItalic?: boolean
-  testo: string
-  cta: string
   href: string
   external?: boolean
   image: string
 }
 
-const items: Item[] = [
+interface Item extends ItemData {
+  label: string
+  titolo: string
+  italic: string
+  testo: string
+  cta: string
+}
+
+const itemData: ItemData[] = [
   {
+    id: 'santEfisio',
     tipo: 'evento',
-    label: 'Maggio 2025',
-    titolo: 'Arriva',
-    italic: 'Sant\u2019Efisio',
     bigItalic: true,
-    testo:
-      'Dal 1 al 4 maggio, da Cagliari parte la processione pi\u00f9 importante e fiorita della Sardegna \u2014 e arriva a Pula. Vivila dalla tua camera al Villa Madau Boutique Hotel.',
-    cta: 'Scopri le camere con vista',
     href: '/sant-efisio',
-    image: '/images/sant-efisio-hotel.png',
+    image: '/images/sant-efisio-hotel.webp',
   },
   {
+    id: 'autunno',
     tipo: 'offerta',
-    label: 'Autunno 2025',
-    titolo: 'Settembre & Ottobre,',
-    italic: 'prenota prima',
-    testo:
-      "L\u2019ultima parte dell\u2019estate, temperature gradevoli, mare caldo, tramonti mozzafiato e spiagge vuote.",
-    cta: 'Prenota ora',
     href: 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8',
     external: true,
-    image: '/images/ristorante.jpg',
+    image: '/images/ristorante.webp',
   },
   {
+    id: 'primavera',
     tipo: 'stagione',
-    label: 'Bassa stagione',
-    titolo: 'Primavera',
-    italic: 'in Sardegna',
-    testo:
-      'Aprile e maggio sono i mesi pi\u00f9 belli: profumi di macchia mediterranea, spiagge deserte, temperature miti. Villa Madau \u00e8 aperta e il paese vi aspetta.',
-    cta: 'Scopri l\u2019hotel',
     href: '/hotel',
-    image: '/images/hotel-primavera.png',
+    image: '/images/hotel-primavera.webp',
   },
   {
+    id: 'pasqua',
     tipo: 'stagione',
-    label: 'Pasqua 2026',
-    titolo: 'Weekend di',
-    italic: 'Pasqua a Pula',
     bigItalic: true,
-    testo:
-      'Mare e montagna, colazione in giardino, sentieri nel parco di Gutturu Mannu e cucina mediterranea. Il weekend di Pasqua più bello di sempre, nel cuore storico di Pula.',
-    cta: 'Scopri il weekend di Pasqua',
     href: '/pasqua-a-pula',
-    image: '/images/villa-madau-primavera.png',
+    image: '/images/villa-madau-primavera.webp',
   },
   // Domus Antigas — riattivare per l'edizione 2027
   // {
+  //   id: 'domusAntigas',
   //   tipo: 'evento',
-  //   label: '15 Marzo 2026',
-  //   titolo: 'Arriva',
-  //   italic: 'Domus Antigas',
   //   bigItalic: true,
-  //   testo:
-  //     'Laboratori, cortili aperti e tradizione a tavola: il centro storico di Pula si trasforma in un viaggio nel tempo. Villa Madau \u00e8 nel cuore della manifestazione.',
-  //   cta: 'Scopri l\u2019offerta speciale',
   //   href: '/domus-antigas',
-  //   image: '/images/piazza-chiesa-pula.png',
+  //   image: '/images/piazza-chiesa-pula.webp',
   // },
 ]
 
@@ -92,16 +72,26 @@ const tipoConfig: Record<Tipo, { dot: string; text: string }> = {
 const INTERVAL = 6
 
 export function OfferteSection() {
+  const t = useTranslations('home.offerte')
+  const items: Item[] = itemData.map((d) => ({
+    ...d,
+    label:  t(`items.${d.id}.label`),
+    titolo: t(`items.${d.id}.titolo`),
+    italic: t(`items.${d.id}.italic`),
+    testo:  t(`items.${d.id}.testo`),
+    cta:    t(`items.${d.id}.cta`),
+  }))
+
   const [active, setActive] = useState(0)
   const [tick, setTick]     = useState(0)
 
   useEffect(() => {
-    const t = setInterval(() => {
+    const timer = setInterval(() => {
       setActive(i => (i + 1) % items.length)
       setTick(t => t + 1)
     }, INTERVAL * 1000)
-    return () => clearInterval(t)
-  }, [])
+    return () => clearInterval(timer)
+  }, [items.length])
 
   const advance = (i: number) => { setActive(i); setTick(t => t + 1) }
 
@@ -115,11 +105,11 @@ export function OfferteSection() {
         {/* Intestazione */}
         <div className="mb-12">
           <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-3">
-            Offerte &amp; eventi
+            {t('label')}
           </p>
           <h2 className="font-serif text-[#1e1c18] leading-none">
-            <em className="block italic font-normal text-7xl md:text-9xl leading-none">Sardegna</em>
-            <span className="block text-3xl md:text-4xl mt-2">Tutto l&apos;anno</span>
+            <em className="block italic font-normal text-7xl md:text-9xl leading-none">{t('sardegna')}</em>
+            <span className="block text-3xl md:text-4xl mt-2">{t('tuttoLanno')}</span>
           </h2>
         </div>
 
@@ -207,7 +197,7 @@ export function OfferteSection() {
               <button
                 key={i}
                 onClick={() => advance(i)}
-                aria-label={`Vai a ${item.titolo} ${item.italic}`}
+                aria-label={t('vaiA', { titolo: item.titolo, italic: item.italic })}
                 className="group text-left"
               >
                 <div
@@ -311,7 +301,7 @@ export function OfferteSection() {
               <button
                 key={i}
                 onClick={() => advance(i)}
-                aria-label={`Vai a ${item.titolo} ${item.italic}`}
+                aria-label={t('vaiA', { titolo: item.titolo, italic: item.italic })}
                 className="group"
               >
                 <div

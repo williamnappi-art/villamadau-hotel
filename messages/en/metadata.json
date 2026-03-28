@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Villa Madau Hotel – Pula, Sardinia",
+      "ogTitle": "Villa Madau Hotel – Pula, Sardinia",
+      "ogAlt": "Villa Madau Hotel in Pula – exterior view"
+    },
+    "hotel": {
+      "title": "The Hotel",
+      "description": "Villa Madau is a small boutique hotel tucked away in the historic centre of Pula, Sardinia. Ten suites, an inner garden, a terrace, and breakfast in the piazza: authentic village life.",
+      "ogTitle": "The Hotel | Villa Madau – Pula, Sardinia",
+      "ogDescription": "Boutique hotel in the historic centre of Pula. Ten suites, garden, terrace and breakfast in the piazza.",
+      "ogAlt": "Villa Madau Hotel Pula springtime"
+    },
+    "ristorante": {
+      "title": "Restaurant",
+      "description": "The Villa Madau restaurant in Pula serves traditional Sardinian cuisine with local ingredients: malloreddus, bottarga, grilled fish, seadas. Traditional Sardinian breakfast included.",
+      "ogTitle": "Restaurant | Villa Madau Hotel Pula Sardinia",
+      "ogDescription": "Traditional Sardinian cuisine with local produce. Pula, southern Sardinia.",
+      "ogAlt": "Villa Madau Restaurant Pula"
+    },
+    "servizi": {
+      "title": "Services",
+      "description": "All services at Villa Madau Hotel in Pula: free WiFi, private parking, air conditioning, car rental, traditional Sardinian breakfast and tourist assistance.",
+      "ogTitle": "Services | Villa Madau Hotel – Pula, Sardinia",
+      "ogDescription": "All services at Villa Madau Hotel in Pula: free WiFi, private parking, air conditioning, car rental, traditional Sardinian breakfast and tourist assistance.",
+      "ogAlt": "Villa Madau Hotel Pula – services"
+    },
+    "contatti": {
+      "title": "Contact & Reservations",
+      "description": "Contact Villa Madau Hotel in Pula for reservations and information. {address}. Email: {email}. 3-star hotel in the historic centre of Pula, Sardinia.",
+      "ogTitle": "Contact & Reservations | Villa Madau Hotel – Pula",
+      "ogDescription": "Contact Villa Madau Hotel in Pula for reservations and information. {address}.",
+      "ogAlt": "Villa Madau Hotel Pula – exterior"
+    },
+    "santEfisio": {
+      "title": "Sant'Efisio in Pula – Experience the Procession from Villa Madau",
+      "description": "The Sant'Efisio procession departs from Cagliari on May 1st and arrives in Pula on May 2nd, right outside Villa Madau Boutique Hotel in the historic centre, facing the Church of San Giovanni.",
+      "ogTitle": "Sant'Efisio in Pula | Villa Madau Boutique Hotel",
+      "ogDescription": "Sardinia's most important procession passes right in front of your hotel. Book one of the six rooms with a view.",
+      "ogAlt": "Villa Madau – room with a view of the Sant'Efisio procession"
+    },
+    "domusAntigas": {
+      "title": "Domus Antigas in Pula – Villa Madau at the Heart of the Event",
+      "description": "On March 15, 2026, the historic centre of Pula transforms with Domus Antigas. Villa Madau Boutique Hotel is at the heart of the event. Special offer: €100 with breakfast and late check-out.",
+      "ogTitle": "Domus Antigas 2026 | Villa Madau Boutique Hotel – Pula",
+      "ogDescription": "Experience Domus Antigas from inside the historic centre of Pula. Special Villa Madau offer: accommodation + breakfast + late check-out for €100.",
+      "ogAlt": "Domus Antigas – Pula piazzetta"
+    },
+    "pasqua": {
+      "title": "Easter in Pula – Villa Madau Boutique Hotel",
+      "description": "Spend the Easter weekend in Pula, Sardinia. Sea, nature, breakfast in the garden and Mediterranean cuisine at Villa Madau Boutique Hotel.",
+      "ogTitle": "Easter in Pula | Villa Madau Boutique Hotel – Sardinia",
+      "ogDescription": "Spend the Easter weekend in Pula, Sardinia. Sea, nature, breakfast in the garden and Mediterranean cuisine at Villa Madau Boutique Hotel.",
+      "ogAlt": "Chia beach – Easter in Sardinia"
+    },
+    "daNonPerdere": {
+      "title": "Don't Miss",
+      "description": "Offers, events and seasons to experience at Villa Madau Hotel: the Sant'Efisio procession, Domus Antigas, Sardinian spring and low-season promotions.",
+      "ogTitle": "Don't Miss | Villa Madau Hotel – Pula, Sardinia",
+      "ogDescription": "Offers, events and seasons to experience at Villa Madau Hotel: the Sant'Efisio procession, Domus Antigas, Sardinian spring and low-season promotions.",
+      "ogAlt": "Sant'Efisio – events in Pula, Sardinia"
+    },
+    "gutturuMannu": {
+      "title": "Gutturu Mannu Park",
+      "description": "Discover the Gutturu Mannu Regional Natural Park in Pula: the largest sclerophyll forest in the Mediterranean, home to the Sardinian deer, trails, waterfalls and unspoilt nature.",
+      "ogTitle": "Gutturu Mannu Park | Villa Madau Hotel – Pula, Sardinia",
+      "ogDescription": "Discover the Gutturu Mannu Regional Natural Park in Pula: the largest sclerophyll forest in the Mediterranean, trails, waterfalls and unspoilt nature.",
+      "ogAlt": "Gutturu Mannu Park – natural landscape in Pula"
+    },
+    "galleria": {
+      "title": "Photo Gallery",
+      "description": "Photo gallery of Villa Madau Hotel in Pula, Sardinia. Discover the rooms, the restaurant, the exterior and the beauty of southern Sardinia.",
+      "ogTitle": "Photo Gallery | Villa Madau Hotel – Pula, Sardinia",
+      "ogDescription": "Photo gallery of Villa Madau Hotel in Pula, Sardinia. Discover the rooms, the restaurant, the exterior and the beauty of southern Sardinia.",
+      "ogAlt": "Villa Madau Hotel Pula – photo gallery"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Privacy and cookie policy of {hotelName}. Learn how we process your personal data in accordance with the GDPR (EU Regulation 2016/679).",
+      "ogTitle": "Privacy Policy | {shortName} – Pula, Sardinia",
+      "ogDescription": "Privacy and cookie policy of {hotelName}. Data processing in accordance with the GDPR."
+    }
+  }
+}

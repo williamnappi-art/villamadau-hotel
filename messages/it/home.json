@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "ariaLabel": "Benvenuti a Villa Madau Hotel",
+    "mobileSubtitle": "Villamadau Boutique Hotel"
+  },
+  "cardCarousel": {
+    "cards": {
+      "hotel": {
+        "title": "L'Hotel",
+        "description": "tra le vie del centro storico di Pula, una vera sorpresa, un piccolo Boutique Hotel tutto da scoprire nei suoi dettagli"
+      },
+      "ristorante": {
+        "title": "Il Ristorante",
+        "description": "Cucina Mediterranea, dalla pasta fresca tramandata da generazioni ai prodotti dell'orto. Passione e amore per il territorio ispirano quotidianamente i nostri piatti"
+      },
+      "chia": {
+        "title": "Il Mare",
+        "description": "Spiagge bianche e acque cristalline a pochi minuti dall'hotel. Da Nora a Chia, un litorale tra i più belli del Mediterraneo"
+      },
+      "mare": {
+        "title": "La Sardegna",
+        "description": "Un'isola antica e selvaggia, dove la natura non ha mai smesso di stupire. Ogni angolo racconta una storia da scoprire"
+      },
+      "gutturu": {
+        "title": "Gutturu Mannu",
+        "description": "la più grande foresta del Mediterraneo, a pochi minuti da Pula, rifugio del cervo sardo e tesoro di natura incontaminata"
+      }
+    },
+    "precedente": "Precedente",
+    "successivo": "Successivo",
+    "vaiA": "Vai a {title}"
+  },
+  "offerte": {
+    "label": "Offerte & eventi",
+    "sardegna": "Sardegna",
+    "tuttoLanno": "Tutto l'anno",
+    "items": {
+      "santEfisio": {
+        "label": "Maggio 2025",
+        "titolo": "Arriva",
+        "italic": "Sant\u2019Efisio",
+        "testo": "Dal 1 al 4 maggio, da Cagliari parte la processione pi\u00f9 importante e fiorita della Sardegna \u2014 e arriva a Pula. Vivila dalla tua camera al Villa Madau Boutique Hotel.",
+        "cta": "Scopri le camere con vista"
+      },
+      "autunno": {
+        "label": "Autunno 2025",
+        "titolo": "Settembre & Ottobre,",
+        "italic": "prenota prima",
+        "testo": "L\u2019ultima parte dell\u2019estate, temperature gradevoli, mare caldo, tramonti mozzafiato e spiagge vuote.",
+        "cta": "Prenota ora"
+      },
+      "primavera": {
+        "label": "Bassa stagione",
+        "titolo": "Primavera",
+        "italic": "in Sardegna",
+        "testo": "Aprile e maggio sono i mesi pi\u00f9 belli: profumi di macchia mediterranea, spiagge deserte, temperature miti. Villa Madau \u00e8 aperta e il paese vi aspetta.",
+        "cta": "Scopri l\u2019hotel"
+      },
+      "pasqua": {
+        "label": "Pasqua 2026",
+        "titolo": "Weekend di",
+        "italic": "Pasqua a Pula",
+        "testo": "Mare e montagna, colazione in giardino, sentieri nel parco di Gutturu Mannu e cucina mediterranea. Il weekend di Pasqua pi\u00f9 bello di sempre, nel cuore storico di Pula.",
+        "cta": "Scopri il weekend di Pasqua"
+      }
+    },
+    "vaiA": "Vai a {titolo} {italic}"
+  },
+  "ristorante": {
+    "label": "Il nostro ristorante",
+    "title": "I sapori autentici della Sardegna",
+    "paragrafo1": "Il ristorante di Villa Madau è un viaggio nella tradizione gastronomica sarda. Ogni piatto è preparato con ingredienti locali di stagione, scelti tra i migliori produttori del Sulcis e della Sardegna meridionale.",
+    "paragrafo2": "Dai malloreddus alla campidanese al prelibato bottarga di Cabras, dalle grigliate di pesce fresco del Golfo di Cagliari ai dolci tradizionali come le seadas al miele di corbezzolo: ogni pasto è un'esperienza indimenticabile.",
+    "lista": {
+      "colazione": "Colazione tipica sarda ogni mattina",
+      "cucina": "Cucina a base di prodotti locali e di stagione",
+      "vini": "Selezione di vini sardi DOC e DOCG",
+      "prenotazioni": "Disponibile anche per prenotazioni esterne"
+    },
+    "cta": "Scopri il menù",
+    "imageAlt": "Ristorante Villa Madau Pula - cucina tipica sarda"
+  },
+  "location": {
+    "label": "Dove siamo",
+    "title": "Il cuore della Sardegna del Sud",
+    "paragrafo": "Villa Madau si trova nel centro storico di Pula, borgo medievale della Sardegna meridionale ricco di storia e tradizioni. La posizione privilegiata vi permette di esplorare a piedi il centro storico e raggiungere facilmente le meraviglie del territorio.",
+    "indicazioniStradali": "Indicazioni stradali",
+    "imageAlt": "Sardegna meridionale - spiagge di Chia vicino a Pula",
+    "spiaggeDiChia": "Spiagge di Chia",
+    "distanzaChia": "a soli 25 km dall'hotel"
+  },
+  "ctaFinale": {
+    "label": "Prenota il tuo soggiorno",
+    "title": "Vivi la Sardegna da Villa Madau",
+    "paragrafo": "Contattaci per disponibilità e tariffe. Risponderemo entro 24 ore.",
+    "richiediDisponibilita": "Richiedi disponibilità"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "subtitle": "Tradizione sarda",
+    "title": "Il nostro ristorante",
+    "imageAlt": "Ristorante Federico's - Villa Madau Pula",
+    "logoAlt": "Federico's Ristorante",
+    "homeAriaLabel": "Torna alla home – Villa Madau Hotel"
+  },
+  "intro": {
+    "label": "Cucina tipica sarda",
+    "title": "Un viaggio tra i sapori dell'isola",
+    "subtitle": "Ogni piatto racconta la storia e le tradizioni della Sardegna meridionale. Utilizziamo solo ingredienti freschi e locali, selezionati tra i migliori produttori del Sulcis e del Campidano."
+  },
+  "menu": {
+    "iframeTitle": "Menù Federico's",
+    "note": "Il menù varia in base alla stagionalità.",
+    "apriNuovaFinestra": "Apri in una nuova finestra →"
+  },
+  "colazione": {
+    "label": "Ogni mattina",
+    "title": "Colazione tipica sarda inclusa",
+    "paragrafo": "La giornata inizia con una colazione ricca e genuina: pane carasau, formaggi freschi, marmellate artigianali, dolci tradizionali, succhi di frutta e prodotti da forno locali. Un modo autentico per iniziare la scoperta della Sardegna.",
+    "cta": "Prenota il tuo soggiorno"
+  }
+}

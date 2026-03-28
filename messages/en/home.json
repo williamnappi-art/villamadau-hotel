@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "ariaLabel": "Welcome to Villa Madau Hotel",
+    "mobileSubtitle": "Villamadau Boutique Hotel"
+  },
+  "cardCarousel": {
+    "cards": {
+      "hotel": {
+        "title": "The Hotel",
+        "description": "Hidden among the lanes of the historic centre of Pula, a true surprise — a small Boutique Hotel waiting to be discovered in every detail"
+      },
+      "ristorante": {
+        "title": "The Restaurant",
+        "description": "Mediterranean cuisine, from handmade pasta passed down through generations to garden-fresh produce. Passion and love for the land inspire our dishes every day"
+      },
+      "chia": {
+        "title": "The Sea",
+        "description": "White sandy beaches and crystal-clear waters just minutes from the hotel. From Nora to Chia, one of the most beautiful coastlines in the Mediterranean"
+      },
+      "mare": {
+        "title": "Sardinia",
+        "description": "An ancient and untamed island, where nature has never ceased to amaze. Every corner tells a story waiting to be discovered"
+      },
+      "gutturu": {
+        "title": "Gutturu Mannu",
+        "description": "The largest forest in the Mediterranean, just minutes from Pula — a sanctuary for the Sardinian deer and a treasure of unspoilt nature"
+      }
+    },
+    "precedente": "Previous",
+    "successivo": "Next",
+    "vaiA": "Go to {title}"
+  },
+  "offerte": {
+    "label": "Offers & events",
+    "sardegna": "Sardinia",
+    "tuttoLanno": "All year round",
+    "items": {
+      "santEfisio": {
+        "label": "May 2025",
+        "titolo": "Here comes",
+        "italic": "Sant'Efisio",
+        "testo": "From May 1st to 4th, Sardinia's most important and colourful procession departs from Cagliari — and arrives in Pula. Experience it from your room at Villa Madau Boutique Hotel.",
+        "cta": "Discover the rooms with a view"
+      },
+      "autunno": {
+        "label": "Autumn 2025",
+        "titolo": "September & October,",
+        "italic": "book early",
+        "testo": "The last stretch of summer — pleasant temperatures, warm sea, breathtaking sunsets and empty beaches.",
+        "cta": "Book now"
+      },
+      "primavera": {
+        "label": "Low season",
+        "titolo": "Spring",
+        "italic": "in Sardinia",
+        "testo": "April and May are the most beautiful months: the scent of Mediterranean scrub, deserted beaches, mild temperatures. Villa Madau is open and the village awaits you.",
+        "cta": "Discover the hotel"
+      },
+      "pasqua": {
+        "label": "Easter 2026",
+        "titolo": "Easter",
+        "italic": "weekend in Pula",
+        "testo": "Sea and mountains, breakfast in the garden, trails through Gutturu Mannu park and Mediterranean cuisine. The most wonderful Easter weekend ever, in the historic heart of Pula.",
+        "cta": "Discover the Easter weekend"
+      }
+    },
+    "vaiA": "Go to {titolo} {italic}"
+  },
+  "ristorante": {
+    "label": "Our restaurant",
+    "title": "The authentic flavours of Sardinia",
+    "paragrafo1": "The Villa Madau restaurant is a journey through Sardinian culinary tradition. Every dish is prepared with local, seasonal ingredients, selected from the finest producers of the Sulcis area and southern Sardinia.",
+    "paragrafo2": "From malloreddus alla campidanese to exquisite Cabras bottarga, from freshly grilled fish from the Gulf of Cagliari to traditional desserts such as seadas with corbezzolo honey: every meal is an unforgettable experience.",
+    "lista": {
+      "colazione": "Traditional Sardinian breakfast every morning",
+      "cucina": "Cuisine based on local, seasonal produce",
+      "vini": "Selection of DOC and DOCG Sardinian wines",
+      "prenotazioni": "Also available for external reservations"
+    },
+    "cta": "Discover the menu",
+    "imageAlt": "Villa Madau Restaurant Pula - traditional Sardinian cuisine"
+  },
+  "location": {
+    "label": "Where we are",
+    "title": "The heart of southern Sardinia",
+    "paragrafo": "Villa Madau is located in the historic centre of Pula, a medieval village in southern Sardinia steeped in history and traditions. Its privileged position allows you to explore the old town on foot and easily reach the wonders of the surrounding area.",
+    "indicazioniStradali": "Directions",
+    "imageAlt": "Southern Sardinia - Chia beaches near Pula",
+    "spiaggeDiChia": "Chia Beaches",
+    "distanzaChia": "just 25 km from the hotel"
+  },
+  "ctaFinale": {
+    "label": "Book your stay",
+    "title": "Experience Sardinia from Villa Madau",
+    "paragrafo": "Contact us for availability and rates. We will reply within 24 hours.",
+    "richiediDisponibilita": "Check availability"
+  }
+}

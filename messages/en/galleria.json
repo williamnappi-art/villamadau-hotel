@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "label": "Images",
+    "title": "Photo Gallery",
+    "subtitle": "Discover Villa Madau and the surroundings of Pula through our photos."
+  },
+  "filtri": {
+    "tutte": "All",
+    "esterno": "Exterior",
+    "ristorante": "Restaurant",
+    "dintorni": "Surroundings"
+  },
+  "immagini": {
+    "hero": {
+      "alt": "Villa Madau Hotel Pula - spring view",
+      "categoria": "Exterior"
+    },
+    "hotel1": {
+      "alt": "Villa Madau Hotel - architectural detail",
+      "categoria": "Exterior"
+    },
+    "hotel2": {
+      "alt": "Villa Madau Hotel - entrance",
+      "categoria": "Exterior"
+    },
+    "ristorante": {
+      "alt": "Villa Madau Restaurant - traditional Sardinian cuisine",
+      "categoria": "Restaurant"
+    },
+    "chia": {
+      "alt": "Chia Beach - southern Sardinia",
+      "categoria": "Surroundings"
+    },
+    "mare": {
+      "alt": "Southern Sardinia sea - aerial view",
+      "categoria": "Surroundings"
+    }
+  },
+  "lightbox": {
+    "apriFoto": "Open photo: {alt}",
+    "chiudi": "Close"
+  }
+}

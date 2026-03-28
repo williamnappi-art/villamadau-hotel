@@ -1,8 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 export function ScrollToTop() {
+  const t = useTranslations('common')
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -16,7 +18,7 @@ export function ScrollToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      aria-label="Torna in cima"
+      aria-label={t('scrollToTop.ariaLabel')}
       className="fixed bottom-8 right-8 z-50 w-11 h-11 flex items-center justify-center bg-[#1e1c18]/80 hover:bg-[#1e1c18] text-white transition-all duration-200 backdrop-blur-sm"
     >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">

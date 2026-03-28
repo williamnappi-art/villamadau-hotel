@@ -2,50 +2,19 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const cards = [
-  {
-    id: 'hotel',
-    image: '/images/hotel-primavera.png',
-    title: "L'Hotel",
-    description:
-      'tra le vie del centro storico di Pula, una vera sorpresa, un piccolo Boutique Hotel tutto da scoprire nei suoi dettagli',
-    href: '/hotel',
-  },
-  {
-    id: 'ristorante',
-    image: '/images/ristorante.jpg',
-    title: 'Il Ristorante',
-    description: 'Cucina Mediterranea, dalla pasta fresca tramandata da generazioni ai prodotti dell\'orto. Passione e amore per il territorio ispirano quotidianamente i nostri piatti',
-    href: '/ristorante',
-  },
-  {
-    id: 'chia',
-    image: '/images/chia-villamadau.jpg',
-    title: 'Il Mare',
-    description: 'Spiagge bianche e acque cristalline a pochi minuti dall\'hotel. Da Nora a Chia, un litorale tra i più belli del Mediterraneo',
-    href: '/servizi',
-  },
-  {
-    id: 'mare',
-    image: '/images/mare-vista-aerea.jpg',
-    title: 'La Sardegna',
-    description: 'Un\'isola antica e selvaggia, dove la natura non ha mai smesso di stupire. Ogni angolo racconta una storia da scoprire',
-    href: '/galleria',
-  },
-  {
-    id: 'gutturu',
-    image: '/images/gutturu-mannu-cervo.jpg',
-    title: 'Gutturu Mannu',
-    description:
-      'la più grande foresta del Mediterraneo, a pochi minuti da Pula, rifugio del cervo sardo e tesoro di natura incontaminata',
-    href: '/gutturu-mannu',
-  },
-]
+const cardData = [
+  { id: 'hotel',      image: '/images/hotel-primavera.webp',     href: '/hotel' },
+  { id: 'ristorante', image: '/images/ristorante.webp',          href: '/ristorante' },
+  { id: 'chia',       image: '/images/chia-villamadau.webp',      href: '/servizi' },
+  { id: 'mare',       image: '/images/mare-vista-aerea.webp',     href: '/galleria' },
+  { id: 'gutturu',    image: '/images/gutturu-mannu-cervo.webp',  href: '/gutturu-mannu' },
+] as const
 
-const N = cards.length
+const N = cardData.length
 
 function mod(n: number, m: number) {
   return ((n % m) + m) % m
@@ -76,6 +45,13 @@ const tweenSide   = { type: 'tween', ease: [0.25, 0.46, 0.45, 0.94], duration: 1
 const tweenCenter = { type: 'tween', ease: [0.22, 0.61, 0.36, 1],    duration: 1.4 } as const
 
 export function CardCarousel() {
+  const t = useTranslations('home.cardCarousel')
+  const cards = cardData.map((c) => ({
+    ...c,
+    title: t(`cards.${c.id}.title`),
+    description: t(`cards.${c.id}.description`),
+  }))
+
   const [active, setActive] = useState(0)
   const [dir, setDir] = useState<1 | -1>(1)
 
@@ -167,7 +143,7 @@ export function CardCarousel() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="mt-5 text-center px-2"
               >
-                <h3 className="font-serif text-2xl text-gray-900 mb-2">
+                <h3 className="font-serif text-2xl text-primary mb-2">
                   {activeCard.title}
                 </h3>
                 {activeCard.description && (
@@ -211,7 +187,7 @@ export function CardCarousel() {
         <div className="flex justify-center gap-6 mt-8 items-center">
           <button
             onClick={goPrev}
-            aria-label="Precedente"
+            aria-label={t('precedente')}
             className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -234,7 +210,7 @@ export function CardCarousel() {
 
           <button
             onClick={goNext}
-            aria-label="Successivo"
+            aria-label={t('successivo')}
             className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

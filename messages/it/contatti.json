@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "subtitle": "Via Nora, 84 · Pula, Sardegna",
+    "title": "Contatti",
+    "imageAlt": "Villa Madau Hotel – esterno Pula"
+  },
+  "whatsapp": {
+    "label": "Risposta in pochi minuti",
+    "title": "Scrivici su\nWhatsApp",
+    "paragrafo": "Dall'altra parte del telefono ci siamo noi — non un bot, non un risponditore automatico. Qualsiasi domanda: disponibilità, camere, ristorante, trasferimenti, esigenze particolari.",
+    "badge": "Persone reali · Risposte vere · Nessun bot",
+    "cta": "Scrivici su WhatsApp",
+    "defaultMessage": "Ciao! Vorrei avere informazioni su Villa Madau Hotel."
+  },
+  "info": {
+    "label": "Dove siamo · Come contattarci",
+    "email": "Email",
+    "telefono": "Telefono",
+    "indirizzo": "Indirizzo",
+    "apriGoogleMaps": "Apri in Google Maps →",
+    "orari": "Orari",
+    "checkinDalle": "Check-in: dalle {time}",
+    "checkoutEntro": "Check-out: entro {time}",
+    "distanze": "Distanze",
+    "mapTitle": "Villa Madau Hotel – Via Nora 84, Pula"
+  },
+  "form": {
+    "nomeCognome": "Nome e Cognome",
+    "email": "Email",
+    "telefono": "Telefono",
+    "numeroOspiti": "Numero ospiti",
+    "seleziona": "Seleziona",
+    "ospite": "ospite",
+    "ospiti": "ospiti",
+    "dataArrivo": "Data arrivo",
+    "dataPartenza": "Data partenza",
+    "messaggio": "Messaggio",
+    "placeholder": "Scrivi qui la tua richiesta...",
+    "inviaRichiesta": "Invia richiesta",
+    "invioInCorso": "Invio in corso...",
+    "successMessage": "Messaggio inviato con successo! Vi risponderemo al più presto.",
+    "errorMessage": "Si è verificato un errore. Riprova o contattaci via email.",
+    "validazione": {
+      "nomeMin": "Inserisci il tuo nome",
+      "emailInvalida": "Inserisci un indirizzo email valido",
+      "messaggioMin": "Il messaggio deve essere di almeno 10 caratteri"
+    }
+  }
+}

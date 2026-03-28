@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "label": "EU Regulation 2016/679",
+    "title": "Privacy Policy",
+    "subtitle": "Information on the processing of personal data pursuant to Articles 13 and 14 of Regulation (EU) 2016/679 (GDPR)",
+    "ultimoAggiornamento": "Last updated: March 2026"
+  },
+  "titolare": {
+    "articolo": "Art. 13, paragraph 1, letter a)",
+    "title": "Data Controller",
+    "intro": "The Data Controller for personal data collected through the website {url} is:",
+    "emailLabel": "Email:",
+    "telefonoLabel": "Phone:"
+  },
+  "datiRaccolti": {
+    "articolo": "Art. 13, paragraph 1, letter c)",
+    "title": "Data Collected",
+    "volontari": {
+      "title": "Data provided voluntarily",
+      "testo": "When you fill in the contact form or send us an email, we collect the data you provide directly: name, email address, phone number and the content of your message. This data is processed exclusively to respond to your enquiry and, with your consent, to send you communications related to the hotel's services."
+    },
+    "navigazione": {
+      "title": "Browsing data",
+      "testo": "The IT systems and software procedures used to operate this website acquire, during their normal operation, certain personal data whose transmission is implicit in the use of Internet communication protocols (e.g. IP addresses, browser type, operating system, pages visited, access times)."
+    }
+  },
+  "googleAnalytics": {
+    "label": "Analytics cookies",
+    "title": "Google Analytics",
+    "paragrafo1": "This website uses Google Analytics 4 (GA4), a web analytics service provided by Google LLC. GA4 uses cookies to collect anonymous and aggregated information about website usage, including: number of visitors, referral source, pages viewed, session duration and content interactions.",
+    "paragrafo2": "Data is processed by Google in aggregated and anonymised form. The user's IP address is not stored in full. For more information, please see the",
+    "privacyPolicyGoogle": "Google privacy policy",
+    "paragrafo3": "You can opt out of Google Analytics by installing the",
+    "componenteAggiuntivo": "browser opt-out add-on"
+  },
+  "googleAds": {
+    "label": "Advertising cookies",
+    "title": "Google Ads",
+    "paragrafo1": "This website uses Google Ads services and its conversion tracking system. When a user interacts with a Google ad, a conversion cookie is placed on their device. This cookie is not used for personal identification and is used solely to measure the effectiveness of advertising campaigns.",
+    "paragrafo2": "Data collected through Google Ads may include: ad interactions, landing pages visited and actions completed (e.g. booking request). For more information and to manage your advertising preferences, visit the",
+    "impostazioniAnnunci": "Google Ads Settings page"
+  },
+  "cookieUtilizzati": {
+    "label": "Cookie types",
+    "title": "Cookies used",
+    "necessari": {
+      "title": "Necessary cookies",
+      "testo": "Essential for the functioning of the website. They include technical cookies for session management and consent preferences. They do not require user consent and cannot be disabled."
+    },
+    "analitici": {
+      "title": "Analytics cookies",
+      "testo": "Used by Google Analytics 4 to collect anonymous statistical data on browsing activity. They help us understand how visitors interact with the website, which pages are most visited and how to improve the user experience.",
+      "ga": "_ga — Anonymous user identifier · Duration: 2 years",
+      "gaStar": "_ga_* — GA4 session persistence · Duration: 2 years"
+    },
+    "marketing": {
+      "title": "Marketing cookies",
+      "testo": "Installed by Google Ads to track advertising conversions and display relevant ads. These cookies may be used to build a profile of your interests and show you relevant advertising on other websites.",
+      "gclAu": "_gcl_au — Google Ads conversion tracking · Duration: 90 days",
+      "ide": "IDE — DoubleClick remarketing and conversions · Duration: 13 months"
+    }
+  },
+  "dirittiUtente": {
+    "articolo": "GDPR — Arts. 15–22",
+    "title": "Your rights",
+    "intro": "As a data subject, pursuant to Articles 15-22 of Regulation (EU) 2016/679, you have the right to:",
+    "diritti": {
+      "accesso": {
+        "title": "Right of access (Art. 15)",
+        "desc": "Obtain confirmation as to whether or not personal data concerning you is being processed and, if so, obtain a copy of that data."
+      },
+      "rettifica": {
+        "title": "Right to rectification (Art. 16)",
+        "desc": "Obtain the rectification of inaccurate personal data concerning you without undue delay."
+      },
+      "cancellazione": {
+        "title": "Right to erasure (Art. 17)",
+        "desc": "Obtain the erasure of personal data concerning you when it is no longer necessary for the purposes for which it was collected."
+      },
+      "limitazione": {
+        "title": "Right to restriction (Art. 18)",
+        "desc": "Obtain the restriction of processing when you contest the accuracy of the data or the processing is unlawful."
+      },
+      "portabilita": {
+        "title": "Right to data portability (Art. 20)",
+        "desc": "Receive personal data concerning you in a structured, commonly used and machine-readable format."
+      },
+      "opposizione": {
+        "title": "Right to object (Art. 21)",
+        "desc": "Object at any time to the processing of personal data concerning you, including profiling."
+      }
+    },
+    "reclamo": "You also have the right to lodge a complaint with the competent supervisory authority (Garante per la Protezione dei Dati Personali —",
+    "garanteUrl": "www.garanteprivacy.it"
+  },
+  "gestioneCookie": {
+    "label": "Cookie management",
+    "title": "How to change your cookie preferences",
+    "intro": "You can change your cookie preferences at any time through your browser settings. Below are instructions for the most common browsers:",
+    "browser": {
+      "chrome": "Google Chrome",
+      "firefox": "Mozilla Firefox",
+      "safari": "Apple Safari",
+      "edge": "Microsoft Edge"
+    },
+    "nota": "Please note that disabling certain cookies may limit the functionality of the website."
+  },
+  "contattiPrivacy": {
+    "label": "Privacy enquiries",
+    "title": "Have questions about how\nwe handle your data?",
+    "paragrafo": "To exercise your rights or for any enquiry relating to the processing of your personal data, you can contact us directly.",
+    "ctaPrefix": "Write to",
+    "infoFooter": "{address} · Tel. {phone}"
+  }
+}

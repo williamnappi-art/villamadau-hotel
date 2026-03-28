@@ -21,3 +21,10 @@ yarn-debug.log*
 # misc
 *.pem
 .vercel
+
+# local reference
+motion-primitives-website-main/
+GUIDA-SEO-NEXTJS.md
+TRACKING-CHECKLIST.md
+Codec video, per siti.txt
+Compressione Immagini.txt

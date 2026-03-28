@@ -1,10 +1,11 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
-import { Header } from './Header'
+import { usePathname } from '@/i18n/navigation'
 
-export function ConditionalHeader() {
+const HERO_PAGES = ['/', '/ristorante', '/hotel', '/sant-efisio', '/domus-antigas', '/servizi', '/pasqua-a-pula', '/da-non-perdere', '/contatti']
+
+export function ConditionalHeader({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  if (pathname === '/' || pathname === '/ristorante' || pathname === '/hotel' || pathname === '/sant-efisio' || pathname === '/domus-antigas' || pathname === '/servizi' || pathname === '/pasqua-a-pula' || pathname === '/da-non-perdere' || pathname === '/contatti') return null
-  return <Header />
+  if (HERO_PAGES.includes(pathname)) return null
+  return <>{children}</>
 }

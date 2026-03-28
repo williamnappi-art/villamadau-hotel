@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "subtitle": "Villa Madau Boutique Hotel",
+    "title1": "Il mare,",
+    "title2": "a portata di mano",
+    "imageAlt": "Villa Madau Hotel – Pula, Sardegna"
+  },
+  "intro": {
+    "label": "Le spiagge più belle del Sud Sardegna",
+    "paragrafo": "Pula è la base ideale per esplorare alcune tra le coste più belle del Mediterraneo. Nora, Chia, Tuerredda: capolavori di natura raggiungibili in pochi minuti. E dopo una giornata di mare, Villa Madau ti aspetta con la camera fresca, l'aperitivo e una cena che sa di Sardegna."
+  },
+  "spiagge": {
+    "nora": {
+      "nome": "Nora",
+      "distanza": "3 min in auto",
+      "alt": "Spiaggia di Nora – Villa Madau Hotel, Pula",
+      "testo": "A tre minuti dall'hotel si apre una delle spiagge più suggestive del Mediterraneo. Nora è un luogo unico: acque basse e cristalline color smeraldo, sabbia fine e bianca, e alle spalle i resti di un'antica città fenicio-romana che emerge direttamente dal mare. È possibile nuotare fino ai ruderi, dove il fondale rivela anfore, mosaici e colonne sommerse. Un posto che non si dimentica."
+    },
+    "chia": {
+      "nome": "Chia",
+      "distanza": "15 min in auto",
+      "alt": "Spiaggia di Chia – vicino a Villa Madau Hotel, Pula",
+      "testo": "A un quarto d'ora di guida si apre il paesaggio selvaggio di Chia: dune alte ricoperte di ginepri secolari, acque poco profonde adatte alle famiglie, una laguna con fenicotteri e aironi. La spiaggia di Su Giudeu, con la sua isola raggiungibile a guado, è tra le più fotografate della Sardegna. I venti del maestrale la rendono perfetta anche per il windsurf."
+    },
+    "tuerredda": {
+      "nome": "Tuerredda",
+      "distanza": "20 min in auto",
+      "alt": "Spiaggia di Tuerredda – vicino a Villa Madau Hotel",
+      "testo": "Venti minuti e si arriva a quella che molti considerano la spiaggia più bella del Sud Sardegna. Tuerredda è una piccola baia chiusa tra due promontori di roccia, con un mare dai colori caraibici e un'isola a pochi metri dalla riva. Le acque sono trasparenti, il fondale digrada lentamente — ideale per snorkeling e nuoto."
+    }
+  },
+  "stacco": {
+    "label": "Dopo il mare",
+    "testo": "Alla fine di una giornata di sole e acqua, non c'è niente di più bello che rientrare nella propria camera — fresca, silenziosa, con tutto il comfort di cui hai bisogno. Un aperitivo, una cena sarda, e il riposo che ti sei guadagnato."
+  },
+  "serviziGrid": {
+    "label": "In hotel",
+    "title": "Tutto incluso",
+    "items": {
+      "wifi": {
+        "titolo": "WiFi Gratuito",
+        "descrizione": "Connessione internet ad alta velocità in tutte le aree dell'hotel, dalla camera alle aree comuni. Sempre inclusa nel soggiorno."
+      },
+      "parking": {
+        "titolo": "Parcheggio Gratuito",
+        "descrizione": "Parcheggio privato riservato agli ospiti dell'hotel. Potete lasciare l'auto in sicurezza per tutta la durata del soggiorno."
+      },
+      "snowflake": {
+        "titolo": "Aria Condizionata",
+        "descrizione": "Tutte le camere sono dotate di sistema di climatizzazione autonomo per garantire il massimo comfort in ogni stagione."
+      },
+      "car": {
+        "titolo": "Noleggio Auto",
+        "descrizione": "Servizio di noleggio auto disponibile per esplorare le meraviglie della Sardegna meridionale: spiagge, nuraghi e borghi tipici."
+      },
+      "coffee": {
+        "titolo": "Colazione Sarda",
+        "descrizione": "Ogni mattina vi aspetta una colazione con prodotti locali e tipici sardi: formaggi, salumi, dolci tradizionali e pane carasau."
+      },
+      "map": {
+        "titolo": "Assistenza Turistica",
+        "descrizione": "Il nostro staff è a disposizione per consigliarvi escursioni, itinerari e i migliori ristoranti del territorio sulcitano."
+      }
+    }
+  },
+  "ctaFinale": {
+    "label": "Prenota il tuo soggiorno",
+    "title": "Ti aspettiamo a Pula",
+    "cta": "Contattaci"
+  }
+}

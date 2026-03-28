@@ -22,7 +22,7 @@ export function generateHotelSchema() {
     telephone: HOTEL.contact.phone,
     email: HOTEL.contact.email,
     url: HOTEL.url,
-    image: `${HOTEL.url}/images/hero.png`,
+    image: `${HOTEL.url}/images/hero.webp`,
     geo: {
       '@type': 'GeoCoordinates',
       latitude: HOTEL.coordinates.lat,
@@ -90,7 +90,7 @@ export function generateLocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'LodgingBusiness',
     name: HOTEL.name,
-    image: `${HOTEL.url}/images/hero.png`,
+    image: `${HOTEL.url}/images/hero.webp`,
     url: HOTEL.url,
     telephone: HOTEL.contact.phone,
     email: HOTEL.contact.email,

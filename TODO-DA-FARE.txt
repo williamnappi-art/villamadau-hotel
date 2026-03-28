@@ -1,0 +1,136 @@
+===============================================
+ VILLA MADAU - COSE DA FARE PRIMA DEL LANCIO
+===============================================
+
+Ultimo aggiornamento: 28 Marzo 2026
+
+
+--- FASE 1: FAVICON E MANIFEST ---
+
+[ ] Generare favicon.ico (32x32 e 16x16) dal logo
+[ ] Generare apple-touch-icon.png (180x180)
+[ ] Generare favicon-192.png e favicon-512.png per PWA
+[ ] Creare public/manifest.json con nome, colori, icone
+[ ] Aggiungere meta tag theme-color nel layout
+
+
+--- FASE 2: TRACKING (serve ID GTM dal cliente) ---
+
+[ ] Ottenere ID Google Tag Manager (GTM-XXXXXXX)
+[ ] Ottenere ID Google Analytics 4 (G-XXXXXXX)
+[ ] Implementare Consent Mode v2 nel layout:
+    - gtag('consent', 'default', {...}) con i 4 segnali denied
+    - url_passthrough: true
+    - ads_data_redaction: true
+    - Caricamento preferenze salvate da localStorage
+    - Script GTM (DOPO consent default)
+[ ] Creare componente CookieBanner:
+    - "Accetta tutti" → gtag('consent', 'update', tutti granted)
+    - "Rifiuta" → chiude banner, consent resta denied
+    - "Personalizza" → toggle separati analytics/marketing
+    - Salvataggio in localStorage con timestamp
+    - Scadenza 180 giorni (ri-consenso GDPR)
+    - Link a /privacy nel banner
+    - Link "Gestisci cookie" nel footer
+[ ] Configurare GA4 Console:
+    - Google Signals: attivo
+    - Raccolta dati forniti dagli utenti: attivo
+    - Dati granulari posizione/dispositivo: attivo
+[ ] Configurare GTM Console:
+    - Panoramica del consenso: attiva
+[ ] Testare con GTM Preview Mode
+
+
+--- FASE 3: PAGINE LEGALI ---
+
+[ ] Creare pagina /privacy con:
+    - Privacy Policy (menzione GA4, cookie, diritti utente)
+    - Cookie Policy (categorie: necessari, analitici, marketing)
+    - Come modificare le preferenze cookie
+[ ] Aggiungere link Privacy Policy nel footer
+[ ] Aggiungere link "Gestisci cookie" nel footer
+
+
+--- FASE 4: SEO ON-PAGE ---
+
+[ ] Aggiungere OpenGraph metadata alle pagine mancanti:
+    - / (homepage)
+    - /contatti
+    - /da-non-perdere
+    - /galleria
+    - /gutturu-mannu
+    - /pasqua-a-pula
+    - /servizi
+[ ] Verificare breadcrumb schema su tutte le pagine
+[ ] Togliere disallow: '/' da robots.ts quando il sito e' pronto per l'indicizzazione
+
+
+--- FASE 5: MULTILINGUA (IT + EN) ---
+
+[ ] Installare next-intl
+[ ] Creare struttura i18n/:
+    - config.ts (locales: ['it', 'en'], defaultLocale: 'it')
+    - routing.ts (pathnames localizzati per ogni pagina)
+    - request.ts (setup server-side)
+[ ] Creare messages/it.json con tutti i testi del sito
+[ ] Creare messages/en.json con traduzioni inglesi
+[ ] Ristrutturare app/ sotto [locale]/:
+    - Spostare tutte le pagine sotto app/[locale]/
+    - Root layout minimo (solo children)
+    - Layout locale con lang dinamico
+[ ] Convertire ogni page.tsx:
+    - Usare generateMetadata con getTranslations
+    - Canonical e hreflang per IT + EN
+    - OpenGraph con locale corretto (it_IT / en_GB)
+    - Schema.org tradotto
+[ ] Aggiornare sitemap.ts per generare URL in entrambe le lingue
+[ ] Aggiornare robots.ts con sitemap URL
+[ ] Creare language switcher nel nav (IT/EN)
+[ ] Tradurre componenti:
+    - Header / MobileNav
+    - Footer
+    - HeroMobileMenu
+    - Tutti gli Hero
+    - CardCarousel
+    - OfferteSection
+    - LocationSection
+    - RistoranteSection
+    - ContactForm
+    - CookieBanner
+    - ScrollToTop
+
+
+--- REDIRECT 301 (GIA' IMPLEMENTATI) ---
+
+[x] /home → /
+[x] /camere → /hotel
+[x] /contact → /contatti
+[x] /gallery → /galleria
+[x] /bookingonline → /contatti
+[x] /esperienze → /servizi
+[x] /hotel-in-centro-a-pula-sant-efisio-a-pula-maggio2025 → /sant-efisio
+[x] /pasqua → /pasqua-a-pula
+[x] /2026-pasqua-a-pula → /pasqua-a-pula
+[x] /pula-gennaio-25-26-domus-antigas → /domus-antigas
+[x] /inverno-2024 → /da-non-perdere
+[x] /pula2024 → /da-non-perdere
+[x] /luglio-in-sardegna → /da-non-perdere
+[x] /natale-2025-pula-capodanno-2026-2025 → /da-non-perdere
+[x] /ridee-egalo-natale-saredgna-estate → /da-non-perdere
+[x] /covid-19 → /
+[x] /pula-hotel-nora-blog → /
+[x] /home/post/* → /
+[x] /cookie-policy → /privacy
+[x] /privacy-policy → /privacy
+[x] /terms-and-conditions → /privacy
+
+
+--- SITEMAP (GIA' AGGIORNATA) ---
+
+[x] Aggiunta /hotel
+[x] Aggiunta /sant-efisio
+[x] Aggiunta /domus-antigas
+[x] Aggiunta /galleria
+
+
+===============================================

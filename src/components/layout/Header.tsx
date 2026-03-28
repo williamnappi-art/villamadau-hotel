@@ -1,25 +1,29 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 import { MobileNav } from './MobileNav'
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 
 const navLinks = [
-  { href: '/hotel', label: 'Hotel' },
-  { href: '/ristorante', label: 'Ristorante' },
-  { href: '/servizi', label: 'Servizi' },
-  { href: '/da-non-perdere', label: 'Da non perdere' },
-  { href: '/contatti', label: 'Contatti' },
+  { href: '/hotel' as const, key: 'hotel' },
+  { href: '/ristorante' as const, key: 'ristorante' },
+  { href: '/servizi' as const, key: 'servizi' },
+  { href: '/da-non-perdere' as const, key: 'daNonPerdere' },
+  { href: '/contatti' as const, key: 'contatti' },
 ]
 
-export function Header() {
+export async function Header() {
+  const t = await getTranslations('common')
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm overflow-visible">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo — overflow verso il basso sul video */}
-          <Link href="/" className="flex-shrink-0 relative z-10" aria-label="Villa Madau Hotel – torna alla home">
+          <Link href="/" className="flex-shrink-0 relative z-10" aria-label={t('hero.homeAriaLabel')}>
             <Image
               src="/images/logo.png"
-              alt="Villa Madau Hotel"
+              alt={t('hero.logoAlt')}
               width={280}
               height={198}
               priority
@@ -30,7 +34,7 @@ export function Header() {
           {/* Desktop nav */}
           <nav
             className="hidden md:flex items-center gap-8"
-            aria-label="Navigazione principale"
+            aria-label={t('nav.ariaLabel')}
           >
             {navLinks.map((link) => (
               <Link
@@ -38,18 +42,19 @@ export function Header() {
                 href={link.href}
                 className="text-sm font-medium text-gray-700 hover:text-primary transition-colors tracking-wide"
               >
-                {link.label}
+                {t(`nav.${link.key}`)}
               </Link>
             ))}
           </nav>
 
           {/* CTA desktop + hamburger mobile */}
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             <Link
               href="/contatti"
-              className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded hover:bg-primary-600 transition-colors"
+              className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary text-[#1e1c18] text-sm font-semibold rounded hover:bg-primary-600 transition-colors"
             >
-              Prenota ora
+              {t('cta.prenotaOra')}
             </Link>
             <MobileNav />
           </div>

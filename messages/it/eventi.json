@@ -1,0 +1,389 @@
+{
+  "santEfisio": {
+    "hero": {
+      "subtitle": "1 – 4 Maggio 2025 · Pula, Sardegna",
+      "title1": "Arriva",
+      "title2": "Sant'Efisio"
+    },
+    "intro": {
+      "label": "1 – 4 Maggio · Pula, Sardegna",
+      "title": "La processione più grande\ndella Sardegna",
+      "paragrafo1": "La processione per Sant'Efisio martire è una delle più importanti e partecipate feste della Sardegna.",
+      "paragrafo2": "Dal primo al quattro Maggio si assiste ad una delle processioni che riunisce tutta la Sardegna e le sue tradizioni come in pochissime altre occasioni.",
+      "paragrafo3": "Parte da Cagliari il primo Maggio e arriva il 2 Maggio a Pula, esattamente sotto il nostro Boutique Hotel nel centro storico, davanti alla chiesa di San Giovanni, per continuare con una processione mozzafiato sulla spiaggia di Nora, in una cornice spettacolare tra mare e laguna.",
+      "link": "Per approfondire →"
+    },
+    "perche": {
+      "label": "Il posto giusto",
+      "title": "Dentro la Festa",
+      "paragrafo1": "Villa Madau si trova nel cuore del centro storico di Pula, esattamente sul percorso della processione — davanti alla chiesa di San Giovanni.",
+      "paragrafo2": "Sei delle nostre camere si affacciano direttamente sul tragitto. Puoi svegliarti con il suono delle launeddas, scendere in strada quando vuoi, rientrare quando hai bisogno di riposo.",
+      "paragrafo3": "La colazione è servita in giardino o in piazzetta, mentre il paese si prepara alla festa. Non sarai un turista che guarda — sarai parte di Pula per quattro giorni.",
+      "imageAlt": "Sant'Efisio – Villa Madau Hotel Pula"
+    },
+    "camere": {
+      "label": "Vista sulla processione",
+      "title": "Le sei camere",
+      "subtitle": "Ognuna affacciata sul percorso del Santo. Ognuna con la sua storia.",
+      "rooms": {
+        "01": {
+          "nome": "La Stanza del Vescovo",
+          "sottotitolo": "Vista Chiesa – Unica e privilegiata",
+          "descrizione": "La camera del vescovo, la numero uno dell'Hotel Villa Madau di Pula è la camera con la vista migliore di tutto il percorso del Santo. Nel cuore della processione, sul balcone privato.",
+          "alt": "La Stanza del Vescovo – Villa Madau Pula"
+        },
+        "02": {
+          "nome": "La Stanza del Priore",
+          "sottotitolo": "Una finestra sulla Processione",
+          "descrizione": "La finestra sulla chiesa di San Giovanni nel cuore di Pula, unica nel suo genere. Dall'hotel Villa Madau la Processione ha un punto di vista unico.",
+          "alt": "La Stanza del Priore – Villa Madau Pula"
+        },
+        "03": {
+          "nome": "Dolce Dormire",
+          "sottotitolo": "Spaziosa e dal design Mediterraneo",
+          "descrizione": "Se cerchi una camera spaziosa, romantica, nel cuore della processione, eccola qui.",
+          "alt": "Dolce Dormire – Villa Madau Pula"
+        },
+        "04": {
+          "nome": "Movida",
+          "sottotitolo": "La stanza e l'olivastro",
+          "descrizione": "La stanza avvolta dall'olivastro del centro storico accoglie l'arrivo della processione. Dal suo balcone si può godere dello spettacolo unico de sa Ramadura — il lancio dei petali sul Santo.",
+          "alt": "Movida – Villa Madau Pula"
+        },
+        "05": {
+          "nome": "Le Torri",
+          "sottotitolo": "Il Balcone sulla Processione",
+          "descrizione": "Affacciata sulla via Nora, su cui si sviluppa tutto l'hotel Villa Madau e via principale di Pula, ha una vista unica sulla Processione di Sant'Efisio.",
+          "alt": "Le Torri – Villa Madau Pula"
+        },
+        "06": {
+          "nome": "La Piazzetta",
+          "sottotitolo": "La camera sulla Piazza",
+          "descrizione": "Esattamente sulla facciata principale dell'Hotel Villa Madau, due balconi completamente affacciati sulla piazza adiacente alla chiesa di San Giovanni per godersi uno spettacolo unico.",
+          "alt": "La Piazzetta – Villa Madau Pula"
+        }
+      }
+    },
+    "infoPratiche": {
+      "quando": {
+        "label": "Quando",
+        "testo": "Dal 1 al 4 maggio ogni anno. La processione arriva a Pula il 2 maggio in andata verso Nora e rientra verso Cagliari il 4 maggio."
+      },
+      "dove": {
+        "label": "Dove siamo",
+        "riga1": "Villa Madau Boutique Hotel",
+        "riga2": "Centro storico di Pula (CA)",
+        "riga3": "Davanti alla chiesa di San Giovanni"
+      },
+      "disponibilita": {
+        "label": "Disponibilità",
+        "testo": "I posti per Sant'Efisio si esauriscono con mesi di anticipo. Prenotare prima possibile è fondamentale per assicurarsi una delle sei camere con vista."
+      }
+    },
+    "cta": {
+      "label": "Posti limitati",
+      "title": "Prenota la tua camera\ncon vista su Sant'Efisio",
+      "paragrafo": "Sei camere, una processione, quattro giorni indimenticabili. Scriveteci subito: vi risponderemo entro 24 ore con disponibilità e tariffe.",
+      "prenotaOra": "Prenota ora",
+      "chiediDisponibilita": "Chiedi disponibilità"
+    }
+  },
+  "domusAntigas": {
+    "hero": {
+      "subtitle": "15 Marzo 2026 · Pula, Sardegna",
+      "title1": "Arriva",
+      "title2": "Domus Antigas",
+      "imageAlt": "Domus Antigas – Piazzetta di Pula, Villa Madau Hotel"
+    },
+    "intro": {
+      "label": "15 Marzo 2026 · Centro storico di Pula",
+      "title": "Un viaggio nel tempo\ntra le vie di Pula",
+      "paragrafo1": "Il 15 Marzo 2026 il centro storico di Pula si trasforma in un viaggio nel tempo con la manifestazione Domus Antigas, dedicata alle tradizioni, ai sapori e alla cultura sarda.",
+      "paragrafo2": "Una manifestazione nata grazie al grande impegno dei ragazzi della Pro Loco di Pula: tante energie, passione e amore per questa Terra rendono possibile questo evento unico.",
+      "link": "Scopri il programma →"
+    },
+    "cuore": {
+      "label": "Il posto giusto",
+      "title": "Nel cuore\ndella manifestazione",
+      "paragrafo1": "Villa Madau Boutique Hotel si trova esattamente al centro del percorso di Domus Antigas, tra le vie del centro storico di Pula. Non a pochi minuti dall'evento — è dentro l'evento.",
+      "paragrafo2": "Laboratori artigianali, cortili aperti, degustazioni di prodotti tipici sardi, musica e tradizione: tutto a portata di mano, appena fuori dalla porta.",
+      "paragrafo3": "Per questa occasione unica abbiamo preparato un'offerta speciale che vi permette di vivere Domus Antigas senza fretta, senza stress, con la comodità di avere la vostra camera nel cuore di tutto.",
+      "imageAlt": "Piazzetta di Pula – Villa Madau Hotel"
+    },
+    "offerta": {
+      "label": "Offerta speciale",
+      "prezzo": "100\u20ac",
+      "sottotitolo": "a camera, tutto incluso",
+      "cosaInclude": {
+        "label": "Cosa include",
+        "item1": {
+          "titolo": "Alloggio e colazione",
+          "testo": "La colazione si consuma in giardino, nella nostra sala interna riscaldata o in piazzetta, davanti alla chiesa di San Giovanni."
+        },
+        "item2": {
+          "titolo": "Late check-out domenicale",
+          "testo": "Arrivando sabato 14 Marzo sarà possibile lasciare la stanza nel pomeriggio di domenica 15 Marzo — e godersi Domus Antigas senza stress e con estrema calma."
+        }
+      },
+      "comePrenotare": {
+        "label": "Come prenotare",
+        "testo": "Per prenotare è sufficiente un messaggio su WhatsApp. Cliccando il simbolo qui sotto accederete direttamente alla chat con lo staff, che vi risponderà in tempi brevissimi.",
+        "cta": "Scrivi su WhatsApp"
+      }
+    },
+    "info": {
+      "quando": {
+        "label": "Quando",
+        "testo": "Sabato 14 e Domenica 15 Marzo 2026.",
+        "dettaglio": "Arrivo il 14, check-out pomeriggio del 15 con late check-out incluso."
+      },
+      "dove": {
+        "label": "Dove siamo",
+        "riga1": "Villa Madau Boutique Hotel",
+        "riga2": "Via Nora, 84 – Centro storico",
+        "riga3": "Pula (CA), Sardegna"
+      },
+      "prezzo": {
+        "label": "Prezzo",
+        "testo": "100\u20ac a camera, colazione inclusa e late check-out domenicale. Disponibilità limitata."
+      }
+    },
+    "cta": {
+      "label": "Posti limitati",
+      "title": "Prenota il tuo weekend\na Domus Antigas",
+      "paragrafo": "Un messaggio su WhatsApp e il gioco è fatto. Lo staff vi risponde in tempi brevissimi.",
+      "whatsapp": "Scrivi su WhatsApp",
+      "contattaci": "Contattaci"
+    }
+  },
+  "pasqua": {
+    "hero": {
+      "subtitle": "Pasqua 2026 · Pula, Sardegna",
+      "title": "Pasqua a Pula"
+    },
+    "testo": {
+      "label": "Pasqua 2026 · Pula, Sardegna",
+      "paragrafo1": "Il fine settimana di Pasqua a Pula, tra mare e montagna, le passeggiate in collina a picco sul mare, la strada romana che da Santa Margherita porta a Chia, i percorsi per tutti del parco di Gutturu Mannu ricchi di cascate e corsi d'acqua.",
+      "paragrafo2": "Una giornata all'insegna del relax e della natura che comincia con la colazione nel nostro giardino; una colazione à la carte per iniziare con il piede giusto.",
+      "paragrafo3": "Il nostro ristorante sarà sempre a disposizione, qualsiasi sia il programma della vostra giornata, sarà aperto per pranzo e per cena. La nostra cucina Mediterranea più tradizionale rivista e rivisitata dai nostri chef per un'esperienza unica, un viaggio tra sapori, idee e racconti del nostro territorio.",
+      "whatsappNote": "Parla direttamente con noi — senza impegno, risponderemo in pochi minuti.",
+      "whatsappCta": "Scrivici su WhatsApp",
+      "whatsappDefaultMessage": "Ciao! Vorrei informazioni per il weekend di Pasqua a Pula"
+    },
+    "cosaFare": {
+      "pulaSardegna": "Pula, Sardegna",
+      "title": "Cosa fare a Pula",
+      "imageAlt": "Piazza della Chiesa di Pula",
+      "links": {
+        "gutturuMannu": {
+          "title": "Gutturu Mannu",
+          "description": "La più grande foresta del Mediterraneo, cervi sardi e cascate a pochi minuti da Pula"
+        },
+        "spiagge": {
+          "title": "Le Spiagge",
+          "description": "Da Nora a Chia, un litorale tra i più belli del Mediterraneo, a pochi minuti dall'hotel"
+        },
+        "ristorante": {
+          "title": "Il Ristorante",
+          "description": "Cucina mediterranea tradizionale, pasta fresca e prodotti del territorio"
+        }
+      },
+      "domande": "Hai domande su cosa fare, dove andare, come organizzare la giornata? Scrivici su WhatsApp — parlerai direttamente con noi.",
+      "whatsappCta": "Chiedici tutto su WhatsApp"
+    },
+    "ctaFinale": {
+      "label": "Prenota il tuo soggiorno",
+      "title": "Pasqua a Pula,\ncome a casa",
+      "paragrafo": "Scrivi un messaggio su WhatsApp per disponibilità e tariffe. Lo staff ti risponde in pochi minuti, senza impegno.",
+      "whatsappCta": "Scrivi su WhatsApp",
+      "contattaci": "Contattaci"
+    }
+  },
+  "daNonPerdere": {
+    "hero": {
+      "subtitle": "Villa Madau · Pula, Sardegna",
+      "title": "Da non perdere"
+    },
+    "tipoLabel": {
+      "evento": "Evento",
+      "offerta": "Offerta",
+      "stagione": "Stagione"
+    },
+    "items": {
+      "santEfisio": {
+        "label": "Maggio 2025",
+        "titolo": "Arriva",
+        "italic": "Sant\u2019Efisio",
+        "testo": "Dal 1 al 4 maggio, da Cagliari parte la processione più importante e fiorita della Sardegna — e arriva a Pula. Vivila dalla tua camera al Villa Madau Boutique Hotel.",
+        "cta": "Scopri le camere con vista"
+      },
+      "pasqua": {
+        "label": "Pasqua 2026",
+        "titolo": "Weekend di",
+        "italic": "Pasqua a Pula",
+        "testo": "Mare e montagna, colazione in giardino, sentieri nel parco di Gutturu Mannu e cucina mediterranea. Il weekend di Pasqua nel cuore storico di Pula.",
+        "cta": "Scopri il weekend di Pasqua"
+      },
+      "domusAntigas": {
+        "label": "15 Marzo 2026",
+        "titolo": "Arriva",
+        "italic": "Domus Antigas",
+        "testo": "Laboratori, cortili aperti e tradizione a tavola: il centro storico di Pula si trasforma in un viaggio nel tempo. Villa Madau è nel cuore della manifestazione.",
+        "cta": "Scopri l\u2019offerta speciale"
+      },
+      "primavera": {
+        "label": "Bassa stagione",
+        "titolo": "Primavera",
+        "italic": "in Sardegna",
+        "testo": "Aprile e maggio sono i mesi più belli: profumi di macchia mediterranea, spiagge deserte, temperature miti. Villa Madau è aperta e il paese vi aspetta.",
+        "cta": "Scopri l\u2019hotel"
+      },
+      "autunno": {
+        "label": "Autunno 2025",
+        "titolo": "Settembre & Ottobre,",
+        "italic": "prenota prima",
+        "testo": "L\u2019ultima parte dell\u2019estate, temperature gradevoli, mare caldo, tramonti mozzafiato e spiagge vuote.",
+        "cta": "Prenota ora"
+      }
+    },
+    "ctaFinale": {
+      "label": "Prenota il tuo soggiorno",
+      "testo": "Ogni stagione a Pula ha la sua bellezza.\nVilla Madau è aperta tutto l'anno.",
+      "cta": "Contattaci"
+    }
+  },
+  "gutturuMannu": {
+    "hero": {
+      "label": "Comune di Pula · Sardegna",
+      "title": "Parco di Gutturu Mannu",
+      "subtitle": "La più grande foresta a sclerofille del Mediterraneo,\nrifugio del cervo sardo e oasi di natura incontaminata.",
+      "imageAlt": "Cervo sardo nel Parco di Gutturu Mannu"
+    },
+    "stats": {
+      "area": {
+        "valore": "19.750",
+        "unita": "ettari",
+        "etichetta": "Area protetta"
+      },
+      "cervi": {
+        "valore": "~2.500",
+        "unita": "esemplari",
+        "etichetta": "Cervi sardi nel parco"
+      },
+      "vetta": {
+        "valore": "1.116",
+        "unita": "metri",
+        "etichetta": "Vetta Monte Is Caravius"
+      },
+      "sentieri": {
+        "valore": "100+",
+        "unita": "km",
+        "etichetta": "Sentieri classificati"
+      }
+    },
+    "introduzione": {
+      "label": "Il polmone verde del Sud Sardegna",
+      "title": "Una foresta millenaria alle porte di Pula",
+      "paragrafo1": "Il Parco Naturale Regionale di Gutturu Mannu — il cui nome in sardo campidanese significa \"grande gola\" — è istituito dalla Regione Sardegna nel 2014 e comprende i territori di dieci comuni, con Pula che ne è oggi il Comune capofila e il cui sindaco presiede la Comunità del Parco.",
+      "paragrafo2": "La foresta si estende per oltre 35.000 ettari di copertura boschiva continua, dominata dal leccio, dalla sughera e dall'olivastro selvatico, ed è considerata la più grande foresta a sclerofille dell'intero bacino del Mediterraneo. Oltre 600 specie vegetali, 50 delle quali endemiche, convivono in questo straordinario ecosistema.",
+      "paragrafo3": "Cuore pulsante del parco è il cervo sardo (Cervus elaphus corsicanus), sottospecie endemica di Sardegna e Corsica ridottasi a meno di 100 esemplari nel XX secolo e oggi rinata: il parco ospita la più grande colonia mondiale di cervo sardo, con circa 2.500 esemplari liberi nel territorio."
+    },
+    "fotoPaesaggio": {
+      "imageAlt": "Paesaggio del Parco di Gutturu Mannu",
+      "citazione": "\"La natura che non si aspetta di essere scoperta.\""
+    },
+    "attivita": {
+      "label": "Cosa fare",
+      "title": "Attività nel parco",
+      "items": {
+        "trekking": {
+          "titolo": "Trekking",
+          "testo": "Oltre 100 km di sentieri classificati CAI, per tutti i livelli."
+        },
+        "cervi": {
+          "titolo": "Avvistamento cervi",
+          "testo": "Circa 2.500 cervi sardi liberi nel parco. Settembre è il mese del bramito."
+        },
+        "birdwatching": {
+          "titolo": "Birdwatching",
+          "testo": "Astore sardo, aquila reale, falco pellegrino e oltre 100 specie di uccelli."
+        },
+        "cascate": {
+          "titolo": "Cascate e pozze",
+          "testo": "Il Rio Gutturu Mannu crea piscine naturali e cascate raggiungibili a piedi."
+        },
+        "mountainBike": {
+          "titolo": "Mountain bike",
+          "testo": "Percorsi ciclabili dedicati tra boschi e macchia mediterranea."
+        },
+        "ecomuseo": {
+          "titolo": "Ecomuseo digitale",
+          "testo": "55 siti archeologici mappati: nuraghi, tombe dei giganti, villaggi antichi."
+        }
+      }
+    },
+    "percorsi": {
+      "label": "Escursionismo",
+      "title": "I percorsi principali",
+      "escursionistico": "Escursionistico",
+      "escursionistaEsperto": "Escursionista Esperto",
+      "items": {
+        "d212a": {
+          "codice": "D 212A",
+          "nome": "Is Cannoneris – Su Paganu",
+          "lunghezza": "6,9 km",
+          "durata": "2 ore",
+          "difficolta": "E",
+          "descrizione": "Sentiero adatto a tutti, nel cuore della foresta di Is Cannoneris. Zona privilegiata per avvistare il cervo sardo."
+        },
+        "d215": {
+          "codice": "D 215",
+          "nome": "Pantaleo – Sorgente Is Arrus",
+          "lunghezza": "5,2 km",
+          "durata": "2 ore 30",
+          "difficolta": "E",
+          "descrizione": "Dal centro visita di Pantaleo verso la sorgente naturale, tra lecci secolari e macchia mediterranea."
+        },
+        "d204": {
+          "codice": "D 204",
+          "nome": "Sa Canna – Perdu Melis",
+          "lunghezza": "12 km",
+          "durata": "4 ore 15",
+          "difficolta": "E",
+          "descrizione": "Percorso panoramico con vista sulle gole del Rio Gutturu Mannu. Possibilità di raggiungere le pozze naturali."
+        },
+        "d200": {
+          "codice": "D 200",
+          "nome": "Pixinamanna – Foresta di Pantaleo",
+          "lunghezza": "16,3 km",
+          "durata": "5 ore",
+          "difficolta": "EE",
+          "descrizione": "Il percorso principale del parco. Segue in parte un'antica ferrovia carbonaria attraverso gole, fiumi e boschi di lecci."
+        }
+      },
+      "mappeNote": "Mappe e tracce GPX scaricabili su"
+    },
+    "comeArrivare": {
+      "label": "Come raggiungerci",
+      "title": "Dal nostro hotel al parco",
+      "pixinamanna": {
+        "title": "Porta di Pula · Pixinamanna",
+        "paragrafo": "L'accesso più vicino a Villa Madau, inaugurato nel 2024. Da Pula si percorre la SS195 verso nord, si prende l'uscita per Polaris/Is Molas e si seguono le indicazioni per Pixinamanna, sede del Centro di Cultura Ambientale e punto di partenza dei principali sentieri.",
+        "distanza": "~ 15–20 minuti in auto dall'hotel"
+      },
+      "pantaleo": {
+        "title": "Sede principale · Pantaleo",
+        "paragrafo": "La sede storica del parco è a Pantaleo (Santadi), raggiungibile in circa 40 minuti. Qui si trovano aree picnic, centro visitatori e il punto di partenza del percorso D 200."
+      },
+      "nota": "Il personale di Villa Madau è a disposizione per fornire indicazioni dettagliate e suggerire guide ambientali certificate.",
+      "mapTitle": "Villa Madau Hotel – Via Nora 84, Pula"
+    },
+    "ctaFinale": {
+      "label": "Scopri il parco da Villa Madau",
+      "title": "A pochi minuti dall'hotel, un mondo tutto da esplorare",
+      "paragrafo": "Partiamo insieme: il nostro staff ti aiuta a organizzare la visita, scegliere il percorso giusto e prenotare guide locali.",
+      "contattaci": "Contattaci",
+      "sitoUfficiale": "Sito ufficiale del Parco"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "subtitle": "Villa Madau Boutique Hotel",
+    "title": "Hotel",
+    "imageAlt": "Villa Madau Hotel Pula – primavera"
+  },
+  "intro": {
+    "label": "Pula · Centro storico · Sardegna",
+    "title": "Una vera sorpresa,\ntutta da scoprire",
+    "paragrafo": "Villa Madau non si annuncia. Bisogna cercarlo, girare l'angolo giusto, spingere il cancello tra i vicoli del centro storico di Pula. È lì che il paese si ferma, il tempo rallenta, e un piccolo mondo tutto da scoprire si apre davanti a voi."
+  },
+  "sezione1": {
+    "numero": "01",
+    "label": "La struttura",
+    "title": "Il Boutique Hotel\ntra le vie del centro",
+    "paragrafo1": "Il Boutique Hotel Villa Madau si trova nel cuore del centro storico di Pula, tra le acque cristalline del mare della Sardegna del Sud e la montagna incontaminata costellata di percorsi naturalistici del parco di Gutturu Mannu.",
+    "paragrafo2": "A pochi minuti dalla spiaggia di Nora e la sua città romana; dalle spiagge uniche al mondo di Chia e Tuerredda.",
+    "imageAlt": "Villa Madau Hotel - facciata primavera"
+  },
+  "sezione2": {
+    "numero": "02",
+    "label": "La vita del paese",
+    "title": "I ritmi del\ncentro storico",
+    "paragrafo1": "L'aria di festa paesana che porta l'estate, quel senso di serenità che non si può descrivere — si può solo respirare.",
+    "paragrafo2": "I profumi del pane, l'aria fresca del mattino, il paese che si sveglia piano. Vivere i ritmi di Pula, al centro del Mediterraneo, significa ritrovare qualcosa di autentico. All'ombra della chiesa di San Giovanni Battista si partecipa alle manifestazioni religiose, ci si ferma, ci si guarda intorno. Non sarete turisti — sarete abitanti di Pula.",
+    "imageAlt": "Villa Madau Hotel – Pula"
+  },
+  "sezione3": {
+    "numero": "03",
+    "label": "La colazione",
+    "title": "Nel giardino,\nin piazza, a modo vostro",
+    "paragrafo1": "La colazione a Villa Madau si fa dove si preferisce: nel giardino interno, tra le piante e il fresco del mattino, oppure fuori, nella piazzetta, all'ombra della grande pianta al centro — mentre il paese si sveglia intorno a voi.",
+    "paragrafo2": "È una colazione à la carte, con prodotti sardi scelti ogni giorno: formaggi freschi, salumi locali, dolci artigianali, marmellate di stagione e frutta fresca. Non è un buffet — è una tavola apparecchiata per voi.",
+    "imageAlt": "Colazione Villa Madau - prodotti locali sardi"
+  },
+  "suite": {
+    "label": "35 mq · tutte diverse",
+    "title": "Le dieci suite",
+    "camera1": {
+      "label": "Suite · 35 mq",
+      "title": "Cura nei dettagli",
+      "paragrafo": "Ogni suite è un racconto a sé. Tessuti di lino locale, letti in ferro battuto o legno massello, terracotta sui pavimenti, ceramiche artigianali nel bagno. Il comfort è totale — aria condizionata, WiFi, ogni comodità — ma non si vede. È così che deve essere.",
+      "imageAlt": "Suite Villa Madau – camera 1"
+    },
+    "camera2": {
+      "label": "Suite · 35 mq",
+      "title": "Tutte diverse, mai uguali",
+      "paragrafo": "Nessuna delle dieci suite assomiglia all'altra. C'è quella con la vista sul giardino, quella con il soffitto a travi antiche, quella con il balcone che guarda i tetti di Pula. Ognuna ha la sua personalità, la sua luce, il suo modo di raccontare la Sardegna.",
+      "imageAlt": "Suite Villa Madau – camera 3"
+    },
+    "camera3": {
+      "label": "Suite · 35 mq",
+      "title": "Il silenzio del centro storico",
+      "paragrafo": "Le finestre si affacciano sui vicoli silenziosi del centro antico. La mattina entra piano, filtrata dalle persiane. Il letto è grande, le lenzuola sono di cotone pesante. Dormire a Villa Madau è un piacere che si ricorda.",
+      "imageAlt": "Suite Villa Madau – camera via Nora"
+    },
+    "camera4": {
+      "label": "Suite · 35 mq",
+      "title": "Ogni comfort, naturalmente",
+      "paragrafo": "Aria condizionata silenziosa, bagno privato in pietra locale, WiFi, minibar, cassaforte, asciugamani di spugna densa. Il lusso di Villa Madau è fatto di qualità, non di ostentazione. Quello che serve, nel modo giusto.",
+      "imageAlt": "Suite Villa Madau – dettagli"
+    },
+    "ctaPrenota": "Prenota la tua esperienza"
+  },
+  "ctaFinale": {
+    "label": "Pula, Sardegna meridionale",
+    "title": "Venite a scoprire\nVilla Madau",
+    "paragrafo": "Scriveteci per disponibilità e tariffe. Vi risponderemo entro 24 ore con tutto quello che vi serve per organizzare il vostro soggiorno.",
+    "cta": "Contattaci"
+  }
+}

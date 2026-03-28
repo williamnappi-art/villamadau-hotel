@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "subtitle": "Sardinian tradition",
+    "title": "Our restaurant",
+    "imageAlt": "Federico's Restaurant - Villa Madau Pula",
+    "logoAlt": "Federico's Restaurant",
+    "homeAriaLabel": "Back to homepage – Villa Madau Hotel"
+  },
+  "intro": {
+    "label": "Traditional Sardinian cuisine",
+    "title": "A journey through the flavours of the island",
+    "subtitle": "Every dish tells the story and traditions of southern Sardinia. We use only fresh, local ingredients, selected from the finest producers of the Sulcis and Campidano regions."
+  },
+  "menu": {
+    "iframeTitle": "Federico's Menu",
+    "note": "The menu changes according to the season.",
+    "apriNuovaFinestra": "Open in a new window →"
+  },
+  "colazione": {
+    "label": "Every morning",
+    "title": "Traditional Sardinian breakfast included",
+    "paragrafo": "The day begins with a rich and wholesome breakfast: pane carasau, fresh cheeses, artisan jams, traditional pastries, fruit juices and locally baked goods. An authentic way to start your discovery of Sardinia.",
+    "cta": "Book your stay"
+  }
+}

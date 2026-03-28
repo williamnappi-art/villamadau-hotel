@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "subtitle": "Villa Madau Boutique Hotel",
+    "title": "Hotel",
+    "imageAlt": "Villa Madau Hotel Pula – springtime"
+  },
+  "intro": {
+    "label": "Pula · Historic Centre · Sardinia",
+    "title": "A true surprise,\nwaiting to be discovered",
+    "paragrafo": "Villa Madau doesn't announce itself. You have to seek it out, turn the right corner, push open the gate among the lanes of the historic centre of Pula. That's where the village stands still, time slows down, and a small world waiting to be discovered opens up before you."
+  },
+  "sezione1": {
+    "numero": "01",
+    "label": "The property",
+    "title": "A Boutique Hotel\namong the lanes of the old town",
+    "paragrafo1": "Villa Madau Boutique Hotel is situated in the heart of the historic centre of Pula, between the crystal-clear waters of southern Sardinia's coast and the unspoilt mountains laced with nature trails of Gutturu Mannu park.",
+    "paragrafo2": "Just minutes from the beach of Nora and its Roman ruins; from the world-renowned beaches of Chia and Tuerredda.",
+    "imageAlt": "Villa Madau Hotel - springtime facade"
+  },
+  "sezione2": {
+    "numero": "02",
+    "label": "Village life",
+    "title": "The rhythms of\nthe historic centre",
+    "paragrafo1": "The festive village atmosphere that summer brings, that sense of serenity that cannot be described — it can only be breathed in.",
+    "paragrafo2": "The scent of fresh bread, the cool morning air, the village waking up slowly. Living the rhythms of Pula, at the centre of the Mediterranean, means rediscovering something authentic. In the shadow of the Church of San Giovanni Battista, you join in the religious celebrations, you pause, you look around. You won't be tourists — you'll be residents of Pula.",
+    "imageAlt": "Villa Madau Hotel – Pula"
+  },
+  "sezione3": {
+    "numero": "03",
+    "label": "Breakfast",
+    "title": "In the garden,\nin the piazza, your way",
+    "paragrafo1": "Breakfast at Villa Madau is served wherever you prefer: in the inner garden, among the plants and the cool morning air, or outside in the little piazza, in the shade of the large tree at its centre — while the village wakes up around you.",
+    "paragrafo2": "It's an à la carte breakfast, with Sardinian products chosen fresh each day: local cheeses, artisan cured meats, homemade pastries, seasonal jams and fresh fruit. It's not a buffet — it's a table set just for you.",
+    "imageAlt": "Villa Madau breakfast - local Sardinian products"
+  },
+  "suite": {
+    "label": "35 sqm · each one unique",
+    "title": "The ten suites",
+    "camera1": {
+      "label": "Suite · 35 sqm",
+      "title": "Attention to detail",
+      "paragrafo": "Each suite tells its own story. Local linen fabrics, wrought-iron or solid-wood beds, terracotta floors, handcrafted ceramics in the bathroom. The comfort is total — air conditioning, WiFi, every amenity — but it doesn't show. That's exactly how it should be.",
+      "imageAlt": "Villa Madau Suite – room 1"
+    },
+    "camera2": {
+      "label": "Suite · 35 sqm",
+      "title": "All different, never the same",
+      "paragrafo": "No two of the ten suites are alike. There's the one overlooking the garden, the one with the ancient wooden-beam ceiling, the one with the balcony looking out over the rooftops of Pula. Each has its own personality, its own light, its own way of telling the story of Sardinia.",
+      "imageAlt": "Villa Madau Suite – room 3"
+    },
+    "camera3": {
+      "label": "Suite · 35 sqm",
+      "title": "The silence of the historic centre",
+      "paragrafo": "The windows look out onto the quiet lanes of the old town. Morning light enters gently, filtered through the shutters. The bed is large, the sheets are heavyweight cotton. Sleeping at Villa Madau is a pleasure you'll remember.",
+      "imageAlt": "Villa Madau Suite – Via Nora room"
+    },
+    "camera4": {
+      "label": "Suite · 35 sqm",
+      "title": "Every comfort, naturally",
+      "paragrafo": "Silent air conditioning, private bathroom in local stone, WiFi, minibar, safe, thick plush towels. The luxury of Villa Madau is made of quality, not ostentation. Everything you need, done the right way.",
+      "imageAlt": "Villa Madau Suite – details"
+    },
+    "ctaPrenota": "Book your experience"
+  },
+  "ctaFinale": {
+    "label": "Pula, southern Sardinia",
+    "title": "Come and discover\nVilla Madau",
+    "paragrafo": "Write to us for availability and rates. We will reply within 24 hours with everything you need to plan your stay.",
+    "cta": "Contact us"
+  }
+}

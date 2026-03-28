@@ -16,11 +16,11 @@ type ButtonProps = {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary text-white hover:bg-primary-600 focus-visible:outline-primary',
+    'bg-primary text-[#1e1c18] hover:bg-primary-600 focus-visible:outline-primary',
   outline:
-    'border-2 border-primary text-primary hover:bg-primary hover:text-white focus-visible:outline-primary',
+    'border-2 border-primary text-primary hover:bg-primary hover:text-[#1e1c18] focus-visible:outline-primary',
   white:
-    'bg-white text-primary hover:bg-cream focus-visible:outline-white',
+    'bg-white text-[#1e1c18] hover:bg-cream focus-visible:outline-white',
 }
 
 export function Button({

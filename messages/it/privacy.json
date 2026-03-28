@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "label": "Regolamento UE 2016/679",
+    "title": "Privacy Policy",
+    "subtitle": "Informativa sul trattamento dei dati personali ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR)",
+    "ultimoAggiornamento": "Ultimo aggiornamento: marzo 2026"
+  },
+  "titolare": {
+    "articolo": "Art. 13, comma 1, lett. a)",
+    "title": "Titolare del trattamento",
+    "intro": "Il Titolare del trattamento dei dati personali raccolti tramite il sito {url} è:",
+    "emailLabel": "Email:",
+    "telefonoLabel": "Telefono:"
+  },
+  "datiRaccolti": {
+    "articolo": "Art. 13, comma 1, lett. c)",
+    "title": "Dati raccolti",
+    "volontari": {
+      "title": "Dati forniti volontariamente",
+      "testo": "Quando compili il modulo di contatto o ci invii un'email, raccogliamo i dati che ci fornisci direttamente: nome, indirizzo email, numero di telefono e il contenuto del messaggio. Questi dati sono trattati esclusivamente per rispondere alla tua richiesta e, previo tuo consenso, per inviarti comunicazioni relative ai servizi dell'hotel."
+    },
+    "navigazione": {
+      "title": "Dati di navigazione",
+      "testo": "I sistemi informatici e le procedure software preposte al funzionamento del sito acquisiscono, nel corso del loro normale esercizio, alcuni dati personali la cui trasmissione è implicita nell'uso dei protocolli di comunicazione Internet (es. indirizzi IP, tipo di browser, sistema operativo, pagine visitate, orari di accesso)."
+    }
+  },
+  "googleAnalytics": {
+    "label": "Cookie analitici",
+    "title": "Google Analytics",
+    "paragrafo1": "Questo sito utilizza Google Analytics 4 (GA4), un servizio di analisi web fornito da Google LLC. GA4 utilizza cookie per raccogliere informazioni anonime e aggregate sull'utilizzo del sito, tra cui: numero di visitatori, provenienza, pagine visualizzate, durata delle sessioni e interazioni con i contenuti.",
+    "paragrafo2": "I dati sono trattati da Google in forma aggregata e anonimizzata. L'indirizzo IP dell'utente non viene memorizzato per intero. Per maggiori informazioni consulta la",
+    "privacyPolicyGoogle": "privacy policy di Google",
+    "paragrafo3": "Puoi disattivare Google Analytics installando il",
+    "componenteAggiuntivo": "componente aggiuntivo del browser per la disattivazione"
+  },
+  "googleAds": {
+    "label": "Cookie pubblicitari",
+    "title": "Google Ads",
+    "paragrafo1": "Questo sito utilizza i servizi di Google Ads e il relativo sistema di monitoraggio delle conversioni. Quando un utente interagisce con un annuncio Google, viene installato un cookie di conversione sul suo dispositivo. Questo cookie non serve per l'identificazione personale e viene utilizzato esclusivamente per misurare l'efficacia delle campagne pubblicitarie.",
+    "paragrafo2": "I dati raccolti tramite Google Ads possono includere: interazione con gli annunci, pagine di destinazione visitate e azioni completate (es. richiesta di prenotazione). Per maggiori informazioni e per la gestione delle preferenze pubblicitarie, visita la pagina",
+    "impostazioniAnnunci": "Impostazioni annunci di Google"
+  },
+  "cookieUtilizzati": {
+    "label": "Tipologie di cookie",
+    "title": "Cookie utilizzati",
+    "necessari": {
+      "title": "Cookie necessari",
+      "testo": "Essenziali per il funzionamento del sito. Includono cookie tecnici per la gestione della sessione e delle preferenze di consenso. Non richiedono il consenso dell'utente e non possono essere disattivati."
+    },
+    "analitici": {
+      "title": "Cookie analitici",
+      "testo": "Utilizzati da Google Analytics 4 per raccogliere dati statistici anonimi sulla navigazione. Ci aiutano a capire come i visitatori interagiscono con il sito, quali pagine sono più visitate e come migliorare l'esperienza utente.",
+      "ga": "_ga — Identificativo utente anonimo · Durata: 2 anni",
+      "gaStar": "_ga_* — Persistenza sessione GA4 · Durata: 2 anni"
+    },
+    "marketing": {
+      "title": "Cookie di marketing",
+      "testo": "Installati da Google Ads per tracciare le conversioni pubblicitarie e mostrare annunci pertinenti. Questi cookie possono essere utilizzati per creare un profilo dei tuoi interessi e mostrarti pubblicità rilevanti su altri siti.",
+      "gclAu": "_gcl_au — Monitoraggio conversioni Google Ads · Durata: 90 giorni",
+      "ide": "IDE — Remarketing e conversioni DoubleClick · Durata: 13 mesi"
+    }
+  },
+  "dirittiUtente": {
+    "articolo": "GDPR — Artt. 15–22",
+    "title": "Diritti dell'utente",
+    "intro": "In qualità di interessato, ai sensi degli articoli 15-22 del Regolamento (UE) 2016/679, hai il diritto di:",
+    "diritti": {
+      "accesso": {
+        "title": "Diritto di accesso (art. 15)",
+        "desc": "Ottenere conferma che sia o meno in corso un trattamento di dati personali che ti riguardano e, in tal caso, ottenerne copia."
+      },
+      "rettifica": {
+        "title": "Diritto di rettifica (art. 16)",
+        "desc": "Ottenere la rettifica dei dati personali inesatti che ti riguardano senza ingiustificato ritardo."
+      },
+      "cancellazione": {
+        "title": "Diritto alla cancellazione (art. 17)",
+        "desc": "Ottenere la cancellazione dei dati personali che ti riguardano, quando non siano più necessari rispetto alle finalità per le quali sono stati raccolti."
+      },
+      "limitazione": {
+        "title": "Diritto di limitazione (art. 18)",
+        "desc": "Ottenere la limitazione del trattamento quando contesti l'esattezza dei dati o il trattamento sia illecito."
+      },
+      "portabilita": {
+        "title": "Diritto alla portabilità (art. 20)",
+        "desc": "Ricevere i dati personali che ti riguardano in un formato strutturato, di uso comune e leggibile da dispositivo automatico."
+      },
+      "opposizione": {
+        "title": "Diritto di opposizione (art. 21)",
+        "desc": "Opporsi in qualsiasi momento al trattamento dei dati personali che ti riguardano, compresa la profilazione."
+      }
+    },
+    "reclamo": "Hai inoltre il diritto di proporre reclamo all'autorità di controllo competente (Garante per la Protezione dei Dati Personali —",
+    "garanteUrl": "www.garanteprivacy.it"
+  },
+  "gestioneCookie": {
+    "label": "Gestione dei cookie",
+    "title": "Come modificare le preferenze cookie",
+    "intro": "Puoi modificare le tue preferenze sui cookie in qualsiasi momento attraverso le impostazioni del tuo browser. Di seguito le istruzioni per i browser più diffusi:",
+    "browser": {
+      "chrome": "Google Chrome",
+      "firefox": "Mozilla Firefox",
+      "safari": "Apple Safari",
+      "edge": "Microsoft Edge"
+    },
+    "nota": "Tieni presente che la disattivazione di alcuni cookie potrebbe limitare la funzionalità del sito web."
+  },
+  "contattiPrivacy": {
+    "label": "Richieste privacy",
+    "title": "Hai domande sul trattamento\ndei tuoi dati?",
+    "paragrafo": "Per esercitare i tuoi diritti o per qualsiasi richiesta relativa al trattamento dei tuoi dati personali, puoi contattarci direttamente.",
+    "ctaPrefix": "Scrivi a",
+    "infoFooter": "{address} · Tel. {phone}"
+  }
+}

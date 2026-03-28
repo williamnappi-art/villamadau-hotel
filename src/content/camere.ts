@@ -32,7 +32,7 @@ export const camere: Camera[] = [
       'Asciugacapelli',
       'Set cortesia',
     ],
-    immagine: '/images/hotel-1.jpg',
+    immagine: '/images/hotel-1.webp',
     immagineAlt: 'Camera Standard Villa Madau Hotel Pula',
   },
   {
@@ -57,7 +57,7 @@ export const camere: Camera[] = [
       'Asciugacapelli',
       'Set cortesia',
     ],
-    immagine: '/images/hotel-2.jpg',
+    immagine: '/images/hotel-2.webp',
     immagineAlt: 'Camera Superior Villa Madau Hotel Pula - vista centro storico',
   },
   {
@@ -84,7 +84,7 @@ export const camere: Camera[] = [
       'Set cortesia premium',
       'Accappatoio e pantofole',
     ],
-    immagine: '/images/mare-sardegna.jpg',
+    immagine: '/images/mare-sardegna.webp',
     immagineAlt: 'Suite Villa Madau Hotel Pula - terrazza privata',
   },
 ]

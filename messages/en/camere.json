@@ -1,0 +1,64 @@
+{
+  "camere": {
+    "standard": {
+      "nome": "Standard Room",
+      "sottotitolo": "Comfort in the historic centre",
+      "descrizione": "The Standard Room at Villa Madau is the perfect starting point for discovering Pula and southern Sardinia. Welcoming and practical, it offers everything you need for a comfortable stay. The private balcony invites you to enjoy the tranquillity of the historic centre, while the carefully chosen furnishings reflect the island's traditions.",
+      "descrizioneBreve": "Welcoming room with private balcony, air conditioning and all essential comforts.",
+      "immagineAlt": "Standard Room Villa Madau Hotel Pula",
+      "dotazioni": [
+        "Double or twin beds (on request)",
+        "Private bathroom with shower",
+        "Air conditioning",
+        "Private balcony",
+        "LED TV",
+        "Free WiFi",
+        "Safe",
+        "Hairdryer",
+        "Courtesy toiletry set"
+      ]
+    },
+    "superior": {
+      "nome": "Superior Room",
+      "sottotitolo": "Panoramic view of the historic centre",
+      "descrizione": "The Superior Room offers a more generous space than the Standard, enhanced by a panoramic view of the charming historic centre of Pula. The spacious balcony is the ideal spot to enjoy a morning coffee while admiring the rooftops and lanes of the old village. Furnished with care and attention to detail, it is perfect for those seeking a special stay.",
+      "descrizioneBreve": "Spacious with a panoramic balcony and views over the historic centre of Pula.",
+      "immagineAlt": "Superior Room Villa Madau Hotel Pula - historic centre view",
+      "dotazioni": [
+        "Double or twin beds (on request)",
+        "Private bathroom with shower",
+        "Air conditioning",
+        "Panoramic balcony",
+        "Historic centre view",
+        "40\" LED TV",
+        "Free WiFi",
+        "Safe",
+        "Refrigerator",
+        "Hairdryer",
+        "Courtesy toiletry set"
+      ]
+    },
+    "suite": {
+      "nome": "Suite",
+      "sottotitolo": "Ultimate comfort with a private terrace",
+      "descrizione": "Our Suite is the most exclusive option: spacious, bright, with a private terrace overlooking the rooftops of the historic centre of Pula and the green Sardinian countryside. The separate lounge area makes it ideal for couples seeking romance or families. Every detail is designed to give you an unforgettable experience in Sardinia.",
+      "descrizioneBreve": "Spacious with private terrace, lounge area and panoramic views. The exclusive choice.",
+      "immagineAlt": "Suite Villa Madau Hotel Pula - private terrace",
+      "dotazioni": [
+        "King-size bed",
+        "Private bathroom with bathtub and shower",
+        "Air conditioning",
+        "Private terrace",
+        "Panoramic view",
+        "Lounge area",
+        "50\" LED TV",
+        "Free WiFi",
+        "Safe",
+        "Minibar",
+        "Hairdryer",
+        "Premium courtesy toiletry set",
+        "Bathrobe and slippers"
+      ]
+    }
+  }
+}

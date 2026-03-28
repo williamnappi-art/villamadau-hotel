@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "subtitle": "Villa Madau Boutique Hotel",
+    "title1": "The sea,",
+    "title2": "within easy reach",
+    "imageAlt": "Villa Madau Hotel – Pula, Sardinia"
+  },
+  "intro": {
+    "label": "The most beautiful beaches of southern Sardinia",
+    "paragrafo": "Pula is the ideal base for exploring some of the most stunning coastlines in the Mediterranean. Nora, Chia, Tuerredda: masterpieces of nature just minutes away. And after a day at the beach, Villa Madau awaits you with a cool room, an aperitif and a dinner that tastes of Sardinia."
+  },
+  "spiagge": {
+    "nora": {
+      "nome": "Nora",
+      "distanza": "3 min by car",
+      "alt": "Nora Beach – Villa Madau Hotel, Pula",
+      "testo": "Three minutes from the hotel, one of the most evocative beaches in the Mediterranean opens up before you. Nora is a truly unique place: shallow, crystal-clear emerald waters, fine white sand, and behind you the ruins of an ancient Phoenician-Roman city emerging directly from the sea. You can swim out to the ruins, where the seabed reveals amphorae, mosaics and submerged columns. A place you won't forget."
+    },
+    "chia": {
+      "nome": "Chia",
+      "distanza": "15 min by car",
+      "alt": "Chia Beach – near Villa Madau Hotel, Pula",
+      "testo": "A fifteen-minute drive reveals the wild landscape of Chia: tall dunes covered with ancient juniper trees, shallow waters ideal for families, a lagoon with flamingos and herons. The beach of Su Giudeu, with its island reachable by wading, is among the most photographed in Sardinia. The mistral winds make it perfect for windsurfing too."
+    },
+    "tuerredda": {
+      "nome": "Tuerredda",
+      "distanza": "20 min by car",
+      "alt": "Tuerredda Beach – near Villa Madau Hotel",
+      "testo": "Twenty minutes and you arrive at what many consider the most beautiful beach in southern Sardinia. Tuerredda is a small bay enclosed between two rocky headlands, with Caribbean-coloured waters and an island just metres from the shore. The waters are crystal clear, the seabed slopes gently — ideal for snorkelling and swimming."
+    }
+  },
+  "stacco": {
+    "label": "After the beach",
+    "testo": "At the end of a day of sun and sea, there's nothing better than returning to your room — cool, quiet, with every comfort you need. An aperitif, a Sardinian dinner, and the rest you've earned."
+  },
+  "serviziGrid": {
+    "label": "At the hotel",
+    "title": "All included",
+    "items": {
+      "wifi": {
+        "titolo": "Free WiFi",
+        "descrizione": "High-speed internet throughout all hotel areas, from your room to the common spaces. Always included in your stay."
+      },
+      "parking": {
+        "titolo": "Free Parking",
+        "descrizione": "Private parking reserved for hotel guests. You can leave your car safely for the entire duration of your stay."
+      },
+      "snowflake": {
+        "titolo": "Air Conditioning",
+        "descrizione": "All rooms are equipped with independent climate control to ensure maximum comfort in every season."
+      },
+      "car": {
+        "titolo": "Car Rental",
+        "descrizione": "Car rental service available to explore the wonders of southern Sardinia: beaches, nuraghi and charming villages."
+      },
+      "coffee": {
+        "titolo": "Sardinian Breakfast",
+        "descrizione": "Every morning a breakfast with local Sardinian products awaits you: cheeses, cured meats, traditional pastries and pane carasau."
+      },
+      "map": {
+        "titolo": "Tourist Assistance",
+        "descrizione": "Our staff is at your disposal to recommend excursions, itineraries and the best restaurants in the Sulcis area."
+      }
+    }
+  },
+  "ctaFinale": {
+    "label": "Book your stay",
+    "title": "We look forward to welcoming you in Pula",
+    "cta": "Contact us"
+  }
+}

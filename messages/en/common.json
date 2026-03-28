@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "Home",
+    "hotel": "Hotel",
+    "ristorante": "Restaurant",
+    "servizi": "Services",
+    "daNonPerdere": "Don't Miss",
+    "contatti": "Contact",
+    "camere": "Rooms",
+    "ariaLabel": "Main navigation"
+  },
+  "cta": {
+    "prenotaOra": "Book now",
+    "reservation": "Reservation",
+    "contattaci": "Contact us"
+  },
+  "hero": {
+    "logoAlt": "Villa Madau Hotel",
+    "homeAriaLabel": "Villa Madau Hotel – back to homepage",
+    "mobileSubtitle": "Villamadau Boutique Hotel",
+    "ariaLabelBenvenuti": "Welcome to Villa Madau Hotel"
+  },
+  "mobileNav": {
+    "apriMenu": "Open menu",
+    "chiudiMenu": "Close menu",
+    "tornaAllaHome": "Back to homepage"
+  },
+  "footer": {
+    "navigazione": "Navigation",
+    "doveSiamo": "Where we are",
+    "checkinCheckout": "Check-in: {checkin} · Check-out: {checkout}",
+    "vediSuGoogleMaps": "View on Google Maps →",
+    "privacyPolicy": "Privacy Policy",
+    "gestisciCookie": "Manage cookies",
+    "copyright": "© {year} {hotelName} – {address} – VAT number to be added",
+    "facebookAriaLabel": "Facebook Villa Madau",
+    "instagramAriaLabel": "Instagram Villa Madau",
+    "facebook": "Facebook",
+    "instagram": "Instagram"
+  },
+  "cookieBanner": {
+    "testo": "We use cookies to improve your experience on our website. You can accept all cookies, keep only the essential ones, or customise your preferences.",
+    "informativaPrivacy": "Privacy policy",
+    "cookieNecessari": "Necessary cookies (always active)",
+    "cookieAnalitici": "Analytics cookies",
+    "cookieMarketing": "Marketing cookies",
+    "accettaTutti": "Accept all",
+    "soloNecessari": "Only necessary",
+    "salvaPreferenze": "Save preferences",
+    "personalizza": "Customise"
+  },
+  "scrollToTop": {
+    "ariaLabel": "Back to top"
+  },
+  "carousel": {
+    "precedente": "Previous",
+    "successivo": "Next",
+    "cardAriaLabel": "Card {number}"
+  }
+}

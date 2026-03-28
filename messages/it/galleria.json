@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "label": "Immagini",
+    "title": "Galleria fotografica",
+    "subtitle": "Scopri Villa Madau e i dintorni di Pula attraverso le nostre foto."
+  },
+  "filtri": {
+    "tutte": "Tutte",
+    "esterno": "Esterno",
+    "ristorante": "Ristorante",
+    "dintorni": "Dintorni"
+  },
+  "immagini": {
+    "hero": {
+      "alt": "Villa Madau Hotel Pula - vista primaverile",
+      "categoria": "Esterno"
+    },
+    "hotel1": {
+      "alt": "Villa Madau Hotel - dettaglio architettura",
+      "categoria": "Esterno"
+    },
+    "hotel2": {
+      "alt": "Villa Madau Hotel - ingresso",
+      "categoria": "Esterno"
+    },
+    "ristorante": {
+      "alt": "Ristorante Villa Madau - cucina tipica sarda",
+      "categoria": "Ristorante"
+    },
+    "chia": {
+      "alt": "Spiaggia di Chia - Sardegna meridionale",
+      "categoria": "Dintorni"
+    },
+    "mare": {
+      "alt": "Mare della Sardegna meridionale - vista aerea",
+      "categoria": "Dintorni"
+    }
+  },
+  "lightbox": {
+    "apriFoto": "Apri foto: {alt}",
+    "chiudi": "Chiudi"
+  }
+}
