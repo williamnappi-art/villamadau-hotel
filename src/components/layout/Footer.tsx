@@ -5,7 +5,7 @@ import { CookieSettingsButton } from '@/components/ui/CookieBanner'
 import { getTranslations } from 'next-intl/server'
 
 const links = [
-  { href: '/camere' as const, key: 'camere' },
+  { href: '/hotel' as const, key: 'hotel' },
   { href: '/ristorante' as const, key: 'ristorante' },
   { href: '/servizi' as const, key: 'servizi' },
   { href: '/da-non-perdere' as const, key: 'daNonPerdere' },
@@ -17,7 +17,7 @@ export async function Footer() {
   const schema = generateLocalBusinessSchema()
 
   return (
-    <footer className="bg-gray-900 text-gray-400">
+    <footer className="text-white/75" style={{ backgroundColor: '#c96148' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -91,20 +91,20 @@ export async function Footer() {
               href={HOTEL.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-3 text-sm text-primary-300 hover:text-primary-200 transition-colors"
+              className="inline-block mt-3 text-sm hover:text-white transition-colors"
             >
               {t('footer.vediSuGoogleMaps')}
             </a>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-10 pt-6 text-xs text-gray-600 text-center space-y-2">
+        <div className="border-t border-white/20 mt-10 pt-6 text-xs text-white/40 text-center space-y-2">
           <div className="flex items-center justify-center gap-3">
             <Link href="/privacy" className="hover:text-white transition-colors">
               {t('footer.privacyPolicy')}
             </Link>
             <span aria-hidden>·</span>
-            <CookieSettingsButton className="text-xs text-gray-600 hover:text-white transition-colors cursor-pointer" />
+            <CookieSettingsButton className="text-xs text-white/40 hover:text-white transition-colors cursor-pointer" />
           </div>
           <p>
             {t('footer.copyright', { year: new Date().getFullYear().toString(), hotelName: HOTEL.name, address: HOTEL.address.full })}
