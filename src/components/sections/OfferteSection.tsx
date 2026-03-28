@@ -31,7 +31,7 @@ const itemData: ItemData[] = [
     tipo: 'evento',
     bigItalic: true,
     href: '/sant-efisio',
-    image: '/images/sant-efisio-hotel.webp',
+    image: '/images/piazza-chiesa-pula.webp',
   },
   {
     id: 'autunno',

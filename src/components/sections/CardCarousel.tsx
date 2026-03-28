@@ -7,11 +7,12 @@ import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const cardData = [
-  { id: 'hotel',      image: '/images/hotel-primavera.webp',     href: '/hotel' },
-  { id: 'ristorante', image: '/images/ristorante.webp',          href: '/ristorante' },
-  { id: 'chia',       image: '/images/chia-villamadau.webp',      href: '/servizi' },
-  { id: 'mare',       image: '/images/mare-vista-aerea.webp',     href: '/galleria' },
-  { id: 'gutturu',    image: '/images/gutturu-mannu-cervo.webp',  href: '/gutturu-mannu' },
+  { id: 'hotel',       image: '/images/hotel-primavera.webp',     href: '/hotel' },
+  { id: 'ristorante',  image: '/images/ristorante.webp',          href: '/ristorante' },
+  { id: 'santEfisio',  image: '/images/sant-efisio-piazza.jpg',   href: '/sant-efisio' },
+  { id: 'chia',        image: '/images/chia-villamadau.webp',      href: '/servizi' },
+  { id: 'mare',        image: '/images/mare-vista-aerea.webp',     href: '/galleria' },
+  { id: 'gutturu',     image: '/images/gutturu-mannu-cervo.webp',  href: '/gutturu-mannu' },
 ] as const
 
 const N = cardData.length
@@ -71,7 +72,7 @@ export function CardCarousel() {
   const rightCard  = cards[next]
 
   return (
-    <section id="carousel" className="py-16 overflow-hidden">
+    <section id="carousel" className="py-16 overflow-hidden" style={{ backgroundColor: '#c4cac3' }}>
       <div className="relative mx-auto px-4 md:max-w-2xl">
 
         {/* prospettiva 3D sul contenitore */}
@@ -143,7 +144,7 @@ export function CardCarousel() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="mt-5 text-center px-2"
               >
-                <h3 className="font-serif text-2xl text-primary mb-2">
+                <h3 className="font-serif text-2xl text-[#1e1c18] mb-2">
                   {activeCard.title}
                 </h3>
                 {activeCard.description && (
@@ -188,7 +189,7 @@ export function CardCarousel() {
           <button
             onClick={goPrev}
             aria-label={t('precedente')}
-            className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-colors"
+            className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-[#1e1c18] hover:text-[#1e1c18] transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -202,7 +203,7 @@ export function CardCarousel() {
                 onClick={() => { setDir(i > active ? 1 : -1); setActive(i) }}
                 aria-label={`Card ${i + 1}`}
                 className={`h-1.5 rounded-full transition-all duration-500 ${
-                  i === active ? 'w-5 bg-primary' : 'w-1.5 bg-gray-300'
+                  i === active ? 'w-5 bg-[#1e1c18]' : 'w-1.5 bg-[#1e1c18]/30'
                 }`}
               />
             ))}
@@ -211,7 +212,7 @@ export function CardCarousel() {
           <button
             onClick={goNext}
             aria-label={t('successivo')}
-            className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-colors"
+            className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-[#1e1c18] hover:text-[#1e1c18] transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
