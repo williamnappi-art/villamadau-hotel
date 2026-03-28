@@ -4,7 +4,7 @@ Questo file fornisce indicazioni a Claude Code (claude.ai/code) per lavorare con
 
 ## Panoramica del Progetto
 
-Sito web **Next.js 15** (App Router, TypeScript) per **Villa Madau Hotel** – hotel 3 stelle nel centro storico di Pula (CA), Sardegna. Il sito live corrente è `villamadau.it`.
+Sito web **Next.js 15.5** (App Router, TypeScript) per **Villa Madau Hotel** – hotel 3 stelle nel centro storico di Pula (CA), Sardegna. Il sito live corrente e' `villamadau.it`. Sito bilingue IT/EN.
 
 ## Comandi principali
 
@@ -18,62 +18,113 @@ npm start        # avvia il server di produzione (dopo build)
 ## Architettura
 
 ### Stack
-- **Framework**: Next.js 15 App Router + TypeScript
-- **Styling**: Tailwind CSS v3 — colore brand `#2c5f2d` configurato come `primary`
-- **Font**: Playfair Display (serif, `--font-playfair`) + Lato (sans, `--font-lato`) via `next/font/google`
-- **Animazioni**: Framer Motion — usato solo per menu mobile e lightbox galleria
+- **Framework**: Next.js 15.5 App Router + TypeScript
+- **Styling**: Tailwind CSS v3 — colore brand oro sabbia `#c4b99a` configurato come `primary`
+- **Font**: Cormorant Garamond (serif, `--font-cormorant`) + DM Sans (sans, `--font-dm-sans`) via `next/font/google`
+- **Animazioni**: Framer Motion — transizione fade tra pagine (template.tsx), menu mobile fullscreen con clip-path circolare, carosello 3D, offerte auto-rotate
 - **Form**: React Hook Form + Zod
 - **Email**: Resend (richiede `RESEND_API_KEY` in `.env.local`)
+- **i18n**: next-intl — italiano (default, senza prefisso URL) + inglese (/en/)
+- **Immagini**: tutte in WebP, video in MP4 H.264 (compressi a 3 MB ciascuno)
 
 ### Struttura chiave
 
 ```
 src/
-├── app/                        # Pagine App Router
-│   ├── layout.tsx              # Root layout: font, metadata globali, Header/Footer, JSON-LD Hotel
-│   ├── page.tsx                # Homepage
-│   ├── camere/page.tsx         # Lista camere
-│   ├── camere/[slug]/page.tsx  # Dettaglio camera (SSG via generateStaticParams)
-│   ├── ristorante/page.tsx
-│   ├── servizi/page.tsx
-│   ├── galleria/               # page.tsx (server) + GalleriaClient.tsx (lightbox, 'use client')
-│   ├── contatti/page.tsx
+├── app/
+│   ├── layout.tsx              # Root layout minimo (solo children)
+│   ├── globals.css             # Stili globali, bg-[#1e1c18]
+│   ├── sitemap.ts              # Sitemap bilingue (IT + EN)
+│   ├── robots.ts               # Attualmente disallow: '/' (da sbloccare al lancio)
 │   ├── api/contatto/route.ts   # POST: valida dati e invia email via Resend
-│   ├── sitemap.ts              # sitemap.xml generata automaticamente
-│   └── robots.ts
+│   └── [locale]/               # Routing multilingua
+│       ├── layout.tsx          # Layout locale: html lang, font, metadata, NextIntlClientProvider
+│       ├── template.tsx        # Transizione fade tra pagine (framer-motion, 'use client')
+│       ├── page.tsx            # Homepage
+│       ├── hotel/page.tsx
+│       ├── ristorante/page.tsx
+│       ├── servizi/page.tsx
+│       ├── contatti/page.tsx
+│       ├── galleria/           # page.tsx (server) + GalleriaClient.tsx (lightbox, 'use client')
+│       ├── da-non-perdere/page.tsx
+│       ├── sant-efisio/page.tsx
+│       ├── domus-antigas/page.tsx
+│       ├── pasqua-a-pula/page.tsx
+│       ├── gutturu-mannu/page.tsx
+│       └── privacy/page.tsx
+├── i18n/
+│   ├── routing.ts              # Locales: ['it', 'en'], defaultLocale: 'it', localePrefix: 'as-needed'
+│   ├── request.ts              # Carica i JSON delle traduzioni per namespace
+│   └── navigation.ts           # Link, usePathname, useRouter locale-aware
+├── middleware.ts                # Middleware next-intl per locale detection
 ├── components/
-│   ├── layout/                 # Header (server), Footer (server + LocalBusiness schema), MobileNav ('use client')
-│   ├── sections/               # Tutti server components: Hero, CamerePreview, Servizi, Ristorante, Location
-│   ├── ui/                     # Button, SectionTitle
+│   ├── layout/
+│   │   ├── Header.tsx          # Server component async, nav + LanguageSwitcher
+│   │   ├── Footer.tsx          # Server component async, link privacy + gestisci cookie
+│   │   ├── ConditionalHeader.tsx # Client: mostra Header solo su pagine senza hero
+│   │   └── MobileNav.tsx       # Client: menu fullscreen con clip-path circolare
+│   ├── sections/
+│   │   ├── HeroSection.tsx     # Home hero (video di sfondo)
+│   │   ├── HotelHero.tsx, ServiziHero.tsx, ContattiHero.tsx, RistoranteHero.tsx
+│   │   ├── DaNonPerdereHero.tsx, DomusAntigasHero.tsx, SantEfisioHero.tsx, PasquaHero.tsx
+│   │   ├── HeroMobileMenu.tsx  # Client: hamburger + menu fullscreen per hero
+│   │   ├── CardCarousel.tsx    # Client: carosello 3D con auto-advance
+│   │   ├── OfferteSection.tsx  # Client: offerte con auto-rotate
+│   │   ├── RistoranteSection.tsx, LocationSection.tsx  # Server components
+│   │   └── HomeScrollSnap.tsx  # Scroll behavior
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── SectionTitle.tsx
+│   │   ├── ScrollToTop.tsx
+│   │   ├── CookieBanner.tsx    # GDPR: Consent Mode v2, salva in localStorage (180 giorni)
+│   │   └── LanguageSwitcher.tsx # Bandierine SVG IT/EN
 │   └── forms/ContactForm.tsx   # 'use client' — react-hook-form + Zod
 ├── content/
-│   ├── camere.ts               # Array `camere[]` con slug, descrizione, dotazioni, immagini
-│   └── servizi.ts              # Array `servizi[]` con icone
+│   ├── camere.ts               # Dati camere (slug, mq, occupazione, immagine)
+│   └── servizi.ts              # Dati servizi (icone)
 └── lib/
-    ├── hotel.config.ts         # Costanti: nome, indirizzo, contatti, coordinate, attrazioni vicine
-    └── schema.ts               # Generatori JSON-LD: Hotel, HotelRoom, LocalBusiness, BreadcrumbList
+    ├── hotel.config.ts         # Costanti: nome, indirizzo, contatti, coordinate, URL
+    └── schema.ts               # JSON-LD: Hotel, HotelRoom, LocalBusiness, BreadcrumbList
+
+messages/
+├── it/                         # 11 file JSON con tutte le stringhe italiane
+│   ├── common.json             # Nav, footer, CTA, cookie banner
+│   ├── metadata.json           # Titoli e descrizioni SEO
+│   ├── home.json, hotel.json, ristorante.json, servizi.json
+│   ├── camere.json, contatti.json, eventi.json, galleria.json, privacy.json
+└── en/                         # 11 file JSON con traduzioni inglesi (stessa struttura)
 ```
 
-### Immagini
-Le foto originali (con spazi nei nomi) rimangono in `images/`. Quelle usate dall'app sono in `public/images/` con nomi puliti: `hero.png`, `hotel-1.jpg`, `hotel-2.jpg`, `ristorante.jpg`, `sardegna-chia.jpg`, `mare-sardegna.jpg`.
+### Traduzioni (next-intl)
+- **Server components**: usare `getTranslations('namespace')` da `next-intl/server`
+- **Client components**: usare `useTranslations('namespace')` da `next-intl`
+- **Link**: usare `Link` da `@/i18n/navigation` (non da `next/link`)
+- **Pathname**: usare `usePathname` da `@/i18n/navigation` (restituisce path senza prefisso locale)
+- **Ogni page.tsx** deve avere `setRequestLocale(locale)` e accettare `params: Promise<{ locale: string }>`
+- I namespace corrispondono ai nomi dei file JSON: `common`, `home`, `hotel`, `eventi`, ecc.
+
+### Immagini e video
+Tutte le immagini sono in `public/images/` in formato WebP (1920px max). I video sono in MP4 H.264 (~3 MB ciascuno, senza audio, con faststart per streaming). Il logo (`logo.png`) e il logo Federico's (`logo-federicos.gif`) restano nei formati originali.
 
 ### SEO
-- Ogni `page.tsx` esporta `metadata` statici o `generateMetadata()`
-- JSON-LD `Hotel` in `layout.tsx`, `LocalBusiness` in `Footer.tsx`, `HotelRoom` + `BreadcrumbList` nelle pagine camera
-- Sitemap autogenerata da `src/app/sitemap.ts`, robots da `src/app/robots.ts`
+- Ogni `page.tsx` esporta `metadata` con title, description, canonical, openGraph
+- JSON-LD `Hotel` nel layout, `BreadcrumbList` nelle singole pagine
+- Sitemap bilingue autogenerata
+- 21 redirect 301 dal vecchio sito Flazio configurati in `next.config.ts`
+- robots.ts attualmente in `disallow: '/'` — da cambiare quando il sito e' pronto
+
+### Cookie e tracking
+- Cookie banner GDPR con Consent Mode v2 (accetta/rifiuta/personalizza)
+- Predisposto per GTM: manca solo l'ID (`GTM-XXXXXXX`) da configurare
+- Le preferenze cookie scadono dopo 180 giorni
 
 ### Aggiungere contenuti
-- **Nuova camera**: aggiungere oggetto in `src/content/camere.ts` con `slug` univoco + immagine in `public/images/`
-- **Nuovo servizio**: aggiungere in `src/content/servizi.ts` e il relativo SVG icon in `ServiziSection.tsx` e `servizi/page.tsx`
+- **Nuova camera**: aggiungere in `src/content/camere.ts` + tradurre in `messages/it/camere.json` e `messages/en/camere.json`
+- **Nuovo servizio**: aggiungere in `src/content/servizi.ts` + tradurre nei file servizi.json
 - **Costanti hotel** (telefono, orari, ecc.): modificare `src/lib/hotel.config.ts`
+- **Nuova pagina**: creare sotto `src/app/[locale]/`, aggiungere traduzioni nei JSON, aggiungere alla sitemap
 
 ### Variabili d'ambiente
 ```
 RESEND_API_KEY=   # API key Resend (https://resend.com) per il form contatti
 CONTACT_EMAIL=    # email destinatario (default: info@villamadau.it)
-```
-Vedere `.env.local.example` come riferimento.
-
-## Lingua dei Contenuti
-
-Tutti i contenuti visibili all'utente sono in **italiano**.

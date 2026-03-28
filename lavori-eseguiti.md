@@ -60,6 +60,11 @@ Implementato il supporto completo per due lingue usando next-intl:
 - 30 pagine totali generate (15 IT + 15 EN)
 
 
+## Sessione di lavoro
+- Modello: Claude Opus 4.6 (1M context)
+- Token utilizzati: ~283k su 1M (28% del contesto)
+- File modificati: 134
+
 ## Cosa resta da fare
 Vedi il file TODO-DA-FARE.txt per la checklist completa:
 - Favicon e manifest
