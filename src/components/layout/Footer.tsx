@@ -1,6 +1,5 @@
 import { Link } from '@/i18n/navigation'
 import { HOTEL } from '@/lib/hotel.config'
-import { generateLocalBusinessSchema } from '@/lib/schema'
 import { CookieSettingsButton } from '@/components/ui/CookieBanner'
 import { getTranslations } from 'next-intl/server'
 
@@ -14,14 +13,8 @@ const links = [
 
 export async function Footer() {
   const t = await getTranslations('common')
-  const schema = generateLocalBusinessSchema()
-
   return (
     <footer className="text-white/75" style={{ backgroundColor: '#c96148' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

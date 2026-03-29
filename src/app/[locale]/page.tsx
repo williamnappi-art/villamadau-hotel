@@ -9,19 +9,30 @@ import { OfferteSection } from '@/components/sections/OfferteSection'
 import { Button } from '@/components/ui/Button'
 import { HOTEL } from '@/lib/hotel.config'
 
-export const metadata: Metadata = {
-  title: 'Villa Madau Hotel – Pula, Sardegna',
-  description: HOTEL.description,
-  alternates: { canonical: HOTEL.url },
-  openGraph: {
-    title: 'Villa Madau Hotel – Pula, Sardegna',
-    description: HOTEL.description,
-    url: HOTEL.url,
-    siteName: HOTEL.name,
-    type: 'website',
-    locale: 'it_IT',
-    images: [{ url: '/images/hero.webp', width: 1200, height: 630, alt: 'Villa Madau Hotel a Pula – vista esterna' }],
-  },
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+
+  const url = locale === 'it' ? HOTEL.url : `${HOTEL.url}/en`
+
+  return {
+    title: t('metadata.home.title'),
+    description: t('metadata.home.description'),
+    alternates: { canonical: url },
+    openGraph: {
+      title: t('metadata.home.ogTitle'),
+      description: t('metadata.home.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/hotel-primavera.webp', width: 1200, height: 630, alt: t('metadata.home.ogAlt') }],
+    },
+  }
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {

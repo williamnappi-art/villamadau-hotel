@@ -2,7 +2,9 @@
   "metadata": {
     "home": {
       "title": "Villa Madau Hotel – Pula, Sardegna",
+      "description": "Hotel Boutique nel cuore del centro storico di Pula, in Sardegna. Camere con balcone, cucina tipica sarda autentica, WiFi e parcheggio gratuiti. A pochi passi dalle antiche rovine di Nora e dalle spiagge cristalline del Sulcis.",
       "ogTitle": "Villa Madau Hotel – Pula, Sardegna",
+      "ogDescription": "Hotel Boutique nel centro storico di Pula, Sardegna. Camere con balcone, cucina sarda, WiFi e parcheggio gratuiti. Vicino a Nora e alle spiagge del Sulcis.",
       "ogAlt": "Villa Madau Hotel a Pula – vista esterna"
     },
     "hotel": {
@@ -28,7 +30,7 @@
     },
     "contatti": {
       "title": "Contatti e Prenotazioni",
-      "description": "Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. {address}. Email: {email}. Hotel 3 stelle nel centro storico di Pula, Sardegna.",
+      "description": "Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. {address}. Email: {email}. Hotel Boutique nel centro storico di Pula, Sardegna.",
       "ogTitle": "Contatti e Prenotazioni | Villa Madau Hotel – Pula",
       "ogDescription": "Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. {address}.",
       "ogAlt": "Villa Madau Hotel Pula – esterno"

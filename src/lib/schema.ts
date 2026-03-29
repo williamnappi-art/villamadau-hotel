@@ -22,7 +22,7 @@ export function generateHotelSchema() {
     telephone: HOTEL.contact.phone,
     email: HOTEL.contact.email,
     url: HOTEL.url,
-    image: `${HOTEL.url}/images/hero.webp`,
+    image: `${HOTEL.url}/images/hotel-primavera.webp`,
     geo: {
       '@type': 'GeoCoordinates',
       latitude: HOTEL.coordinates.lat,
@@ -85,35 +85,3 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
   }
 }
 
-export function generateLocalBusinessSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LodgingBusiness',
-    name: HOTEL.name,
-    image: `${HOTEL.url}/images/hero.webp`,
-    url: HOTEL.url,
-    telephone: HOTEL.contact.phone,
-    email: HOTEL.contact.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: HOTEL.address.street,
-      addressLocality: HOTEL.address.city,
-      addressRegion: HOTEL.address.province,
-      postalCode: HOTEL.address.postalCode,
-      addressCountry: HOTEL.address.countryCode,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: HOTEL.coordinates.lat,
-      longitude: HOTEL.coordinates.lng,
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '00:00',
-        closes: '23:59',
-      },
-    ],
-  }
-}

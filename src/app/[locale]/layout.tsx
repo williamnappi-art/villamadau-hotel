@@ -30,7 +30,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(HOTEL.url),
   title: {
-    default: `${HOTEL.name} – Hotel 3 Stelle a Pula, Sardegna`,
+    default: `${HOTEL.name} – Boutique Hotel a Pula, Sardegna`,
     template: `%s | ${HOTEL.shortName} Hotel Pula`,
   },
   description: HOTEL.description,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     'hotel pula sardegna',
     'villa madau',
     'hotel centro storico pula',
-    'hotel 3 stelle sardegna',
+    'boutique hotel sardegna',
     'hotel pula ca',
     'soggiorno sardegna meridionale',
     'boutique hotel sulcis',
@@ -51,11 +51,11 @@ export const metadata: Metadata = {
     locale: 'it_IT',
     url: HOTEL.url,
     siteName: HOTEL.name,
-    title: `${HOTEL.name} – Hotel 3 Stelle a Pula, Sardegna`,
+    title: `${HOTEL.name} – Boutique Hotel a Pula, Sardegna`,
     description: HOTEL.description,
     images: [
       {
-        url: '/images/hero.webp',
+        url: '/images/hotel-primavera.webp',
         width: 1200,
         height: 630,
         alt: `${HOTEL.name} – Pula, Sardegna`,
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${HOTEL.name} – Pula, Sardegna`,
     description: HOTEL.description,
-    images: ['/images/hero.webp'],
+    images: ['/images/hotel-primavera.webp'],
   },
   robots: {
     index: true,

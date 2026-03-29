@@ -4,7 +4,7 @@ Questo file fornisce indicazioni a Claude Code (claude.ai/code) per lavorare con
 
 ## Panoramica del Progetto
 
-Sito web **Next.js 15.5** (App Router, TypeScript) per **Villa Madau Hotel** – hotel 3 stelle nel centro storico di Pula (CA), Sardegna. Il sito live corrente e' `villamadau.it`. Sito bilingue IT/EN.
+Sito web **Next.js 15.5** (App Router, TypeScript) per **Villa Madau Hotel** – Hotel Boutique nel centro storico di Pula (CA), Sardegna. Il sito live corrente e' `villamadau.it`. Sito bilingue IT/EN.
 
 ## Comandi principali
 
@@ -84,7 +84,7 @@ src/
 │   └── servizi.ts              # Dati servizi (icone)
 └── lib/
     ├── hotel.config.ts         # Costanti: nome, indirizzo, contatti, coordinate, URL
-    └── schema.ts               # JSON-LD: Hotel, HotelRoom, LocalBusiness, BreadcrumbList
+    └── schema.ts               # JSON-LD: Hotel, HotelRoom, BreadcrumbList
 
 messages/
 ├── it/                         # 11 file JSON con tutte le stringhe italiane
@@ -107,8 +107,9 @@ messages/
 Tutte le immagini sono in `public/images/` in formato WebP (1920px max). I video sono in MP4 H.264 (~3 MB ciascuno, senza audio, con faststart per streaming). Il logo (`logo.png`) e il logo Federico's (`logo-federicos.gif`) restano nei formati originali.
 
 ### SEO
-- Ogni `page.tsx` esporta `metadata` con title, description, canonical, openGraph
+- Ogni `page.tsx` esporta `metadata` (statico) o `generateMetadata` (dinamico, per pagine multilingua) con title, description, canonical, openGraph
 - JSON-LD `Hotel` nel layout, `BreadcrumbList` nelle singole pagine
+- Immagine OG/SERP di default: `/images/hotel-primavera.webp`
 - Sitemap bilingue autogenerata
 - 21 redirect 301 dal vecchio sito Flazio configurati in `next.config.ts`
 - robots.ts attualmente in `disallow: '/'` — da cambiare quando il sito e' pronto

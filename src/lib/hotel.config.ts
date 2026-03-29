@@ -3,7 +3,7 @@ export const HOTEL = {
   shortName: 'Villa Madau',
   tagline: 'Nel cuore del centro storico di Pula',
   description:
-    'Hotel 3 stelle nel cuore del centro storico di Pula, in Sardegna. Camere con balcone, cucina tipica sarda autentica, WiFi e parcheggio gratuiti. A pochi passi dalle antiche rovine di Nora e dalle spiagge cristalline del Sulcis.',
+    'Hotel Boutique nel cuore del centro storico di Pula, in Sardegna. Camere con balcone, cucina tipica sarda autentica, WiFi e parcheggio gratuiti. A pochi passi dalle antiche rovine di Nora e dalle spiagge cristalline del Sulcis.',
   stars: 3,
   address: {
     street: 'Via Nora, 84',

@@ -7,7 +7,7 @@ import { generateBreadcrumbSchema } from '@/lib/schema'
 export const metadata: Metadata = {
   title: 'Contatti e Prenotazioni',
   description:
-    `Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. ${HOTEL.address.full}. Email: ${HOTEL.contact.email}. Hotel 3 stelle nel centro storico di Pula, Sardegna.`,
+    `Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. ${HOTEL.address.full}. Email: ${HOTEL.contact.email}. Hotel Boutique nel centro storico di Pula, Sardegna.`,
   alternates: { canonical: `${HOTEL.url}/contatti` },
   openGraph: {
     title: 'Contatti e Prenotazioni | Villa Madau Hotel – Pula',

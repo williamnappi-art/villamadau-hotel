@@ -2,7 +2,7 @@
  VILLA MADAU - COSE DA FARE PRIMA DEL LANCIO
 ===============================================
 
-Ultimo aggiornamento: 28 Marzo 2026
+Ultimo aggiornamento: 29 Marzo 2026
 
 
 --- FASE 1: FAVICON E MANIFEST ---
@@ -43,17 +43,17 @@ Ultimo aggiornamento: 28 Marzo 2026
 
 --- FASE 3: PAGINE LEGALI ---
 
-[ ] Creare pagina /privacy con:
+[x] Creare pagina /privacy con:
     - Privacy Policy (menzione GA4, cookie, diritti utente)
     - Cookie Policy (categorie: necessari, analitici, marketing)
     - Come modificare le preferenze cookie
-[ ] Aggiungere link Privacy Policy nel footer
-[ ] Aggiungere link "Gestisci cookie" nel footer
+[x] Aggiungere link Privacy Policy nel footer
+[x] Aggiungere link "Gestisci cookie" nel footer
 
 
 --- FASE 4: SEO ON-PAGE ---
 
-[ ] Aggiungere OpenGraph metadata alle pagine mancanti:
+[x] Aggiungere OpenGraph metadata alle pagine mancanti:
     - / (homepage)
     - /contatti
     - /da-non-perdere
@@ -61,32 +61,35 @@ Ultimo aggiornamento: 28 Marzo 2026
     - /gutturu-mannu
     - /pasqua-a-pula
     - /servizi
+[x] Aggiungere meta description alla homepage (IT + EN)
+[x] Homepage: convertire metadata statico in generateMetadata multilingua
+[x] Immagine OG/SERP di default: hotel-primavera.webp
+[x] Rimosso schema LodgingBusiness ridondante (resta solo Hotel)
 [ ] Verificare breadcrumb schema su tutte le pagine
 [ ] Togliere disallow: '/' da robots.ts quando il sito e' pronto per l'indicizzazione
 
 
 --- FASE 5: MULTILINGUA (IT + EN) ---
 
-[ ] Installare next-intl
-[ ] Creare struttura i18n/:
+[x] Installare next-intl
+[x] Creare struttura i18n/:
     - config.ts (locales: ['it', 'en'], defaultLocale: 'it')
     - routing.ts (pathnames localizzati per ogni pagina)
     - request.ts (setup server-side)
-[ ] Creare messages/it.json con tutti i testi del sito
-[ ] Creare messages/en.json con traduzioni inglesi
-[ ] Ristrutturare app/ sotto [locale]/:
+[x] Creare messages/it/ con tutti i testi del sito (11 file JSON)
+[x] Creare messages/en/ con traduzioni inglesi (11 file JSON)
+[x] Ristrutturare app/ sotto [locale]/:
     - Spostare tutte le pagine sotto app/[locale]/
     - Root layout minimo (solo children)
     - Layout locale con lang dinamico
-[ ] Convertire ogni page.tsx:
-    - Usare generateMetadata con getTranslations
+[x] Homepage: generateMetadata con getTranslations, locale corretto (it_IT / en_US)
+[ ] Convertire le altre page.tsx a generateMetadata multilingua:
     - Canonical e hreflang per IT + EN
-    - OpenGraph con locale corretto (it_IT / en_GB)
-    - Schema.org tradotto
-[ ] Aggiornare sitemap.ts per generare URL in entrambe le lingue
+    - OpenGraph con locale corretto (it_IT / en_US)
+[x] Aggiornare sitemap.ts per generare URL in entrambe le lingue
 [ ] Aggiornare robots.ts con sitemap URL
-[ ] Creare language switcher nel nav (IT/EN)
-[ ] Tradurre componenti:
+[x] Creare language switcher nel nav (IT/EN) — bandierine SVG
+[x] Tradurre componenti:
     - Header / MobileNav
     - Footer
     - HeroMobileMenu
@@ -131,6 +134,8 @@ Ultimo aggiornamento: 28 Marzo 2026
 [x] Aggiunta /sant-efisio
 [x] Aggiunta /domus-antigas
 [x] Aggiunta /galleria
+[x] Sitemap bilingue IT + EN (tutte le pagine statiche)
+[x] Rimossi URL /camere/[slug] (pagine non ancora esistenti)
 
 
 ===============================================

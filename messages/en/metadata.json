@@ -2,7 +2,9 @@
   "metadata": {
     "home": {
       "title": "Villa Madau Hotel – Pula, Sardinia",
+      "description": "Boutique Hotel in the heart of Pula's historic centre, Sardinia. Rooms with balcony, authentic Sardinian cuisine, free WiFi and parking. Steps away from the ancient ruins of Nora and the crystal-clear beaches of southern Sardinia.",
       "ogTitle": "Villa Madau Hotel – Pula, Sardinia",
+      "ogDescription": "Boutique Hotel in the historic centre of Pula, Sardinia. Rooms with balcony, Sardinian cuisine, free WiFi and parking. Near Nora and the southern beaches.",
       "ogAlt": "Villa Madau Hotel in Pula – exterior view"
     },
     "hotel": {
@@ -28,7 +30,7 @@
     },
     "contatti": {
       "title": "Contact & Reservations",
-      "description": "Contact Villa Madau Hotel in Pula for reservations and information. {address}. Email: {email}. 3-star hotel in the historic centre of Pula, Sardinia.",
+      "description": "Contact Villa Madau Hotel in Pula for reservations and information. {address}. Email: {email}. Boutique Hotel in the historic centre of Pula, Sardinia.",
       "ogTitle": "Contact & Reservations | Villa Madau Hotel – Pula",
       "ogDescription": "Contact Villa Madau Hotel in Pula for reservations and information. {address}.",
       "ogAlt": "Villa Madau Hotel Pula – exterior"
