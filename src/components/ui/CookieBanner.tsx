@@ -7,7 +7,8 @@ import { useTranslations } from 'next-intl'
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void
+    gtag: (...args: unknown[]) => void
+    dataLayer: unknown[]
   }
 }
 
@@ -15,11 +16,9 @@ declare global {
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
 
-interface ConsentPreferences {
-  analytics_storage: 'granted' | 'denied'
-  ad_storage: 'granted' | 'denied'
-  ad_user_data: 'granted' | 'denied'
-  ad_personalization: 'granted' | 'denied'
+interface ConsentState {
+  analytics: boolean
+  marketing: boolean
   timestamp: number
 }
 
@@ -30,12 +29,12 @@ const MAX_AGE_DAYS = 180
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
-function getSavedConsent(): ConsentPreferences | null {
+function getSavedConsent(): ConsentState | null {
   if (typeof window === 'undefined') return null
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) return null
-    const parsed: ConsentPreferences = JSON.parse(raw)
+    const parsed: ConsentState = JSON.parse(raw)
     const age = Date.now() - parsed.timestamp
     if (age > MAX_AGE_DAYS * 24 * 60 * 60 * 1000) return null
     return parsed
@@ -44,18 +43,28 @@ function getSavedConsent(): ConsentPreferences | null {
   }
 }
 
-function pushConsent(prefs: Omit<ConsentPreferences, 'timestamp'>) {
-  const full: ConsentPreferences = { ...prefs, timestamp: Date.now() }
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(full))
-
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+function updateGtagConsent(analytics: boolean, marketing: boolean) {
+  if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('consent', 'update', {
-      analytics_storage: prefs.analytics_storage,
-      ad_storage: prefs.ad_storage,
-      ad_user_data: prefs.ad_user_data,
-      ad_personalization: prefs.ad_personalization,
+      ad_storage: marketing ? 'granted' : 'denied',
+      ad_user_data: marketing ? 'granted' : 'denied',
+      ad_personalization: marketing ? 'granted' : 'denied',
+      analytics_storage: analytics ? 'granted' : 'denied',
+    })
+
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'cookie_consent_update',
+      analytics_consent: analytics,
+      marketing_consent: marketing,
     })
   }
+}
+
+function saveConsent(analytics: boolean, marketing: boolean) {
+  const state: ConsentState = { analytics, marketing, timestamp: Date.now() }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+  updateGtagConsent(analytics, marketing)
 }
 
 /* ------------------------------------------------------------------ */
@@ -109,48 +118,37 @@ export default function CookieBanner() {
   const [marketing, setMarketing] = useState(false)
 
   useEffect(() => {
-    if (!getSavedConsent()) setVisible(true)
+    const saved = getSavedConsent()
+    if (saved) {
+      setAnalytics(saved.analytics)
+      setMarketing(saved.marketing)
+      updateGtagConsent(saved.analytics, saved.marketing)
+    } else {
+      setVisible(true)
+    }
   }, [])
 
   const accept = useCallback(
-    (prefs: Omit<ConsentPreferences, 'timestamp'>) => {
-      pushConsent(prefs)
+    (analyticsVal: boolean, marketingVal: boolean) => {
+      saveConsent(analyticsVal, marketingVal)
       setVisible(false)
     },
     [],
   )
 
-  const acceptAll = () =>
-    accept({
-      analytics_storage: 'granted',
-      ad_storage: 'granted',
-      ad_user_data: 'granted',
-      ad_personalization: 'granted',
-    })
+  const acceptAll = () => accept(true, true)
 
-  const acceptNecessary = () =>
-    accept({
-      analytics_storage: 'denied',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-    })
+  const acceptNecessary = () => accept(false, false)
 
-  const acceptCustom = () =>
-    accept({
-      analytics_storage: analytics ? 'granted' : 'denied',
-      ad_storage: marketing ? 'granted' : 'denied',
-      ad_user_data: marketing ? 'granted' : 'denied',
-      ad_personalization: marketing ? 'granted' : 'denied',
-    })
+  const acceptCustom = () => accept(analytics, marketing)
 
   /* Allow external re-open */
   useEffect(() => {
     const handler = () => {
       const saved = getSavedConsent()
       if (saved) {
-        setAnalytics(saved.analytics_storage === 'granted')
-        setMarketing(saved.ad_storage === 'granted')
+        setAnalytics(saved.analytics)
+        setMarketing(saved.marketing)
       }
       setShowCustomise(false)
       setVisible(true)
