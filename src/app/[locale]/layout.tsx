@@ -10,6 +10,7 @@ import CookieBanner from '@/components/ui/CookieBanner'
 import { HOTEL } from '@/lib/hotel.config'
 import { generateHotelSchema } from '@/lib/schema'
 import { routing } from '@/i18n/routing'
+import PageViewTracker from '@/components/analytics/PageViewTracker'
 import Script from 'next/script'
 import '../globals.css'
 
@@ -139,6 +140,7 @@ export default async function LocaleLayout({
           <Footer />
           <ScrollToTop />
           <CookieBanner />
+          <PageViewTracker />
         </NextIntlClientProvider>
       </body>
     </html>
