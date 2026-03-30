@@ -181,7 +181,7 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-4">
-              35 mq · tutte diverse
+              Tutte diverse
             </p>
             <h2 className="font-serif text-4xl md:text-5xl text-[#1e1c18]">
               Le dieci suite
@@ -202,17 +202,13 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
                   className="object-cover"
                 />
               </div>
-              <p className="text-[11px] uppercase tracking-[0.3em] text-[#c4b99a] mb-2">
-                Suite · 35 mq
-              </p>
               <h3 className="font-serif text-2xl text-[#1e1c18] mb-3">
-                Cura nei dettagli
+                Cura nei Dettagli
               </h3>
               <p className="text-[#4a4640] leading-relaxed text-sm">
-                Ogni suite è un racconto a sé. Tessuti di lino locale, letti in ferro battuto o
-                legno massello, terracotta sui pavimenti, ceramiche artigianali nel bagno. Il
-                comfort è totale — aria condizionata, WiFi, ogni comodità — ma non si vede.
-                È così che deve essere.
+                Ogni suite è un racconto a sé. Tessuti locali, dalle tende fatte a mano ai richiami
+                alla tradizione tessile sarda. Il comfort è totale — aria condizionata, WiFi, ogni
+                comodità — ma non si vede. È così che deve essere.
               </p>
             </div>
 
@@ -227,17 +223,14 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
                   className="object-cover"
                 />
               </div>
-              <p className="text-[11px] uppercase tracking-[0.3em] text-[#c4b99a] mb-2">
-                Suite · 35 mq
-              </p>
               <h3 className="font-serif text-2xl text-[#1e1c18] mb-3">
                 Tutte diverse, mai uguali
               </h3>
               <p className="text-[#4a4640] leading-relaxed text-sm">
-                Nessuna delle dieci suite assomiglia all&apos;altra. C&apos;è quella con la vista
-                sul giardino, quella con il soffitto a travi antiche, quella con il balcone che
-                guarda i tetti di Pula. Ognuna ha la sua personalità, la sua luce, il suo modo
-                di raccontare la Sardegna.
+                Nessuna delle dieci suite assomiglia all&apos;altra. C&apos;è quella che si affaccia
+                sulla piazzetta, quella direttamente sulla chiesa di San Giovanni Battista e quella
+                sulla caratteristica via Caprera. Ognuna ha la sua personalità, la sua luce, il suo
+                modo di raccontare la Sardegna.
               </p>
             </div>
 
@@ -252,16 +245,12 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
                   className="object-cover"
                 />
               </div>
-              <p className="text-[11px] uppercase tracking-[0.3em] text-[#c4b99a] mb-2">
-                Suite · 35 mq
-              </p>
               <h3 className="font-serif text-2xl text-[#1e1c18] mb-3">
-                Il silenzio del centro storico
+                La Vita del Centro Storico
               </h3>
               <p className="text-[#4a4640] leading-relaxed text-sm">
-                Le finestre si affacciano sui vicoli silenziosi del centro antico. La mattina entra
-                piano, filtrata dalle persiane. Il letto è grande, le lenzuola sono di cotone pesante.
-                Dormire a Villa Madau è un piacere che si ricorda.
+                Le finestre si affacciano sui vicoli animati del centro antico. La mattina entra
+                piano, filtrata dalle tende. Dormire al Villa Madau è un piacere che si ricorda.
               </p>
             </div>
 
@@ -276,14 +265,11 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
                   className="object-cover"
                 />
               </div>
-              <p className="text-[11px] uppercase tracking-[0.3em] text-[#c4b99a] mb-2">
-                Suite · 35 mq
-              </p>
               <h3 className="font-serif text-2xl text-[#1e1c18] mb-3">
                 Ogni comfort, naturalmente
               </h3>
               <p className="text-[#4a4640] leading-relaxed text-sm">
-                Aria condizionata silenziosa, bagno privato in pietra locale, WiFi, minibar,
+                Aria condizionata, bagno rifinito con ceramiche selezionate, WiFi, minibar,
                 cassaforte, asciugamani di spugna densa. Il lusso di Villa Madau è fatto di
                 qualità, non di ostentazione. Quello che serve, nel modo giusto.
               </p>
