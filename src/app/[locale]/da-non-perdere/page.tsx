@@ -1,24 +1,31 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HOTEL } from '@/lib/hotel.config'
 import { DaNonPerdereHero } from '@/components/sections/DaNonPerdereHero'
 
-export const metadata: Metadata = {
-  title: 'Da non perdere',
-  description:
-    'Offerte, eventi e stagioni da vivere a Villa Madau Hotel: la Cavalcata di Sant\'Efisio, Domus Antigas, la primavera sarda e le promozioni di bassa stagione.',
-  alternates: { canonical: `${HOTEL.url}/da-non-perdere` },
-  openGraph: {
-    title: 'Da non perdere | Villa Madau Hotel – Pula, Sardegna',
-    description: 'Offerte, eventi e stagioni da vivere a Villa Madau Hotel: la Cavalcata di Sant\'Efisio, Domus Antigas, la primavera sarda e le promozioni di bassa stagione.',
-    url: `${HOTEL.url}/da-non-perdere`,
-    siteName: HOTEL.name,
-    type: 'website',
-    locale: 'it_IT',
-    images: [{ url: '/images/sant-efisio-hotel.webp', width: 1200, height: 630, alt: 'Sant\'Efisio – eventi a Pula, Sardegna' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/da-non-perdere` : `${HOTEL.url}/en/da-non-perdere`
+  return {
+    title: t('metadata.daNonPerdere.title'),
+    description: t('metadata.daNonPerdere.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/da-non-perdere`, 'en': `${HOTEL.url}/en/da-non-perdere` },
+    },
+    openGraph: {
+      title: t('metadata.daNonPerdere.ogTitle'),
+      description: t('metadata.daNonPerdere.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/sant-efisio-hotel.webp', width: 1200, height: 630, alt: t('metadata.daNonPerdere.ogAlt') }],
+    },
+  }
 }
 
 // Palette: Rust #802d20 · Terracotta #c96148 · Moss #c4cac3 · Wheat #d7a773 · Peach #dca791 · Cream #f2e7df

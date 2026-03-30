@@ -1,21 +1,32 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HotelHero } from '@/components/sections/HotelHero'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
 
-export const metadata: Metadata = {
-  title: "L'Hotel",
-  description:
-    'Villa Madau è un piccolo boutique hotel nascosto tra le vie del centro storico di Pula, in Sardegna. Dieci suite, giardino interno, terrazza, colazione in piazza: la vita autentica del paese.',
-  alternates: { canonical: `${HOTEL.url}/hotel` },
-  openGraph: {
-    title: "L'Hotel | Villa Madau – Pula, Sardegna",
-    description: 'Boutique hotel nel centro storico di Pula. Dieci suite, giardino, terrazza e colazione in piazza.',
-    images: [{ url: '/images/hotel-primavera.webp', width: 1200, height: 630, alt: 'Villa Madau Hotel Pula primavera' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/hotel` : `${HOTEL.url}/en/hotel`
+  return {
+    title: t('metadata.hotel.title'),
+    description: t('metadata.hotel.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/hotel`, 'en': `${HOTEL.url}/en/hotel` },
+    },
+    openGraph: {
+      title: t('metadata.hotel.ogTitle'),
+      description: t('metadata.hotel.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/hotel-primavera.webp', width: 1200, height: 630, alt: t('metadata.hotel.ogAlt') }],
+    },
+  }
 }
 
 export default async function HotelPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -2,7 +2,7 @@
  VILLA MADAU - COSE DA FARE PRIMA DEL LANCIO
 ===============================================
 
-Ultimo aggiornamento: 29 Marzo 2026
+Ultimo aggiornamento: 30 Marzo 2026
 
 
 --- FASE 1: FAVICON E MANIFEST ---
@@ -14,31 +14,38 @@ Ultimo aggiornamento: 29 Marzo 2026
 [ ] Aggiungere meta tag theme-color nel layout
 
 
---- FASE 2: TRACKING (serve ID GTM dal cliente) ---
+--- FASE 2: TRACKING ---
 
-[ ] Ottenere ID Google Tag Manager (GTM-XXXXXXX)
-[ ] Ottenere ID Google Analytics 4 (G-XXXXXXX)
-[ ] Implementare Consent Mode v2 nel layout:
+[x] Ottenere ID Google Tag Manager → GTM-KQMDTBCZ
+[x] Ottenere ID Google Analytics 4 → G-942JLBX8T4
+[x] Implementare Consent Mode v2 nel layout:
     - gtag('consent', 'default', {...}) con i 4 segnali denied
-    - url_passthrough: true
-    - ads_data_redaction: true
-    - Caricamento preferenze salvate da localStorage
+    - wait_for_update: 500
     - Script GTM (DOPO consent default)
-[ ] Creare componente CookieBanner:
+    - Noscript iframe fallback
+[x] Creare componente CookieBanner:
     - "Accetta tutti" → gtag('consent', 'update', tutti granted)
-    - "Rifiuta" → chiude banner, consent resta denied
+    - "Solo necessari" → chiude banner, consent resta denied
     - "Personalizza" → toggle separati analytics/marketing
     - Salvataggio in localStorage con timestamp
     - Scadenza 180 giorni (ri-consenso GDPR)
     - Link a /privacy nel banner
     - Link "Gestisci cookie" nel footer
-[ ] Configurare GA4 Console:
+[x] Configurare tag GTM:
+    - Google Tag GA4
+    - Conversion Linker
+    - Click Telefono, Email, Prenota, Social, Maps, WhatsApp
+    - Scroll Depth (25/50/75/90%)
+    - Outbound Link Click
+[x] Fix trigger "Click Prenota" — aggiunto slope.it al regex
+[x] Configurare GA4 Console:
     - Google Signals: attivo
-    - Raccolta dati forniti dagli utenti: attivo
+    - Raccolta dati forniti dagli utenti: confermato
     - Dati granulari posizione/dispositivo: attivo
-[ ] Configurare GTM Console:
-    - Panoramica del consenso: attiva
-[ ] Testare con GTM Preview Mode
+[x] Configurare GTM Console:
+    - Panoramica del consenso: consenso integrato abilitato su tutti i tag
+[x] Importare gtm-container-export.json aggiornato in GTM
+[x] Testare con GTM Preview Mode
 
 
 --- FASE 3: PAGINE LEGALI ---
@@ -53,54 +60,42 @@ Ultimo aggiornamento: 29 Marzo 2026
 
 --- FASE 4: SEO ON-PAGE ---
 
-[x] Aggiungere OpenGraph metadata alle pagine mancanti:
-    - / (homepage)
-    - /contatti
-    - /da-non-perdere
-    - /galleria
-    - /gutturu-mannu
-    - /pasqua-a-pula
-    - /servizi
+[x] Aggiungere OpenGraph metadata alle pagine mancanti
 [x] Aggiungere meta description alla homepage (IT + EN)
 [x] Homepage: convertire metadata statico in generateMetadata multilingua
 [x] Immagine OG/SERP di default: hotel-primavera.webp
 [x] Rimosso schema LodgingBusiness ridondante (resta solo Hotel)
-[ ] Verificare breadcrumb schema su tutte le pagine
-[ ] Togliere disallow: '/' da robots.ts quando il sito e' pronto per l'indicizzazione
+[x] Togliere disallow: '/' da robots.ts → indicizzazione abilitata
+[x] Aggiunto sitemap URL in robots.ts
+[x] Breadcrumb schema presente su: hotel, ristorante, servizi, contatti,
+    galleria, privacy, domus-antigas, sant-efisio, gutturu-mannu
+[ ] Aggiungere breadcrumb schema a:
+    - /da-non-perdere
+    - /pasqua-a-pula
+    (homepage non necessita breadcrumb)
+[x] Convertire tutte le page.tsx a generateMetadata multilingua:
+    - Canonical locale-aware (IT senza prefisso, EN con /en/)
+    - hreflang alternates IT + EN su ogni pagina
+    - OpenGraph con locale corretto (it_IT / en_US)
+    - Interpolazione variabili (contatti: address/email, privacy: hotelName)
 
 
 --- FASE 5: MULTILINGUA (IT + EN) ---
 
 [x] Installare next-intl
 [x] Creare struttura i18n/:
-    - config.ts (locales: ['it', 'en'], defaultLocale: 'it')
-    - routing.ts (pathnames localizzati per ogni pagina)
+    - routing.ts (locales, defaultLocale, localePrefix: 'as-needed')
     - request.ts (setup server-side)
+    - navigation.ts (Link, usePathname, useRouter locale-aware)
 [x] Creare messages/it/ con tutti i testi del sito (11 file JSON)
 [x] Creare messages/en/ con traduzioni inglesi (11 file JSON)
-[x] Ristrutturare app/ sotto [locale]/:
-    - Spostare tutte le pagine sotto app/[locale]/
-    - Root layout minimo (solo children)
-    - Layout locale con lang dinamico
-[x] Homepage: generateMetadata con getTranslations, locale corretto (it_IT / en_US)
-[ ] Convertire le altre page.tsx a generateMetadata multilingua:
-    - Canonical e hreflang per IT + EN
-    - OpenGraph con locale corretto (it_IT / en_US)
+[x] Ristrutturare app/ sotto [locale]/
+[x] Homepage: generateMetadata con getTranslations
 [x] Aggiornare sitemap.ts per generare URL in entrambe le lingue
-[ ] Aggiornare robots.ts con sitemap URL
 [x] Creare language switcher nel nav (IT/EN) — bandierine SVG
-[x] Tradurre componenti:
-    - Header / MobileNav
-    - Footer
-    - HeroMobileMenu
-    - Tutti gli Hero
-    - CardCarousel
-    - OfferteSection
-    - LocationSection
-    - RistoranteSection
-    - ContactForm
-    - CookieBanner
-    - ScrollToTop
+[x] Tradurre tutti i componenti (Header, Footer, Hero, Card, ecc.)
+[x] Fix locale detection: disabilitato auto-detect da cookie/browser
+    (root '/' ora mostra sempre italiano)
 
 
 --- REDIRECT 301 (GIA' IMPLEMENTATI) ---
@@ -130,12 +125,15 @@ Ultimo aggiornamento: 29 Marzo 2026
 
 --- SITEMAP (GIA' AGGIORNATA) ---
 
-[x] Aggiunta /hotel
-[x] Aggiunta /sant-efisio
-[x] Aggiunta /domus-antigas
-[x] Aggiunta /galleria
 [x] Sitemap bilingue IT + EN (tutte le pagine statiche)
 [x] Rimossi URL /camere/[slug] (pagine non ancora esistenti)
 
+
+===============================================
+ RIEPILOGO COSE ANCORA DA FARE
+===============================================
+
+1. [ ] Favicon e manifest (5 file + meta tag theme-color)
+2. [ ] Breadcrumb schema su /da-non-perdere e /pasqua-a-pula
 
 ===============================================

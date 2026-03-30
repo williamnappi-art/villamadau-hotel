@@ -1,23 +1,30 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { GalleriaClient } from './GalleriaClient'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
 
-export const metadata: Metadata = {
-  title: 'Galleria fotografica',
-  description:
-    'Galleria fotografica di Villa Madau Hotel a Pula, Sardegna. Scopri le camere, il ristorante, gli esterni e le bellezze della Sardegna meridionale.',
-  alternates: { canonical: `${HOTEL.url}/galleria` },
-  openGraph: {
-    title: 'Galleria fotografica | Villa Madau Hotel – Pula, Sardegna',
-    description: 'Galleria fotografica di Villa Madau Hotel a Pula, Sardegna. Scopri le camere, il ristorante, gli esterni e le bellezze della Sardegna meridionale.',
-    url: `${HOTEL.url}/galleria`,
-    siteName: HOTEL.name,
-    type: 'website',
-    locale: 'it_IT',
-    images: [{ url: '/images/hero.webp', width: 1200, height: 630, alt: 'Villa Madau Hotel Pula – galleria fotografica' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/galleria` : `${HOTEL.url}/en/galleria`
+  return {
+    title: t('metadata.galleria.title'),
+    description: t('metadata.galleria.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/galleria`, 'en': `${HOTEL.url}/en/galleria` },
+    },
+    openGraph: {
+      title: t('metadata.galleria.ogTitle'),
+      description: t('metadata.galleria.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/hero.webp', width: 1200, height: 630, alt: t('metadata.galleria.ogAlt') }],
+    },
+  }
 }
 
 const immagini = [

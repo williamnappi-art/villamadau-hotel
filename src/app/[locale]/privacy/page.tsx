@@ -1,17 +1,28 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { HOTEL } from '@/lib/hotel.config'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description:
-    `Informativa sulla privacy e cookie policy di ${HOTEL.name}. Scopri come trattiamo i tuoi dati personali ai sensi del GDPR (Regolamento UE 2016/679).`,
-  alternates: { canonical: `${HOTEL.url}/privacy` },
-  openGraph: {
-    title: `Privacy Policy | ${HOTEL.shortName} – Pula, Sardegna`,
-    description: `Informativa sulla privacy e cookie policy di ${HOTEL.name}. Trattamento dati ai sensi del GDPR.`,
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/privacy` : `${HOTEL.url}/en/privacy`
+  return {
+    title: t('metadata.privacy.title'),
+    description: t('metadata.privacy.description', { hotelName: HOTEL.name }),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/privacy`, 'en': `${HOTEL.url}/en/privacy` },
+    },
+    openGraph: {
+      title: t('metadata.privacy.ogTitle', { shortName: HOTEL.shortName }),
+      description: t('metadata.privacy.ogDescription', { hotelName: HOTEL.name }),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+    },
+  }
 }
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {

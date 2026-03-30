@@ -1,25 +1,32 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 
 import { HOTEL } from '@/lib/hotel.config'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { Button } from '@/components/ui/Button'
 
-export const metadata: Metadata = {
-  title: 'Parco di Gutturu Mannu',
-  description:
-    'Scopri il Parco Naturale Regionale di Gutturu Mannu a Pula: la più grande foresta a sclerofille del Mediterraneo, home del cervo sardo, percorsi, cascate e natura incontaminata.',
-  alternates: { canonical: `${HOTEL.url}/gutturu-mannu` },
-  openGraph: {
-    title: 'Parco di Gutturu Mannu | Villa Madau Hotel – Pula, Sardegna',
-    description: 'Scopri il Parco Naturale Regionale di Gutturu Mannu a Pula: la più grande foresta a sclerofille del Mediterraneo, percorsi, cascate e natura incontaminata.',
-    url: `${HOTEL.url}/gutturu-mannu`,
-    siteName: HOTEL.name,
-    type: 'website',
-    locale: 'it_IT',
-    images: [{ url: '/images/gutturu-mannu-paesaggio.webp', width: 1200, height: 630, alt: 'Parco di Gutturu Mannu – paesaggio naturale a Pula' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/gutturu-mannu` : `${HOTEL.url}/en/gutturu-mannu`
+  return {
+    title: t('metadata.gutturuMannu.title'),
+    description: t('metadata.gutturuMannu.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/gutturu-mannu`, 'en': `${HOTEL.url}/en/gutturu-mannu` },
+    },
+    openGraph: {
+      title: t('metadata.gutturuMannu.ogTitle'),
+      description: t('metadata.gutturuMannu.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/gutturu-mannu-paesaggio.webp', width: 1200, height: 630, alt: t('metadata.gutturuMannu.ogAlt') }],
+    },
+  }
 }
 
 const percorsi = [

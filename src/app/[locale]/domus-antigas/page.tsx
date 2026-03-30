@@ -1,21 +1,32 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { DomusAntigasHero } from '@/components/sections/DomusAntigasHero'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
 
-export const metadata: Metadata = {
-  title: 'Domus Antigas a Pula \u2013 Villa Madau nel cuore dell\u2019evento',
-  description:
-    'Il 15 Marzo 2026 il centro storico di Pula si trasforma con Domus Antigas. Villa Madau Boutique Hotel \u00e8 nel cuore della manifestazione. Offerta speciale: 100\u20ac con colazione e late check-out.',
-  alternates: { canonical: `${HOTEL.url}/domus-antigas` },
-  openGraph: {
-    title: 'Domus Antigas 2026 | Villa Madau Boutique Hotel \u2013 Pula',
-    description: 'Vivi Domus Antigas dall\u2019interno del centro storico di Pula. Offerta speciale Villa Madau: alloggio + colazione + late check-out a 100\u20ac.',
-    images: [{ url: '/images/piazzetta.webp', width: 1200, height: 630, alt: 'Domus Antigas \u2013 Piazzetta di Pula' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/domus-antigas` : `${HOTEL.url}/en/domus-antigas`
+  return {
+    title: t('metadata.domusAntigas.title'),
+    description: t('metadata.domusAntigas.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/domus-antigas`, 'en': `${HOTEL.url}/en/domus-antigas` },
+    },
+    openGraph: {
+      title: t('metadata.domusAntigas.ogTitle'),
+      description: t('metadata.domusAntigas.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/piazzetta.webp', width: 1200, height: 630, alt: t('metadata.domusAntigas.ogAlt') }],
+    },
+  }
 }
 
 // Aggiorna con il numero WhatsApp reale dell'hotel (formato internazionale senza +)

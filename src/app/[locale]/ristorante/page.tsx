@@ -1,21 +1,32 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { RistoranteHero } from '@/components/sections/RistoranteHero'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
 
-export const metadata: Metadata = {
-  title: 'Ristorante',
-  description:
-    'Il ristorante di Villa Madau a Pula propone la cucina tradizionale sarda con ingredienti locali: malloreddus, bottarga, grigliate di pesce, seadas. Colazione tipica sarda inclusa.',
-  alternates: { canonical: `${HOTEL.url}/ristorante` },
-  openGraph: {
-    title: 'Ristorante | Villa Madau Hotel Pula Sardegna',
-    description: 'Cucina tipica sarda con prodotti locali. Pula, Sardegna meridionale.',
-    images: [{ url: '/images/ristorante.webp', width: 1200, height: 630, alt: 'Ristorante Villa Madau Pula' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/ristorante` : `${HOTEL.url}/en/ristorante`
+  return {
+    title: t('metadata.ristorante.title'),
+    description: t('metadata.ristorante.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/ristorante`, 'en': `${HOTEL.url}/en/ristorante` },
+    },
+    openGraph: {
+      title: t('metadata.ristorante.ogTitle'),
+      description: t('metadata.ristorante.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/ristorante.webp', width: 1200, height: 630, alt: t('metadata.ristorante.ogAlt') }],
+    },
+  }
 }
 
 const MENU_URL = 'https://www.leggimenu.it/menu/federicos/210635'

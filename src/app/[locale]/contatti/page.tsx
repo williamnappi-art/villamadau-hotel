@@ -1,23 +1,30 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { ContattiHero } from '@/components/sections/ContattiHero'
 import { HOTEL } from '@/lib/hotel.config'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 
-export const metadata: Metadata = {
-  title: 'Contatti e Prenotazioni',
-  description:
-    `Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. ${HOTEL.address.full}. Email: ${HOTEL.contact.email}. Hotel Boutique nel centro storico di Pula, Sardegna.`,
-  alternates: { canonical: `${HOTEL.url}/contatti` },
-  openGraph: {
-    title: 'Contatti e Prenotazioni | Villa Madau Hotel – Pula',
-    description: `Contatta Villa Madau Hotel a Pula per prenotazioni e informazioni. ${HOTEL.address.full}.`,
-    url: `${HOTEL.url}/contatti`,
-    siteName: HOTEL.name,
-    type: 'website',
-    locale: 'it_IT',
-    images: [{ url: '/images/hotel-esterno.webp', width: 1200, height: 630, alt: 'Villa Madau Hotel Pula – esterno' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/contatti` : `${HOTEL.url}/en/contatti`
+  return {
+    title: t('metadata.contatti.title'),
+    description: t('metadata.contatti.description', { address: HOTEL.address.full, email: HOTEL.contact.email }),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/contatti`, 'en': `${HOTEL.url}/en/contatti` },
+    },
+    openGraph: {
+      title: t('metadata.contatti.ogTitle'),
+      description: t('metadata.contatti.ogDescription', { address: HOTEL.address.full }),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/hotel-esterno.webp', width: 1200, height: 630, alt: t('metadata.contatti.ogAlt') }],
+    },
+  }
 }
 
 const WHATSAPP_NUMBER = '390709249033'

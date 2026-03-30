@@ -35,7 +35,7 @@ src/
 │   ├── layout.tsx              # Root layout minimo (solo children)
 │   ├── globals.css             # Stili globali, bg-[#1e1c18]
 │   ├── sitemap.ts              # Sitemap bilingue (IT + EN)
-│   ├── robots.ts               # Attualmente disallow: '/' (da sbloccare al lancio)
+│   ├── robots.ts               # allow: '/' + sitemap URL (indicizzazione attiva)
 │   ├── api/contatto/route.ts   # POST: valida dati e invia email via Resend
 │   └── [locale]/               # Routing multilingua
 │       ├── layout.tsx          # Layout locale: html lang, font, metadata, NextIntlClientProvider
@@ -53,7 +53,7 @@ src/
 │       ├── gutturu-mannu/page.tsx
 │       └── privacy/page.tsx
 ├── i18n/
-│   ├── routing.ts              # Locales: ['it', 'en'], defaultLocale: 'it', localePrefix: 'as-needed'
+│   ├── routing.ts              # Locales: ['it', 'en'], defaultLocale: 'it', localePrefix: 'as-needed', localeDetection: false
 │   ├── request.ts              # Carica i JSON delle traduzioni per namespace
 │   └── navigation.ts           # Link, usePathname, useRouter locale-aware
 ├── middleware.ts                # Middleware next-intl per locale detection
@@ -107,17 +107,19 @@ messages/
 Tutte le immagini sono in `public/images/` in formato WebP (1920px max). I video sono in MP4 H.264 (~3 MB ciascuno, senza audio, con faststart per streaming). Il logo (`logo.png`) e il logo Federico's (`logo-federicos.gif`) restano nei formati originali.
 
 ### SEO
-- Ogni `page.tsx` esporta `metadata` (statico) o `generateMetadata` (dinamico, per pagine multilingua) con title, description, canonical, openGraph
+- Ogni `page.tsx` esporta `generateMetadata` (dinamico, multilingua) con title, description, canonical locale-aware, hreflang alternates IT+EN, OpenGraph con locale (it_IT/en_US)
 - JSON-LD `Hotel` nel layout, `BreadcrumbList` nelle singole pagine
 - Immagine OG/SERP di default: `/images/hotel-primavera.webp`
 - Sitemap bilingue autogenerata
 - 21 redirect 301 dal vecchio sito Flazio configurati in `next.config.ts`
-- robots.ts attualmente in `disallow: '/'` — da cambiare quando il sito e' pronto
+- robots.ts: `allow: '/'` con riferimento a sitemap (indicizzazione attiva)
 
 ### Cookie e tracking
-- Cookie banner GDPR con Consent Mode v2 (accetta/rifiuta/personalizza)
-- Predisposto per GTM: manca solo l'ID (`GTM-XXXXXXX`) da configurare
-- Le preferenze cookie scadono dopo 180 giorni
+- GTM attivo: `GTM-KQMDTBCZ` con GA4 `G-942JLBX8T4`
+- Consent Mode v2: default denied, aggiornato dal CookieBanner
+- Cookie banner GDPR (accetta/rifiuta/personalizza), preferenze in localStorage (180 giorni)
+- Tag GTM: GA4, Conversion Linker, click (telefono, email, prenota, social, maps, WhatsApp), scroll depth, outbound links
+- Consenso integrato abilitato su tutti i tag in GTM Console
 
 ### Aggiungere contenuti
 - **Nuova camera**: aggiungere in `src/content/camere.ts` + tradurre in `messages/it/camere.json` e `messages/en/camere.json`

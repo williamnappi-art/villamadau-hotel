@@ -1,21 +1,32 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SantEfisioHero } from '@/components/sections/SantEfisioHero'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
 
-export const metadata: Metadata = {
-  title: "Sant\u2019Efisio a Pula \u2013 Vivi la processione da Villa Madau",
-  description:
-    "La processione di Sant\u2019Efisio parte da Cagliari il 1 Maggio e arriva a Pula il 2 Maggio, esattamente sotto il Boutique Hotel Villa Madau nel centro storico, davanti alla chiesa di San Giovanni.",
-  alternates: { canonical: `${HOTEL.url}/sant-efisio` },
-  openGraph: {
-    title: "Sant\u2019Efisio a Pula | Villa Madau Boutique Hotel",
-    description: "La processione pi\u00f9 importante della Sardegna passa davanti al tuo hotel. Prenota una delle sei camere con vista.",
-    images: [{ url: '/images/camera-1.webp', width: 1200, height: 630, alt: "Villa Madau \u2013 camera con vista sulla processione di Sant\u2019Efisio" }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/sant-efisio` : `${HOTEL.url}/en/sant-efisio`
+  return {
+    title: t('metadata.santEfisio.title'),
+    description: t('metadata.santEfisio.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/sant-efisio`, 'en': `${HOTEL.url}/en/sant-efisio` },
+    },
+    openGraph: {
+      title: t('metadata.santEfisio.ogTitle'),
+      description: t('metadata.santEfisio.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/camera-1.webp', width: 1200, height: 630, alt: t('metadata.santEfisio.ogAlt') }],
+    },
+  }
 }
 
 const rooms = [

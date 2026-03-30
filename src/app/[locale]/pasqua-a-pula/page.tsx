@@ -1,24 +1,31 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PasquaHero } from '@/components/sections/PasquaHero'
 import { HOTEL } from '@/lib/hotel.config'
 
-export const metadata: Metadata = {
-  title: 'Pasqua a Pula – Villa Madau Boutique Hotel',
-  description:
-    'Trascorri il weekend di Pasqua a Pula, in Sardegna. Mare, natura, colazione in giardino e cucina mediterranea al Villa Madau Boutique Hotel.',
-  alternates: { canonical: `${HOTEL.url}/pasqua-a-pula` },
-  openGraph: {
-    title: 'Pasqua a Pula | Villa Madau Boutique Hotel – Sardegna',
-    description: 'Trascorri il weekend di Pasqua a Pula, in Sardegna. Mare, natura, colazione in giardino e cucina mediterranea al Villa Madau Boutique Hotel.',
-    url: `${HOTEL.url}/pasqua-a-pula`,
-    siteName: HOTEL.name,
-    type: 'website',
-    locale: 'it_IT',
-    images: [{ url: '/images/chia-villamadau.webp', width: 1200, height: 630, alt: 'Spiaggia di Chia – Pasqua in Sardegna' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/pasqua-a-pula` : `${HOTEL.url}/en/pasqua-a-pula`
+  return {
+    title: t('metadata.pasqua.title'),
+    description: t('metadata.pasqua.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/pasqua-a-pula`, 'en': `${HOTEL.url}/en/pasqua-a-pula` },
+    },
+    openGraph: {
+      title: t('metadata.pasqua.ogTitle'),
+      description: t('metadata.pasqua.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/chia-villamadau.webp', width: 1200, height: 630, alt: t('metadata.pasqua.ogAlt') }],
+    },
+  }
 }
 
 // Palette: Almond #F5DFC5 · Cambridge Blue #A1B5A8 · Khaki #CBB093 · Fawn #DFA477 · Redwood #A4624D

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { servizi } from '@/content/servizi'
 import { Button } from '@/components/ui/Button'
@@ -7,20 +7,27 @@ import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
 import { ServiziHero } from '@/components/sections/ServiziHero'
 
-export const metadata: Metadata = {
-  title: 'Servizi',
-  description:
-    'Tutti i servizi di Villa Madau Hotel a Pula: WiFi gratuito, parcheggio privato, aria condizionata, noleggio auto, colazione tipica sarda e assistenza turistica.',
-  alternates: { canonical: `${HOTEL.url}/servizi` },
-  openGraph: {
-    title: 'Servizi | Villa Madau Hotel – Pula, Sardegna',
-    description: 'Tutti i servizi di Villa Madau Hotel a Pula: WiFi gratuito, parcheggio privato, aria condizionata, noleggio auto, colazione tipica sarda e assistenza turistica.',
-    url: `${HOTEL.url}/servizi`,
-    siteName: HOTEL.name,
-    type: 'website',
-    locale: 'it_IT',
-    images: [{ url: '/images/villa-madau-pula-hotel.webp', width: 1200, height: 630, alt: 'Villa Madau Hotel Pula – servizi' }],
-  },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+  const url = locale === 'it' ? `${HOTEL.url}/servizi` : `${HOTEL.url}/en/servizi`
+  return {
+    title: t('metadata.servizi.title'),
+    description: t('metadata.servizi.description'),
+    alternates: {
+      canonical: url,
+      languages: { 'it': `${HOTEL.url}/servizi`, 'en': `${HOTEL.url}/en/servizi` },
+    },
+    openGraph: {
+      title: t('metadata.servizi.ogTitle'),
+      description: t('metadata.servizi.ogDescription'),
+      url,
+      siteName: HOTEL.name,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      images: [{ url: '/images/villa-madau-pula-hotel.webp', width: 1200, height: 630, alt: t('metadata.servizi.ogAlt') }],
+    },
+  }
 }
 
 const iconeMap: Record<string, React.ReactNode> = {
