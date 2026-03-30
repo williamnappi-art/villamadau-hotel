@@ -15,7 +15,7 @@ export function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
 
-          // Consent Mode v2 - Default DENIED (GDPR compliant)
+          // 1. Consent Mode v2 - Default DENIED (GDPR compliant)
           gtag('consent', 'default', {
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
@@ -24,11 +24,7 @@ export function Analytics() {
             'wait_for_update': 500
           });
 
-          // Advanced parameters for better tracking
-          gtag('set', 'url_passthrough', true);
-          gtag('set', 'ads_data_redaction', true);
-
-          // Check for saved consent preferences (with 180-day GDPR expiry)
+          // 2. Check for saved consent preferences (with 180-day GDPR expiry)
           (function() {
             try {
               var saved = localStorage.getItem('cookie_consent');
@@ -48,10 +44,14 @@ export function Analytics() {
               }
             } catch(e) {}
           })();
+
+          // 3. Advanced parameters for better tracking
+          gtag('set', 'url_passthrough', true);
+          gtag('set', 'ads_data_redaction', true);
         `}
       </Script>
 
-      {/* Google Tag Manager */}
+      {/* 4. Google Tag Manager */}
       <Script id="gtm-script" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
