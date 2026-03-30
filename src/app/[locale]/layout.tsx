@@ -49,6 +49,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: HOTEL.name }],
   creator: HOTEL.name,
+  verification: {
+    google: 'PzuCQyQAID-pi1C5AxmCrltC1Ivl3xS15IsARpi1etA',
+  },
   openGraph: {
     type: 'website',
     locale: 'it_IT',
