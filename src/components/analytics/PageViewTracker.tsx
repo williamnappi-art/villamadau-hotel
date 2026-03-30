@@ -5,15 +5,17 @@ import { usePathname } from '@/i18n/navigation'
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void
+    dataLayer?: Record<string, unknown>[]
   }
 }
 
 function sendPageView() {
-  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
-  window.gtag('event', 'page_view', {
-    page_title: document.title,
-    page_location: window.location.href,
+  if (typeof window === 'undefined') return
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    event: 'virtualPageview',
+    virtualPageURL: window.location.pathname + window.location.search,
+    virtualPageTitle: document.title,
   })
 }
 
@@ -21,7 +23,7 @@ export default function PageViewTracker() {
   const pathname = usePathname()
   const isFirstRender = useRef(true)
 
-  // Send page_view on every client-side navigation (SPA)
+  // Send virtualPageview on every client-side navigation (SPA)
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false
