@@ -26,19 +26,19 @@ export const servizi: Servizio[] = [
   {
     titolo: 'Noleggio Auto',
     descrizione:
-      'Servizio di noleggio auto disponibile per esplorare le meraviglie della Sardegna meridionale: spiagge, nuraghi e borghi tipici.',
+      'Servizio di noleggio auto disponibile per esplorare le meraviglie della Sardegna meridionale: su richiesta ci occuperemo noi di prenotare l\'auto giusta per te.',
     icona: 'car',
   },
   {
-    titolo: 'Colazione Sarda',
+    titolo: 'Colazione à la Carte',
     descrizione:
-      'Ogni mattina vi aspetta una colazione con prodotti locali e tipici sardi: formaggi, salumi, dolci tradizionali e pane carasau.',
+      'Ogni mattina vi aspetta una colazione con prodotti locali e tipici sardi: formaggi, salumi, dolci tradizionali e pane carasau, il tutto sul nostro menù direttamente a tavola.',
     icona: 'coffee',
   },
   {
     titolo: 'Assistenza Turistica',
     descrizione:
-      'Il nostro staff è a disposizione per consigliarvi escursioni, itinerari e i migliori ristoranti del territorio sulcitano.',
+      'Il nostro staff è a disposizione per consigliarvi e prenotarvi escursioni, itinerari e i migliori ristoranti del territorio sulcitano. Per voi solo le migliori esperienze nel territorio.',
     icona: 'map',
   },
 ]

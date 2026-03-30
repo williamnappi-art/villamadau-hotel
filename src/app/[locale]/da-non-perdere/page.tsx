@@ -54,7 +54,7 @@ const items = [
     cta: 'Scopri le camere con vista',
     href: '/sant-efisio',
     external: false,
-    image: '/images/sant-efisio-hotel.webp',
+    image: '/images/buoi-sant-efisio.jpg',
   },
   {
     tipo: 'stagione' as Tipo,
