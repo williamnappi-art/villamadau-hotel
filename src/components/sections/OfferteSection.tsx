@@ -53,13 +53,14 @@ const itemData: ItemData[] = [
     href: '/hotel',
     image: '/images/hotel-primavera.webp',
   },
-  {
-    id: 'pasqua',
-    tipo: 'stagione',
-    bigItalic: true,
-    href: '/pasqua-a-pula',
-    image: '/images/villa-madau-primavera.webp',
-  },
+  // Pasqua — riattivare a gennaio 2027
+  // {
+  //   id: 'pasqua',
+  //   tipo: 'stagione',
+  //   bigItalic: true,
+  //   href: '/pasqua-a-pula',
+  //   image: '/images/villa-madau-primavera.webp',
+  // },
   // Domus Antigas — riattivare per l'edizione 2027
   // {
   //   id: 'domusAntigas',
