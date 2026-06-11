@@ -31,7 +31,7 @@ const itemData: ItemData[] = [
     tipo: 'offerta',
     bigItalic: true,
     href: '/settimana-al-mare',
-    image: '/images/stabilimento-mare.jpg',
+    image: '/images/lettino-mare.jpg',
   },
   {
     id: 'santEfisio',
