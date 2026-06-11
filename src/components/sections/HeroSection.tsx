@@ -23,17 +23,18 @@ export async function HeroSection() {
       className="relative h-screen min-h-[560px] overflow-hidden"
       aria-label={t('hero.ariaLabelBenvenuti')}
     >
-      {/* Video di sfondo */}
+      {/* Video di sfondo — temporaneamente quello di Sant'Efisio.
+          Per ripristinare il video originale: poster="/images/hero.webp" e source "/images/hotel_pula.mp4" */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        poster="/images/hero.webp"
+        poster="/images/camera-1.webp"
         className="absolute inset-0 w-full h-full object-cover object-center"
         aria-hidden="true"
       >
-        <source src="/images/hotel_pula.mp4" type="video/mp4" />
+        <source src="/images/sant-efisio.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay scuro */}
