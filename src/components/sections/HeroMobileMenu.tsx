@@ -18,12 +18,16 @@ const navLinks = [
 
 interface HeroMobileMenuProps {
   bookingUrl: string
+  /** Hamburger scuro: per hero con video/immagine chiari (default: bianco) */
+  dark?: boolean
 }
 
-export function HeroMobileMenu({ bookingUrl }: HeroMobileMenuProps) {
+export function HeroMobileMenu({ bookingUrl, dark = false }: HeroMobileMenuProps) {
   const t = useTranslations('common')
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+  // Quando il menu è aperto le linee sono sempre chiare (overlay scuro)
+  const barColor = !open && dark ? 'bg-[#1e1c18]' : 'bg-white'
 
   useEffect(() => { setOpen(false) }, [pathname])
   useEffect(() => {
@@ -41,17 +45,17 @@ export function HeroMobileMenu({ bookingUrl }: HeroMobileMenuProps) {
         className="relative flex flex-col items-center justify-center w-10 h-10 gap-1.5 z-[110]"
       >
         <motion.span
-          className="block h-0.5 w-6 bg-white rounded-full"
+          className={`block h-0.5 w-6 ${barColor} rounded-full`}
           animate={open ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
           transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
         />
         <motion.span
-          className="block h-0.5 w-6 bg-white rounded-full"
+          className={`block h-0.5 w-6 ${barColor} rounded-full`}
           animate={open ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
           transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
         />
         <motion.span
-          className="block h-0.5 w-6 bg-white rounded-full"
+          className={`block h-0.5 w-6 ${barColor} rounded-full`}
           animate={open ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
           transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
         />

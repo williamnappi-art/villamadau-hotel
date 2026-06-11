@@ -39,6 +39,13 @@
     "sardegna": "Sardegna",
     "tuttoLanno": "Tutto l'anno",
     "items": {
+      "settimanaMare": {
+        "label": "Offerta · 7 giorni",
+        "titolo": "Una settimana",
+        "italic": "al mare",
+        "testo": "Sette giorni nel Sud Sardegna per due: camera con colazione, pranzo al mare, cena romantica al Federico’s e lettino frontemare a Su Guventeddu. Tutto compreso, nel cuore di Pula.",
+        "cta": "Scopri l’offerta"
+      },
       "santEfisio": {
         "label": "Maggio 2025",
         "titolo": "Arriva",

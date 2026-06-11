@@ -27,6 +27,13 @@ interface Item extends ItemData {
 
 const itemData: ItemData[] = [
   {
+    id: 'settimanaMare',
+    tipo: 'offerta',
+    bigItalic: true,
+    href: '/settimana-al-mare',
+    image: '/images/stabilimento-mare.jpg',
+  },
+  {
     id: 'santEfisio',
     tipo: 'evento',
     bigItalic: true,

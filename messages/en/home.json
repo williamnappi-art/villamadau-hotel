@@ -39,6 +39,13 @@
     "sardegna": "Sardinia",
     "tuttoLanno": "All year round",
     "items": {
+      "settimanaMare": {
+        "label": "Offer · 7 days",
+        "titolo": "A week",
+        "italic": "by the sea",
+        "testo": "Seven days in southern Sardinia for two: room with breakfast, lunch by the sea, a romantic dinner at Federico’s and a beachfront sunbed at Su Guventeddu. All included, in the heart of Pula.",
+        "cta": "Discover the offer"
+      },
       "santEfisio": {
         "label": "May 2025",
         "titolo": "Here comes",

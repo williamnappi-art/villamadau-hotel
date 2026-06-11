@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/ristorante', changeFrequency: 'monthly' as const, priority: 0.8 },
     { path: '/servizi', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/da-non-perdere', changeFrequency: 'monthly' as const, priority: 0.7 },
+    { path: '/settimana-al-mare', changeFrequency: 'monthly' as const, priority: 0.8 },
     { path: '/sant-efisio', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/domus-antigas', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/pasqua-a-pula', changeFrequency: 'monthly' as const, priority: 0.7 },
