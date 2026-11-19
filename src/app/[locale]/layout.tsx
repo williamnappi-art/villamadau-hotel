@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
-import { NextIntlClientProvider } from 'next-intl'
+import { NextIntlClientProvider, hasLocale } from 'next-intl'
+import { notFound } from 'next/navigation'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { ConditionalHeader } from '@/components/layout/ConditionalHeader'
 import { Header } from '@/components/layout/Header'
@@ -86,6 +87,9 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
+// Solo 'it' ed 'en': qualsiasi altro primo segmento (es. /test.php) → 404 statica (src/app/not-found.tsx)
+export const dynamicParams = false
+
 export default async function LocaleLayout({
   children,
   params,
@@ -94,6 +98,8 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
+  // Lingua sconosciuta (es. /test.php, /favicon.png) → 404 invece della home
+  if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
   const messages = await getMessages()
   const hotelSchema = generateHotelSchema()
