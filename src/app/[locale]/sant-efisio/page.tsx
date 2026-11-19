@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { SantEfisioHero } from '@/components/sections/SantEfisioHero'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
@@ -101,11 +101,11 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
       <section style={{ backgroundColor: '#F9ECE8' }} className="py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#939685' }}>
-            1 \u2013 4 Maggio &middot; Pula, Sardegna
+            1 &ndash; 4 Maggio 2027 &middot; Pula, Sardegna
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl leading-tight mb-10" style={{ color: '#1e1c18' }}>
+          <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-10" style={{ color: '#1e1c18' }}>
             La processione pi&ugrave; grande<br />della Sardegna
-          </h1>
+          </h2>
           <div className="space-y-5 text-lg leading-relaxed" style={{ color: '#4a4640' }}>
             <p>
               La processione per Sant&apos;Efisio martire &egrave; una delle pi&ugrave; importanti

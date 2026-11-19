@@ -47,6 +47,7 @@ src/
 │       ├── contatti/page.tsx
 │       ├── galleria/           # page.tsx (server) + GalleriaClient.tsx (lightbox, 'use client')
 │       ├── da-non-perdere/page.tsx
+│       ├── settimana-al-mare/page.tsx  # Offerta di Natale "Una settimana al mare" (estate 2027), testi in messages/*/settimanaMare.json
 │       ├── sant-efisio/page.tsx
 │       ├── domus-antigas/page.tsx
 │       ├── pasqua-a-pula/page.tsx
@@ -87,12 +88,13 @@ src/
     └── schema.ts               # JSON-LD: Hotel, HotelRoom, BreadcrumbList
 
 messages/
-├── it/                         # 11 file JSON con tutte le stringhe italiane
+├── it/                         # 12 file JSON con tutte le stringhe italiane
 │   ├── common.json             # Nav, footer, CTA, cookie banner
 │   ├── metadata.json           # Titoli e descrizioni SEO
 │   ├── home.json, hotel.json, ristorante.json, servizi.json
 │   ├── camere.json, contatti.json, eventi.json, galleria.json, privacy.json
-└── en/                         # 11 file JSON con traduzioni inglesi (stessa struttura)
+│   └── settimanaMare.json      # Pagina offerta /settimana-al-mare (+ registrato in src/i18n/request.ts)
+└── en/                         # 12 file JSON con traduzioni inglesi (stessa struttura)
 ```
 
 ### Traduzioni (next-intl)

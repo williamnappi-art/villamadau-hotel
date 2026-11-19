@@ -1,0 +1,135 @@
+{
+  "breadcrumb": "A week by the sea – Summer 2027",
+  "hero": {
+    "badge": "The Christmas gift · Summer 2027",
+    "title1": "A week",
+    "title2": "by the sea",
+    "title3": "in Pula, Sardinia",
+    "deadline": "Price locked for bookings made by 6 January 2027"
+  },
+  "intro": {
+    "label": "For two · 6 nights, 7 days · July and August 2027",
+    "title": "This year, under the tree,",
+    "titleItalic": "summer",
+    "p1": "Some gifts are unwrapped in December and lived in July. A week by the sea in southern Sardinia, for two: six nights and seven days between the streets of Pula’s historic centre and the most beautiful beaches on the coast, from Nora to Chia.",
+    "p2": "Book by Epiphany and your summer 2027 comes at <b>one single, locked price</b>: room with breakfast, lunch by the sea, dinner every evening and a beachfront sunbed at Su Guventeddu. All included, every day — no worries and no surprises.",
+    "panoramaAlt": "The Way Sailing beach club at Su Guventeddu, Pula – seaside holidays in Sardinia"
+  },
+  "inclusi": {
+    "label": "All included, every day",
+    "title": "What",
+    "titleItalic": "awaits you",
+    "items": [
+      {
+        "eyebrow": "Stay",
+        "titolo": "Double room\nwith breakfast",
+        "testo": "Six nights in a double room in the heart of Pula’s historic centre, along the quiet corridors of our Boutique Hotel. Breakfast is waiting every morning: the sweetest way to start a day at the beach.",
+        "alt": "Double room – Villa Madau Boutique Hotel, historic centre of Pula"
+      },
+      {
+        "eyebrow": "Lunch by the sea, every day",
+        "titolo": "A thermal lunch box,\nnever the same",
+        "testo": "No trips back under the midday sun: lunch comes with you to the beach. Every day a different thermal lunch box, chosen by you, to savour the flavours of Sardinia with your toes in the sand and the sea in front of you.",
+        "alt": "Lunch on the beach at Su Guventeddu, Pula"
+      },
+      {
+        "eyebrow": "Dinner, every evening",
+        "titolo": "Dinner at\nFederico’s",
+        "testo": "When the sun goes down, the evening is yours. Dinner is included every evening at Federico’s Restaurant, on the terrace or in the square beneath the tree: local cuisine in one of the most charming settings in Pula.",
+        "alt": "Dinner at Federico’s Restaurant in the historic centre of Pula"
+      },
+      {
+        "eyebrow": "Beachfront",
+        "titolo": "Sunbed and umbrella\nat Su Guventeddu",
+        "testo": "A front-row sunbed and umbrella, right on the sea, for the whole week, on the beautiful beach of Su Guventeddu at the Way Sailing centre. Easy parking and showers: the sea, without a single worry.",
+        "alt": "Beachfront sunbed and umbrella at Su Guventeddu – Way Sailing, Pula"
+      },
+      {
+        "eyebrow": "Pure relaxation",
+        "titolo": "Just relax,\nnothing to think about",
+        "testo": "Parking, sunbed, umbrella, lunch ready to go and dinner every evening: it’s all included, which means only one thing — there is nothing to think about. Simply relax and let the days drift slowly by, between sun and sea. And if you feel like it, the beach club also offers windsurfing and sailing: an entirely optional extra.",
+        "alt": "Relaxing by the sea at the Su Guventeddu beach club, Pula"
+      }
+    ]
+  },
+  "centro": {
+    "label": "Between the streets of Pula and the sea",
+    "title": "All the beauty,\nnone of the worries",
+    "p1": "From our hotel you can easily reach the finest beaches of southern Sardinia: <b>Chia</b> and <b>Tuerredda</b> are about 20 minutes away by car, paradises of white sand and turquoise water, while the archaeological site of <b>Nora</b> and its beach are just 2 km away.",
+    "p2": "And when you come back, the quiet elegance of Pula’s historic centre awaits: the narrow streets, the square, the scent of dinner drifting from Federico’s.",
+    "p3": "A week discovering southern Sardinia in complete comfort, with the care of a Boutique Hotel that thinks of every detail for you.",
+    "imageAlt": "The garden of the beachfront club at Su Guventeddu, Pula"
+  },
+  "regalo": {
+    "label": "To give",
+    "title": "A summer to unwrap",
+    "titleItalic": "under the tree",
+    "p1": "If this week by the sea is a gift for someone special, let it be a surprise. Once payment is complete, we will send you an elegant gift voucher to print: to place beneath the tree on Christmas morning, or to tuck into an Epiphany stocking.",
+    "p2": "Inside, the promise of seven days of sun, sea and dinners under the stars in Sardinia. A gift to look forward to all winter long, and to remember forever.",
+    "voucherLabel": "Gift voucher",
+    "voucherTitle1": "A week",
+    "voucherTitle2": "by the sea",
+    "voucherSub": "Summer 2027 · for two",
+    "voucherFirma": "Villa Madau · Pula, Sardinia"
+  },
+  "condizioni": {
+    "label": "How it works",
+    "title": "The Christmas price,",
+    "titleItalic": "locked in",
+    "items": [
+      { "term": "When", "def": "July and August 2027 · 6 nights, 7 days" },
+      { "term": "Price", "def": "€2,300 per couple, all included (€1,150 per person)" },
+      { "term": "How to lock it", "def": "A deposit when booking and the balance by 6 January 2027" },
+      { "term": "Rate", "def": "Non-refundable" },
+      { "term": "After Epiphany", "def": "From 7 January 2027 the same week will cost €3,300 per couple and will no longer be available in June, July or August" }
+    ]
+  },
+  "prezzo": {
+    "label": "Christmas price · for two",
+    "price": "€2,300",
+    "sub": "per couple · €1,150 per person · 6 nights, 7 days",
+    "deadline": "Booking and balance by 6 January 2027",
+    "testo": "Room with breakfast, lunch by the sea, dinner every evening, beachfront sunbed and umbrella, parking and showers: all included, for an unforgettable week in July or August.",
+    "cta": "<b>Write to us and ask for the Christmas offer “A week by the sea”</b>: we will reply with the weeks still available and all the details.",
+    "whatsapp": "WhatsApp",
+    "telefono": "Phone",
+    "email": "Email",
+    "messaggio": "Hello! I would like to book the Christmas offer “A week by the sea” for summer 2027 at Villa Madau. Could you tell me which weeks are available in July and August?",
+    "oggettoEmail": "Christmas offer “A week by the sea” – Summer 2027"
+  },
+  "faq": {
+    "label": "Frequently asked questions",
+    "title": "Everything you",
+    "titleItalic": "need to know",
+    "items": [
+      {
+        "q": "What does the “A week by the sea” offer include?",
+        "a": "Six nights and seven days for two at Villa Madau Boutique Hotel in Pula: double room with breakfast, lunch by the sea with a thermal lunch box, dinner every evening at Federico’s Restaurant, a beachfront sunbed and umbrella at Su Guventeddu, parking and showers at the beach club. All included, every day."
+      },
+      {
+        "q": "Which dates does it cover?",
+        "a": "The Christmas price of €2,300 per couple applies to weeks in July and August 2027, subject to availability. From 7 January 2027 the offer costs €3,300 per couple and is no longer valid for June, July or August."
+      },
+      {
+        "q": "How do I lock in the price?",
+        "a": "Book with a deposit and pay the balance by 6 January 2027. The rate is non-refundable."
+      },
+      {
+        "q": "Can I give it as a Christmas gift?",
+        "a": "Of course. Once payment is complete we will send you a printable gift voucher, ready to place under the tree or in an Epiphany stocking."
+      },
+      {
+        "q": "Which beaches are near Pula?",
+        "a": "The beach club included in the offer is on Su Guventeddu beach in Pula. Nora’s beach and archaeological site are 2 km from the hotel, and Chia and Tuerredda — among the most beautiful beaches in Sardinia — are about 20 minutes away by car."
+      },
+      {
+        "q": "Where is Villa Madau?",
+        "a": "In the historic centre of Pula, in southern Sardinia, about 40 km from Cagliari Elmas airport. The hotel is on Via Nora, the town’s main street, a few steps from the square and its restaurants."
+      }
+    ]
+  },
+  "offerSchema": {
+    "name": "A week by the sea in Sardinia – Christmas offer for summer 2027",
+    "description": "6 nights and 7 days for two in Pula (southern Sardinia) in July or August 2027: room with breakfast, lunch by the sea, dinner every evening, beachfront sunbed and umbrella. Price locked when booking by 6 January 2027."
+  }
+}

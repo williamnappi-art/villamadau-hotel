@@ -1,7 +1,7 @@
 {
   "santEfisio": {
     "hero": {
-      "subtitle": "1 – 4 Maggio 2025 · Pula, Sardegna",
+      "subtitle": "1 – 4 Maggio 2027 · Pula, Sardegna",
       "title1": "Arriva",
       "title2": "Sant'Efisio"
     },
@@ -210,8 +210,15 @@
       "stagione": "Stagione"
     },
     "items": {
+      "settimanaMare": {
+        "label": "Regalo di Natale · Estate 2027",
+        "titolo": "Una settimana",
+        "italic": "al mare",
+        "testo": "Regalatevi l’estate 2027 in Sardegna: 6 notti e 7 giorni per due a Pula, con colazione, pranzo al mare, cena ogni sera e lettino frontemare. Prezzo unico bloccato se prenoti entro il 6 gennaio.",
+        "cta": "Scopri l’offerta di Natale"
+      },
       "santEfisio": {
-        "label": "Maggio 2025",
+        "label": "Maggio 2027",
         "titolo": "Arriva",
         "italic": "Sant\u2019Efisio",
         "testo": "Dal 1 al 4 maggio, da Cagliari parte la processione più importante e fiorita della Sardegna — e arriva a Pula. Vivila dalla tua camera al Villa Madau Boutique Hotel.",

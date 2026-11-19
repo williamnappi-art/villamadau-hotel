@@ -21,6 +21,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       eventi: (await import(`../../messages/${locale}/eventi.json`)).default,
       galleria: (await import(`../../messages/${locale}/galleria.json`)).default,
       privacy: (await import(`../../messages/${locale}/privacy.json`)).default,
+      settimanaMare: (await import(`../../messages/${locale}/settimanaMare.json`)).default,
     },
   }
 })

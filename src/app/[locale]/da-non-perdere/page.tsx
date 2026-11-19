@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { HOTEL } from '@/lib/hotel.config'
 import { DaNonPerdereHero } from '@/components/sections/DaNonPerdereHero'
 
@@ -28,15 +28,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
+
 // Palette: Rust #802d20 · Terracotta #c96148 · Moss #c4cac3 · Wheat #d7a773 · Peach #dca791 · Cream #f2e7df
 
 type Tipo = 'offerta' | 'evento' | 'stagione'
-
-const tipoLabel: Record<Tipo, string> = {
-  evento:   'Evento',
-  offerta:  'Offerta',
-  stagione: 'Stagione',
-}
 
 const tipoColor: Record<Tipo, { bg: string; text: string }> = {
   evento:   { bg: 'bg-[#802d20]',  text: 'text-[#f2e7df]' },
@@ -44,67 +39,44 @@ const tipoColor: Record<Tipo, { bg: string; text: string }> = {
   stagione: { bg: 'bg-[#d7a773]',  text: 'text-[#802d20]' },
 }
 
-const items = [
-  {
-    tipo: 'evento' as Tipo,
-    label: 'Maggio 2025',
-    titolo: 'Arriva',
-    italic: "Sant\u2019Efisio",
-    testo: 'Dal 1 al 4 maggio, da Cagliari parte la processione più importante e fiorita della Sardegna — e arriva a Pula. Vivila dalla tua camera al Villa Madau Boutique Hotel.',
-    cta: 'Scopri le camere con vista',
-    href: '/sant-efisio',
-    external: false,
-    image: '/images/buoi-sant-efisio.jpg',
-  },
-  {
-    tipo: 'stagione' as Tipo,
-    label: 'Pasqua 2026',
-    titolo: 'Weekend di',
-    italic: 'Pasqua a Pula',
-    testo: 'Mare e montagna, colazione in giardino, sentieri nel parco di Gutturu Mannu e cucina mediterranea. Il weekend di Pasqua nel cuore storico di Pula.',
-    cta: 'Scopri il weekend di Pasqua',
-    href: '/pasqua-a-pula',
-    external: false,
-    image: '/images/villa-madau-primavera.webp',
-  },
-  {
-    tipo: 'evento' as Tipo,
-    label: '15 Marzo 2026',
-    titolo: 'Arriva',
-    italic: 'Domus Antigas',
-    testo: 'Laboratori, cortili aperti e tradizione a tavola: il centro storico di Pula si trasforma in un viaggio nel tempo. Villa Madau è nel cuore della manifestazione.',
-    cta: "Scopri l\u2019offerta speciale",
-    href: '/domus-antigas',
-    external: false,
-    image: '/images/piazza-chiesa-pula.webp',
-  },
-  {
-    tipo: 'stagione' as Tipo,
-    label: 'Bassa stagione',
-    titolo: 'Primavera',
-    italic: 'in Sardegna',
-    testo: 'Aprile e maggio sono i mesi più belli: profumi di macchia mediterranea, spiagge deserte, temperature miti. Villa Madau è aperta e il paese vi aspetta.',
-    cta: "Scopri l\u2019hotel",
-    href: '/hotel',
-    external: false,
-    image: '/images/hotel-primavera.webp',
-  },
-  {
-    tipo: 'offerta' as Tipo,
-    label: 'Autunno 2025',
-    titolo: 'Settembre & Ottobre,',
-    italic: 'prenota prima',
-    testo: "L\u2019ultima parte dell\u2019estate, temperature gradevoli, mare caldo, tramonti mozzafiato e spiagge vuote.",
-    cta: 'Prenota ora',
-    href: 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8',
-    external: true,
-    image: '/images/ristorante.webp',
-  },
+// Testi in messages/*/eventi.json → daNonPerdere.items.<id>
+const itemData: { id: string; tipo: Tipo; href: string; external?: boolean; image: string }[] = [
+  { id: 'settimanaMare', tipo: 'offerta', href: '/settimana-al-mare', image: '/images/lettino-mare.jpg' },
+  { id: 'santEfisio',    tipo: 'evento',  href: '/sant-efisio',       image: '/images/buoi-sant-efisio.jpg' },
+  // Pasqua — riattivare a gennaio 2027 (aggiornare l'etichetta in eventi.json)
+  // { id: 'pasqua',       tipo: 'stagione', href: '/pasqua-a-pula',  image: '/images/villa-madau-primavera.webp' },
+  // Domus Antigas — riattivare per l'edizione 2027 (aggiornare l'etichetta in eventi.json)
+  // { id: 'domusAntigas', tipo: 'evento',   href: '/domus-antigas',  image: '/images/piazza-chiesa-pula.webp' },
+  { id: 'primavera',     tipo: 'stagione', href: '/hotel',            image: '/images/hotel-primavera.webp' },
+  // Autunno — scaduto, riattivare per l'autunno 2027
+  // { id: 'autunno', tipo: 'offerta', href: 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8', external: true, image: '/images/ristorante.webp' },
 ]
+
+function CardWrapper({ href, external, className, children }: { href: string; external?: boolean; className?: string; children: React.ReactNode }) {
+  return external ? (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+    </a>
+  ) : (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  )
+}
 
 export default async function DaNonPerderePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
+  const t = await getTranslations('eventi.daNonPerdere')
+
+  const items = itemData.map((d) => ({
+    ...d,
+    label:  t(`items.${d.id}.label`),
+    titolo: t(`items.${d.id}.titolo`),
+    italic: t(`items.${d.id}.italic`),
+    testo:  t(`items.${d.id}.testo`),
+    cta:    t(`items.${d.id}.cta`),
+  }))
 
   return (
     <>
@@ -116,21 +88,12 @@ export default async function DaNonPerderePage({ params }: { params: Promise<{ l
           {items.map((item, i) => {
             const cfg = tipoColor[item.tipo]
             const isLarge = i === 0 // prima card full-width
-            const CardWrapper = item.external
-              ? ({ children, className }: { children: React.ReactNode; className?: string }) => (
-                  <a href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
-                    {children}
-                  </a>
-                )
-              : ({ children, className }: { children: React.ReactNode; className?: string }) => (
-                  <Link href={item.href} className={className}>
-                    {children}
-                  </Link>
-                )
 
             return (
               <CardWrapper
-                key={item.italic}
+                key={item.id}
+                href={item.href}
+                external={item.external}
                 className={`group relative overflow-hidden bg-[#dca791]/20 flex flex-col ${isLarge ? 'md:col-span-2' : ''}`}
               >
                 {/* Foto */}
@@ -151,7 +114,7 @@ export default async function DaNonPerderePage({ params }: { params: Promise<{ l
                   <span
                     className={`absolute top-5 left-5 text-[9px] uppercase tracking-[0.25em] font-medium px-3 py-1.5 ${cfg.bg} ${cfg.text}`}
                   >
-                    {tipoLabel[item.tipo]} · {item.label}
+                    {t(`tipoLabel.${item.tipo}`)} · {item.label}
                   </span>
                 </div>
 
@@ -183,16 +146,15 @@ export default async function DaNonPerderePage({ params }: { params: Promise<{ l
       {/* ── STACCO FINALE ── */}
       <section className="bg-[#c4cac3] py-20 px-6 text-center">
         <div className="max-w-xl mx-auto">
-          <p className="text-[10px] uppercase tracking-[0.35em] text-[#802d20] mb-5">Prenota il tuo soggiorno</p>
-          <em className="font-serif italic text-[#802d20] text-2xl md:text-3xl leading-relaxed block mb-10">
-            Ogni stagione a Pula ha la sua bellezza.<br />
-            Villa Madau è aperta tutto l&apos;anno.
+          <p className="text-[10px] uppercase tracking-[0.35em] text-[#802d20] mb-5">{t('ctaFinale.label')}</p>
+          <em className="font-serif italic text-[#802d20] text-2xl md:text-3xl leading-relaxed block mb-10 whitespace-pre-line">
+            {t('ctaFinale.testo')}
           </em>
           <Link
             href="/contatti"
             className="inline-block border border-[#802d20] text-[#802d20] text-[10px] uppercase tracking-[0.25em] px-8 py-3 hover:bg-[#802d20] hover:text-[#f2e7df] transition-colors duration-200"
           >
-            Contattaci
+            {t('ctaFinale.cta')}
           </Link>
         </div>
       </section>

@@ -7,7 +7,8 @@ import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const cardData = [
-  { id: 'santEfisio',  image: '/images/camera-via-nora.webp',     href: '/sant-efisio' },
+  // Sant'Efisio — nascosto (nov 2026), riattivare per maggio 2027
+  // { id: 'santEfisio',  image: '/images/camera-via-nora.webp',     href: '/sant-efisio' },
   { id: 'hotel',       image: '/images/hotel-primavera.webp',     href: '/hotel' },
   { id: 'ristorante',  image: '/images/ristorante.webp',          href: '/ristorante' },
   { id: 'chia',        image: '/images/chia-villamadau.webp',      href: '/servizi' },

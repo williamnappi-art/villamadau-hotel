@@ -1,0 +1,135 @@
+{
+  "breadcrumb": "Una settimana al mare – Estate 2027",
+  "hero": {
+    "badge": "Il regalo di Natale · Estate 2027",
+    "title1": "Una settimana",
+    "title2": "al mare",
+    "title3": "a Pula, in Sardegna",
+    "deadline": "Prezzo bloccato per chi prenota entro il 6 gennaio 2027"
+  },
+  "intro": {
+    "label": "Per due persone · 6 notti, 7 giorni · Luglio e agosto 2027",
+    "title": "Quest’anno, sotto l’albero,",
+    "titleItalic": "l’estate",
+    "p1": "C’è un regalo che si scarta a dicembre e si vive a luglio. Una settimana al mare in Sardegna, per due, nel Sud dell’isola: sei notti e sette giorni tra le vie del centro storico di Pula e le spiagge più belle della costa, da Nora a Chia.",
+    "p2": "Prenotate entro l’Epifania e la vostra estate 2027 avrà un <b>prezzo unico, bloccato</b>: camera con colazione, pranzo al mare, cena ogni sera e lettino frontemare a Su Guventeddu. Tutto compreso, ogni giorno — senza pensieri e senza sorprese.",
+    "panoramaAlt": "Lo stabilimento Way Sailing frontemare a Su Guventeddu, Pula – vacanze al mare in Sardegna"
+  },
+  "inclusi": {
+    "label": "Tutto compreso, ogni giorno",
+    "title": "Cosa vi",
+    "titleItalic": "aspetta",
+    "items": [
+      {
+        "eyebrow": "Dormire",
+        "titolo": "Camera matrimoniale\ncon colazione",
+        "testo": "Sei notti in una camera matrimoniale nel cuore del centro storico di Pula, tra le vie silenziose del nostro Boutique Hotel. Ogni mattina la colazione vi aspetta: il modo più dolce per iniziare una giornata di mare.",
+        "alt": "Camera matrimoniale – Villa Madau Boutique Hotel, centro storico di Pula"
+      },
+      {
+        "eyebrow": "Pranzo al mare, ogni giorno",
+        "titolo": "Lunch box termico\nsempre diverso",
+        "testo": "Niente rientri sotto il sole: il pranzo arriva con voi in spiaggia. Ogni giorno un lunch box termico diverso, scelto da voi, per gustare i sapori della Sardegna con i piedi nella sabbia e il mare davanti.",
+        "alt": "Pranzo al mare in spiaggia a Su Guventeddu, Pula"
+      },
+      {
+        "eyebrow": "Cena, ogni sera",
+        "titolo": "A cena da\nFederico’s",
+        "testo": "Quando il sole tramonta, la sera è vostra. La cena è compresa ogni sera al Federico’s Restaurant, in terrazza o sulla piazza sotto l’albero: la cucina del territorio in una delle cornici più suggestive di Pula.",
+        "alt": "Cena al Federico’s Restaurant nel centro storico di Pula"
+      },
+      {
+        "eyebrow": "Frontemare",
+        "titolo": "Lettino e ombrellone\na Su Guventeddu",
+        "testo": "Lettino e ombrellone in prima fila, frontemare, per tutta la settimana, nella bellissima spiaggia di Su Guventeddu, al centro velico Way Sailing. Parcheggio comodissimo e doccia: il mare, senza il minimo pensiero.",
+        "alt": "Lettino e ombrellone frontemare a Su Guventeddu – Way Sailing, Pula"
+      },
+      {
+        "eyebrow": "Completo relax",
+        "titolo": "Solo relax,\nnessun pensiero",
+        "testo": "Parcheggio, lettino, ombrellone, pranzo già pronto e cena ogni sera: è tutto compreso, e questo vuol dire una cosa sola — non dovete pensare a niente. Solo rilassarvi e lasciare che le giornate scorrano lente, tra il sole e il mare. E se vi va, allo stabilimento ci sono anche windsurf e vela: un extra, del tutto facoltativo.",
+        "alt": "Relax frontemare allo stabilimento di Su Guventeddu, Pula"
+      }
+    ]
+  },
+  "centro": {
+    "label": "Tra le vie di Pula e il mare",
+    "title": "Tutta la bellezza,\nnessun pensiero",
+    "p1": "Dal nostro hotel raggiungete facilmente le spiagge più belle del Sud Sardegna: <b>Chia</b> e <b>Tuerredda</b> sono a circa 20 minuti d’auto, paradisi di sabbia bianca e acqua turchese, mentre l’area archeologica di <b>Nora</b> e la sua spiaggia sono a soli 2 km.",
+    "p2": "E quando tornate, vi aspetta il silenzio elegante del centro storico di Pula: i vicoli, la piazza, il profumo della cena che arriva dal Federico’s.",
+    "p3": "Una settimana alla scoperta del Sud Sardegna, in tutta comodità, con la cura di un Boutique Hotel che pensa a ogni dettaglio per voi.",
+    "imageAlt": "Il giardino dello stabilimento frontemare a Su Guventeddu, Pula"
+  },
+  "regalo": {
+    "label": "Da regalare",
+    "title": "Un’estate da scartare",
+    "titleItalic": "sotto l’albero",
+    "p1": "Se la settimana al mare è un pensiero per qualcuno di speciale, lasciate che sia una sorpresa. A pagamento completato vi invieremo un elegante voucher regalo da stampare: da adagiare sotto l’albero la mattina di Natale, o da nascondere nella calza della Befana.",
+    "p2": "Dentro, la promessa di sette giorni di sole, mare e cene sotto le stelle in Sardegna. Un regalo che si aspetta per tutto l’inverno e si ricorda per sempre.",
+    "voucherLabel": "Voucher regalo",
+    "voucherTitle1": "Una settimana",
+    "voucherTitle2": "al mare",
+    "voucherSub": "Estate 2027 · per due persone",
+    "voucherFirma": "Villa Madau · Pula, Sardegna"
+  },
+  "condizioni": {
+    "label": "Come funziona",
+    "title": "Il prezzo di Natale,",
+    "titleItalic": "bloccato",
+    "items": [
+      { "term": "Quando", "def": "Luglio e agosto 2027 · 6 notti, 7 giorni" },
+      { "term": "Prezzo", "def": "2.300 € a coppia, tutto compreso (1.150 € a persona)" },
+      { "term": "Come bloccarlo", "def": "Una caparra alla prenotazione e il saldo entro il 6 gennaio 2027" },
+      { "term": "Tariffa", "def": "Non rimborsabile" },
+      { "term": "Dopo l’Epifania", "def": "Dal 7 gennaio 2027 la stessa settimana costerà 3.300 € a coppia e non sarà più disponibile a giugno, luglio e agosto" }
+    ]
+  },
+  "prezzo": {
+    "label": "Prezzo di Natale · per due persone",
+    "price": "2.300 €",
+    "sub": "a coppia · 1.150 € a persona · 6 notti, 7 giorni",
+    "deadline": "Prenotazione e saldo entro il 6 gennaio 2027",
+    "testo": "Camera con colazione, pranzo al mare, cena ogni sera, lettino e ombrellone frontemare, parcheggio e doccia: tutto compreso, per una settimana di luglio o di agosto indimenticabile.",
+    "cta": "<b>Scriveteci e richiedete l’offerta di Natale “Una settimana al mare”</b>: vi risponderemo con le settimane ancora disponibili e tutti i dettagli.",
+    "whatsapp": "WhatsApp",
+    "telefono": "Telefono",
+    "email": "Email",
+    "messaggio": "Ciao! Vorrei prenotare l’offerta di Natale “Una settimana al mare” per l’estate 2027 al Villa Madau. Potete indicarmi le settimane disponibili a luglio e agosto?",
+    "oggettoEmail": "Offerta di Natale “Una settimana al mare” – Estate 2027"
+  },
+  "faq": {
+    "label": "Domande frequenti",
+    "title": "Tutto quello che c’è",
+    "titleItalic": "da sapere",
+    "items": [
+      {
+        "q": "Cosa comprende l’offerta “Una settimana al mare”?",
+        "a": "Sei notti e sette giorni per due persone al Villa Madau Boutique Hotel di Pula: camera matrimoniale con colazione, pranzo al mare con lunch box termico, cena ogni sera al Federico’s Restaurant, lettino e ombrellone frontemare a Su Guventeddu, parcheggio e doccia allo stabilimento. Tutto compreso, ogni giorno."
+      },
+      {
+        "q": "Per quali periodi è valida?",
+        "a": "Il prezzo di Natale di 2.300 € a coppia vale per le settimane di luglio e agosto 2027, fino a esaurimento delle disponibilità. Dal 7 gennaio 2027 l’offerta costa 3.300 € a coppia e non è più valida per giugno, luglio e agosto."
+      },
+      {
+        "q": "Come si blocca il prezzo?",
+        "a": "Si prenota versando una caparra e si completa il saldo entro il 6 gennaio 2027. La tariffa è non rimborsabile."
+      },
+      {
+        "q": "Posso regalarla a Natale?",
+        "a": "Certo. A pagamento completato vi inviamo un voucher regalo da stampare, pronto da mettere sotto l’albero o nella calza della Befana."
+      },
+      {
+        "q": "Quali spiagge ci sono vicino a Pula?",
+        "a": "Lo stabilimento compreso nell’offerta è sulla spiaggia di Su Guventeddu, a Pula. A 2 km dall’hotel ci sono la spiaggia e l’area archeologica di Nora; in circa 20 minuti d’auto si raggiungono Chia e Tuerredda, tra le spiagge più belle della Sardegna."
+      },
+      {
+        "q": "Dove si trova il Villa Madau?",
+        "a": "Nel centro storico di Pula, nel Sud Sardegna, a circa 40 km dall’aeroporto di Cagliari Elmas. L’hotel è in via Nora, la strada principale del paese, a pochi passi dalla piazza e dai suoi ristoranti."
+      }
+    ]
+  },
+  "offerSchema": {
+    "name": "Una settimana al mare in Sardegna – Offerta di Natale per l’estate 2027",
+    "description": "6 notti e 7 giorni per due persone a Pula (Sud Sardegna) a luglio o agosto 2027: camera con colazione, pranzo al mare, cena ogni sera, lettino e ombrellone frontemare. Prezzo bloccato prenotando entro il 6 gennaio 2027."
+  }
+}

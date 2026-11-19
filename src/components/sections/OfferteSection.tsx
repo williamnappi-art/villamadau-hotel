@@ -33,20 +33,22 @@ const itemData: ItemData[] = [
     href: '/settimana-al-mare',
     image: '/images/lettino-mare.jpg',
   },
-  {
-    id: 'santEfisio',
-    tipo: 'evento',
-    bigItalic: true,
-    href: '/sant-efisio',
-    image: '/images/piazza-chiesa-pula.webp',
-  },
-  {
-    id: 'autunno',
-    tipo: 'offerta',
-    href: 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8',
-    external: true,
-    image: '/images/ristorante.webp',
-  },
+  // Sant'Efisio — nascosto (nov 2026), riattivare per maggio 2027
+  // {
+  //   id: 'santEfisio',
+  //   tipo: 'evento',
+  //   bigItalic: true,
+  //   href: '/sant-efisio',
+  //   image: '/images/piazza-chiesa-pula.webp',
+  // },
+  // Autunno — scaduto, riattivare per l'autunno 2027 aggiornando l'etichetta in home.json
+  // {
+  //   id: 'autunno',
+  //   tipo: 'offerta',
+  //   href: 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8',
+  //   external: true,
+  //   image: '/images/ristorante.webp',
+  // },
   {
     id: 'primavera',
     tipo: 'stagione',
