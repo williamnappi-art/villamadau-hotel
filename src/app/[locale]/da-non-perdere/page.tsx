@@ -41,7 +41,7 @@ const tipoColor: Record<Tipo, { bg: string; text: string }> = {
 
 // Testi in messages/*/eventi.json → daNonPerdere.items.<id>
 const itemData: { id: string; tipo: Tipo; href: string; external?: boolean; image: string }[] = [
-  { id: 'settimanaMare', tipo: 'offerta', href: '/settimana-al-mare', image: '/images/lettino-mare.jpg' },
+  { id: 'settimanaMare', tipo: 'offerta', href: '/settimana-al-mare', image: '/images/mare-vista-aerea.webp' },
   { id: 'santEfisio',    tipo: 'evento',  href: '/sant-efisio',       image: '/images/buoi-sant-efisio.jpg' },
   // Pasqua — riattivare a gennaio 2027 (aggiornare l'etichetta in eventi.json)
   // { id: 'pasqua',       tipo: 'stagione', href: '/pasqua-a-pula',  image: '/images/villa-madau-primavera.webp' },

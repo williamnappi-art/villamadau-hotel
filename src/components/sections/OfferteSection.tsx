@@ -31,7 +31,7 @@ const itemData: ItemData[] = [
     tipo: 'offerta',
     bigItalic: true,
     href: '/settimana-al-mare',
-    image: '/images/lettino-mare.jpg',
+    image: '/images/mare-vista-aerea.webp',
   },
   // Sant'Efisio — nascosto (nov 2026), riattivare per maggio 2027
   // {
@@ -139,12 +139,12 @@ export function OfferteSection() {
               >
                 {current.external ? (
                   <a href={current.href} target="_blank" rel="noopener noreferrer" className="block absolute inset-0">
-                    <Image src={current.image} alt={current.titolo + ' ' + current.italic} fill sizes="100vw" className="object-cover" priority />
+                    <Image src={current.image} alt={current.titolo + ' ' + current.italic} fill sizes="(max-width: 1280px) 100vw, 1216px" className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
                   </a>
                 ) : (
                   <Link href={current.href} className="block absolute inset-0">
-                    <Image src={current.image} alt={current.titolo + ' ' + current.italic} fill sizes="100vw" className="object-cover" priority />
+                    <Image src={current.image} alt={current.titolo + ' ' + current.italic} fill sizes="(max-width: 1280px) 100vw, 1216px" className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
                   </Link>
                 )}

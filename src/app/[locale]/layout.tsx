@@ -101,7 +101,11 @@ export default async function LocaleLayout({
   // Lingua sconosciuta (es. /test.php, /favicon.png) → 404 invece della home
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
-  const messages = await getMessages()
+  // Al browser servono solo le traduzioni usate dai componenti client
+  // (menu, cookie banner, caroselli della home): il resto è già nell'HTML.
+  // Tenerle tutte appesantiva ogni pagina di ~60 KB. (Se si usa ContactForm aggiungere 'contatti'.)
+  const allMessages = await getMessages()
+  const messages = { common: allMessages.common, home: allMessages.home }
   const hotelSchema = generateHotelSchema()
   const schemaJson = JSON.stringify(hotelSchema)
 

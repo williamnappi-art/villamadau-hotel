@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import { HeroMobileMenu } from './HeroMobileMenu'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
+import { HeroVideo } from '@/components/ui/HeroVideo'
 
 const BOOKING_URL = 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8'
 
@@ -20,17 +21,7 @@ export async function SantEfisioHero() {
 
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/camera-1.webp"
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        aria-hidden="true"
-      >
-        <source src="/images/sant-efisio.mp4" type="video/mp4" />
-      </video>
+      <HeroVideo src="/images/sant-efisio.mp4" poster="/images/camera-1.webp" />
       <div className="absolute inset-0 bg-black/45" />
 
       {/* DESKTOP NAV */}

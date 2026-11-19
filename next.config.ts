@@ -60,6 +60,17 @@ const nextConfig: NextConfig = {
       { source: '/terms-and-conditions', destination: '/privacy', permanent: true },
     ]
   },
+  async headers() {
+    return [
+      // Immagini, video e loghi in /public/images: cache di 30 giorni nel browser
+      // (le visite successive non riscaricano i ~3 MB dei video).
+      // Se si sostituisce un file mantenendo lo stesso nome, meglio rinominarlo.
+      {
+        source: '/images/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=2592000, stale-while-revalidate=86400' }],
+      },
+    ]
+  },
 }
 
 export default withNextIntl(nextConfig)

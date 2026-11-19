@@ -21,29 +21,18 @@ export async function SettimanaMareHero() {
 
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
-      {/* Desktop: foto in alta risoluzione (il video verticale risulterebbe sgranato a tutto schermo) */}
+      {/* Foto dell'offerta: vista aerea del mare (ottimizzata e precaricata, desktop e mobile) */}
       <Image
-        src="/images/lettino-mare.jpg"
+        src="/images/mare-vista-aerea.webp"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="hidden md:block object-cover object-center"
+        quality={70}
+        className="object-cover object-center"
         aria-hidden="true"
       />
-      {/* Mobile: video verticale, che riempie bene lo schermo stretto del telefono */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/stabilimento-mare.jpg"
-        className="md:hidden absolute inset-0 w-full h-full object-cover object-center"
-        aria-hidden="true"
-      >
-        <source src="/images/mare-vela.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* DESKTOP NAV — scura per leggibilità sul video chiaro */}
       <div className="absolute top-0 left-0 right-0 z-20 hidden md:flex flex-col items-center pt-7">

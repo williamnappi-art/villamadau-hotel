@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import { HeroMobileMenu } from './HeroMobileMenu'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
+import { HeroVideo } from '@/components/ui/HeroVideo'
 
 const BOOKING_URL = 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8'
 
@@ -25,17 +26,7 @@ export async function HeroSection() {
     >
       {/* Video di sfondo — temporaneamente quello di Sant'Efisio.
           Per ripristinare il video originale: poster="/images/hero.webp" e source "/images/hotel_pula.mp4" */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/camera-1.webp"
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        aria-hidden="true"
-      >
-        <source src="/images/sant-efisio.mp4" type="video/mp4" />
-      </video>
+      <HeroVideo src="/images/sant-efisio.mp4" poster="/images/camera-1.webp" />
 
       {/* Overlay scuro */}
       <div className="absolute inset-0 bg-black/45" aria-hidden="true" />

@@ -102,7 +102,7 @@ export function CardCarousel() {
                 whileHover={{ scale: 1.04, rotateY: 5 }}
               >
                 <div className="relative aspect-[9/16] md:aspect-[3/4] w-full rounded overflow-hidden shadow-md opacity-75">
-                  <Image src={leftCard.image} alt={leftCard.title} fill className="object-cover" />
+                  <Image src={leftCard.image} alt={leftCard.title} fill sizes="(max-width: 768px) 36vw, 200px" className="object-cover" />
                   <div className="absolute inset-0 bg-black/20" />
                 </div>
               </motion.div>
@@ -128,9 +128,9 @@ export function CardCarousel() {
                       src={activeCard.image}
                       alt={activeCard.title}
                       fill
+                      sizes="(max-width: 768px) 82vw, 270px"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       style={{ objectPosition: (activeCard as { objectPosition?: string }).objectPosition ?? 'center' }}
-                      priority
                     />
                   </div>
                 </Link>
@@ -178,7 +178,7 @@ export function CardCarousel() {
                 whileHover={{ scale: 1.04, rotateY: -5 }}
               >
                 <div className="relative aspect-[9/16] md:aspect-[3/4] w-full rounded overflow-hidden shadow-md opacity-75">
-                  <Image src={rightCard.image} alt={rightCard.title} fill className="object-cover" />
+                  <Image src={rightCard.image} alt={rightCard.title} fill sizes="(max-width: 768px) 36vw, 200px" className="object-cover" />
                   <div className="absolute inset-0 bg-black/20" />
                 </div>
               </motion.div>

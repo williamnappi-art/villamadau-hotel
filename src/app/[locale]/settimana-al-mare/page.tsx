@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: HOTEL.name,
       type: 'website',
       locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/stabilimento-mare.jpg', width: 1200, height: 630, alt: t('metadata.settimanaMare.ogAlt') }],
+      images: [{ url: '/images/og-settimana-mare.jpg', width: 1200, height: 630, alt: t('metadata.settimanaMare.ogAlt') }],
     },
   }
 }
@@ -89,7 +89,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
     name: t('offerSchema.name'),
     description: t('offerSchema.description'),
     url,
-    image: `${HOTEL.url}/images/stabilimento-mare.jpg`,
+    image: `${HOTEL.url}/images/og-settimana-mare.jpg`,
     price: PREZZO,
     priceCurrency: 'EUR',
     validFrom: '2026-11-19',
