@@ -3,6 +3,25 @@ import createNextIntlPlugin from 'next-intl/plugin'
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts')
 
+// Fonti autorizzate (Google Tag Manager/Analytics, mappe Google, menù leggimenu)
+const CSP = [
+  "default-src 'self'",
+  // 'unsafe-inline' serve agli script inline di Next.js (pagine statiche, niente nonce) e al consenso GTM
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.googleapis.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.google.com",
+  "frame-src https://www.google.com https://maps.google.com https://www.leggimenu.it https://www.googletagmanager.com",
+  "media-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+  'report-uri /api/csp-report',
+  'report-to csp',
+].join('; ')
+
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -63,10 +82,14 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       // Header di sicurezza standard su tutte le pagine (HSTS lo aggiunge già Vercel).
-      // CSP non inclusa: con GTM e script inline va progettata e testata a parte.
+      // CSP in modalità "solo segnalazione": non blocca nulla, segnala a /api/csp-report
+      // (log di Vercel, cerca "[CSP]"). Quando i log sono puliti per qualche giorno si può
+      // passare a 'Content-Security-Policy' (bloccante).
       {
         source: '/:path*',
         headers: [
+          { key: 'Content-Security-Policy-Report-Only', value: CSP },
+          { key: 'Reporting-Endpoints', value: 'csp="/api/csp-report"' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
