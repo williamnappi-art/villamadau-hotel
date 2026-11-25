@@ -15,6 +15,7 @@ type FormData = {
   checkout?: string
   ospiti?: string
   messaggio: string
+  sito?: string // honeypot
 }
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
@@ -31,6 +32,7 @@ export function ContactForm() {
     checkout: z.string().optional(),
     ospiti: z.string().optional(),
     messaggio: z.string().min(10, t('form.validazione.messaggioMin')).max(2000),
+    sito: z.string().optional(), // honeypot anti-spam (invisibile)
   })
 
   const {
@@ -66,6 +68,11 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+      {/* Honeypot anti-spam: invisibile alle persone, i bot lo compilano */}
+      <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+        <label htmlFor="sito">Sito web</label>
+        <input id="sito" type="text" tabIndex={-1} autoComplete="off" {...register('sito')} />
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Nome */}
         <div>
