@@ -131,7 +131,7 @@ export default async function CapodannoPage({ params }: { params: Promise<{ loca
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
           <div className="relative w-full overflow-hidden order-2 lg:order-1" style={{ aspectRatio: '4 / 5' }}>
             <Image
-              src="/images/foto-pula-hotel.webp"
+              src="/images/piatto-federicos-pula.webp"
               alt={t('cena.imageAlt')}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
