@@ -7,15 +7,11 @@ import { usePathname } from '@/i18n/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
+import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon'
+import { HOTEL, whatsappUrl } from '@/lib/hotel.config'
+import { NAV_LINKS } from '@/lib/nav'
 
-const navLinks = [
-  { href: '/' as const, key: 'home' },
-  { href: '/hotel' as const, key: 'hotel' },
-  { href: '/ristorante' as const, key: 'ristorante' },
-  { href: '/servizi' as const, key: 'servizi' },
-  { href: '/da-non-perdere' as const, key: 'daNonPerdere' },
-  { href: '/contatti' as const, key: 'contatti' },
-]
+const navLinks = [{ href: '/', key: 'home' } as const, ...NAV_LINKS]
 
 export function MobileNav() {
   const t = useTranslations('common')
@@ -23,6 +19,13 @@ export function MobileNav() {
   const pathname = usePathname()
 
   useEffect(() => { setOpen(false) }, [pathname])
+  // Esc chiude il menu
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -108,18 +111,29 @@ export function MobileNav() {
             </ul>
 
             <motion.div
-              className="mt-10"
+              className="mt-10 flex flex-col items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.4 }}
             >
-              <Link
-                href="/contatti"
+              <a
+                href={HOTEL.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-10 py-4 border border-primary text-primary text-xs font-medium tracking-[0.2em] uppercase hover:bg-primary hover:text-[#1e1c18] transition-colors duration-300"
-                onClick={() => setOpen(false)}
               >
                 {t('cta.prenotaOra')}
-              </Link>
+              </a>
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-3 px-10 py-4 text-xs font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: '#1f7a44' }}
+              >
+                <WhatsAppIcon size={16} />
+                {t('cta.scriviciWhatsapp')}
+              </a>
             </motion.div>
 
             <motion.div

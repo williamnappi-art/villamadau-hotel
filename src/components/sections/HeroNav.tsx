@@ -118,7 +118,7 @@ export async function HeroNav({ variant = 'hotel' }: { variant?: 'hotel' | 'rist
               </p>
             )}
           </div>
-          <HeroMobileMenu bookingUrl={bookingUrl} />
+          <HeroMobileMenu bookingUrl={bookingUrl} bookingLabel={isRistorante ? bookingLabel : undefined} />
         </div>
       </div>
     </>

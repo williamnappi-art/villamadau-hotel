@@ -7,22 +7,21 @@ import { usePathname } from '@/i18n/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
+import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon'
+import { whatsappUrl } from '@/lib/hotel.config'
+import { NAV_LINKS } from '@/lib/nav'
 
-const navLinks = [
-  { href: '/hotel' as const, key: 'hotel' },
-  { href: '/ristorante' as const, key: 'ristorante' },
-  { href: '/servizi' as const, key: 'servizi' },
-  { href: '/da-non-perdere' as const, key: 'daNonPerdere' },
-  { href: '/contatti' as const, key: 'contatti' },
-]
+const navLinks = NAV_LINKS
 
 interface HeroMobileMenuProps {
   bookingUrl: string
+  /** Testo del pulsante di prenotazione (default: 'Prenota ora') */
+  bookingLabel?: string
   /** Hamburger scuro: per hero con video/immagine chiari (default: bianco) */
   dark?: boolean
 }
 
-export function HeroMobileMenu({ bookingUrl, dark = false }: HeroMobileMenuProps) {
+export function HeroMobileMenu({ bookingUrl, bookingLabel, dark = false }: HeroMobileMenuProps) {
   const t = useTranslations('common')
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
@@ -30,6 +29,13 @@ export function HeroMobileMenu({ bookingUrl, dark = false }: HeroMobileMenuProps
   const barColor = !open && dark ? 'bg-[#1e1c18]' : 'bg-white'
 
   useEffect(() => { setOpen(false) }, [pathname])
+  // Esc chiude il menu
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -111,7 +117,7 @@ export function HeroMobileMenu({ bookingUrl, dark = false }: HeroMobileMenuProps
             </ul>
 
             <motion.div
-              className="mt-10"
+              className="mt-10 flex flex-col items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.4 }}
@@ -122,7 +128,17 @@ export function HeroMobileMenu({ bookingUrl, dark = false }: HeroMobileMenuProps
                 rel="noopener noreferrer"
                 className="inline-block px-10 py-4 border border-primary text-primary text-xs font-medium tracking-[0.2em] uppercase hover:bg-primary hover:text-[#1e1c18] transition-colors duration-300"
               >
-                {t('cta.prenotaOra')}
+                {bookingLabel ?? t('cta.prenotaOra')}
+              </a>
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-3 px-10 py-4 text-xs font-medium tracking-[0.2em] uppercase text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: '#1f7a44' }}
+              >
+                <WhatsAppIcon size={16} />
+                {t('cta.scriviciWhatsapp')}
               </a>
             </motion.div>
 
