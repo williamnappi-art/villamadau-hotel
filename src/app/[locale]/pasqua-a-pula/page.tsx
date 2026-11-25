@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/metadata'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { PasquaHero } from '@/components/sections/PasquaHero'
@@ -13,12 +13,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 // Palette: Almond #F5DFC5 · Cambridge Blue #A1B5A8 · Khaki #CBB093 · Fawn #DFA477 · Redwood #A4624D
 
-const WHATSAPP_URL = `${whatsappUrl()}?text=Ciao!%20Vorrei%20informazioni%20per%20il%20weekend%20di%20Pasqua%20a%20Pula`
-
-function WhatsAppButton({ label = 'Scrivici su WhatsApp' }: { label?: string }) {
+function WhatsAppButton({ href, label }: { href: string; label: string }) {
   return (
     <a
-      href={WHATSAPP_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium transition-opacity hover:opacity-90"
@@ -32,30 +30,18 @@ function WhatsAppButton({ label = 'Scrivici su WhatsApp' }: { label?: string }) 
   )
 }
 
+// Testi in messages/*/eventi.json → pasqua.cosaFare.links.<id>
 const linkItems = [
-  {
-    href: '/gutturu-mannu',
-    title: 'Gutturu Mannu',
-    description: 'La più grande foresta del Mediterraneo, cervi sardi e cascate a pochi minuti da Pula',
-    image: '/images/gutturu-mannu-paesaggio.webp',
-  },
-  {
-    href: '/servizi',
-    title: 'Le Spiagge',
-    description: 'Da Nora a Chia, un litorale tra i più belli del Mediterraneo, a pochi minuti dall\'hotel',
-    image: '/images/chia-villamadau.webp',
-  },
-  {
-    href: '/ristorante',
-    title: 'Il Ristorante',
-    description: 'Cucina mediterranea tradizionale, pasta fresca e prodotti del territorio',
-    image: '/images/ristorante.webp',
-  },
+  { id: 'gutturuMannu', href: '/gutturu-mannu', image: '/images/gutturu-mannu-paesaggio.webp' },
+  { id: 'spiagge', href: '/servizi', image: '/images/chia-villamadau.webp' },
+  { id: 'ristorante', href: '/ristorante', image: '/images/ristorante.webp' },
 ]
 
 export default async function PasquaPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
+  const t = await getTranslations('eventi')
+  const WHATSAPP_URL = whatsappUrl(t('pasqua.testo.whatsappDefaultMessage'))
 
   return (
     <>
@@ -65,31 +51,19 @@ export default async function PasquaPage({ params }: { params: Promise<{ locale:
       <section style={{ backgroundColor: '#F5DFC5' }} className="py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#A1B5A8' }}>
-            Pasqua 2027 &middot; Pula, Sardegna
+            {t('pasqua.testo.label')}
           </p>
           <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#A4624D' }}>
-            <p>
-              Il fine settimana di Pasqua a Pula, tra mare e montagna, le passeggiate in collina
-              a picco sul mare, la strada romana che da Santa Margherita porta a Chia, i percorsi
-              per tutti del parco di Gutturu Mannu ricchi di cascate e corsi d&apos;acqua.
-            </p>
-            <p>
-              Una giornata all&apos;insegna del relax e della natura che comincia con la colazione
-              nel nostro giardino; una colazione à la carte per iniziare con il piede giusto.
-            </p>
-            <p>
-              Il nostro ristorante sarà sempre a disposizione, qualsiasi sia il programma della
-              vostra giornata, sarà aperto per pranzo e per cena. La nostra cucina Mediterranea
-              più tradizionale rivista e rivisitata dai nostri chef per un&apos;esperienza unica,
-              un viaggio tra sapori, idee e racconti del nostro territorio.
-            </p>
+            <p>{t('pasqua.testo.paragrafo1')}</p>
+            <p>{t('pasqua.testo.paragrafo2')}</p>
+            <p>{t('pasqua.testo.paragrafo3')}</p>
           </div>
 
           <div className="mt-12">
             <p className="text-sm mb-6" style={{ color: '#CBB093' }}>
-              Parla direttamente con noi — senza impegno, risponderemo in pochi minuti.
+              {t('pasqua.testo.whatsappNote')}
             </p>
-            <WhatsAppButton />
+            <WhatsAppButton href={WHATSAPP_URL} label={t('pasqua.testo.whatsappCta')} />
           </div>
         </div>
       </section>
@@ -102,58 +76,60 @@ export default async function PasquaPage({ params }: { params: Promise<{ locale:
           <div className="relative w-full overflow-hidden mb-16" style={{ aspectRatio: '16 / 7' }}>
             <Image
               src="/images/piazza-chiesa-pula.webp"
-              alt="Piazza della Chiesa di Pula"
+              alt={t('pasqua.cosaFare.imageAlt')}
               fill
               sizes="100vw"
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8">
-              <p className="text-[11px] uppercase tracking-[0.3em] text-white/70 mb-2">Pula, Sardegna</p>
+              <p className="text-[11px] uppercase tracking-[0.3em] text-white/70 mb-2">{t('pasqua.cosaFare.pulaSardegna')}</p>
               <h2 className="font-serif text-white leading-tight">
-                <em className="block italic font-normal text-4xl md:text-6xl">Cosa fare a Pula</em>
+                <em className="block italic font-normal text-4xl md:text-6xl">{t('pasqua.cosaFare.title')}</em>
               </h2>
             </div>
           </div>
 
           {/* Link con immagini */}
           <div className="flex flex-col divide-y" style={{ borderColor: '#CBB093', borderTopWidth: '1px', borderTopStyle: 'solid' }}>
-            {linkItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex items-center gap-6 py-7 group transition-opacity hover:opacity-80"
-              >
-                <div className="relative flex-shrink-0 overflow-hidden" style={{ width: '80px', height: '80px' }}>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="80px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-serif text-xl mb-1 leading-tight" style={{ color: '#F5DFC5' }}>
-                    {item.title}
-                  </p>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,223,197,0.75)' }}>
-                    {item.description}
-                  </p>
-                </div>
-                <span className="text-2xl flex-shrink-0 ml-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: '#F5DFC5' }}>
-                  →
-                </span>
-              </Link>
-            ))}
+            {linkItems.map((item) => {
+              const title = t(`pasqua.cosaFare.links.${item.id}.title`)
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-6 py-7 group transition-opacity hover:opacity-80"
+                >
+                  <div className="relative flex-shrink-0 overflow-hidden" style={{ width: '80px', height: '80px' }}>
+                    <Image
+                      src={item.image}
+                      alt={title}
+                      fill
+                      sizes="80px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-serif text-xl mb-1 leading-tight" style={{ color: '#F5DFC5' }}>
+                      {title}
+                    </p>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,223,197,0.75)' }}>
+                      {t(`pasqua.cosaFare.links.${item.id}.description`)}
+                    </p>
+                  </div>
+                  <span className="text-2xl flex-shrink-0 ml-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: '#F5DFC5' }}>
+                    →
+                  </span>
+                </Link>
+              )
+            })}
           </div>
 
           <div className="mt-14 pt-10 border-t" style={{ borderColor: '#CBB093' }}>
             <p className="text-sm mb-6" style={{ color: '#F5DFC5' }}>
-              Hai domande su cosa fare, dove andare, come organizzare la giornata?
-              Scrivici su WhatsApp — parlerai direttamente con noi.
+              {t('pasqua.cosaFare.domande')}
             </p>
-            <WhatsAppButton label="Chiedici tutto su WhatsApp" />
+            <WhatsAppButton href={WHATSAPP_URL} label={t('pasqua.cosaFare.whatsappCta')} />
           </div>
         </div>
       </section>
@@ -161,24 +137,23 @@ export default async function PasquaPage({ params }: { params: Promise<{ locale:
       {/* ── CTA FINALE ── */}
       <section style={{ backgroundColor: '#A4624D' }} className="py-24 text-center px-6">
         <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#DFA477' }}>
-          Prenota il tuo soggiorno
+          {t('pasqua.ctaFinale.label')}
         </p>
         <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-tight" style={{ color: '#F5DFC5' }}>
-          Pasqua a Pula,<br />
-          <em className="italic font-normal">come a casa</em>
+          {t('pasqua.ctaFinale.title1')}<br />
+          <em className="italic font-normal">{t('pasqua.ctaFinale.title2')}</em>
         </h2>
         <p className="max-w-xl mx-auto mb-12 leading-relaxed" style={{ color: 'rgba(245,223,197,0.8)' }}>
-          Scrivi un messaggio su WhatsApp per disponibilità e tariffe.
-          Lo staff ti risponde in pochi minuti, senza impegno.
+          {t('pasqua.ctaFinale.paragrafo')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <WhatsAppButton label="Scrivi su WhatsApp" />
+          <WhatsAppButton href={WHATSAPP_URL} label={t('pasqua.ctaFinale.whatsappCta')} />
           <Link
             href="/contatti"
             className="inline-block border text-sm font-medium tracking-[0.2em] uppercase px-10 py-4 hover:opacity-80 transition-opacity"
             style={{ borderColor: 'rgba(245,223,197,0.5)', color: '#F5DFC5' }}
           >
-            Contattaci
+            {t('pasqua.ctaFinale.contattaci')}
           </Link>
         </div>
       </section>

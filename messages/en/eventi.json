@@ -6,12 +6,13 @@
       "title2": "Sant'Efisio"
     },
     "intro": {
-      "label": "1 – 4 May · Pula, Sardinia",
-      "title": "The greatest procession\nin Sardinia",
+      "label": "1 – 4 May 2027 · Pula, Sardinia",
       "paragrafo1": "The procession of Sant'Efisio Martyr is one of the most important and widely attended festivals in Sardinia.",
       "paragrafo2": "From the first to the fourth of May, one of the processions that brings together all of Sardinia and its traditions takes place — like very few other occasions.",
       "paragrafo3": "It departs from Cagliari on May 1st and arrives on May 2nd in Pula, right outside our Boutique Hotel in the historic centre, facing the Church of San Giovanni. It then continues with a breathtaking procession along Nora beach, in a spectacular setting between the sea and the lagoon.",
-      "link": "Learn more →"
+      "link": "Learn more →",
+      "title1": "The greatest procession",
+      "title2": "in Sardinia"
     },
     "perche": {
       "label": "The perfect spot",
@@ -27,16 +28,16 @@
       "subtitle": "Each one overlooking the route of the Saint. Each with its own story.",
       "rooms": {
         "01": {
-          "nome": "The Bishop's Room",
+          "nome": "La Stanza del Vescovo",
           "sottotitolo": "Church View – Unique and privileged",
           "descrizione": "The Bishop's Room, room number one at Villa Madau Hotel in Pula, offers the finest view of the entire route of the Saint. In the heart of the procession, from your private balcony.",
-          "alt": "The Bishop's Room – Villa Madau Pula"
+          "alt": "La Stanza del Vescovo – Villa Madau Pula"
         },
         "02": {
-          "nome": "The Prior's Room",
+          "nome": "La Stanza del Priore",
           "sottotitolo": "A window onto the Procession",
           "descrizione": "The window overlooking the Church of San Giovanni in the heart of Pula, one of a kind. From Villa Madau Hotel, the Procession has a unique vantage point.",
-          "alt": "The Prior's Room – Villa Madau Pula"
+          "alt": "La Stanza del Priore – Villa Madau Pula"
         },
         "03": {
           "nome": "Dolce Dormire",
@@ -67,7 +68,7 @@
     "infoPratiche": {
       "quando": {
         "label": "When",
-        "testo": "From May 1st to 4th every year. The procession arrives in Pula on May 2nd on its way to Nora and returns towards Cagliari on May 4th."
+        "testo": "From <b>May 1st to 4th</b> every year. The procession arrives in Pula on May 2nd on its way to Nora and returns towards Cagliari on May 4th."
       },
       "dove": {
         "label": "Where we are",
@@ -82,10 +83,11 @@
     },
     "cta": {
       "label": "Limited availability",
-      "title": "Book your room\nwith a view of Sant'Efisio",
       "paragrafo": "Six rooms, one procession, four unforgettable days. Write to us now: we will reply within 24 hours with availability and rates.",
       "prenotaOra": "Book now",
-      "chiediDisponibilita": "Check availability"
+      "chiediDisponibilita": "Check availability",
+      "title1": "Book your room",
+      "title2": "with a view of Sant'Efisio"
     }
   },
   "domusAntigas": {
@@ -97,18 +99,20 @@
     },
     "intro": {
       "label": "15 March 2026 · Historic centre of Pula",
-      "title": "A journey back in time\nthrough the streets of Pula",
-      "paragrafo1": "On March 15, 2026, the historic centre of Pula transforms into a journey back in time with Domus Antigas, a festival dedicated to the traditions, flavours and culture of Sardinia.",
+      "paragrafo1": "On March 15, 2026, the historic centre of Pula transforms into a journey back in time with <b>Domus Antigas</b>, a festival dedicated to the traditions, flavours and culture of Sardinia.",
       "paragrafo2": "An event made possible by the dedication of the young volunteers of Pula's Pro Loco: abundant energy, passion and love for this land bring this unique occasion to life.",
-      "link": "Discover the programme →"
+      "link": "Discover the programme →",
+      "title1": "A journey back in time",
+      "title2": "through the streets of Pula"
     },
     "cuore": {
       "label": "The perfect spot",
-      "title": "At the heart\nof the event",
       "paragrafo1": "Villa Madau Boutique Hotel is situated right at the centre of the Domus Antigas route, among the lanes of the historic centre of Pula. Not a few minutes from the event — inside the event.",
       "paragrafo2": "Artisan workshops, open courtyards, tastings of traditional Sardinian products, music and tradition: everything within reach, just outside your door.",
       "paragrafo3": "For this unique occasion, we have prepared a special offer that lets you experience Domus Antigas without rushing, without stress, with the convenience of having your room at the heart of it all.",
-      "imageAlt": "Pula piazzetta – Villa Madau Hotel"
+      "imageAlt": "Pula piazzetta – Villa Madau Hotel",
+      "title1": "At the heart",
+      "title2": "of the event"
     },
     "offerta": {
       "label": "Special offer",
@@ -145,16 +149,18 @@
       },
       "prezzo": {
         "label": "Price",
-        "testo": "€100 per room, breakfast included and Sunday late check-out. Limited availability."
+        "testo": "<b>€100 per room</b>, breakfast included and Sunday late check-out. Limited availability."
       }
     },
     "cta": {
       "label": "Limited availability",
-      "title": "Book your weekend\nat Domus Antigas",
       "paragrafo": "A WhatsApp message and you're all set. Our staff will reply in no time.",
       "whatsapp": "Write on WhatsApp",
-      "contattaci": "Contact us"
-    }
+      "contattaci": "Contact us",
+      "title1": "Book your weekend",
+      "title2": "at Domus Antigas"
+    },
+    "whatsappMessage": "Hello! I'd like to book for Domus Antigas on 14-15 March 2026"
   },
   "pasqua": {
     "hero": {
@@ -193,10 +199,11 @@
     },
     "ctaFinale": {
       "label": "Book your stay",
-      "title": "Easter in Pula,\njust like home",
       "paragrafo": "Send a WhatsApp message for availability and rates. Our staff will reply in minutes, no obligation.",
       "whatsappCta": "Write on WhatsApp",
-      "contattaci": "Contact us"
+      "contattaci": "Contact us",
+      "title1": "Easter in Pula,",
+      "title2": "just like home"
     }
   },
   "daNonPerdere": {
@@ -263,7 +270,8 @@
     "hero": {
       "label": "Municipality of Pula · Sardinia",
       "title": "Gutturu Mannu Park",
-      "subtitle": "The largest sclerophyll forest in the Mediterranean,\nsanctuary of the Sardinian deer and an oasis of unspoilt nature.",
+      "subtitle1": "The largest sclerophyll forest in the Mediterranean,",
+      "subtitle2": "sanctuary of the Sardinian deer and an oasis of unspoilt nature.",
       "imageAlt": "Sardinian deer in Gutturu Mannu Park"
     },
     "stats": {
@@ -291,13 +299,13 @@
     "introduzione": {
       "label": "The green lung of southern Sardinia",
       "title": "An ancient forest at the gates of Pula",
-      "paragrafo1": "The Gutturu Mannu Regional Natural Park — whose name in Campidanese Sardinian means \"great gorge\" — was established by the Sardinia Region in 2014 and spans the territories of ten municipalities, with Pula serving as the lead municipality, whose mayor chairs the Park Community.",
-      "paragrafo2": "The forest extends over more than 35,000 hectares of continuous woodland, dominated by holm oak, cork oak and wild olive, and is considered the largest sclerophyll forest in the entire Mediterranean basin. Over 600 plant species, 50 of which are endemic, coexist in this extraordinary ecosystem.",
-      "paragrafo3": "The beating heart of the park is the Sardinian deer (Cervus elaphus corsicanus), a subspecies endemic to Sardinia and Corsica that dwindled to fewer than 100 specimens in the 20th century but has since been reborn: the park hosts the world's largest colony of Sardinian deer, with approximately 2,500 specimens roaming freely across the territory."
+      "paragrafo1": "The <b>Gutturu Mannu Regional Natural Park</b> — whose name in Campidanese Sardinian means <i>“great gorge”</i> — was established by the Sardinia Region in 2014 and spans the territories of ten municipalities, with Pula serving as the lead municipality, whose mayor chairs the Park Community.",
+      "paragrafo2": "The forest extends over more than <b>35,000 hectares</b> of continuous woodland, dominated by holm oak, cork oak and wild olive, and is considered the largest sclerophyll forest in the entire Mediterranean basin. Over 600 plant species, 50 of which are endemic, coexist in this extraordinary ecosystem.",
+      "paragrafo3": "The beating heart of the park is the <b>Sardinian deer</b> (<i>Cervus elaphus corsicanus</i>), a subspecies endemic to Sardinia and Corsica that dwindled to fewer than 100 specimens in the 20th century but has since been reborn: the park hosts the <b>world's largest colony</b> of Sardinian deer, with approximately 2,500 specimens roaming freely across the territory."
     },
     "fotoPaesaggio": {
       "imageAlt": "Gutturu Mannu Park landscape",
-      "citazione": "\"Nature that doesn't expect to be discovered.\""
+      "citazione": "“Nature that doesn't expect to be discovered.”"
     },
     "attivita": {
       "label": "Things to do",
@@ -336,35 +344,27 @@
       "escursionistaEsperto": "Experienced Hiker",
       "items": {
         "d212a": {
-          "codice": "D 212A",
           "nome": "Is Cannoneris – Su Paganu",
           "lunghezza": "6.9 km",
           "durata": "2 hours",
-          "difficolta": "E",
           "descrizione": "A trail suitable for all, in the heart of the Is Cannoneris forest. A prime area for spotting the Sardinian deer."
         },
         "d215": {
-          "codice": "D 215",
           "nome": "Pantaleo – Sorgente Is Arrus",
           "lunghezza": "5.2 km",
           "durata": "2 hours 30 min",
-          "difficolta": "E",
           "descrizione": "From the Pantaleo visitor centre towards the natural spring, through centuries-old holm oaks and Mediterranean scrub."
         },
         "d204": {
-          "codice": "D 204",
           "nome": "Sa Canna – Perdu Melis",
           "lunghezza": "12 km",
           "durata": "4 hours 15 min",
-          "difficolta": "E",
           "descrizione": "A panoramic route with views over the gorges of the Rio Gutturu Mannu. Option to reach the natural pools."
         },
         "d200": {
-          "codice": "D 200",
           "nome": "Pixinamanna – Foresta di Pantaleo",
           "lunghezza": "16.3 km",
           "durata": "5 hours",
-          "difficolta": "EE",
           "descrizione": "The park's main trail. It partly follows an old charcoal railway through gorges, rivers and holm oak forests."
         }
       },
@@ -375,7 +375,7 @@
       "title": "From our hotel to the park",
       "pixinamanna": {
         "title": "Pula Gateway · Pixinamanna",
-        "paragrafo": "The closest access point to Villa Madau, opened in 2024. From Pula, take the SS195 northbound, exit at Polaris/Is Molas and follow the signs to Pixinamanna, home to the Environmental Culture Centre and starting point of the main trails.",
+        "paragrafo": "The closest access point to Villa Madau, opened in 2024. From Pula, take the SS195 northbound, exit at Polaris/Is Molas and follow the signs to <b>Pixinamanna</b>, home to the Environmental Culture Centre and starting point of the main trails.",
         "distanza": "~ 15–20 minutes by car from the hotel"
       },
       "pantaleo": {

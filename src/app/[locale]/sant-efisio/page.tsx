@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/metadata'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import type { ReactNode } from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { SantEfisioHero } from '@/components/sections/SantEfisioHero'
@@ -11,55 +12,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildMetadata({ locale, path: '/sant-efisio', key: 'santEfisio', image: { url: '/images/fuochi-villa-madau.webp' } })
 }
 
+// Foto delle sei camere — i testi sono in messages/*/eventi.json → santEfisio.camere.rooms.<numero>
 const rooms = [
-  {
-    numero: '01',
-    nome: 'La Stanza del Vescovo',
-    sottotitolo: 'Vista Chiesa \u2013 Unica e privilegiata',
-    descrizione: "La camera del vescovo, la numero uno dell\u2019Hotel Villa Madau di Pula \u00e8 la camera con la vista migliore di tutto il percorso del Santo. Nel cuore della processione, sul balcone privato.",
-    image: '/images/camera-1.webp',
-    alt: 'La Stanza del Vescovo \u2013 Villa Madau Pula',
-  },
-  {
-    numero: '02',
-    nome: 'La Stanza del Priore',
-    sottotitolo: 'Una finestra sulla Processione',
-    descrizione: "La finestra sulla chiesa di San Giovanni nel cuore di Pula, unica nel suo genere. Dall\u2019hotel Villa Madau la Processione ha un punto di vista unico.",
-    image: '/images/camera-3.webp',
-    alt: 'La Stanza del Priore \u2013 Villa Madau Pula',
-  },
-  {
-    numero: '03',
-    nome: 'Dolce Dormire',
-    sottotitolo: 'Spaziosa e dal design Mediterraneo',
-    descrizione: "Se cerchi una camera spaziosa, romantica, nel cuore della processione, eccola qui.",
-    image: '/images/camera-hotel-pula.webp',
-    alt: 'Dolce Dormire \u2013 Villa Madau Pula',
-  },
-  {
-    numero: '04',
-    nome: 'Movida',
-    sottotitolo: "La stanza e l\u2019olivastro",
-    descrizione: "La stanza avvolta dall\u2019olivastro del centro storico accoglie l\u2019arrivo della processione. Dal suo balcone si pu\u00f2 godere dello spettacolo unico de sa Ramadura \u2014 il lancio dei petali sul Santo.",
-    image: '/images/camera-1.webp',
-    alt: 'Movida \u2013 Villa Madau Pula',
-  },
-  {
-    numero: '05',
-    nome: 'Le Torri',
-    sottotitolo: 'Il Balcone sulla Processione',
-    descrizione: "Affacciata sulla via Nora, su cui si sviluppa tutto l\u2019hotel Villa Madau e via principale di Pula, ha una vista unica sulla Processione di Sant\u2019Efisio.",
-    image: '/images/camera-3.webp',
-    alt: 'Le Torri \u2013 Villa Madau Pula',
-  },
-  {
-    numero: '06',
-    nome: 'La Piazzetta',
-    sottotitolo: 'La camera sulla Piazza',
-    descrizione: "Esattamente sulla facciata principale dell\u2019Hotel Villa Madau, due balconi completamente affacciati sulla piazza adiacente alla chiesa di San Giovanni per godersi uno spettacolo unico.",
-    image: '/images/camera-via-nora.webp',
-    alt: 'La Piazzetta \u2013 Villa Madau Pula',
-  },
+  { numero: '01', image: '/images/camera-1.webp' },
+  { numero: '02', image: '/images/camera-3.webp' },
+  { numero: '03', image: '/images/camera-hotel-pula.webp' },
+  { numero: '04', image: '/images/camera-1.webp' },
+  { numero: '05', image: '/images/camera-3.webp' },
+  { numero: '06', image: '/images/camera-via-nora.webp' },
 ]
 
 const BOOKING_URL = 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8'
@@ -67,6 +27,7 @@ const BOOKING_URL = 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387
 export default async function SantEfisioPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
+  const t = await getTranslations('eventi')
 
   const breadcrumb = pageBreadcrumb(locale, '/sant-efisio')
 
@@ -80,25 +41,15 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
       <section style={{ backgroundColor: '#F9ECE8' }} className="py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#939685' }}>
-            1 &ndash; 4 Maggio 2027 &middot; Pula, Sardegna
+            {t('santEfisio.intro.label')}
           </p>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-10" style={{ color: '#1e1c18' }}>
-            La processione pi&ugrave; grande<br />della Sardegna
+            {t('santEfisio.intro.title1')}<br />{t('santEfisio.intro.title2')}
           </h2>
           <div className="space-y-5 text-lg leading-relaxed" style={{ color: '#4a4640' }}>
-            <p>
-              La processione per Sant&apos;Efisio martire &egrave; una delle pi&ugrave; importanti
-              e partecipate feste della Sardegna.
-            </p>
-            <p>
-              Dal primo al quattro Maggio si assiste ad una delle processioni che riunisce tutta la Sardegna
-              e le sue tradizioni come in pochissime altre occasioni.
-            </p>
-            <p>
-              Parte da Cagliari il primo Maggio e arriva il 2 Maggio a Pula, esattamente sotto il nostro
-              Boutique Hotel nel centro storico, davanti alla chiesa di San Giovanni, per continuare con una
-              processione mozzafiato sulla spiaggia di Nora, in una cornice spettacolare tra mare e laguna.
-            </p>
+            <p>{t('santEfisio.intro.paragrafo1')}</p>
+            <p>{t('santEfisio.intro.paragrafo2')}</p>
+            <p>{t('santEfisio.intro.paragrafo3')}</p>
           </div>
           <a
             href="https://www.festadisantefisio.it"
@@ -107,7 +58,7 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
             className="inline-block mt-10 text-xs uppercase tracking-[0.25em] border-b pb-px transition-opacity hover:opacity-60"
             style={{ color: '#D0634C', borderColor: '#D0634C' }}
           >
-            Per approfondire &rarr;
+            {t('santEfisio.intro.link')}
           </a>
         </div>
       </section>
@@ -121,7 +72,7 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
           <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4 / 5' }}>
             <Image
               src="/images/fuochi-villa-madau.webp"
-              alt="Sant\u2019Efisio \u2013 Villa Madau Hotel Pula"
+              alt={t('santEfisio.perche.imageAlt')}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -129,25 +80,15 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#939685' }}>
-              Il posto giusto
+              {t('santEfisio.perche.label')}
             </p>
             <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-snug" style={{ color: '#1e1c18' }}>
-              Dentro la Festa
+              {t('santEfisio.perche.title')}
             </h2>
             <div className="space-y-4 leading-relaxed" style={{ color: '#4a4640' }}>
-              <p>
-                Villa Madau si trova nel cuore del centro storico di Pula, esattamente sul percorso
-                della processione &mdash; davanti alla chiesa di San Giovanni.
-              </p>
-              <p>
-                Sei delle nostre camere si affacciano direttamente sul tragitto. Puoi svegliarti
-                con il suono delle launeddas, scendere in strada quando vuoi, rientrare quando
-                hai bisogno di riposo.
-              </p>
-              <p>
-                La colazione &egrave; servita in giardino o in piazzetta, mentre il paese si prepara
-                alla festa. Non sarai un turista che guarda &mdash; sarai parte di Pula per quattro giorni.
-              </p>
+              <p>{t('santEfisio.perche.paragrafo1')}</p>
+              <p>{t('santEfisio.perche.paragrafo2')}</p>
+              <p>{t('santEfisio.perche.paragrafo3')}</p>
             </div>
           </div>
         </div>
@@ -156,13 +97,13 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
       {/* ── LE SEI CAMERE — intestazione ── */}
       <section style={{ backgroundColor: '#F9ECE8' }} className="pt-28 pb-0 px-6 text-center">
         <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#939685' }}>
-          Vista sulla processione
+          {t('santEfisio.camere.label')}
         </p>
         <h2 className="font-serif text-5xl md:text-7xl" style={{ color: '#1e1c18' }}>
-          Le sei camere
+          {t('santEfisio.camere.title')}
         </h2>
         <p className="mt-5 leading-relaxed" style={{ color: '#939685' }}>
-          Ognuna affacciata sul percorso del Santo. Ognuna con la sua storia.
+          {t('santEfisio.camere.subtitle')}
         </p>
       </section>
 
@@ -171,9 +112,10 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
         <div className="max-w-6xl mx-auto">
           {rooms.map((room, i) => {
             const isEven = i % 2 === 0
+            const testo = (campo: string) => t(`santEfisio.camere.rooms.${room.numero}.${campo}`)
             return (
               <div
-                key={room.nome}
+                key={room.numero}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center py-16 border-t"
                 style={{ borderColor: '#F4C2AE' }}
               >
@@ -184,7 +126,7 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
                 >
                   <Image
                     src={room.image}
-                    alt={room.alt}
+                    alt={testo('alt')}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
@@ -200,13 +142,13 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
                     {room.numero}
                   </span>
                   <p className="text-[11px] uppercase tracking-[0.3em] mb-3" style={{ color: '#D0634C' }}>
-                    {room.sottotitolo}
+                    {testo('sottotitolo')}
                   </p>
                   <h3 className="font-serif text-3xl md:text-4xl mb-5" style={{ color: '#1e1c18' }}>
-                    {room.nome}
+                    {testo('nome')}
                   </h3>
                   <p className="leading-relaxed" style={{ color: '#4a4640' }}>
-                    {room.descrizione}
+                    {testo('descrizione')}
                   </p>
                 </div>
               </div>
@@ -221,32 +163,30 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <p className="text-[11px] uppercase tracking-[0.25em] mb-4" style={{ color: '#D0634C' }}>
-              Quando
+              {t('santEfisio.infoPratiche.quando.label')}
             </p>
             <p className="text-sm leading-relaxed" style={{ color: '#4a4640' }}>
-              Dal <strong style={{ color: '#1e1c18' }}>1 al 4 maggio</strong> ogni anno.
-              La processione arriva a Pula il 2 maggio in andata verso Nora
-              e rientra verso Cagliari il 4 maggio.
+              {t.rich('santEfisio.infoPratiche.quando.testo', {
+                b: (chunks: ReactNode) => <strong style={{ color: '#1e1c18' }}>{chunks}</strong>,
+              })}
             </p>
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-[0.25em] mb-4" style={{ color: '#D0634C' }}>
-              Dove siamo
+              {t('santEfisio.infoPratiche.dove.label')}
             </p>
             <p className="text-sm leading-relaxed" style={{ color: '#4a4640' }}>
-              Villa Madau Boutique Hotel<br />
-              Centro storico di Pula (CA)<br />
-              Davanti alla chiesa di San Giovanni
+              {t('santEfisio.infoPratiche.dove.riga1')}<br />
+              {t('santEfisio.infoPratiche.dove.riga2')}<br />
+              {t('santEfisio.infoPratiche.dove.riga3')}
             </p>
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-[0.25em] mb-4" style={{ color: '#D0634C' }}>
-              Disponibilit&agrave;
+              {t('santEfisio.infoPratiche.disponibilita.label')}
             </p>
             <p className="text-sm leading-relaxed" style={{ color: '#4a4640' }}>
-              I posti per Sant&apos;Efisio si esauriscono con mesi di anticipo.
-              Prenotare prima possibile &egrave; fondamentale per assicurarsi
-              una delle sei camere con vista.
+              {t('santEfisio.infoPratiche.disponibilita.testo')}
             </p>
           </div>
         </div>
@@ -255,14 +195,13 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
       {/* ── CTA ── */}
       <section style={{ backgroundColor: '#D0634C' }} className="py-28 text-center px-6">
         <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#F4C2AE' }}>
-          Posti limitati
+          {t('santEfisio.cta.label')}
         </p>
         <h2 className="font-serif text-4xl md:text-6xl text-white mb-8 leading-tight">
-          Prenota la tua camera<br />con vista su Sant&apos;Efisio
+          {t('santEfisio.cta.title1')}<br />{t('santEfisio.cta.title2')}
         </h2>
         <p className="max-w-xl mx-auto mb-12 leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
-          Sei camere, una processione, quattro giorni indimenticabili.
-          Scriveteci subito: vi risponderemo entro 24 ore con disponibilit&agrave; e tariffe.
+          {t('santEfisio.cta.paragrafo')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -272,13 +211,13 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
             className="inline-block bg-white text-xs font-medium tracking-[0.2em] uppercase px-10 py-4 transition-opacity hover:opacity-90"
             style={{ color: '#D0634C' }}
           >
-            Prenota ora
+            {t('santEfisio.cta.prenotaOra')}
           </a>
           <Link
             href="/contatti"
             className="inline-block border border-white/50 text-white text-xs font-medium tracking-[0.2em] uppercase px-10 py-4 hover:bg-white/10 transition-colors duration-200"
           >
-            Chiedi disponibilit&agrave;
+            {t('santEfisio.cta.chiediDisponibilita')}
           </Link>
         </div>
       </section>
