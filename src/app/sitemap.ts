@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/ristorante', changeFrequency: 'monthly' as const, priority: 0.8 },
     { path: '/servizi', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/da-non-perdere', changeFrequency: 'monthly' as const, priority: 0.7 },
+    { path: '/capodanno-a-pula', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/settimana-al-mare', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/sant-efisio', changeFrequency: 'monthly' as const, priority: 0.7 },
     // { path: '/domus-antigas', ... } — fuori dalla sitemap finché non c'è l'edizione 2027 (pagina in noindex)

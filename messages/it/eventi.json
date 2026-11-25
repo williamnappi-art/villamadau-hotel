@@ -217,6 +217,13 @@
       "stagione": "Stagione"
     },
     "items": {
+      "capodanno": {
+        "label": "Capodanno 2027",
+        "titolo": "Il lusso",
+        "italic": "della calma",
+        "testo": "Una notte nel centro storico di Pula con colazione del 1° gennaio, cena à la carte facoltativa al Federico’s e un primo giorno dell’anno senza fretta. 209 € a coppia.",
+        "cta": "Scopri il Capodanno"
+      },
       "settimanaMare": {
         "label": "Regalo di Natale · Estate 2027",
         "titolo": "Una settimana",

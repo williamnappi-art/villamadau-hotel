@@ -82,6 +82,7 @@ const BREADCRUMB_NAMES: Record<string, { it: string; en: string }> = {
   '/pasqua-a-pula': { it: 'Pasqua a Pula', en: 'Easter in Pula' },
   '/domus-antigas': { it: 'Domus Antigas', en: 'Domus Antigas' },
   '/gutturu-mannu': { it: 'Parco di Gutturu Mannu', en: 'Gutturu Mannu Park' },
+  '/capodanno-a-pula': { it: 'Capodanno 2027 a Pula', en: 'New Year 2027 in Pula' },
 }
 
 /** Briciole Home → pagina, con nomi e URL nella lingua della pagina */

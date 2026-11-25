@@ -1,0 +1,122 @@
+{
+  "breadcrumb": "Capodanno 2027 a Pula",
+  "hero": {
+    "kicker": "Capodanno 2027 a Pula · Sardegna",
+    "title1": "Il lusso",
+    "title2": "della calma",
+    "sub": "L’ultimo brindisi dell’anno. Il primo giorno, senza fretta.",
+    "imageAlt": "Il mare d’inverno vicino a Pula, con la torre sul promontorio"
+  },
+  "intro": {
+    "label": "Capodanno a Villa Madau · 31 dicembre 2026 – 1 gennaio 2027",
+    "title": "Un Capodanno",
+    "titleItalic": "diverso",
+    "p1": "Quest’anno concedetevi un Capodanno diverso: una notte nel cuore di Pula, il piacere di una cena da scegliere liberamente e un primo gennaio da vivere al vostro ritmo.",
+    "p2": "Villa Madau Boutique Hotel vi accoglie nelle sue camere confortevoli, a pochi passi dal ristorante Federico’s. Festeggiate la sera del 31 dicembre e, dopo il brindisi, godetevi il piacere di non dover riprendere l’auto per tornare a casa.",
+    "p3": "Siamo nel centro storico di Pula, nel Sud Sardegna, a circa 40 km da Cagliari: il luogo ideale per un Capodanno in Sardegna lontano dalla folla, tra le vie del paese e il mare d’inverno.",
+    "imageAlt": "Camera matrimoniale del Villa Madau con luce calda della sera, centro storico di Pula"
+  },
+  "cena": {
+    "label": "La sera del 31 dicembre",
+    "title": "Una cena speciale,",
+    "titleItalic": "senza un menù imposto",
+    "p1": "La sera di San Silvestro il Federico’s propone il suo menù à la carte, arricchito da piatti speciali creati per l’occasione. Nessun cenone dal menù imposto: ognuno sceglie liberamente cosa mangiare, in base ai propri gusti e desideri.",
+    "p2": "La cena è facoltativa, non è inclusa nel prezzo del soggiorno e viene pagata separatamente in base alle ordinazioni. È consigliata la prenotazione del tavolo.",
+    "menu": "Sfoglia il menù del Federico’s",
+    "imageAlt": "Sera nel centro storico di Pula, lampione e tetti al tramonto"
+  },
+  "primoGennaio": {
+    "label": "Il 1° gennaio",
+    "title": "Il primo gennaio?",
+    "titleItalic": "Il tempo è tutto vostro",
+    "p1": "Dimenticate la sveglia. Al Villa Madau il nuovo anno comincia con una colazione da gustare con calma e il piacere di poter dedicare la mattina a ciò che preferite: rilassarvi, passeggiare tra le vie di Pula, raggiungere Nora o il mare di Chia.",
+    "p2": "E per chi desidera fermarsi ancora a tavola, il Federico’s sarà aperto anche a pranzo, con uno sconto speciale riservato agli ospiti dell’hotel.",
+    "imageAlt": "Colazione del Villa Madau: croissant, frutta fresca e caffè"
+  },
+  "anticipo": {
+    "label": "Prenotazione anticipata",
+    "title": "Prenotate in anticipo,",
+    "titleItalic": "partite senza fretta",
+    "p1": "Prenotando entro il 15 dicembre, il late check-out fino alle ore 16:00 del primo gennaio è incluso, per le camere riservate alla promozione. Una mattina — e buona parte del pomeriggio — senza orologio.",
+    "badge": "Entro il 15 dicembre · check-out alle 16:00"
+  },
+  "inclusi": {
+    "label": "Cosa comprende",
+    "title": "Il soggiorno",
+    "titleItalic": "comprende",
+    "inclusoTag": "Soggiorno incluso",
+    "items": [
+      "Una notte in camera matrimoniale per due persone",
+      "Colazione del primo gennaio con servizio flessibile, secondo le modalità comunicate dall’hotel",
+      "Tutti i comfort della camera e Wi-Fi",
+      "Late check-out fino alle ore 16:00 per chi prenota entro il 15 dicembre (camere promozionali limitate)",
+      "10% di sconto sulle pietanze del pranzo del primo gennaio al Federico’s (bevande escluse)",
+      "Suggerimenti digitali per passeggiate e luoghi da scoprire nei dintorni di Pula"
+    ],
+    "esclusoTag": "Cena non inclusa",
+    "esclusoTitle": "La cena del 31 dicembre",
+    "esclusoTesto": "Facoltativa, à la carte al Federico’s, pagata a parte in base a ciò che si ordina. Nessun menù imposto. Prenotazione del tavolo consigliata."
+  },
+  "prezzo": {
+    "label": "Capodanno a Villa Madau · per due persone",
+    "price": "209 €",
+    "sub": "a coppia · camera + colazione",
+    "nota": "La cena del 31 dicembre è facoltativa e si paga a parte, scegliendo liberamente dal menù à la carte.",
+    "invito": "Prenotate il vostro Capodanno a Villa Madau. Il lusso della calma vi aspetta.",
+    "cta": "Richiedi disponibilità",
+    "whatsapp": "WhatsApp",
+    "telefono": "Telefono",
+    "email": "Email",
+    "messaggio": "Ciao! Vorrei richiedere disponibilità per il Capodanno a Villa Madau (notte del 31 dicembre 2026, camera + colazione). Potete darmi conferma e dettagli?",
+    "oggettoEmail": "Richiesta disponibilità – Capodanno 2027 a Villa Madau"
+  },
+  "esplora": {
+    "label": "Il primo gennaio nei dintorni",
+    "title": "Idee per esplorare",
+    "titleItalic": "Pula",
+    "intro": "Qualche idea per una passeggiata in autonomia il primo giorno dell’anno. Non sono visite guidate: per musei e siti culturali verificate in anticipo gli orari di apertura festivi.",
+    "imageAlt": "Il promontorio di Nora con la sua torre sul mare, Pula",
+    "luoghi": [
+      { "nome": "Nora e la chiesetta di Sant’Efisio", "testo": "Passeggiata sul mare e scorci del promontorio, a pochi minuti da Pula." },
+      { "nome": "Chia e le dune", "testo": "Spiagge silenziose e paesaggi mediterranei per iniziare l’anno all’aria aperta." },
+      { "nome": "Antica strada romana Nora–Bithia", "testo": "Un percorso costiero che parte dall’area di Pinus Village, lungo il mare del Sud Sardegna." },
+      { "nome": "Area archeologica di Nora e Museo Giovanni Patroni", "testo": "Proposte culturali per scoprire la città antica: verificate gli orari del 1° gennaio prima di partire." },
+      { "nome": "Fortini della Seconda guerra mondiale", "testo": "Luoghi storici intorno a Pula, testimoni di un passato recente." }
+    ]
+  },
+  "faq": {
+    "label": "Domande frequenti e condizioni",
+    "title": "Tutto quello che c’è",
+    "titleItalic": "da sapere",
+    "items": [
+      {
+        "q": "Il cenone di Capodanno è incluso?",
+        "a": "No. Il soggiorno comprende una notte in camera matrimoniale e la colazione del 1° gennaio. La cena del 31 dicembre al Federico’s è facoltativa, à la carte e si paga a parte in base a ciò che si ordina, scegliendo liberamente dal menù à la carte."
+      },
+      {
+        "q": "Come funziona la cena di San Silvestro al Federico’s?",
+        "a": "La sera del 31 dicembre il Federico’s propone il suo menù à la carte, arricchito da piatti speciali creati per l’occasione. Ognuno sceglie liberamente cosa ordinare. È consigliata la prenotazione del tavolo."
+      },
+      {
+        "q": "Quanto costa il Capodanno a Villa Madau?",
+        "a": "209 € a coppia per una notte in camera matrimoniale con colazione del 1° gennaio. La cena è esclusa e facoltativa."
+      },
+      {
+        "q": "Fino a che ora si può lasciare la camera il 1° gennaio?",
+        "a": "Per chi prenota entro il 15 dicembre il late check-out fino alle ore 16:00 è incluso, limitatamente alle camere riservate alla promozione."
+      },
+      {
+        "q": "Cosa si può fare a Pula il 1° gennaio?",
+        "a": "Passeggiare nel centro storico, raggiungere Nora e la chiesetta di Sant’Efisio sul mare, le dune di Chia o l’antica strada romana Nora–Bithia. Per musei e siti archeologici verificate in anticipo gli orari festivi."
+      },
+      {
+        "q": "Quanto dista Pula da Cagliari?",
+        "a": "Circa 40 km, sia dal centro di Cagliari sia dall’aeroporto di Cagliari Elmas. Villa Madau si trova in via Nora, nel centro storico di Pula."
+      }
+    ]
+  },
+  "offerSchema": {
+    "name": "Capodanno 2027 a Villa Madau, Pula – Il lusso della calma",
+    "description": "Notte del 31 dicembre 2026 in camera matrimoniale con colazione del 1° gennaio 2027 nel centro storico di Pula (Sud Sardegna). Cena à la carte al Federico’s facoltativa e non inclusa."
+  }
+}

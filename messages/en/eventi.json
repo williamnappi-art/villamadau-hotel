@@ -217,6 +217,13 @@
       "stagione": "Season"
     },
     "items": {
+      "capodanno": {
+        "label": "New Year 2027",
+        "titolo": "The luxury",
+        "italic": "of calm",
+        "testo": "A night in Pula’s historic centre with breakfast on 1 January, optional à la carte dinner at Federico’s and an unhurried first day of the year. €209 per couple.",
+        "cta": "Discover New Year’s Eve"
+      },
       "settimanaMare": {
         "label": "Christmas gift · Summer 2027",
         "titolo": "A week",

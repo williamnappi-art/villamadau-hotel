@@ -18,6 +18,14 @@ export interface OffertaData {
 }
 
 export const offerteData: OffertaData[] = [
+  // Capodanno 2027 — togliere dopo il 1° gennaio 2027
+  {
+    id: 'capodanno',
+    tipo: 'offerta',
+    bigItalic: true,
+    href: '/capodanno-a-pula',
+    image: '/images/villa-madau-pula-hotel.webp',
+  },
   {
     id: 'settimanaMare',
     tipo: 'offerta',

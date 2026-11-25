@@ -23,6 +23,8 @@ const tipoColor: Record<Tipo, { bg: string; text: string }> = {
 
 // Testi in messages/*/eventi.json → daNonPerdere.items.<id>
 const itemData: { id: string; tipo: Tipo; href: string; external?: boolean; image: string }[] = [
+  // Capodanno 2027 — togliere dopo il 1° gennaio 2027
+  { id: 'capodanno',     tipo: 'offerta', href: '/capodanno-a-pula',  image: '/images/villa-madau-pula-hotel.webp' },
   { id: 'settimanaMare', tipo: 'offerta', href: '/settimana-al-mare', image: '/images/mare-vista-aerea.webp' },
   { id: 'santEfisio',    tipo: 'evento',  href: '/sant-efisio',       image: '/images/buoi-sant-efisio.jpg' },
   // Pasqua — riattivare a gennaio 2027 (aggiornare l'etichetta in eventi.json)
@@ -69,7 +71,8 @@ export default async function DaNonPerderePage({ params }: { params: Promise<{ l
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {items.map((item, i) => {
             const cfg = tipoColor[item.tipo]
-            const isLarge = i === 0 // prima card full-width
+            // prima card full-width; anche l'ultima se altrimenti resterebbe da sola nella riga
+            const isLarge = i === 0 || (i === items.length - 1 && (items.length - 1) % 2 === 1)
 
             return (
               <CardWrapper

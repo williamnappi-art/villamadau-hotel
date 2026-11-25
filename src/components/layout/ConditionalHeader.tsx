@@ -2,7 +2,7 @@
 
 import { usePathname } from '@/i18n/navigation'
 
-const HERO_PAGES = ['/', '/ristorante', '/hotel', '/sant-efisio', '/domus-antigas', '/servizi', '/pasqua-a-pula', '/da-non-perdere', '/contatti', '/settimana-al-mare']
+const HERO_PAGES = ['/', '/ristorante', '/hotel', '/sant-efisio', '/domus-antigas', '/servizi', '/pasqua-a-pula', '/da-non-perdere', '/contatti', '/settimana-al-mare', '/capodanno-a-pula']
 
 export function ConditionalHeader({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()

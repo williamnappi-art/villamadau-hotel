@@ -1,0 +1,122 @@
+{
+  "breadcrumb": "New Year’s Eve 2027 in Pula",
+  "hero": {
+    "kicker": "New Year’s Eve 2027 in Pula · Sardinia",
+    "title1": "The luxury",
+    "title2": "of calm",
+    "sub": "The last toast of the year. The first day, unhurried.",
+    "imageAlt": "The winter sea near Pula, with the tower on the headland"
+  },
+  "intro": {
+    "label": "New Year at Villa Madau · 31 December 2026 – 1 January 2027",
+    "title": "A different",
+    "titleItalic": "New Year’s Eve",
+    "p1": "This year, treat yourselves to a different New Year’s Eve: a night in the heart of Pula, the pleasure of a dinner chosen freely and a first of January lived at your own pace.",
+    "p2": "Villa Madau Boutique Hotel welcomes you to its comfortable rooms, a few steps from Federico’s restaurant. Celebrate on the evening of 31 December and, after the toast, enjoy not having to get back in the car to drive home.",
+    "p3": "We are in the historic centre of Pula, in southern Sardinia, about 40 km from Cagliari: the ideal place for New Year’s Eve in Sardinia away from the crowds, between the town’s streets and the winter sea.",
+    "imageAlt": "Double room at Villa Madau in warm evening light, historic centre of Pula"
+  },
+  "cena": {
+    "label": "The evening of 31 December",
+    "title": "A special dinner,",
+    "titleItalic": "with no set menu",
+    "p1": "On New Year’s Eve, Federico’s offers its à la carte menu, enriched with special dishes created for the occasion. No fixed-menu gala dinner: everyone chooses freely what to eat, according to their tastes and wishes.",
+    "p2": "Dinner is optional, not included in the price of the stay and paid separately according to what you order. Booking a table is recommended.",
+    "menu": "Browse Federico’s menu",
+    "imageAlt": "Evening in Pula’s historic centre, street lamp and rooftops at sunset"
+  },
+  "primoGennaio": {
+    "label": "1 January",
+    "title": "The first of January?",
+    "titleItalic": "Your time is your own",
+    "p1": "Forget the alarm clock. At Villa Madau the new year begins with a breakfast to enjoy slowly, and the pleasure of spending the morning however you like: relaxing, strolling through the streets of Pula, heading to Nora or to the sea at Chia.",
+    "p2": "And for those who would like to linger at the table, Federico’s will also be open for lunch, with a special discount for hotel guests.",
+    "imageAlt": "Breakfast at Villa Madau: croissants, fresh fruit and coffee"
+  },
+  "anticipo": {
+    "label": "Early booking",
+    "title": "Book early,",
+    "titleItalic": "leave without hurry",
+    "p1": "Book by 15 December and late check-out until 4 pm on the first of January is included, for the rooms reserved for this offer. A morning — and much of the afternoon — with no clock.",
+    "badge": "By 15 December · check-out at 4 pm"
+  },
+  "inclusi": {
+    "label": "What’s included",
+    "title": "Your stay",
+    "titleItalic": "includes",
+    "inclusoTag": "Stay included",
+    "items": [
+      "One night in a double room for two",
+      "Breakfast on 1 January with flexible service, as arranged with the hotel",
+      "All room comforts and Wi-Fi",
+      "Late check-out until 4 pm for bookings made by 15 December (limited promotional rooms)",
+      "10% off food at Federico’s for lunch on 1 January (drinks excluded)",
+      "Digital suggestions for walks and places to discover around Pula"
+    ],
+    "esclusoTag": "Dinner not included",
+    "esclusoTitle": "Dinner on 31 December",
+    "esclusoTesto": "Optional, à la carte at Federico’s, paid separately according to what you order. No set menu. Booking a table is recommended."
+  },
+  "prezzo": {
+    "label": "New Year at Villa Madau · for two",
+    "price": "€209",
+    "sub": "per couple · room + breakfast",
+    "nota": "Dinner on 31 December is optional and paid separately, chosen freely from the à la carte menu.",
+    "invito": "Book your New Year’s Eve at Villa Madau. The luxury of calm awaits you.",
+    "cta": "Check availability",
+    "whatsapp": "WhatsApp",
+    "telefono": "Phone",
+    "email": "Email",
+    "messaggio": "Hello! I would like to check availability for New Year’s Eve at Villa Madau (night of 31 December 2026, room + breakfast). Could you confirm and send me the details?",
+    "oggettoEmail": "Availability request – New Year’s Eve 2027 at Villa Madau"
+  },
+  "esplora": {
+    "label": "1 January around Pula",
+    "title": "Ideas to explore",
+    "titleItalic": "Pula",
+    "intro": "A few ideas for an independent walk on the first day of the year. These are not guided tours: for museums and cultural sites, please check holiday opening hours in advance.",
+    "imageAlt": "The Nora headland with its tower by the sea, Pula",
+    "luoghi": [
+      { "nome": "Nora and the little church of Sant’Efisio", "testo": "A walk by the sea and views of the headland, a few minutes from Pula." },
+      { "nome": "Chia and its dunes", "testo": "Quiet beaches and Mediterranean landscapes to start the year in the open air." },
+      { "nome": "The ancient Roman road Nora–Bithia", "testo": "A coastal route starting from the Pinus Village area, along the sea of southern Sardinia." },
+      { "nome": "Nora archaeological area and Giovanni Patroni Museum", "testo": "Cultural visits to discover the ancient city: check the opening hours for 1 January before you go." },
+      { "nome": "Second World War forts", "testo": "Historic sites around Pula, witnesses to a recent past." }
+    ]
+  },
+  "faq": {
+    "label": "Frequently asked questions and conditions",
+    "title": "Everything you",
+    "titleItalic": "need to know",
+    "items": [
+      {
+        "q": "Is the New Year’s Eve dinner included?",
+        "a": "No. The stay includes one night in a double room and breakfast on 1 January. Dinner on 31 December at Federico’s is optional, à la carte and paid separately according to what you order: there is no set menu."
+      },
+      {
+        "q": "How does New Year’s Eve dinner at Federico’s work?",
+        "a": "On the evening of 31 December, Federico’s offers its à la carte menu, enriched with special dishes created for the occasion. Everyone chooses freely what to order. Booking a table is recommended."
+      },
+      {
+        "q": "How much does New Year’s Eve at Villa Madau cost?",
+        "a": "€209 per couple for one night in a double room with breakfast on 1 January. Dinner is excluded and optional."
+      },
+      {
+        "q": "Until what time can we keep the room on 1 January?",
+        "a": "For bookings made by 15 December, late check-out until 4 pm is included, limited to the rooms reserved for this offer."
+      },
+      {
+        "q": "What can you do in Pula on 1 January?",
+        "a": "Stroll through the historic centre, or head to Nora and the little church of Sant’Efisio by the sea, the dunes of Chia or the ancient Roman road Nora–Bithia. For museums and archaeological sites, check holiday opening hours in advance."
+      },
+      {
+        "q": "How far is Pula from Cagliari?",
+        "a": "About 40 km, both from Cagliari city centre and from Cagliari Elmas airport. Villa Madau is on Via Nora, in the historic centre of Pula."
+      }
+    ]
+  },
+  "offerSchema": {
+    "name": "New Year’s Eve 2027 at Villa Madau, Pula – The luxury of calm",
+    "description": "Night of 31 December 2026 in a double room with breakfast on 1 January 2027 in the historic centre of Pula (southern Sardinia). À la carte dinner at Federico’s optional and not included."
+  }
+}
