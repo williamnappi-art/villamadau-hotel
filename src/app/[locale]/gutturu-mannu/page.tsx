@@ -329,7 +329,7 @@ export default async function GutturuMannuPage({ params }: { params: Promise<{ l
             <div className="rounded-xl overflow-hidden shadow-md aspect-[4/3]">
               <iframe
                 title="Villa Madau Hotel – Via Nora 84, Pula"
-                src="https://maps.google.com/maps?q=Via+Nora+84,+09010+Pula+CA,+Sardegna,+Italy&output=embed&z=16"
+                src="https://maps.google.com/maps?q=Via+Nora+84,+09050+Pula+CA,+Sardegna,+Italy&output=embed&z=16"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
