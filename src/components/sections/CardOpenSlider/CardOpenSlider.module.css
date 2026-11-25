@@ -1,0 +1,183 @@
+/* Slider a tutto schermo "card che si apre" — sezione Offerte & eventi, Villa Madau
+   Le variabili qui sotto controllano dove e quanto grandi sono le card. */
+.hero {
+  --cx: 58%;                              /* da dove parte la fila di card (da sinistra) */
+  --cw: clamp(118px, 12vw, 188px);        /* larghezza card */
+  --ch: clamp(160px, 17vw, 268px);        /* altezza card */
+  --cb: clamp(64px, 7vw, 96px);           /* distanza card dal fondo */
+  --gap: 16px;
+  --accent: #f2b880;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  height: 100svh;          /* tutto schermo, anche su telefono con la barra del browser */
+  min-height: 640px;
+  background: #0f1f1d;
+  color: #fff;
+  isolation: isolate;
+}
+
+.layer {
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  will-change: left, top, width, height;
+}
+
+.img { object-fit: cover; }
+
+.cardLabel {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  transition: opacity 0.4s;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+.cardKicker { font-size: 13px; }
+.cardTitle {
+  font-family: var(--font-display, inherit);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.cardButton {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(7, 20, 22, 0.78) 0%, rgba(7, 20, 22, 0.42) 42%, rgba(7, 20, 22, 0) 68%),
+    linear-gradient(0deg, rgba(7, 20, 22, 0.55) 0%, rgba(7, 20, 22, 0) 40%);
+}
+
+.heading {
+  position: absolute;
+  top: clamp(24px, 4vw, 48px);
+  left: max(5vw, 20px);
+  z-index: 6;
+  margin: 0;
+  font-family: var(--font-display, inherit);
+  font-weight: 600;
+  font-size: clamp(18px, 1.6vw, 22px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.text {
+  position: absolute;
+  left: max(5vw, 20px);
+  top: clamp(130px, 13vw, 200px);
+  width: min(600px, 48%);
+  z-index: 5;
+}
+.slide {
+  position: absolute;
+  inset: 0 0 auto 0;
+  opacity: 0;
+  transform: translateY(24px);
+  visibility: hidden;
+  transition: opacity 0.25s, transform 0.25s, visibility 0s 0.25s;
+}
+.slideOn {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition: opacity 0.6s 0.45s, transform 0.6s 0.45s, visibility 0s;
+}
+.kicker { margin: 0 0 10px; font-size: 16px; font-weight: 500; color: #ffe2c2; }
+.title {
+  margin: 0;
+  font-family: var(--font-display, inherit);
+  font-weight: 700;
+  font-size: clamp(48px, 7vw, 104px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.subtitle { margin: 12px 0 0; font-size: 18px; font-weight: 500; }
+.body { margin: 18px 0 0; max-width: 46ch; font-size: 17px; line-height: 1.55; }
+.cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 22px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #2a1608;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.controls {
+  position: absolute;
+  left: max(5vw, 20px);
+  bottom: var(--cb);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.navBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.15);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.navBtn:hover { background: rgba(255, 255, 255, 0.15); }
+.counter {
+  margin-left: 6px;
+  font-family: var(--font-display, inherit);
+  font-weight: 600;
+  font-size: 22px;
+  white-space: nowrap;
+}
+.counterTotal { opacity: 0.6; }
+.progressTrack {
+  width: 90px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+.progress {
+  display: block;
+  height: 100%;
+  background: #fff;
+  transform-origin: left;
+  animation: grow linear forwards;
+}
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.hero button:focus-visible,
+.hero a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 760px) {
+  .hero { --cx: 20px; min-height: 780px; }
+  .text { width: auto; right: 20px; }
+  .overlay {
+    background: linear-gradient(180deg, rgba(7, 20, 22, 0.8) 0%, rgba(7, 20, 22, 0.5) 55%, rgba(7, 20, 22, 0.25) 100%);
+  }
+  .controls { left: auto; right: 20px; bottom: calc(var(--cb) + var(--ch) + 16px); }
+  .progressTrack { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer, .slide, .slideOn, .cardLabel { transition: none !important; }
+  .progress { animation: none; }
+}
