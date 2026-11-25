@@ -1,28 +1,12 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import { HOTEL, PHONE_HREF } from '@/lib/hotel.config'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/privacy` : `${HOTEL.url}/en/privacy`
-  return {
-    title: t('metadata.privacy.title'),
-    description: t('metadata.privacy.description', { hotelName: HOTEL.name }),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/privacy`, 'en': `${HOTEL.url}/en/privacy` },
-    },
-    openGraph: {
-      title: t('metadata.privacy.ogTitle', { shortName: HOTEL.shortName }),
-      description: t('metadata.privacy.ogDescription', { hotelName: HOTEL.name }),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-    },
-  }
+  return buildMetadata({ locale, path: '/privacy', key: 'privacy' })
 }
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {

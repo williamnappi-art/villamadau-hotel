@@ -1,31 +1,13 @@
 import type { Metadata } from 'next'
+import { buildMetadata } from '@/lib/metadata'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
-import { HOTEL } from '@/lib/hotel.config'
 import { DaNonPerdereHero } from '@/components/sections/DaNonPerdereHero'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/da-non-perdere` : `${HOTEL.url}/en/da-non-perdere`
-  return {
-    title: t('metadata.daNonPerdere.title'),
-    description: t('metadata.daNonPerdere.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/da-non-perdere`, 'en': `${HOTEL.url}/en/da-non-perdere` },
-    },
-    openGraph: {
-      title: t('metadata.daNonPerdere.ogTitle'),
-      description: t('metadata.daNonPerdere.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/og-da-non-perdere.jpg', width: 1200, height: 630, alt: t('metadata.daNonPerdere.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/da-non-perdere', key: 'daNonPerdere', image: { url: '/images/og-da-non-perdere.jpg', width: 1200, height: 630 } })
 }
 
 

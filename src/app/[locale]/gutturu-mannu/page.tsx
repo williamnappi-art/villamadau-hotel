@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 
 import { HOTEL } from '@/lib/hotel.config'
@@ -8,25 +9,7 @@ import { Button } from '@/components/ui/Button'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/gutturu-mannu` : `${HOTEL.url}/en/gutturu-mannu`
-  return {
-    title: t('metadata.gutturuMannu.title'),
-    description: t('metadata.gutturuMannu.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/gutturu-mannu`, 'en': `${HOTEL.url}/en/gutturu-mannu` },
-    },
-    openGraph: {
-      title: t('metadata.gutturuMannu.ogTitle'),
-      description: t('metadata.gutturuMannu.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/gutturu-mannu-paesaggio.webp', width: 1200, height: 630, alt: t('metadata.gutturuMannu.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/gutturu-mannu', key: 'gutturuMannu', image: { url: '/images/gutturu-mannu-paesaggio.webp' } })
 }
 
 const percorsi = [

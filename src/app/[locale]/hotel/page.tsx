@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { HotelHero } from '@/components/sections/HotelHero'
@@ -8,25 +9,7 @@ import { HOTEL } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/hotel` : `${HOTEL.url}/en/hotel`
-  return {
-    title: t('metadata.hotel.title'),
-    description: t('metadata.hotel.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/hotel`, 'en': `${HOTEL.url}/en/hotel` },
-    },
-    openGraph: {
-      title: t('metadata.hotel.ogTitle'),
-      description: t('metadata.hotel.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/hotel-primavera.webp', width: 1200, height: 630, alt: t('metadata.hotel.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/hotel', key: 'hotel', image: { url: '/images/hotel-primavera.webp' } })
 }
 
 export default async function HotelPage({ params }: { params: Promise<{ locale: string }> }) {

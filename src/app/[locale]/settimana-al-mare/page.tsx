@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { buildMetadata } from '@/lib/metadata'
 import type { ReactNode } from 'react'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
@@ -22,25 +23,7 @@ const pageUrl = (locale: string) =>
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = pageUrl(locale)
-  return {
-    title: { absolute: t('metadata.settimanaMare.title') },
-    description: t('metadata.settimanaMare.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/settimana-al-mare`, 'en': `${HOTEL.url}/en/settimana-al-mare` },
-    },
-    openGraph: {
-      title: t('metadata.settimanaMare.ogTitle'),
-      description: t('metadata.settimanaMare.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/og-settimana-mare.jpg', width: 1200, height: 630, alt: t('metadata.settimanaMare.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/settimana-al-mare', key: 'settimanaMare', image: { url: '/images/og-settimana-mare.jpg', width: 1200, height: 630 } })
 }
 
 // Foto della lista "Cosa vi aspetta" — i testi sono in messages/*/settimanaMare.json (stesso ordine)

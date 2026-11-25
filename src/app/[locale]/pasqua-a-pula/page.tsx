@@ -1,31 +1,14 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { PasquaHero } from '@/components/sections/PasquaHero'
-import { HOTEL, whatsappUrl } from '@/lib/hotel.config'
+import { whatsappUrl } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/pasqua-a-pula` : `${HOTEL.url}/en/pasqua-a-pula`
-  return {
-    title: t('metadata.pasqua.title'),
-    description: t('metadata.pasqua.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/pasqua-a-pula`, 'en': `${HOTEL.url}/en/pasqua-a-pula` },
-    },
-    openGraph: {
-      title: t('metadata.pasqua.ogTitle'),
-      description: t('metadata.pasqua.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/chia-villamadau.webp', width: 1200, height: 630, alt: t('metadata.pasqua.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/pasqua-a-pula', key: 'pasqua', image: { url: '/images/chia-villamadau.webp' } })
 }
 
 // Palette: Almond #F5DFC5 · Cambridge Blue #A1B5A8 · Khaki #CBB093 · Fawn #DFA477 · Redwood #A4624D

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { servizi } from '@/content/servizi'
 import { Button } from '@/components/ui/Button'
@@ -9,25 +10,7 @@ import { ServiziHero } from '@/components/sections/ServiziHero'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/servizi` : `${HOTEL.url}/en/servizi`
-  return {
-    title: t('metadata.servizi.title'),
-    description: t('metadata.servizi.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/servizi`, 'en': `${HOTEL.url}/en/servizi` },
-    },
-    openGraph: {
-      title: t('metadata.servizi.ogTitle'),
-      description: t('metadata.servizi.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/villa-madau-pula-hotel.webp', width: 1200, height: 630, alt: t('metadata.servizi.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/servizi', key: 'servizi', image: { url: '/images/villa-madau-pula-hotel.webp' } })
 }
 
 const iconeMap: Record<string, React.ReactNode> = {

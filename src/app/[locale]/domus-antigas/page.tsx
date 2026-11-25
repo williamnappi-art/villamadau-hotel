@@ -1,34 +1,16 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { DomusAntigasHero } from '@/components/sections/DomusAntigasHero'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL, whatsappUrl } from '@/lib/hotel.config'
 
+// Edizione 2026 conclusa: noindex finché la pagina non viene aggiornata al 2027
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/domus-antigas` : `${HOTEL.url}/en/domus-antigas`
-  return {
-    // Edizione 2026 conclusa: fuori da Google finché la pagina non viene aggiornata al 2027
-    robots: { index: false, follow: true },
-    title: t('metadata.domusAntigas.title'),
-    description: t('metadata.domusAntigas.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/domus-antigas`, 'en': `${HOTEL.url}/en/domus-antigas` },
-    },
-    openGraph: {
-      title: t('metadata.domusAntigas.ogTitle'),
-      description: t('metadata.domusAntigas.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/piazzetta.webp', width: 1200, height: 630, alt: t('metadata.domusAntigas.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/domus-antigas', key: 'domusAntigas', image: { url: '/images/piazzetta.webp' }, noindex: true })
 }
 
 const WHATSAPP_URL = `${whatsappUrl()}?text=Ciao!%20Vorrei%20prenotare%20per%20Domus%20Antigas%20il%2014-15%20Marzo%202026`

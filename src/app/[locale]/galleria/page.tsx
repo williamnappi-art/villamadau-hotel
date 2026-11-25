@@ -1,30 +1,13 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import { GalleriaClient } from './GalleriaClient'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/galleria` : `${HOTEL.url}/en/galleria`
-  return {
-    title: t('metadata.galleria.title'),
-    description: t('metadata.galleria.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/galleria`, 'en': `${HOTEL.url}/en/galleria` },
-    },
-    openGraph: {
-      title: t('metadata.galleria.ogTitle'),
-      description: t('metadata.galleria.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/hero.webp', width: 1200, height: 630, alt: t('metadata.galleria.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/galleria', key: 'galleria', image: { url: '/images/hero.webp' } })
 }
 
 const immagini = [

@@ -1,30 +1,13 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import { ContattiHero } from '@/components/sections/ContattiHero'
 import { HOTEL, PHONE_HREF, whatsappUrl } from '@/lib/hotel.config'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/contatti` : `${HOTEL.url}/en/contatti`
-  return {
-    title: t('metadata.contatti.title'),
-    description: t('metadata.contatti.description', { address: HOTEL.address.full, email: HOTEL.contact.email }),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/contatti`, 'en': `${HOTEL.url}/en/contatti` },
-    },
-    openGraph: {
-      title: t('metadata.contatti.ogTitle'),
-      description: t('metadata.contatti.ogDescription', { address: HOTEL.address.full }),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/hotel-esterno.webp', width: 1200, height: 630, alt: t('metadata.contatti.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/contatti', key: 'contatti', image: { url: '/images/hotel-esterno.webp' } })
 }
 
 const WHATSAPP_URL = whatsappUrl('Ciao! Vorrei avere informazioni su Villa Madau Hotel.')

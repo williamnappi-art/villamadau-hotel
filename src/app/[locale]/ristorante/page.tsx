@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import { RistoranteHero } from '@/components/sections/RistoranteHero'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
@@ -8,25 +9,7 @@ import { HOTEL } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/ristorante` : `${HOTEL.url}/en/ristorante`
-  return {
-    title: t('metadata.ristorante.title'),
-    description: t('metadata.ristorante.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/ristorante`, 'en': `${HOTEL.url}/en/ristorante` },
-    },
-    openGraph: {
-      title: t('metadata.ristorante.ogTitle'),
-      description: t('metadata.ristorante.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/ristorante.webp', width: 1200, height: 630, alt: t('metadata.ristorante.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/ristorante', key: 'ristorante', image: { url: '/images/ristorante.webp' } })
 }
 
 const MENU_URL = 'https://www.leggimenu.it/menu/federicos/210635'

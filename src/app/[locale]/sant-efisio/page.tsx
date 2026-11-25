@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildMetadata } from '@/lib/metadata'
+import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { SantEfisioHero } from '@/components/sections/SantEfisioHero'
@@ -8,25 +9,7 @@ import { HOTEL } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-  const url = locale === 'it' ? `${HOTEL.url}/sant-efisio` : `${HOTEL.url}/en/sant-efisio`
-  return {
-    title: t('metadata.santEfisio.title'),
-    description: t('metadata.santEfisio.description'),
-    alternates: {
-      canonical: url,
-      languages: { 'it': `${HOTEL.url}/sant-efisio`, 'en': `${HOTEL.url}/en/sant-efisio` },
-    },
-    openGraph: {
-      title: t('metadata.santEfisio.ogTitle'),
-      description: t('metadata.santEfisio.ogDescription'),
-      url,
-      siteName: HOTEL.name,
-      type: 'website',
-      locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/camera-1.webp', width: 1200, height: 630, alt: t('metadata.santEfisio.ogAlt') }],
-    },
-  }
+  return buildMetadata({ locale, path: '/sant-efisio', key: 'santEfisio', image: { url: '/images/fuochi-villa-madau.webp' } })
 }
 
 const rooms = [
