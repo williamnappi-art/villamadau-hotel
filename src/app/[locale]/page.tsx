@@ -46,9 +46,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       <HomeScrollSnap />
       <HeroSection />
-      <CardCarousel />
       {/* <OfferteSection /> */}
       <OfferteEventiSlider />
+      {/* Carosello 3D spostato qui: è l'unico link della home a Galleria e Gutturu Mannu */}
+      <CardCarousel />
       <RistoranteSection />
       <LocationSection />
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { OFFERTE_EVENTI_ID } from '@/content/offerte'
 
 export function HomeScrollSnap() {
   const snapped = useRef(false)
@@ -11,9 +12,10 @@ export function HomeScrollSnap() {
     const snap = () => {
       if (snapped.current) return
       snapped.current = true
-      const carousel = document.getElementById('carousel')
-      if (carousel) {
-        carousel.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      // Primo scroll dal video → sezione Offerte & eventi, ferma a tutto schermo
+      const target = document.getElementById(OFFERTE_EVENTI_ID)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     }
 

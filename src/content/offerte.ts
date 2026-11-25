@@ -2,6 +2,9 @@
 // I testi IT/EN stanno in messages/{it,en}/home.json → home.offerte.items.<id>
 // Usato da: OfferteEventiSlider (sezione attuale) e OfferteSection (vecchia versione, non importata).
 
+/** id/anchor della sezione Offerte & eventi in homepage (usato anche dall'aggancio dello scroll) */
+export const OFFERTE_EVENTI_ID = 'offerte-eventi'
+
 export type Tipo = 'offerta' | 'evento' | 'stagione'
 
 export interface OffertaData {

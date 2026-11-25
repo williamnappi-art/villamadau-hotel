@@ -1,14 +1,12 @@
 import { getLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
-import { offerteData, type OffertaData } from '@/content/offerte'
+import { offerteData, OFFERTE_EVENTI_ID, type OffertaData } from '@/content/offerte'
 import CardOpenSlider, { type CardSlide } from './CardOpenSlider/CardOpenSlider'
 
 // Sezione "Offerte & eventi" della homepage, a tutto schermo.
 // Nessun contenuto nuovo: usa gli stessi dati (src/content/offerte.ts), le stesse foto
 // e gli stessi testi IT/EN (messages/*/home.json → home.offerte) della sezione precedente.
 // La vecchia versione è in OfferteSection.tsx (non importata).
-
-export const OFFERTE_EVENTI_ID = 'offerte-eventi'
 
 type Translator = (key: string) => string
 
