@@ -12,13 +12,17 @@
   "cta": {
     "prenotaOra": "Book now",
     "reservation": "Reservation",
-    "contattaci": "Contact us"
+    "contattaci": "Contact us",
+    "whatsapp": "WhatsApp",
+    "scriviciWhatsapp": "Message us on WhatsApp",
+    "prenotaTavolo": "Book a table"
   },
   "hero": {
     "logoAlt": "Villa Madau Hotel",
     "homeAriaLabel": "Villa Madau Hotel – back to homepage",
     "mobileSubtitle": "Villamadau Boutique Hotel",
-    "ariaLabelBenvenuti": "Welcome to Villa Madau Hotel"
+    "ariaLabelBenvenuti": "Welcome to Villa Madau Hotel",
+    "titoloHome": "Villa Madau Boutique Hotel, in the historic centre of Pula, Sardinia"
   },
   "mobileNav": {
     "apriMenu": "Open menu",
@@ -32,11 +36,15 @@
     "vediSuGoogleMaps": "View on Google Maps →",
     "privacyPolicy": "Privacy Policy",
     "gestisciCookie": "Manage cookies",
-    "copyright": "© {year} {hotelName} – {address} – VAT number to be added",
+    "copyright": "© {year} {hotelName} – {address} – VAT {vat}",
     "facebookAriaLabel": "Facebook Villa Madau",
     "instagramAriaLabel": "Instagram Villa Madau",
     "facebook": "Facebook",
-    "instagram": "Instagram"
+    "instagram": "Instagram",
+    "telefono": "Phone",
+    "whatsapp": "WhatsApp",
+    "tagline": "In the heart of Pula’s historic centre",
+    "prenota": "Book your stay"
   },
   "cookieBanner": {
     "testo": "We use cookies to improve your experience on our website. You can accept all cookies, keep only the essential ones, or customise your preferences.",
