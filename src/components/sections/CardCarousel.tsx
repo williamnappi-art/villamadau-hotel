@@ -63,17 +63,36 @@ export function CardCarousel() {
   const goNext = useCallback(() => { setDir(1);  setActive((a) => mod(a + 1, N)) }, [])
   const goPrev = useCallback(() => { setDir(-1); setActive((a) => mod(a - 1, N)) }, [])
 
+  // Autoplay: fermo con mouse/focus sopra e con "riduci movimento" (WCAG 2.2.2)
+  const [paused, setPaused] = useState(false)
+  const [reduced, setReduced] = useState(false)
   useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReduced(mq.matches)
+    const on = () => setReduced(mq.matches)
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
+  useEffect(() => {
+    if (paused || reduced) return
     const t = setTimeout(goNext, 4500)
     return () => clearTimeout(t)
-  }, [active, goNext])
+  }, [active, goNext, paused, reduced])
 
   const activeCard = cards[active]
   const leftCard   = cards[prev]
   const rightCard  = cards[next]
 
   return (
-    <section id="carousel" className="py-16 overflow-hidden" style={{ backgroundColor: '#c4cac3' }}>
+    <section
+      id="carousel"
+      className="py-16 overflow-hidden"
+      style={{ backgroundColor: '#c4cac3' }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+    >
       <div className="relative mx-auto px-4 md:max-w-2xl">
 
         {/* prospettiva 3D sul contenitore */}
@@ -99,6 +118,7 @@ export function CardCarousel() {
                 exit="exit"
                 transition={tweenSide}
                 onClick={goPrev}
+                aria-hidden="true"
                 whileHover={{ scale: 1.04, rotateY: 5 }}
               >
                 <div className="relative aspect-[9/16] md:aspect-[3/4] w-full rounded overflow-hidden shadow-md opacity-75">
@@ -175,6 +195,7 @@ export function CardCarousel() {
                 exit="exit"
                 transition={tweenSide}
                 onClick={goNext}
+                aria-hidden="true"
                 whileHover={{ scale: 1.04, rotateY: -5 }}
               >
                 <div className="relative aspect-[9/16] md:aspect-[3/4] w-full rounded overflow-hidden shadow-md opacity-75">
@@ -199,11 +220,13 @@ export function CardCarousel() {
           </button>
 
           <div className="flex items-center gap-2">
-            {cards.map((_, i) => (
+            {cards.map((card, i) => (
               <button
-                key={i}
+                key={card.id}
+                type="button"
                 onClick={() => { setDir(i > active ? 1 : -1); setActive(i) }}
-                aria-label={`Card ${i + 1}`}
+                aria-label={t('vaiA', { title: card.title })}
+                aria-current={i === active ? 'true' : undefined}
                 className={`h-1.5 rounded-full transition-all duration-500 ${
                   i === active ? 'w-5 bg-[#1e1c18]' : 'w-1.5 bg-[#1e1c18]/30'
                 }`}

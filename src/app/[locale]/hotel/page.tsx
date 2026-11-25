@@ -238,7 +238,7 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
             <div className="lg:mt-24">
               <div className="relative aspect-[3/2] w-full overflow-hidden mb-6">
                 <Image
-                  src="/images/hotel-2.webp"
+                  src="/images/camera-hotel-pula.webp"
                   alt="Suite Villa Madau – dettagli"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

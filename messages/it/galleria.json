@@ -6,38 +6,26 @@
   },
   "filtri": {
     "tutte": "Tutte",
-    "esterno": "Esterno",
+    "hotel": "Hotel",
     "ristorante": "Ristorante",
     "dintorni": "Dintorni"
   },
   "immagini": {
-    "hero": {
-      "alt": "Villa Madau Hotel Pula - vista primaverile",
-      "categoria": "Esterno"
-    },
-    "hotel1": {
-      "alt": "Villa Madau Hotel - dettaglio architettura",
-      "categoria": "Esterno"
-    },
-    "hotel2": {
-      "alt": "Villa Madau Hotel - ingresso",
-      "categoria": "Esterno"
-    },
-    "ristorante": {
-      "alt": "Ristorante Villa Madau - cucina tipica sarda",
-      "categoria": "Ristorante"
-    },
-    "chia": {
-      "alt": "Spiaggia di Chia - Sardegna meridionale",
-      "categoria": "Dintorni"
-    },
-    "mare": {
-      "alt": "Mare della Sardegna meridionale - vista aerea",
-      "categoria": "Dintorni"
-    }
+    "facciata": "Villa Madau Boutique Hotel in primavera, centro storico di Pula",
+    "vescovo": "La Stanza del Vescovo, camera con balcone",
+    "viaNora": "Camera matrimoniale affacciata su via Nora",
+    "camera": "Camera matrimoniale con arco, Villa Madau",
+    "colazione": "La colazione del Villa Madau",
+    "ristorante": "Federico’s Restaurant, la piazza sotto l’albero",
+    "nora": "Il promontorio di Nora con la sua torre, Pula",
+    "chia": "La costa di Chia vista dall’alto, Sud Sardegna",
+    "mare": "Il mare del Sud Sardegna visto dall’alto",
+    "cervo": "Cervo sardo nel Parco di Gutturu Mannu"
   },
   "lightbox": {
     "apriFoto": "Apri foto: {alt}",
-    "chiudi": "Chiudi"
+    "chiudi": "Chiudi",
+    "precedente": "Foto precedente",
+    "successiva": "Foto successiva"
   }
 }

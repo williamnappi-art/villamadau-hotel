@@ -6,38 +6,26 @@
   },
   "filtri": {
     "tutte": "All",
-    "esterno": "Exterior",
+    "hotel": "Hotel",
     "ristorante": "Restaurant",
     "dintorni": "Surroundings"
   },
   "immagini": {
-    "hero": {
-      "alt": "Villa Madau Hotel Pula - spring view",
-      "categoria": "Exterior"
-    },
-    "hotel1": {
-      "alt": "Villa Madau Hotel - architectural detail",
-      "categoria": "Exterior"
-    },
-    "hotel2": {
-      "alt": "Villa Madau Hotel - entrance",
-      "categoria": "Exterior"
-    },
-    "ristorante": {
-      "alt": "Villa Madau Restaurant - traditional Sardinian cuisine",
-      "categoria": "Restaurant"
-    },
-    "chia": {
-      "alt": "Chia Beach - southern Sardinia",
-      "categoria": "Surroundings"
-    },
-    "mare": {
-      "alt": "Southern Sardinia sea - aerial view",
-      "categoria": "Surroundings"
-    }
+    "facciata": "Villa Madau Boutique Hotel in spring, historic centre of Pula",
+    "vescovo": "The Bishop’s Room, with balcony",
+    "viaNora": "Double room overlooking Via Nora",
+    "camera": "Double room with arch, Villa Madau",
+    "colazione": "Breakfast at Villa Madau",
+    "ristorante": "Federico’s Restaurant, the square beneath the tree",
+    "nora": "The Nora headland with its tower, Pula",
+    "chia": "The Chia coastline from above, southern Sardinia",
+    "mare": "The sea of southern Sardinia from above",
+    "cervo": "Sardinian deer in Gutturu Mannu Park"
   },
   "lightbox": {
     "apriFoto": "Open photo: {alt}",
-    "chiudi": "Close"
+    "chiudi": "Close",
+    "precedente": "Previous photo",
+    "successiva": "Next photo"
   }
 }
