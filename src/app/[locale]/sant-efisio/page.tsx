@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { SantEfisioHero } from '@/components/sections/SantEfisioHero'
 import { pageBreadcrumb } from '@/lib/schema'
+import { HOTEL } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -22,7 +23,6 @@ const rooms = [
   { numero: '06', image: '/images/camera-via-nora.webp' },
 ]
 
-const BOOKING_URL = 'https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8'
 
 export default async function SantEfisioPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -205,7 +205,7 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={BOOKING_URL}
+            href={HOTEL.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-xs font-medium tracking-[0.2em] uppercase px-10 py-4 transition-opacity hover:opacity-90"
