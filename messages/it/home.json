@@ -75,7 +75,14 @@
         "cta": "Scopri il weekend di Pasqua"
       }
     },
-    "vaiA": "Vai a {titolo} {italic}"
+    "vaiA": "Vai a {titolo} {italic}",
+    "a11y": {
+      "carosello": "carosello",
+      "mostra": "Mostra: {title}",
+      "precedente": "Precedente",
+      "successivo": "Successivo",
+      "scopri": "Scopri di più"
+    }
   },
   "ristorante": {
     "label": "Il nostro ristorante",

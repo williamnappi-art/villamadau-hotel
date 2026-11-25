@@ -2,6 +2,7 @@
 
 import Image, { type ImageProps } from "next/image";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { Link } from "@/i18n/navigation";
 import styles from "./CardOpenSlider.module.css";
 
 /**
@@ -36,6 +37,25 @@ type Props = {
   interval?: number;
   /** Card visibili in fila */
   visibleCards?: number;
+  /** Testi per screen reader (default italiano) */
+  labels?: Partial<Labels>;
+};
+
+type Labels = {
+  carousel: string;
+  /** contiene {title} */
+  show: string;
+  previous: string;
+  next: string;
+  more: string;
+};
+
+const DEFAULT_LABELS: Labels = {
+  carousel: "carosello",
+  show: "Mostra: {title}",
+  previous: "Precedente",
+  next: "Successivo",
+  more: "Scopri di più",
 };
 
 const EASE = "cubic-bezier(.7,0,.2,1)";
@@ -61,17 +81,23 @@ export default function CardOpenSlider({
   id,
   interval = 5500,
   visibleCards = 3,
+  labels: labelsProp,
 }: Props) {
+  const labels = { ...DEFAULT_LABELS, ...labelsProp };
   const n = items.length;
   const [active, setActive] = useState(0);
   const [leaving, setLeaving] = useState<Leaving>(null);
-  const [hovered, setHovered] = useState(false);
+  const [hovered, setHovered] = useState(false); // mouse sopra card, frecce o pulsante
+  const [focused, setFocused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
   const [inView, setInView] = useState(false);
   const [tabHidden, setTabHidden] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const busy = useRef(false);
   const timers = useRef<number[]>([]);
-  const paused = hovered || !inView || tabHidden;
+  const nextBtnRef = useRef<HTMLButtonElement>(null);
+  const paused = hovered || focused || !inView || tabHidden;
+  const autoplayOn = interval > 0 && !reducedMotion;
 
   const go = (target: number) => {
     if (n < 2 || busy.current) return;
@@ -98,11 +124,11 @@ export default function CardOpenSlider({
 
   // Autoplay solo quando la sezione è sullo schermo, non in hover/focus e a scheda visibile
   useEffect(() => {
-    if (!interval || paused || n < 2) return;
+    if (!autoplayOn || paused || n < 2) return;
     const t = window.setTimeout(() => go(active + 1), interval);
     return () => window.clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active, paused, interval, n]);
+  }, [active, paused, interval, n, autoplayOn]);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -111,10 +137,17 @@ export default function CardOpenSlider({
     io.observe(el);
     const onVis = () => setTabHidden(document.hidden);
     document.addEventListener("visibilitychange", onVis);
+    // Con "riduci movimento" niente autoplay (le transizioni sono già istantanee via CSS)
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onMq = () => setReducedMotion(mq.matches);
+    onMq();
+    mq.addEventListener("change", onMq);
+    const pending = timers.current;
     return () => {
       io.disconnect();
       document.removeEventListener("visibilitychange", onVis);
-      timers.current.forEach((t) => window.clearTimeout(t));
+      mq.removeEventListener("change", onMq);
+      pending.forEach((t) => window.clearTimeout(t));
     };
   }, []);
 
@@ -137,12 +170,16 @@ export default function CardOpenSlider({
       ref={sectionRef}
       id={id}
       className={styles.hero}
-      aria-roledescription="carosello"
+      aria-roledescription={labels.carousel}
       aria-label={heading}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocus={() => setHovered(true)}
-      onBlur={() => setHovered(false)}
+      // Pausa solo col mouse sopra elementi cliccabili: la sezione è a tutto schermo,
+      // fermarsi su tutta la sezione vorrebbe dire non partire mai su desktop.
+      onPointerOver={(e) => {
+        if (e.pointerType === "mouse") setHovered(!!(e.target as Element).closest("button, a"));
+      }}
+      onPointerLeave={() => setHovered(false)}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
     >
       {items.map((item, i) => {
         const { style, isCard } = layer(i);
@@ -165,8 +202,13 @@ export default function CardOpenSlider({
               <button
                 type="button"
                 className={styles.cardButton}
-                onClick={() => go(i)}
-                aria-label={`Mostra: ${item.title}`}
+                onClick={(e) => {
+                  const fromKeyboard = e.detail === 0;
+                  e.currentTarget.blur();
+                  go(i);
+                  if (fromKeyboard) nextBtnRef.current?.focus();
+                }}
+                aria-label={labels.show.replace("{title}", item.title)}
               />
             )}
           </div>
@@ -177,7 +219,7 @@ export default function CardOpenSlider({
 
       {heading && <h2 className={styles.heading}>{heading}</h2>}
 
-      <div className={styles.text} aria-live="polite">
+      <div className={styles.text} aria-live={autoplayOn && !paused ? "off" : "polite"}>
         {items.map((item, i) => {
           const on = i === active;
           return (
@@ -186,11 +228,16 @@ export default function CardOpenSlider({
               <h3 className={styles.title}>{item.title}</h3>
               {item.subtitle && <p className={styles.subtitle}>{item.subtitle}</p>}
               {item.text && <p className={styles.body}>{item.text}</p>}
-              {item.href && (
-                <a href={item.href} className={styles.cta} tabIndex={on ? 0 : -1}>
-                  {item.ctaLabel ?? "Scopri di più"}
-                </a>
-              )}
+              {item.href &&
+                (item.href.startsWith("/") ? (
+                  <Link href={item.href} className={styles.cta} tabIndex={on ? 0 : -1}>
+                    {item.ctaLabel ?? labels.more}
+                  </Link>
+                ) : (
+                  <a href={item.href} className={styles.cta} tabIndex={on ? 0 : -1} target="_blank" rel="noopener noreferrer">
+                    {item.ctaLabel ?? labels.more}
+                  </a>
+                ))}
             </div>
           );
         })}
@@ -198,12 +245,12 @@ export default function CardOpenSlider({
 
       {n > 1 && (
         <div className={styles.controls}>
-          <button type="button" className={styles.navBtn} onClick={() => go(active - 1)} aria-label="Precedente">
+          <button type="button" className={styles.navBtn} onClick={() => go(active - 1)} aria-label={labels.previous}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
-          <button type="button" className={styles.navBtn} onClick={() => go(active + 1)} aria-label="Successivo">
+          <button ref={nextBtnRef} type="button" className={styles.navBtn} onClick={() => go(active + 1)} aria-label={labels.next}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M9 18l6-6-6-6" />
             </svg>
@@ -212,7 +259,7 @@ export default function CardOpenSlider({
             {String(active + 1).padStart(2, "0")}{" "}
             <span className={styles.counterTotal}>/ {String(n).padStart(2, "0")}</span>
           </span>
-          {interval > 0 && (
+          {autoplayOn && (
             <span className={styles.progressTrack} aria-hidden="true">
               <span
                 key={active}

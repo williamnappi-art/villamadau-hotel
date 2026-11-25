@@ -1,5 +1,4 @@
-import { getLocale, getTranslations } from 'next-intl/server'
-import { routing } from '@/i18n/routing'
+import { getTranslations } from 'next-intl/server'
 import { offerteData, OFFERTE_EVENTI_ID, type OffertaData } from '@/content/offerte'
 import CardOpenSlider, { type CardSlide } from './CardOpenSlider/CardOpenSlider'
 
@@ -10,14 +9,8 @@ import CardOpenSlider, { type CardSlide } from './CardOpenSlider/CardOpenSlider'
 
 type Translator = (key: string) => string
 
-/** Link nella lingua corrente: i link interni su /en diventano /en/... (come faceva il Link di next-intl) */
-function localizedHref(href: string, external: boolean | undefined, locale: string) {
-  if (external || /^https?:\/\//.test(href) || locale === routing.defaultLocale) return href
-  return `/${locale}${href === '/' ? '' : href}`
-}
-
 /** Trasforma un elemento esistente nel formato CardSlide del componente */
-export function toCardSlide(d: OffertaData, t: Translator, locale: string): CardSlide {
+export function toCardSlide(d: OffertaData, t: Translator): CardSlide {
   const title = `${t(`items.${d.id}.titolo`)} ${t(`items.${d.id}.italic`)}`
   const label = t(`items.${d.id}.label`)
   return {
@@ -29,15 +22,22 @@ export function toCardSlide(d: OffertaData, t: Translator, locale: string): Card
     cardKicker: label,
     image: d.image,
     alt: title,
-    href: localizedHref(d.href, d.external, locale),
+    // link interni senza lingua: il Link di next-intl nel componente aggiunge /en quando serve
+    href: d.href,
     ctaLabel: `${t(`items.${d.id}.cta`)} →`,
   }
 }
 
 export async function OfferteEventiSlider() {
-  const locale = await getLocale()
   const t = await getTranslations('home.offerte')
-  const items = offerteData.map((d) => toCardSlide(d, t, locale))
+  const items = offerteData.map((d) => toCardSlide(d, t))
+  const labels = {
+    carousel: t('a11y.carosello'),
+    show: t('a11y.mostra', { title: '{title}' }),
+    previous: t('a11y.precedente'),
+    next: t('a11y.successivo'),
+    more: t('a11y.scopri'),
+  }
 
-  return <CardOpenSlider id={OFFERTE_EVENTI_ID} heading={t('label')} items={items} />
+  return <CardOpenSlider id={OFFERTE_EVENTI_ID} heading={t('label')} items={items} labels={labels} />
 }

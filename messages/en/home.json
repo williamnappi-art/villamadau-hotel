@@ -75,7 +75,14 @@
         "cta": "Discover the Easter weekend"
       }
     },
-    "vaiA": "Go to {titolo} {italic}"
+    "vaiA": "Go to {titolo} {italic}",
+    "a11y": {
+      "carosello": "carousel",
+      "mostra": "Show: {title}",
+      "precedente": "Previous",
+      "successivo": "Next",
+      "scopri": "Discover more"
+    }
   },
   "ristorante": {
     "label": "Our restaurant",
