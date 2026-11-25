@@ -81,11 +81,12 @@ src/
 │   │   └── LanguageSwitcher.tsx # Bandierine SVG IT/EN
 │   └── forms/ContactForm.tsx   # 'use client' — react-hook-form + Zod
 ├── content/
-│   ├── camere.ts               # Dati camere (slug, mq, occupazione, immagine)
-│   └── servizi.ts              # Dati servizi (icone)
+│   └── servizi.ts              # Icone dei servizi (testi in servizi.json)
 └── lib/
-    ├── hotel.config.ts         # Costanti: nome, indirizzo, contatti, coordinate, URL
-    └── schema.ts               # JSON-LD: Hotel, HotelRoom, BreadcrumbList
+    ├── hotel.config.ts         # Costanti: nome, indirizzo, contatti, Slope, WhatsApp, P.IVA + whatsappUrl/PHONE_HREF
+    ├── nav.ts                  # Voci del menu (NAV_LINKS)
+    ├── metadata.ts             # buildMetadata(): canonical, hreflang, OG, Twitter per lingua
+    └── schema.ts               # JSON-LD: Hotel (per lingua, @id), BreadcrumbList
 
 messages/
 ├── it/                         # 12 file JSON con tutte le stringhe italiane
@@ -123,11 +124,22 @@ Tutte le immagini sono in `public/images/` in formato WebP (1920px max). I video
 - Tag GTM: GA4, Conversion Linker, click (telefono, email, prenota, social, maps, WhatsApp), scroll depth, outbound links
 - Consenso integrato abilitato su tutti i tag in GTM Console
 
+### Regole del progetto (da rispettare)
+- **Contatti e link solo da `src/lib/hotel.config.ts`**: `HOTEL.bookingUrl` (Slope, tutti i "Prenota"), `HOTEL.contact.whatsapp` (351, messaggi) con `whatsappUrl(testo)`, `HOTEL.contact.phone` (070, chiamate) con `PHONE_HREF`, CAP 09050, `HOTEL.vatNumber`, `HOTEL.restaurant.*`. Mai numeri o URL scritti a mano.
+- **"Prenota" porta sempre a Slope e accanto c'è sempre WhatsApp.**
+- **Menu**: unica lista in `src/lib/nav.ts` (`NAV_LINKS`).
+- **Hero delle pagine**: la navigazione è `HeroNav` (`src/components/sections/HeroNav.tsx`); ogni `*Hero.tsx` contiene solo sfondo e titolo. Sfondi video con `HeroVideo` (immagine subito, video dopo il load).
+- **Testi**: niente italiano scritto nel JSX; tutto in `messages/{it,en}/*.json` con le stesse chiavi. Le traduzioni passate al browser sono solo `common` e `home` (vedi `[locale]/layout.tsx`): i componenti client che usano altri namespace ricevono i testi come props.
+- **Link interni**: sempre `Link` da `@/i18n/navigation` (mai `next/link`, che fa perdere la lingua).
+- **Metadati**: `buildMetadata()` da `src/lib/metadata.ts` (hreflang con x-default, OG/Twitter per lingua); briciole con `pageBreadcrumb()` da `src/lib/schema.ts`.
+- **Contenuti di terze parti** (mappe, menù): `ConsentIframe`, si caricano solo dopo il consenso.
+- **Un solo `<h1>` per pagina.**
+
 ### Aggiungere contenuti
-- **Nuova camera**: aggiungere in `src/content/camere.ts` + tradurre in `messages/it/camere.json` e `messages/en/camere.json`
-- **Nuovo servizio**: aggiungere in `src/content/servizi.ts` + tradurre nei file servizi.json
+- **Nuovo servizio**: aggiungere l'icona in `src/content/servizi.ts` + testi in `messages/{it,en}/servizi.json` (`serviziGrid.items.<icona>`)
+- **Offerte/eventi in home**: `src/content/offerte.ts` (dati) + `messages/{it,en}/home.json` → `home.offerte.items.<id>`
 - **Costanti hotel** (telefono, orari, ecc.): modificare `src/lib/hotel.config.ts`
-- **Nuova pagina**: creare sotto `src/app/[locale]/`, aggiungere traduzioni nei JSON, aggiungere alla sitemap
+- **Nuova pagina**: creare sotto `src/app/[locale]/`, `generateMetadata` con `buildMetadata`, testi nei JSON, aggiungere alla sitemap e (se ha un hero a tutto schermo) a `HERO_PAGES` in `ConditionalHeader.tsx`
 
 ### Variabili d'ambiente
 ```
