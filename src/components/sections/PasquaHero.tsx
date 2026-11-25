@@ -1,13 +1,16 @@
 import { getTranslations } from 'next-intl/server'
 import { HeroNav } from './HeroNav'
 import { HeroVideo } from '@/components/ui/HeroVideo'
+import { HeroParallax } from '@/components/ui/HeroParallax'
 
 export async function PasquaHero() {
   const tEventi = await getTranslations('eventi')
 
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
-      <HeroVideo src="/images/tuerredda.mp4" poster="/images/chia-villamadau.webp" />
+      <HeroParallax>
+        <HeroVideo src="/images/tuerredda.mp4" poster="/images/chia-villamadau.webp" />
+      </HeroParallax>
       <div className="absolute inset-0 bg-black/45" />
 
       <HeroNav />

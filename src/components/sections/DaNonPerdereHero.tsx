@@ -1,13 +1,16 @@
 import { getTranslations } from 'next-intl/server'
 import { HeroNav } from './HeroNav'
 import { HeroVideo } from '@/components/ui/HeroVideo'
+import { HeroParallax } from '@/components/ui/HeroParallax'
 
 export async function DaNonPerdereHero() {
   const tEventi = await getTranslations('eventi')
 
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
-      <HeroVideo src="/images/sant-efisio.mp4" poster="/images/sant-efisio-piazza.jpg" posterPosition="22% 15%" />
+      <HeroParallax>
+        <HeroVideo src="/images/sant-efisio.mp4" poster="/images/sant-efisio-piazza.jpg" posterPosition="22% 15%" />
+      </HeroParallax>
       <div className="absolute inset-0 bg-black/45" />
 
       <HeroNav />

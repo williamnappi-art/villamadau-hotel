@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { HeroNav } from './HeroNav'
 import { Stella } from '@/components/ui/Stella'
+import { HeroParallax } from '@/components/ui/HeroParallax'
 
 export async function SettimanaMareHero() {
   const tOfferta = await getTranslations('settimanaMare')
@@ -9,16 +10,18 @@ export async function SettimanaMareHero() {
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
       {/* Foto dell'offerta: vista aerea del mare (ottimizzata e precaricata, desktop e mobile) */}
-      <Image
-        src="/images/mare-vista-aerea.webp"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        quality={70}
-        className="object-cover object-center"
-        aria-hidden="true"
-      />
+      <HeroParallax>
+        <Image
+          src="/images/mare-vista-aerea.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          quality={70}
+          className="object-cover object-center"
+          aria-hidden="true"
+        />
+      </HeroParallax>
       <div className="absolute inset-0 bg-black/40" />
 
       <HeroNav />
