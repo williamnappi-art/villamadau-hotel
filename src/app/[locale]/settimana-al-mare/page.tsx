@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { SettimanaMareHero } from '@/components/sections/SettimanaMareHero'
 import { Stella } from '@/components/ui/Stella'
 import { generateBreadcrumbSchema } from '@/lib/schema'
-import { HOTEL } from '@/lib/hotel.config'
+import { HOTEL, PHONE_HREF, whatsappUrl } from '@/lib/hotel.config'
 
 // ─────────────────────────────────────────────────────────────
 // Offerta di Natale "Una settimana al mare" — Estate 2027
@@ -56,7 +56,6 @@ type Incluso = { eyebrow: string; titolo: string; testo: string; alt: string }
 type Condizione = { term: string; def: string }
 type Faq = { q: string; a: string }
 
-const WHATSAPP_NUMBER = '393518508606'
 
 export default async function SettimanaMarePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -70,8 +69,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
 
   // Contatti per richiedere l'offerta
   const messaggio = t('prezzo.messaggio')
-  const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messaggio)}`
-  const PHONE_HREF = `tel:${HOTEL.contact.phone.replace(/\s/g, '')}`
+  const WHATSAPP_URL = whatsappUrl(messaggio)
   const EMAIL_HREF = `mailto:${HOTEL.contact.email}?subject=${encodeURIComponent(t('prezzo.oggettoEmail'))}&body=${encodeURIComponent(messaggio)}`
 
   const url = pageUrl(locale)

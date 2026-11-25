@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { PasquaHero } from '@/components/sections/PasquaHero'
-import { HOTEL } from '@/lib/hotel.config'
+import { HOTEL, whatsappUrl } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -30,8 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 // Palette: Almond #F5DFC5 · Cambridge Blue #A1B5A8 · Khaki #CBB093 · Fawn #DFA477 · Redwood #A4624D
 
-const WHATSAPP_NUMBER = '393518508606'
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Ciao!%20Vorrei%20informazioni%20per%20il%20weekend%20di%20Pasqua%20a%20Pula`
+const WHATSAPP_URL = `${whatsappUrl()}?text=Ciao!%20Vorrei%20informazioni%20per%20il%20weekend%20di%20Pasqua%20a%20Pula`
 
 function WhatsAppButton({ label = 'Scrivici su WhatsApp' }: { label?: string }) {
   return (

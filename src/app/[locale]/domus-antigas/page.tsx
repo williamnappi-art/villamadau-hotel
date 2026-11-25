@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { DomusAntigasHero } from '@/components/sections/DomusAntigasHero'
 import { generateBreadcrumbSchema } from '@/lib/schema'
-import { HOTEL } from '@/lib/hotel.config'
+import { HOTEL, whatsappUrl } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -29,9 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
-// Aggiorna con il numero WhatsApp reale dell'hotel (formato internazionale senza +)
-const WHATSAPP_NUMBER = '393518508606'
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Ciao!%20Vorrei%20prenotare%20per%20Domus%20Antigas%20il%2014-15%20Marzo%202026`
+const WHATSAPP_URL = `${whatsappUrl()}?text=Ciao!%20Vorrei%20prenotare%20per%20Domus%20Antigas%20il%2014-15%20Marzo%202026`
 
 export default async function DomusAntigasPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

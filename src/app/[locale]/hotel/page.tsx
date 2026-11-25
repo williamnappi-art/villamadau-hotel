@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { HotelHero } from '@/components/sections/HotelHero'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 import { HOTEL } from '@/lib/hotel.config'
@@ -279,7 +279,7 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
 
           <div className="text-center mt-16">
             <a
-              href="https://booking.slope.it/f0fc79cb-30b8-401d-a334-210174b387a8"
+              href={HOTEL.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 bg-[#1e1c18] text-[#c4b99a] text-xs font-medium tracking-[0.25em] uppercase px-12 py-5 hover:bg-[#c4b99a] hover:text-[#1e1c18] transition-colors duration-500"

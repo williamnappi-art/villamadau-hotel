@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { ContattiHero } from '@/components/sections/ContattiHero'
-import { HOTEL } from '@/lib/hotel.config'
+import { HOTEL, PHONE_HREF, whatsappUrl } from '@/lib/hotel.config'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -27,8 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
-const WHATSAPP_NUMBER = '390709249033'
-const WHATSAPP_TEXT = encodeURIComponent('Ciao! Vorrei avere informazioni su Villa Madau Hotel.')
+const WHATSAPP_URL = whatsappUrl('Ciao! Vorrei avere informazioni su Villa Madau Hotel.')
 
 export default async function ContattiPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -62,7 +61,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
           Persone reali · Risposte vere · Nessun bot
         </p>
         <a
-          href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`}
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-3 bg-[#25D366] text-white text-xs font-semibold tracking-[0.2em] uppercase px-10 py-5 hover:bg-[#1ebe5a] transition-colors duration-300"
@@ -101,7 +100,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
               <div>
                 <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-3">Telefono</p>
                 <a
-                  href={`tel:+390709249033`}
+                  href={PHONE_HREF}
                   className="font-serif text-3xl md:text-4xl text-[#1e1c18] hover:text-[#4a4640] transition-colors"
                 >
                   {HOTEL.contact.phone}

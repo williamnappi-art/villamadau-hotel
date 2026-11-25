@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { HOTEL } from '@/lib/hotel.config'
+import { HOTEL, PHONE_HREF } from '@/lib/hotel.config'
 import { generateBreadcrumbSchema } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -80,7 +80,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               </p>
               <p>
                 Telefono:{' '}
-                <a href="tel:+390709249033" className="text-[#1e1c18] hover:text-[#c4b99a] transition-colors">
+                <a href={PHONE_HREF} className="text-[#1e1c18] hover:text-[#c4b99a] transition-colors">
                   {HOTEL.contact.phone}
                 </a>
               </p>

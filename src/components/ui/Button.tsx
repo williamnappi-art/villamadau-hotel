@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { clsx } from 'clsx'
 
 type ButtonVariant = 'primary' | 'outline' | 'white'
@@ -39,11 +39,17 @@ export function Button({
   const classes = clsx(baseClasses, variantClasses[variant], className)
 
   if (href) {
-    const linkProps = external
-      ? { target: '_blank', rel: 'noopener noreferrer' }
-      : {}
+    // Link esterni, mailto: e tel: → <a> normale; link interni → Link di next-intl (mantiene la lingua: /en/...)
+    const isExternal = external || /^(https?:|mailto:|tel:)/.test(href)
+    if (isExternal) {
+      return (
+        <a href={href} className={classes} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+          {children}
+        </a>
+      )
+    }
     return (
-      <Link href={href} className={classes} {...linkProps}>
+      <Link href={href} className={classes}>
         {children}
       </Link>
     )
