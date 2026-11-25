@@ -6,7 +6,9 @@ import { CardCarousel } from '@/components/sections/CardCarousel'
 import { HomeScrollSnap } from '@/components/sections/HomeScrollSnap'
 import { RistoranteSection } from '@/components/sections/RistoranteSection'
 import { LocationSection } from '@/components/sections/LocationSection'
-import { OfferteSection } from '@/components/sections/OfferteSection'
+// Vecchia sezione Offerte & eventi (per tornare indietro: ripristinare questo import e <OfferteSection />)
+// import { OfferteSection } from '@/components/sections/OfferteSection'
+import { OfferteEventiSlider } from '@/components/sections/OfferteEventiSlider'
 import { Button } from '@/components/ui/Button'
 import { HOTEL } from '@/lib/hotel.config'
 
@@ -24,8 +26,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       <HomeScrollSnap />
       <HeroSection />
+      {/* <OfferteSection /> */}
+      <OfferteEventiSlider />
+      {/* Carosello 3D spostato qui: è l'unico link della home a Galleria e Gutturu Mannu */}
       <CardCarousel />
-      <OfferteSection />
       <RistoranteSection />
       <LocationSection />
 
