@@ -6,7 +6,7 @@
   },
   "whatsapp": {
     "label": "Risposta in pochi minuti",
-    "title": "Scrivici su\nWhatsApp",
+    "title": "Scrivici su<br></br><em>WhatsApp</em>",
     "paragrafo": "Dall'altra parte del telefono ci siamo noi — non un bot, non un risponditore automatico. Qualsiasi domanda: disponibilità, camere, ristorante, trasferimenti, esigenze particolari.",
     "badge": "Persone reali · Risposte vere · Nessun bot",
     "cta": "Scrivici su WhatsApp",
@@ -22,6 +22,13 @@
     "checkinDalle": "Check-in: dalle {time}",
     "checkoutEntro": "Check-out: entro {time}",
     "distanze": "Distanze",
+    "luoghi": [
+      "Sito Archeologico di Nora",
+      "Spiagge di Santa Margherita di Pula",
+      "Spiaggia di Chia",
+      "Aeroporto di Cagliari Elmas",
+      "Cagliari centro"
+    ],
     "mapTitle": "Villa Madau Hotel – Via Nora 84, Pula"
   },
   "form": {
