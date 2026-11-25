@@ -40,7 +40,7 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
       {/* ── INTRO PROCESSIONE ── */}
       <section style={{ backgroundColor: '#F9ECE8' }} className="py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#939685' }}>
+          <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#5c5f51' }}>
             {t('santEfisio.intro.label')}
           </p>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-10" style={{ color: '#1e1c18' }}>
@@ -79,7 +79,7 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
             />
           </div>
           <div>
-            <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#939685' }}>
+            <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#5c5f51' }}>
               {t('santEfisio.perche.label')}
             </p>
             <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-snug" style={{ color: '#1e1c18' }}>
@@ -96,13 +96,13 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
 
       {/* ── LE SEI CAMERE — intestazione ── */}
       <section style={{ backgroundColor: '#F9ECE8' }} className="pt-28 pb-0 px-6 text-center">
-        <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#939685' }}>
+        <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#5c5f51' }}>
           {t('santEfisio.camere.label')}
         </p>
         <h2 className="font-serif text-5xl md:text-7xl" style={{ color: '#1e1c18' }}>
           {t('santEfisio.camere.title')}
         </h2>
-        <p className="mt-5 leading-relaxed" style={{ color: '#939685' }}>
+        <p className="mt-5 leading-relaxed" style={{ color: '#5c5f51' }}>
           {t('santEfisio.camere.subtitle')}
         </p>
       </section>

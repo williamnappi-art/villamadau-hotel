@@ -33,7 +33,7 @@ export default function RootNotFound() {
         <div className="max-w-xl py-24">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/logo.png" alt="Villa Madau Hotel" width={220} height={155} className="mx-auto mb-10 h-auto w-[220px]" />
-          <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#8a9e82' }}>
+          <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#52624c' }}>
             Errore 404
           </p>
           <h1 className="font-serif text-5xl md:text-6xl leading-tight mb-4" style={{ color: '#1e1c18' }}>

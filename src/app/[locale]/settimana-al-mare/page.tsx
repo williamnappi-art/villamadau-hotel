@@ -107,7 +107,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
       {/* ── INTRO ── */}
       <section className="bg-cream py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#8a9e82' }}>
+          <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#52624c' }}>
             {t('intro.label')}
           </p>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-10" style={{ color: '#1e1c18' }}>
@@ -117,7 +117,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
             <p>{t('intro.p1')}</p>
             <p>{t.rich('intro.p2', { b: bold })}</p>
           </div>
-          <Stella className="w-4 h-4 mx-auto mt-12 text-[#c4b99a]" />
+          <Stella className="w-4 h-4 mx-auto mt-12 text-[#675c3c]" />
         </div>
       </section>
 
@@ -138,7 +138,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
 
       {/* ── COSA COMPRENDE — intestazione ── */}
       <section className="bg-cream pt-20 pb-4 px-6 text-center">
-        <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#c4b99a' }}>
+        <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#675c3c' }}>
           {t('inclusi.label')}
         </p>
         <h2 className="font-serif text-5xl md:text-7xl" style={{ color: '#1e1c18' }}>
@@ -181,7 +181,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
                   >
                     {numero}
                   </span>
-                  <p className="text-[11px] uppercase tracking-[0.3em] mb-3" style={{ color: '#8a9e82' }}>
+                  <p className="text-[11px] uppercase tracking-[0.3em] mb-3" style={{ color: '#52624c' }}>
                     {item.eyebrow}
                   </p>
                   <h3 className="font-serif text-3xl md:text-4xl mb-5 whitespace-pre-line" style={{ color: '#1e1c18' }}>
@@ -266,7 +266,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
                   <p className="text-[10px] uppercase tracking-[0.3em] mb-2" style={{ color: '#4a4640' }}>
                     {t('regalo.voucherSub')}
                   </p>
-                  <p className="text-[10px] uppercase tracking-[0.3em]" style={{ color: '#8a9e82' }}>
+                  <p className="text-[10px] uppercase tracking-[0.3em]" style={{ color: '#52624c' }}>
                     {t('regalo.voucherFirma')}
                   </p>
                 </div>
@@ -280,7 +280,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
       <section className="bg-cream py-28 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#c4b99a' }}>
+            <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#675c3c' }}>
               {t('condizioni.label')}
             </p>
             <h2 className="font-serif text-4xl md:text-6xl" style={{ color: '#1e1c18' }}>
@@ -294,7 +294,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
                 className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-2 md:gap-10 py-6 border-t"
                 style={{ borderColor: '#dcd3bf' }}
               >
-                <dt className="text-[11px] uppercase tracking-[0.3em] md:pt-2" style={{ color: '#8a9e82' }}>
+                <dt className="text-[11px] uppercase tracking-[0.3em] md:pt-2" style={{ color: '#52624c' }}>
                   {c.term}
                 </dt>
                 <dd className="font-serif text-xl md:text-2xl leading-snug" style={{ color: '#1e1c18' }}>
@@ -371,7 +371,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
       <section className="bg-cream py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#c4b99a' }}>
+            <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#675c3c' }}>
               {t('faq.label')}
             </p>
             <h2 className="font-serif text-4xl md:text-6xl" style={{ color: '#1e1c18' }}>
@@ -386,7 +386,7 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
                 </h3>
                 <span
                   className="text-2xl leading-none transition-transform duration-200 group-open:rotate-45 shrink-0 mt-1"
-                  style={{ color: '#8a9e82' }}
+                  style={{ color: '#52624c' }}
                   aria-hidden="true"
                 >
                   +

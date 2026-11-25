@@ -70,7 +70,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
 
               {/* Email — in evidenza */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-3">{t('info.email')}</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-3">{t('info.email')}</p>
                 <a
                   href={`mailto:${HOTEL.contact.email}`}
                   className="font-serif text-3xl md:text-4xl text-[#1e1c18] hover:text-[#4a4640] transition-colors"
@@ -81,7 +81,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
 
               {/* Telefono */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-3">{t('info.telefono')}</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-3">{t('info.telefono')}</p>
                 <a
                   href={PHONE_HREF}
                   className="font-serif text-3xl md:text-4xl text-[#1e1c18] hover:text-[#4a4640] transition-colors"
@@ -92,7 +92,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
 
               {/* Indirizzo */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-2">{t('info.indirizzo')}</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-2">{t('info.indirizzo')}</p>
                 <address className="not-italic text-[#1e1c18] text-sm leading-relaxed mb-2">
                   {HOTEL.address.full}
                 </address>
@@ -108,7 +108,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
 
               {/* Orari */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-2">{t('info.orari')}</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-2">{t('info.orari')}</p>
                 <p className="text-sm text-[#1e1c18] leading-relaxed">
                   {t('info.checkinDalle', { time: HOTEL.checkinTime })}<br />
                   {t('info.checkoutEntro', { time: HOTEL.checkoutTime })}
@@ -117,12 +117,12 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
 
               {/* Distanze */}
               <div>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-3">{t('info.distanze')}</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-3">{t('info.distanze')}</p>
                 <ul className="text-sm space-y-2">
                   {HOTEL.nearbyAttractions.map((a, i) => (
                     <li key={a.name} className="flex justify-between gap-4 border-b border-[#1e1c18]/8 pb-2">
                       <span className="text-[#4a4640]">{luoghi[i] ?? a.name}</span>
-                      <span className="text-[#c4b99a] font-medium flex-shrink-0">{a.distance}</span>
+                      <span className="text-[#675c3c] font-medium flex-shrink-0">{a.distance}</span>
                     </li>
                   ))}
                 </ul>

@@ -56,7 +56,7 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
           </div>
           {/* Testo */}
           <div>
-            <span className="font-serif text-7xl text-[#c4b99a] leading-none select-none">{t('sezione1.numero')}</span>
+            <span className="font-serif text-7xl text-[#675c3c] leading-none select-none">{t('sezione1.numero')}</span>
             <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mt-2 mb-6">
               {t('sezione1.label')}
             </p>
@@ -116,7 +116,7 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
           </div>
           {/* Testo */}
           <div>
-            <span className="font-serif text-7xl text-[#c4b99a] leading-none select-none">{t('sezione3.numero')}</span>
+            <span className="font-serif text-7xl text-[#675c3c] leading-none select-none">{t('sezione3.numero')}</span>
             <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mt-2 mb-6">
               {t('sezione3.label')}
             </p>

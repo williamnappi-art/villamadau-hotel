@@ -76,7 +76,7 @@ const itemData: ItemData[] = [
 const tipoConfig: Record<Tipo, { dot: string; text: string }> = {
   offerta:  { dot: 'bg-[#c9621a]', text: 'text-[#c9621a]' },
   evento:   { dot: 'bg-[#7a5c3a]', text: 'text-[#7a5c3a]' },
-  stagione: { dot: 'bg-[#8a9e82]',  text: 'text-[#8a9e82]' },
+  stagione: { dot: 'bg-[#8a9e82]',  text: 'text-[#52624c]' },
 }
 
 const INTERVAL = 6

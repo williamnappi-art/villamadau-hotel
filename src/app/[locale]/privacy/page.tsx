@@ -23,7 +23,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#1e1c18] underline underline-offset-2 hover:text-[#c4b99a] transition-colors"
+          className="text-[#1e1c18] underline underline-offset-2 hover:text-[#675c3c] transition-colors"
         >
           {chunks}
         </a>
@@ -55,7 +55,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       {/* ── Titolare del trattamento ── */}
       <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-8">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-4">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-4">
             {t('titolare.articolo')}
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-8">
@@ -70,13 +70,13 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               <p>{HOTEL.address.full}</p>
               <p>
                 {t('titolare.emailLabel')}{' '}
-                <a href={`mailto:${HOTEL.contact.email}`} className="text-[#1e1c18] hover:text-[#c4b99a] transition-colors">
+                <a href={`mailto:${HOTEL.contact.email}`} className="text-[#1e1c18] hover:text-[#675c3c] transition-colors">
                   {HOTEL.contact.email}
                 </a>
               </p>
               <p>
                 {t('titolare.telefonoLabel')}{' '}
-                <a href={PHONE_HREF} className="text-[#1e1c18] hover:text-[#c4b99a] transition-colors">
+                <a href={PHONE_HREF} className="text-[#1e1c18] hover:text-[#675c3c] transition-colors">
                   {HOTEL.contact.phone}
                 </a>
               </p>
@@ -88,7 +88,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       {/* ── Dati raccolti ── */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-8">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-4">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-4">
             {t('datiRaccolti.articolo')}
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-8">
@@ -114,7 +114,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       {/* ── Google Analytics ── */}
       <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-8">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-4">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-4">
             {t('googleAnalytics.label')}
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-8">
@@ -137,7 +137,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       {/* ── Google Ads ── */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-8">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-4">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-4">
             {t('googleAds.label')}
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-8">
@@ -157,7 +157,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       {/* ── Cookie utilizzati ── */}
       <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-8">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-4">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-4">
             {t('cookieUtilizzati.label')}
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-8">
@@ -213,7 +213,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       {/* ── Diritti dell'utente ── */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-8">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-4">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-4">
             {t('dirittiUtente.articolo')}
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-8">
@@ -244,7 +244,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       {/* ── Come modificare le preferenze cookie ── */}
       <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-8">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-[#c4b99a] mb-4">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#675c3c] mb-4">
             {t('gestioneCookie.label')}
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#1e1c18] mb-8">
@@ -266,7 +266,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                     href={browser.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1e1c18] underline underline-offset-2 hover:text-[#c4b99a] transition-colors"
+                    className="text-[#1e1c18] underline underline-offset-2 hover:text-[#675c3c] transition-colors"
                   >
                     {t(`gestioneCookie.browser.${browser.key}`)}
                   </a>

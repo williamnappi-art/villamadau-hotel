@@ -32,7 +32,7 @@ export default async function DomusAntigasPage({ params }: { params: Promise<{ l
       {/* \u2500\u2500 INTRO \u2500\u2500 */}
       <section style={{ backgroundColor: '#F9ECE8' }} className="py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#939685' }}>
+          <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#5c5f51' }}>
             {t('domusAntigas.intro.label')}
           </p>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-10" style={{ color: '#1e1c18' }}>
@@ -70,7 +70,7 @@ export default async function DomusAntigasPage({ params }: { params: Promise<{ l
             />
           </div>
           <div>
-            <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#939685' }}>
+            <p className="text-[11px] uppercase tracking-[0.35em] mb-6" style={{ color: '#5c5f51' }}>
               {t('domusAntigas.cuore.label')}
             </p>
             <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-snug" style={{ color: '#1e1c18' }}>
@@ -89,7 +89,7 @@ export default async function DomusAntigasPage({ params }: { params: Promise<{ l
       <section style={{ backgroundColor: '#F9ECE8' }} className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#939685' }}>
+            <p className="text-[11px] uppercase tracking-[0.35em] mb-4" style={{ color: '#5c5f51' }}>
               {t('domusAntigas.offerta.label')}
             </p>
             <h2 className="font-serif leading-none" style={{ color: '#1e1c18' }}>
