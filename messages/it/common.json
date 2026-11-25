@@ -64,5 +64,11 @@
     "precedente": "Precedente",
     "successivo": "Successivo",
     "cardAriaLabel": "Card {number}"
+  },
+  "contenutoEsterno": {
+    "mostraMappa": "Mostra la mappa",
+    "mostraMenu": "Mostra il menù",
+    "nota": "Contenuto esterno fornito da {provider}, che può usare cookie. Si carica solo se lo chiedi.",
+    "apriEsterno": "Apri su {provider} ↗"
   }
 }

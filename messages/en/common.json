@@ -64,5 +64,11 @@
     "precedente": "Previous",
     "successivo": "Next",
     "cardAriaLabel": "Card {number}"
+  },
+  "contenutoEsterno": {
+    "mostraMappa": "Show the map",
+    "mostraMenu": "Show the menu",
+    "nota": "External content provided by {provider}, which may use cookies. It only loads if you ask.",
+    "apriEsterno": "Open on {provider} ↗"
   }
 }

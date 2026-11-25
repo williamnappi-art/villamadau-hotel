@@ -23,13 +23,14 @@ interface ConsentState {
 }
 
 const STORAGE_KEY = 'cookie_consent'
+export const CONSENT_EVENT = 'villamadau:consent'
 const MAX_AGE_DAYS = 180
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
-function getSavedConsent(): ConsentState | null {
+export function getSavedConsent(): ConsentState | null {
   if (typeof window === 'undefined') return null
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
@@ -65,6 +66,8 @@ function saveConsent(analytics: boolean, marketing: boolean) {
   const state: ConsentState = { analytics, marketing, timestamp: Date.now() }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
   updateGtagConsent(analytics, marketing)
+  // Avvisa i contenuti esterni in attesa di consenso (mappe, menù): vedi ConsentIframe
+  window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: state }))
 }
 
 /* ------------------------------------------------------------------ */

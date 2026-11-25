@@ -4,6 +4,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { ContattiHero } from '@/components/sections/ContattiHero'
 import { HOTEL, PHONE_HREF, whatsappUrl } from '@/lib/hotel.config'
 import { pageBreadcrumb } from '@/lib/schema'
+import { ConsentIframe } from '@/components/ui/ConsentIframe'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -128,15 +129,13 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
 
             {/* Mappa */}
             <div className="w-full overflow-hidden" style={{ aspectRatio: '4/3' }}>
-              <iframe
+              <ConsentIframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792!2d9.0021019!3d39.0114414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e727d27f214f0d%3A0x2900f40f2c992db9!2sHotel%20VillaMadau%2C%20Boutique%20Hotel!5e0!3m2!1sit!2sit!4v1742900000000!5m2!1sit!2sit"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
                 title="Villa Madau Hotel – Via Nora 84, Pula"
+                provider="Google Maps"
+                externalUrl={HOTEL.googleMapsUrl}
+                kind="mappa"
+                className="w-full h-full"
               />
             </div>
 

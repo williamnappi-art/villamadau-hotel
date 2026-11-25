@@ -5,13 +5,15 @@ import { RistoranteHero } from '@/components/sections/RistoranteHero'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { pageBreadcrumb } from '@/lib/schema'
+import { ConsentIframe } from '@/components/ui/ConsentIframe'
+import { HOTEL } from '@/lib/hotel.config'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   return buildMetadata({ locale, path: '/ristorante', key: 'ristorante', image: { url: '/images/ristorante.webp' } })
 }
 
-const MENU_URL = 'https://www.leggimenu.it/menu/federicos/210635'
+const MENU_URL = HOTEL.restaurant.menuUrl
 
 export default async function RistorantePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -40,12 +42,14 @@ export default async function RistorantePage({ params }: { params: Promise<{ loc
       <section className="pb-20 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
-            <iframe
+            <ConsentIframe
               src={MENU_URL}
               title="Menù Federico's"
+              provider="leggimenu"
+              externalUrl={MENU_URL}
+              kind="menu"
               className="w-full"
-              style={{ height: '900px', border: 'none' }}
-              loading="lazy"
+              style={{ height: '900px' }}
             />
           </div>
           <p className="text-center text-sm text-gray-400 mt-4">

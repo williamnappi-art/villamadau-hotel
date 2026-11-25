@@ -5,6 +5,8 @@ import Image from 'next/image'
 
 import { pageBreadcrumb } from '@/lib/schema'
 import { Button } from '@/components/ui/Button'
+import { HOTEL } from '@/lib/hotel.config'
+import { ConsentIframe } from '@/components/ui/ConsentIframe'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -306,12 +308,13 @@ export default async function GutturuMannuPage({ params }: { params: Promise<{ l
 
             {/* Mappa OpenStreetMap */}
             <div className="rounded-xl overflow-hidden shadow-md aspect-[4/3]">
-              <iframe
-                title="Villa Madau Hotel – Via Nora 84, Pula"
+              <ConsentIframe
                 src="https://maps.google.com/maps?q=Via+Nora+84,+09050+Pula+CA,+Sardegna,+Italy&output=embed&z=16"
-                className="w-full h-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                title="Villa Madau Hotel – Via Nora 84, Pula"
+                provider="Google Maps"
+                externalUrl={HOTEL.googleMapsUrl}
+                kind="mappa"
+                className="w-full h-full"
               />
             </div>
           </div>
