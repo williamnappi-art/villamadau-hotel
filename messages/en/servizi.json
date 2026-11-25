@@ -51,15 +51,15 @@
       },
       "car": {
         "titolo": "Car Rental",
-        "descrizione": "Car rental service available to explore the wonders of southern Sardinia: beaches, nuraghi and charming villages."
+        "descrizione": "Car rental service available to explore the wonders of southern Sardinia: on request, we will take care of booking the right car for you."
       },
       "coffee": {
-        "titolo": "Sardinian Breakfast",
-        "descrizione": "Every morning a breakfast with local Sardinian products awaits you: cheeses, cured meats, traditional pastries and pane carasau."
+        "titolo": "À la Carte Breakfast",
+        "descrizione": "Every morning a breakfast with local Sardinian products awaits you: cheeses, cured meats, traditional pastries and pane carasau, all ordered from our menu and served at your table."
       },
       "map": {
         "titolo": "Tourist Assistance",
-        "descrizione": "Our staff is at your disposal to recommend excursions, itineraries and the best restaurants in the Sulcis area."
+        "descrizione": "Our staff is at your disposal to recommend and book excursions, itineraries and the best restaurants in the Sulcis area. Only the finest experiences the area has to offer."
       }
     }
   },

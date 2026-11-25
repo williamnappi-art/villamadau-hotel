@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/metadata'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { servizi } from '@/content/servizi'
 import { Button } from '@/components/ui/Button'
@@ -46,35 +46,15 @@ const iconeMap: Record<string, React.ReactNode> = {
 }
 
 const spiagge = [
-  {
-    nome: 'Nora',
-    distanza: '3 min in auto',
-    image: '/images/nora-villa-madau.webp',
-    alt: 'Spiaggia di Nora – Villa Madau Hotel, Pula',
-    testo:
-      "A tre minuti dall'hotel si apre una delle spiagge più suggestive del Mediterraneo. Nora è un luogo unico: acque basse e cristalline color smeraldo, sabbia fine e bianca, e alle spalle i resti di un'antica città fenicio-romana che emerge direttamente dal mare. È possibile nuotare fino ai ruderi, dove il fondale rivela anfore, mosaici e colonne sommerse. Un posto che non si dimentica.",
-  },
-  {
-    nome: 'Chia',
-    distanza: '15 min in auto',
-    image: '/images/chia-villamadau.webp',
-    alt: 'Spiaggia di Chia – vicino a Villa Madau Hotel, Pula',
-    testo:
-      "A un quarto d'ora di guida si apre il paesaggio selvaggio di Chia: dune alte ricoperte di ginepri secolari, acque poco profonde adatte alle famiglie, una laguna con fenicotteri e aironi. La spiaggia di Su Giudeu, con la sua isola raggiungibile a guado, è tra le più fotografate della Sardegna. I venti del maestrale la rendono perfetta anche per il windsurf.",
-  },
-  {
-    nome: 'Tuerredda',
-    distanza: '20 min in auto',
-    image: '/images/sardegna-chia.webp',
-    alt: 'Spiaggia di Tuerredda – vicino a Villa Madau Hotel',
-    testo:
-      "Venti minuti e si arriva a quella che molti considerano la spiaggia più bella del Sud Sardegna. Tuerredda è una piccola baia chiusa tra due promontori di roccia, con un mare dai colori caraibici e un'isola a pochi metri dalla riva. Le acque sono trasparenti, il fondale digrada lentamente — ideale per snorkeling e nuoto.",
-  },
+  { slug: 'nora', image: '/images/nora-villa-madau.webp' },
+  { slug: 'chia', image: '/images/chia-villamadau.webp' },
+  { slug: 'tuerredda', image: '/images/sardegna-chia.webp' },
 ]
 
 export default async function ServiziPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
+  const t = await getTranslations('servizi')
 
   const breadcrumb = pageBreadcrumb(locale, '/servizi')
 
@@ -87,9 +67,9 @@ export default async function ServiziPage({ params }: { params: Promise<{ locale
       {/* ── INTRO ── */}
       <section className="bg-cream py-20 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-6">Le spiagge più belle del Sud Sardegna</p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-6">{t('intro.label')}</p>
           <p className="font-serif text-[#1e1c18] text-xl md:text-2xl leading-relaxed">
-            Pula è la base ideale per esplorare alcune tra le coste più belle del Mediterraneo. Nora, Chia, Tuerredda: capolavori di natura raggiungibili in pochi minuti. E dopo una giornata di mare, Villa Madau ti aspetta con la camera fresca, l&apos;aperitivo e una cena che sa di Sardegna.
+            {t('intro.paragrafo')}
           </p>
         </div>
       </section>
@@ -97,7 +77,7 @@ export default async function ServiziPage({ params }: { params: Promise<{ locale
       {/* ── SPIAGGE ── */}
       {spiagge.map((s, i) => (
         <section
-          key={s.nome}
+          key={s.slug}
           className={`py-0 ${i % 2 === 0 ? 'bg-[#f0ebe0]' : 'bg-white'}`}
         >
           <div className={`max-w-7xl mx-auto flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
@@ -106,7 +86,7 @@ export default async function ServiziPage({ params }: { params: Promise<{ locale
             <div className="relative w-full lg:w-1/2" style={{ minHeight: '420px' }}>
               <Image
                 src={s.image}
-                alt={s.alt}
+                alt={t(`spiagge.${s.slug}.alt`)}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -115,11 +95,11 @@ export default async function ServiziPage({ params }: { params: Promise<{ locale
 
             {/* Testo */}
             <div className="w-full lg:w-1/2 flex flex-col justify-center px-10 py-16 lg:px-16 xl:px-20">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#4a4640] mb-4">{s.distanza}</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#4a4640] mb-4">{t(`spiagge.${s.slug}.distanza`)}</p>
               <h2 className="font-serif text-[#1e1c18] leading-none mb-6">
-                <em className="block italic font-normal text-5xl md:text-6xl">{s.nome}</em>
+                <em className="block italic font-normal text-5xl md:text-6xl">{t(`spiagge.${s.slug}.nome`)}</em>
               </h2>
-              <p className="text-[#4a4640] leading-relaxed text-sm max-w-md">{s.testo}</p>
+              <p className="text-[#4a4640] leading-relaxed text-sm max-w-md">{t(`spiagge.${s.slug}.testo`)}</p>
             </div>
           </div>
         </section>
@@ -128,9 +108,9 @@ export default async function ServiziPage({ params }: { params: Promise<{ locale
       {/* ── STACCO: il ritorno ── */}
       <section className="bg-[#1e1c18] py-20 px-6 text-center">
         <div className="max-w-2xl mx-auto">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-white/40 mb-6">Dopo il mare</p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-white/40 mb-6">{t('stacco.label')}</p>
           <em className="font-serif italic text-white text-xl md:text-2xl leading-relaxed block">
-            Alla fine di una giornata di sole e acqua, non c&apos;è niente di più bello che rientrare nella propria camera — fresca, silenziosa, con tutto il comfort di cui hai bisogno. Un aperitivo, una cena sarda, e il riposo che ti sei guadagnato.
+            {t('stacco.testo')}
           </em>
         </div>
       </section>
@@ -139,22 +119,22 @@ export default async function ServiziPage({ params }: { params: Promise<{ locale
       <section className="bg-cream py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-3">In hotel</p>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-3">{t('serviziGrid.label')}</p>
             <h2 className="font-serif text-[#1e1c18] text-4xl md:text-5xl leading-none">
-              <em className="italic font-normal">Tutto incluso</em>
+              <em className="italic font-normal">{t('serviziGrid.title')}</em>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#c4b99a]/30">
             {servizi.map((servizio) => (
               <div
-                key={servizio.titolo}
+                key={servizio.icona}
                 className="bg-cream p-10 flex flex-col gap-4"
               >
                 <div className="text-[#7a5c3a]">
                   {iconeMap[servizio.icona]}
                 </div>
-                <h3 className="font-serif text-lg text-[#1e1c18]">{servizio.titolo}</h3>
-                <p className="text-sm text-[#4a4640] leading-relaxed">{servizio.descrizione}</p>
+                <h3 className="font-serif text-lg text-[#1e1c18]">{t(`serviziGrid.items.${servizio.icona}.titolo`)}</h3>
+                <p className="text-sm text-[#4a4640] leading-relaxed">{t(`serviziGrid.items.${servizio.icona}.descrizione`)}</p>
               </div>
             ))}
           </div>
@@ -163,11 +143,11 @@ export default async function ServiziPage({ params }: { params: Promise<{ locale
 
       {/* ── CTA ── */}
       <section className="bg-[#f0ebe0] py-20 text-center px-6 border-t border-[#c4b99a]/30">
-        <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-6">Prenota il tuo soggiorno</p>
+        <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-6">{t('ctaFinale.label')}</p>
         <h2 className="font-serif text-[#1e1c18] text-4xl md:text-5xl leading-none mb-10">
-          <em className="italic font-normal">Ti aspettiamo a Pula</em>
+          <em className="italic font-normal">{t('ctaFinale.title')}</em>
         </h2>
-        <Button href="/contatti">Contattaci</Button>
+        <Button href="/contatti">{t('ctaFinale.cta')}</Button>
       </section>
     </>
   )
