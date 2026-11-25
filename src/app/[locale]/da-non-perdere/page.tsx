@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: HOTEL.name,
       type: 'website',
       locale: locale === 'it' ? 'it_IT' : 'en_US',
-      images: [{ url: '/images/sant-efisio-hotel.webp', width: 1200, height: 630, alt: t('metadata.daNonPerdere.ogAlt') }],
+      images: [{ url: '/images/og-da-non-perdere.jpg', width: 1200, height: 630, alt: t('metadata.daNonPerdere.ogAlt') }],
     },
   }
 }

@@ -13,10 +13,13 @@ import Image from 'next/image'
 export function HeroVideo({
   src,
   poster,
+  posterPosition = 'center',
   videoClassName = '',
 }: {
   src: string
   poster: string
+  /** punto da tenere a fuoco nel ritaglio dell'immagine (object-position), es. '25% 40%' */
+  posterPosition?: string
   /** classi extra solo per il video (es. 'md:hidden' per mostrarlo solo su mobile) */
   videoClassName?: string
 }) {
@@ -52,7 +55,8 @@ export function HeroVideo({
         priority
         sizes="100vw"
         quality={70}
-        className="object-cover object-center"
+        className="object-cover"
+        style={{ objectPosition: posterPosition }}
         aria-hidden="true"
       />
       <video

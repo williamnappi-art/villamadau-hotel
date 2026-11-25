@@ -141,7 +141,7 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4 / 5' }}>
             <Image
-              src="/images/sant-efisio-hotel.webp"
+              src="/images/fuochi-villa-madau.webp"
               alt="Sant\u2019Efisio \u2013 Villa Madau Hotel Pula"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
