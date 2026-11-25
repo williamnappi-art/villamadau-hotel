@@ -4,6 +4,8 @@ import { HOTEL } from '@/lib/hotel.config'
 
 export async function LocationSection() {
   const t = await getTranslations('home.location')
+  // nomi dei luoghi tradotti (stesso ordine di HOTEL.nearbyAttractions)
+  const luoghi = (await getTranslations('contatti')).raw('info.luoghi') as string[]
 
   return (
     <section className="py-20 md:py-28 bg-gray-900 text-white">
@@ -22,13 +24,13 @@ export async function LocationSection() {
             </p>
 
             <ul className="space-y-4 mb-8">
-              {HOTEL.nearbyAttractions.map((attr) => (
+              {HOTEL.nearbyAttractions.map((attr, i) => (
                 <li key={attr.name} className="flex items-center gap-4">
                   <span className="flex-shrink-0 w-16 text-right text-sm font-semibold text-primary-300">
                     {attr.distance}
                   </span>
                   <span className="flex-1 h-px bg-gray-700" aria-hidden="true" />
-                  <span className="text-sm text-gray-300">{attr.name}</span>
+                  <span className="text-sm text-gray-300">{luoghi[i] ?? attr.name}</span>
                 </li>
               ))}
             </ul>
