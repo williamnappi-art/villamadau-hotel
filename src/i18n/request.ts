@@ -16,7 +16,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
       hotel: (await import(`../../messages/${locale}/hotel.json`)).default,
       ristorante: (await import(`../../messages/${locale}/ristorante.json`)).default,
       servizi: (await import(`../../messages/${locale}/servizi.json`)).default,
-      camere: (await import(`../../messages/${locale}/camere.json`)).default,
       contatti: (await import(`../../messages/${locale}/contatti.json`)).default,
       eventi: (await import(`../../messages/${locale}/eventi.json`)).default,
       galleria: (await import(`../../messages/${locale}/galleria.json`)).default,

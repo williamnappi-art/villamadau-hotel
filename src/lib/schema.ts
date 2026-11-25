@@ -1,6 +1,5 @@
 import { HOTEL } from './hotel.config'
 import { localeUrl } from './metadata'
-import type { Camera } from '@/content/camere'
 
 export const HOTEL_SCHEMA_ID = `${HOTEL.url}/#hotel`
 
@@ -53,36 +52,6 @@ export function generateHotelSchema(locale: string = 'it') {
     checkoutTime: HOTEL.checkoutTime,
     amenityFeature: text.amenities.map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true })),
     sameAs: [HOTEL.socialMedia.facebook, HOTEL.socialMedia.instagram],
-  }
-}
-
-export function generateRoomSchema(camera: Camera) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'HotelRoom',
-    name: camera.nome,
-    description: camera.descrizione,
-    image: `${HOTEL.url}${camera.immagine}`,
-    occupancy: {
-      '@type': 'QuantitativeValue',
-      minValue: 1,
-      maxValue: camera.occupazione,
-    },
-    floorSize: {
-      '@type': 'QuantitativeValue',
-      value: camera.mq,
-      unitCode: 'MTK',
-    },
-    amenityFeature: camera.dotazioni.map((d) => ({
-      '@type': 'LocationFeatureSpecification',
-      name: d,
-      value: true,
-    })),
-    containedInPlace: {
-      '@type': 'Hotel',
-      name: HOTEL.name,
-      url: HOTEL.url,
-    },
   }
 }
 
