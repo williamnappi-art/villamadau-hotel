@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { HeroNav } from './HeroNav'
 import { Stella } from '@/components/ui/Stella'
+import { HeroParallax } from '@/components/ui/HeroParallax'
 
 export async function CapodannoHero() {
   const tOfferta = await getTranslations('capodanno')
@@ -9,15 +10,17 @@ export async function CapodannoHero() {
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
       {/* Il mare d'inverno vicino a Pula, con la torre sul promontorio (su mobile inquadrata a sinistra per non tagliarla) */}
-      <Image
-        src="/images/villa-madau-pula-hotel.webp"
-        alt={tOfferta('hero.imageAlt')}
-        fill
-        priority
-        sizes="100vw"
-        quality={70}
-        className="object-cover object-[30%_50%] md:object-center"
-      />
+      <HeroParallax>
+        <Image
+          src="/images/villa-madau-pula-hotel.webp"
+          alt={tOfferta('hero.imageAlt')}
+          fill
+          priority
+          sizes="100vw"
+          quality={70}
+          className="object-cover object-[30%_50%] md:object-center"
+        />
+      </HeroParallax>
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70" />
 
       <HeroNav />
