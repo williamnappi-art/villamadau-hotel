@@ -5,6 +5,8 @@
 @layer base {
   html {
     scroll-behavior: auto;
+    /* Font dei titoli del sito, usato dai componenti che leggono --font-display (es. CardOpenSlider) */
+    --font-display: var(--font-cormorant), Georgia, serif;
   }
 
   body {
