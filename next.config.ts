@@ -3,16 +3,16 @@ import createNextIntlPlugin from 'next-intl/plugin'
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts')
 
-// Fonti autorizzate (Google Tag Manager/Analytics, mappe Google, menù leggimenu)
+// Fonti autorizzate (Google Tag Manager/Analytics/Ads tramite GTM, mappe Google, menù leggimenu)
 const CSP = [
   "default-src 'self'",
   // 'unsafe-inline' serve agli script inline di Next.js (pagine statiche, niente nonce) e al consenso GTM
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://www.googleadservices.com https://*.doubleclick.net https://pagead2.googlesyndication.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.googleapis.com",
+  "img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.googleapis.com https://*.doubleclick.net https://pagead2.googlesyndication.com https://www.googleadservices.com https://*.google.it",
   "font-src 'self' data:",
-  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.google.com",
-  "frame-src https://www.google.com https://maps.google.com https://www.leggimenu.it https://www.googletagmanager.com",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net https://pagead2.googlesyndication.com https://www.googleadservices.com https://*.google.it",
+  "frame-src https://www.google.com https://maps.google.com https://www.leggimenu.it https://www.googletagmanager.com https://*.doubleclick.net",
   "media-src 'self'",
   "object-src 'none'",
   "base-uri 'self'",
