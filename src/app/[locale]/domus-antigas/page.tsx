@@ -11,6 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'metadata' })
   const url = locale === 'it' ? `${HOTEL.url}/domus-antigas` : `${HOTEL.url}/en/domus-antigas`
   return {
+    // Edizione 2026 conclusa: fuori da Google finché la pagina non viene aggiornata al 2027
+    robots: { index: false, follow: true },
     title: t('metadata.domusAntigas.title'),
     description: t('metadata.domusAntigas.description'),
     alternates: {
@@ -52,9 +54,9 @@ export default async function DomusAntigasPage({ params }: { params: Promise<{ l
           <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#939685' }}>
             15 Marzo 2026 &middot; Centro storico di Pula
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl leading-tight mb-10" style={{ color: '#1e1c18' }}>
+          <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-10" style={{ color: '#1e1c18' }}>
             Un viaggio nel tempo<br />tra le vie di Pula
-          </h1>
+          </h2>
           <div className="space-y-5 text-lg leading-relaxed" style={{ color: '#4a4640' }}>
             <p>
               Il 15 Marzo 2026 il centro storico di Pula si trasforma in un viaggio nel tempo

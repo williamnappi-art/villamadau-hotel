@@ -82,7 +82,7 @@ export default async function PasquaPage({ params }: { params: Promise<{ locale:
       <section style={{ backgroundColor: '#F5DFC5' }} className="py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <p className="text-[11px] uppercase tracking-[0.35em] mb-8" style={{ color: '#A1B5A8' }}>
-            Pasqua 2026 &middot; Pula, Sardegna
+            Pasqua 2027 &middot; Pula, Sardegna
           </p>
           <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#A4624D' }}>
             <p>

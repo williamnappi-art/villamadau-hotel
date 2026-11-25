@@ -50,9 +50,9 @@ export default async function HotelPage({ params }: { params: Promise<{ locale: 
           <p className="text-[11px] uppercase tracking-[0.3em] text-[#4a4640] mb-6">
             Pula · Centro storico · Sardegna
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl text-[#1e1c18] leading-tight mb-8">
+          <h2 className="font-serif text-4xl md:text-5xl text-[#1e1c18] leading-tight mb-8">
             Una vera sorpresa,<br />tutta da scoprire
-          </h1>
+          </h2>
           <p className="text-[#4a4640] leading-relaxed text-lg max-w-2xl mx-auto">
             Villa Madau non si annuncia. Bisogna cercarlo, girare l&apos;angolo giusto, spingere il
             cancello tra i vicoli del centro storico di Pula. È lì che il paese si ferma,

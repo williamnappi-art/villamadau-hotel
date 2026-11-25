@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/da-non-perdere', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/settimana-al-mare', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/sant-efisio', changeFrequency: 'monthly' as const, priority: 0.7 },
-    { path: '/domus-antigas', changeFrequency: 'monthly' as const, priority: 0.7 },
+    // { path: '/domus-antigas', ... } — fuori dalla sitemap finché non c'è l'edizione 2027 (pagina in noindex)
     { path: '/pasqua-a-pula', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/gutturu-mannu', changeFrequency: 'monthly' as const, priority: 0.6 },
     { path: '/galleria', changeFrequency: 'monthly' as const, priority: 0.5 },
