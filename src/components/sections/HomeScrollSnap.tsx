@@ -40,7 +40,8 @@ export function HomeScrollSnap() {
         const y = targetY() ?? first
         const arrived = Math.abs(window.scrollY - y) < 2
         if ((arrived && now - lastInput > QUIET_MS) || now - start > MAX_MS) {
-          window.scrollTo({ top: y, behavior: 'auto' }) // correzione finale al pixel
+          // correzione finale al pixel, solo se siamo davvero vicini (mai riportare indietro di colpo)
+          if (Math.abs(window.scrollY - y) < 120) window.scrollTo({ top: y, behavior: 'auto' })
           state = 'done'
           return
         }
@@ -49,7 +50,23 @@ export function HomeScrollSnap() {
       raf = requestAnimationFrame(tick)
     }
 
+    // L'utente prende il controllo (tastiera, barra di scorrimento, click): l'aggancio si annulla
+    const cancelSnap = () => {
+      if (state !== 'snapping') return
+      cancelAnimationFrame(raf)
+      state = 'done'
+    }
+    const SCROLL_KEYS = new Set([' ', 'PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', 'Home', 'End'])
+    // click col mouse (es. trascinare la barra di scorrimento); il dito non annulla
+    const handlePointer = (e: PointerEvent) => {
+      if (e.pointerType === 'mouse') cancelSnap()
+    }
+    const handleKey = (e: KeyboardEvent) => {
+      if (SCROLL_KEYS.has(e.key)) cancelSnap()
+    }
+
     const handleWheel = (e: WheelEvent) => {
+      if (e.ctrlKey) return // pinch-zoom del trackpad: non è uno scroll
       if (state === 'snapping') {
         e.preventDefault()
         lastInput = performance.now()
@@ -75,6 +92,11 @@ export function HomeScrollSnap() {
       }
       if (state === 'done' || window.scrollY > 80) return
       if (touchStartY - e.touches[0].clientY > 8) {
+        // Se il browser non permette più di bloccare il gesto (Chrome Android), non forzare nulla
+        if (!e.cancelable) {
+          state = 'done'
+          return
+        }
         e.preventDefault()
         snap()
       }
@@ -83,12 +105,16 @@ export function HomeScrollSnap() {
     window.addEventListener('wheel', handleWheel, { passive: false })
     window.addEventListener('touchstart', handleTouchStart, { passive: true })
     window.addEventListener('touchmove', handleTouchMove, { passive: false })
+    window.addEventListener('keydown', handleKey)
+    window.addEventListener('pointerdown', handlePointer)
 
     return () => {
       cancelAnimationFrame(raf)
       window.removeEventListener('wheel', handleWheel)
       window.removeEventListener('touchstart', handleTouchStart)
       window.removeEventListener('touchmove', handleTouchMove)
+      window.removeEventListener('keydown', handleKey)
+      window.removeEventListener('pointerdown', handlePointer)
     }
   }, [])
 
