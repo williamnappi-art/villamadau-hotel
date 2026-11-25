@@ -4,8 +4,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { RistoranteHero } from '@/components/sections/RistoranteHero'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
-import { generateBreadcrumbSchema } from '@/lib/schema'
-import { HOTEL } from '@/lib/hotel.config'
+import { pageBreadcrumb } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -18,10 +17,7 @@ export default async function RistorantePage({ params }: { params: Promise<{ loc
   const { locale } = await params
   setRequestLocale(locale)
 
-  const breadcrumb = generateBreadcrumbSchema([
-    { name: 'Home', url: HOTEL.url },
-    { name: 'Ristorante', url: `${HOTEL.url}/ristorante` },
-  ])
+  const breadcrumb = pageBreadcrumb(locale, '/ristorante')
 
   return (
     <>

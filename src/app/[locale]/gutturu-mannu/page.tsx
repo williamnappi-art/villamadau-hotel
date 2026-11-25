@@ -3,8 +3,7 @@ import { buildMetadata } from '@/lib/metadata'
 import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 
-import { HOTEL } from '@/lib/hotel.config'
-import { generateBreadcrumbSchema } from '@/lib/schema'
+import { pageBreadcrumb } from '@/lib/schema'
 import { Button } from '@/components/ui/Button'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -110,10 +109,7 @@ export default async function GutturuMannuPage({ params }: { params: Promise<{ l
   const { locale } = await params
   setRequestLocale(locale)
 
-  const breadcrumb = generateBreadcrumbSchema([
-    { name: 'Home', url: HOTEL.url },
-    { name: 'Gutturu Mannu', url: `${HOTEL.url}/gutturu-mannu` },
-  ])
+  const breadcrumb = pageBreadcrumb(locale, '/gutturu-mannu')
 
   return (
     <>

@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { SettimanaMareHero } from '@/components/sections/SettimanaMareHero'
 import { Stella } from '@/components/ui/Stella'
-import { generateBreadcrumbSchema } from '@/lib/schema'
+import { generateBreadcrumbSchema, HOTEL_SCHEMA_ID } from '@/lib/schema'
 import { HOTEL, PHONE_HREF, whatsappUrl } from '@/lib/hotel.config'
 
 // ─────────────────────────────────────────────────────────────
@@ -80,17 +80,9 @@ export default async function SettimanaMarePage({ params }: { params: Promise<{ 
     availability: 'https://schema.org/LimitedAvailability',
     offeredBy: {
       '@type': 'Hotel',
+      '@id': HOTEL_SCHEMA_ID,
       name: HOTEL.name,
       url: HOTEL.url,
-      telephone: HOTEL.contact.phone,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: HOTEL.address.street,
-        addressLocality: HOTEL.address.city,
-        addressRegion: HOTEL.address.region,
-        postalCode: HOTEL.address.postalCode,
-        addressCountry: HOTEL.address.countryCode,
-      },
     },
   }
 

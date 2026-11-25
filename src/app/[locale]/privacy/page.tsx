@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/metadata'
 import { setRequestLocale } from 'next-intl/server'
 import { HOTEL, PHONE_HREF } from '@/lib/hotel.config'
-import { generateBreadcrumbSchema } from '@/lib/schema'
+import { pageBreadcrumb } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -13,10 +13,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   const { locale } = await params
   setRequestLocale(locale)
 
-  const breadcrumb = generateBreadcrumbSchema([
-    { name: 'Home', url: HOTEL.url },
-    { name: 'Privacy Policy', url: `${HOTEL.url}/privacy` },
-  ])
+  const breadcrumb = pageBreadcrumb(locale, '/privacy')
 
   return (
     <>

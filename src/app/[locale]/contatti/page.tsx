@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/metadata'
 import { setRequestLocale } from 'next-intl/server'
 import { ContattiHero } from '@/components/sections/ContattiHero'
 import { HOTEL, PHONE_HREF, whatsappUrl } from '@/lib/hotel.config'
-import { generateBreadcrumbSchema } from '@/lib/schema'
+import { pageBreadcrumb } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -16,10 +16,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ local
   const { locale } = await params
   setRequestLocale(locale)
 
-  const breadcrumb = generateBreadcrumbSchema([
-    { name: 'Home', url: HOTEL.url },
-    { name: 'Contatti', url: `${HOTEL.url}/contatti` },
-  ])
+  const breadcrumb = pageBreadcrumb(locale, '/contatti')
 
   return (
     <>

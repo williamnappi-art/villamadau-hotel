@@ -4,8 +4,8 @@ import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { DomusAntigasHero } from '@/components/sections/DomusAntigasHero'
-import { generateBreadcrumbSchema } from '@/lib/schema'
-import { HOTEL, whatsappUrl } from '@/lib/hotel.config'
+import { pageBreadcrumb } from '@/lib/schema'
+import { whatsappUrl } from '@/lib/hotel.config'
 
 // Edizione 2026 conclusa: noindex finché la pagina non viene aggiornata al 2027
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -19,10 +19,7 @@ export default async function DomusAntigasPage({ params }: { params: Promise<{ l
   const { locale } = await params
   setRequestLocale(locale)
 
-  const breadcrumb = generateBreadcrumbSchema([
-    { name: 'Home', url: HOTEL.url },
-    { name: 'Domus Antigas', url: `${HOTEL.url}/domus-antigas` },
-  ])
+  const breadcrumb = pageBreadcrumb(locale, '/domus-antigas')
 
   return (
     <>

@@ -106,7 +106,7 @@ export default async function LocaleLayout({
   // Tenerle tutte appesantiva ogni pagina di ~60 KB. (Se si usa ContactForm aggiungere 'contatti'.)
   const allMessages = await getMessages()
   const messages = { common: allMessages.common, home: allMessages.home }
-  const hotelSchema = generateHotelSchema()
+  const hotelSchema = generateHotelSchema(locale)
   const schemaJson = JSON.stringify(hotelSchema)
 
   return (

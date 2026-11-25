@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/metadata'
 import { setRequestLocale } from 'next-intl/server'
 import { GalleriaClient } from './GalleriaClient'
-import { generateBreadcrumbSchema } from '@/lib/schema'
-import { HOTEL } from '@/lib/hotel.config'
+import { pageBreadcrumb } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -23,10 +22,7 @@ export default async function GalleriaPage({ params }: { params: Promise<{ local
   const { locale } = await params
   setRequestLocale(locale)
 
-  const breadcrumb = generateBreadcrumbSchema([
-    { name: 'Home', url: HOTEL.url },
-    { name: 'Galleria', url: `${HOTEL.url}/galleria` },
-  ])
+  const breadcrumb = pageBreadcrumb(locale, '/galleria')
 
   return (
     <>

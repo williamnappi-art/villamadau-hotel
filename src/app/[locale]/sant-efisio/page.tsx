@@ -4,8 +4,7 @@ import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { SantEfisioHero } from '@/components/sections/SantEfisioHero'
-import { generateBreadcrumbSchema } from '@/lib/schema'
-import { HOTEL } from '@/lib/hotel.config'
+import { pageBreadcrumb } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -69,10 +68,7 @@ export default async function SantEfisioPage({ params }: { params: Promise<{ loc
   const { locale } = await params
   setRequestLocale(locale)
 
-  const breadcrumb = generateBreadcrumbSchema([
-    { name: 'Home', url: HOTEL.url },
-    { name: "Sant\u2019Efisio a Pula", url: `${HOTEL.url}/sant-efisio` },
-  ])
+  const breadcrumb = pageBreadcrumb(locale, '/sant-efisio')
 
   return (
     <>
