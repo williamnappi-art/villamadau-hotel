@@ -1,20 +1,23 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { HeroNav } from './HeroNav'
+import { HeroParallax } from '@/components/ui/HeroParallax'
 
 export async function ServiziHero() {
   const tServizi = await getTranslations('servizi')
 
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
-      <Image
-        src="/images/villa-madau-pula-hotel.webp"
-        alt={tServizi('hero.imageAlt')}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+      <HeroParallax>
+        <Image
+          src="/images/villa-madau-pula-hotel.webp"
+          alt={tServizi('hero.imageAlt')}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </HeroParallax>
       <div className="absolute inset-0 bg-black/40" />
 
       <HeroNav />

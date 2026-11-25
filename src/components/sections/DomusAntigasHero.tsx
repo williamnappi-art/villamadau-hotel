@@ -1,20 +1,23 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { HeroNav } from './HeroNav'
+import { HeroParallax } from '@/components/ui/HeroParallax'
 
 export async function DomusAntigasHero() {
   const tEventi = await getTranslations('eventi')
 
   return (
     <section className="relative h-screen min-h-[560px] overflow-hidden">
-      <Image
-        src="/images/piazzetta.webp"
-        alt={tEventi('domusAntigas.hero.imageAlt')}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+      <HeroParallax>
+        <Image
+          src="/images/piazzetta.webp"
+          alt={tEventi('domusAntigas.hero.imageAlt')}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </HeroParallax>
       <div className="absolute inset-0 bg-black/45" />
 
       <HeroNav />
