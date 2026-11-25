@@ -11,7 +11,7 @@ import CookieBanner from '@/components/ui/CookieBanner'
 import { HOTEL } from '@/lib/hotel.config'
 import { generateHotelSchema } from '@/lib/schema'
 import { routing } from '@/i18n/routing'
-import { Analytics } from '@/components/analytics/Analytics'
+import { Analytics, AnalyticsNoscript } from '@/components/analytics/Analytics'
 import '../globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -116,6 +116,7 @@ export default async function LocaleLayout({
         <script type="application/ld+json" suppressHydrationWarning>{schemaJson}</script>
       </head>
       <body className="flex flex-col min-h-screen">
+        <AnalyticsNoscript />
         <NextIntlClientProvider messages={messages}>
           <ConditionalHeader>
             <Header />

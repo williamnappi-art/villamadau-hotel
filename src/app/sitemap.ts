@@ -4,7 +4,6 @@ import { routing } from '@/i18n/routing'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = HOTEL.url
-  const now = new Date()
 
   const staticPaths = [
     { path: '', changeFrequency: 'weekly' as const, priority: 1.0 },
@@ -24,7 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return staticPaths.flatMap((route) =>
     routing.locales.map((locale) => ({
       url: `${base}${locale === routing.defaultLocale ? '' : `/${locale}`}${route.path}`,
-      lastModified: now,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     }))

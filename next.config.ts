@@ -62,6 +62,17 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      // Header di sicurezza standard su tutte le pagine (HSTS lo aggiunge già Vercel).
+      // CSP non inclusa: con GTM e script inline va progettata e testata a parte.
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()' },
+        ],
+      },
       // Immagini, video e loghi in /public/images: cache di 30 giorni nel browser
       // (le visite successive non riscaricano i ~3 MB dei video).
       // Se si sostituisce un file mantenendo lo stesso nome, meglio rinominarlo.

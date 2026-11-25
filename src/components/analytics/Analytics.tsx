@@ -62,15 +62,20 @@ export function Analytics() {
         `}
       </Script>
 
-      {/* GTM noscript fallback */}
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-          height="0"
-          width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-        />
-      </noscript>
     </>
+  )
+}
+
+/** Fallback GTM per chi ha JavaScript disattivato: deve stare nel <body>, non nell'<head> */
+export function AnalyticsNoscript() {
+  return (
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+        height="0"
+        width="0"
+        style={{ display: 'none', visibility: 'hidden' }}
+      />
+    </noscript>
   )
 }
